@@ -22,18 +22,236 @@ format:
 
 ## **Spring-Mass Equation Problems**
 
+
+
+::: {.callout-tip collapse="true"}
+## **Formulas**
+
+The undamped, undriven spring-mass system is represented by:
+
+$$
+y'' + \frac{k}{m} y = 0
+$$
+
+where:
+
+- $k$ is the spring constant, indicating the stiffness of the spring.
+- $m$ is the mass of the object attached to the spring.
+- $y$ is the displacement of the mass from its equilibrium position.
+
+The general solution to this differential equation is:
+
+$$
+y_h = c_1 \cos \left( \sqrt{\frac{k}{m}} \, t \right) + c_2 \sin \left( \sqrt{\frac{k}{m}} \, t \right)
+$$
+
+where:
+
+- $y_h$ is the general solution to the homogeneous equation.
+- $c_1$ and $c_2$ are constants determined by initial conditions.
+- $\sqrt{\frac{k}{m}}$ is the natural angular frequency of the undamped system, often denoted as $\omega = \sqrt{\frac{k}{m}}$.
+
+For a damped, driven spring-mass system, we use:
+
 $$
 y'' + \frac{c}{m} y' + \frac{k}{m} y = \frac{1}{m} F(t)
 $$
 
-Where:
+where:
 
-- $m$: Mass of the object attached to the spring.
-- $k$: Spring constant, which measures the stiffness of the spring. A higher $k$ value indicates a stiffer spring.
-- $c$: Damping constant, which represents the resistance (e.g., due to friction or air resistance) that opposes the motion of the mass. A higher $c$ value implies more resistance and faster dissipation of energy.
+- $m$: Mass of the object.
+- $k$: Spring constant, measuring the stiffness of the spring. A higher $k$ indicates a stiffer spring.
+- $c$: Damping constant, representing resistance (e.g., due to friction or air resistance) opposing the motion. A higher $c$ implies greater resistance and faster energy dissipation.
 - $y(t)$: Displacement of the mass from its equilibrium position at time $t$.
 - $F(t)$: External force applied to the system as a function of time.
 
+The terms in the equation represent:
+
+- $y''$: Acceleration of the mass.
+- $\frac{c}{m} y'$: Damping term, proportional to the velocity $y'$ and damping constant $c$.
+- $\frac{k}{m} y$: Restoring force term, proportional to displacement $y$ and spring constant $k$.
+- $\frac{1}{m} F(t)$: External force per unit mass acting on the system.
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+Consider the initial-value problem for the undamped spring-mass system:
+
+$$
+y'' + 25y = 0.01 \cos(5t)
+$$
+
+with parameters:
+
+- $m = 1$
+- $k = 25$
+- $F(t) = 0.01 \cos(5t)$
+- Initial conditions: $y(0) = 0$ and $y'(0) = 0$
+
+Solve for $y(t)$, determine the maximum displacement, and state if resonance or beats are present.
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Solution:**
+
+### Solve the Homogeneous Equation
+
+The corresponding homogeneous equation is:
+
+$$
+y_h'' + 25y_h = 0
+$$
+
+The characteristic equation is:
+
+$$
+r^2 + 25 = 0 \quad \Rightarrow \quad r = \pm 5i
+$$
+
+The general solution to the homogeneous equation is:
+
+$$
+y_h(t) = C_1 \cos(5t) + C_2 \sin(5t)
+$$
+
+### Find the Particular Solution
+
+The non-homogeneous term is $f(t) = \dfrac{1}{100} \cos(5t)$. Since this term has the same frequency as the homogeneous solution, **resonance** occurs.
+
+To account for resonance, assume a particular solution of the form:
+
+$$
+y_p(t) = t \left( A \cos(5t) + B \sin(5t) \right)
+$$
+
+### Compute the Derivatives of $y_p(t)$
+
+1. **First Derivative $y_p'(t)$:**
+
+Using the product rule:
+
+$$
+\begin{aligned}
+y_p'(t) &= A \cos(5t) + B \sin(5t) + t \left( -5A \sin(5t) + 5B \cos(5t) \right) \\
+&= A \cos(5t) + B \sin(5t) - 5A t \sin(5t) + 5B t \cos(5t)
+\end{aligned}
+$$
+
+2. **Second Derivative $y_p''(t)$:**
+
+Differentiating $y_p'(t)$:
+
+$$
+\begin{aligned}
+y_p''(t) &= -5A \sin(5t) + 5B \cos(5t) - 5A \sin(5t) + 5B \cos(5t) \\
+&\quad - 5A t \cos(5t) - 5B t \sin(5t) \cdot 5 \\
+&= -10A \sin(5t) + 10B \cos(5t) - 25A t \cos(5t) - 25B t \sin(5t)
+\end{aligned}
+$$
+
+### Substitute into the Original Equation
+
+Substitute $y_p(t)$ and its derivatives into the original equation:
+
+$$
+y_p''(t) + 25 y_p(t) = \dfrac{1}{100} \cos(5t)
+$$
+
+Plug in the expressions:
+
+$$
+\begin{aligned}
+&\left[ -10A \sin(5t) + 10B \cos(5t) - 25A t \cos(5t) - 25B t \sin(5t) \right] \\
+&\quad + 25 \left[ t A \cos(5t) + t B \sin(5t) \right] = \dfrac{1}{100} \cos(5t)
+\end{aligned}
+$$
+
+Simplify:
+
+$$
+-10A \sin(5t) + 10B \cos(5t) = \dfrac{1}{100} \cos(5t)
+$$
+
+### Equate Coefficients and Solve for $A$ and $B$
+
+Set up the equations by equating the coefficients of $\sin(5t)$ and $\cos(5t)$:
+
+1. Coefficient of $\sin(5t)$:
+
+   $$
+   -10A = 0 \quad \Rightarrow \quad A = 0
+   $$
+
+2. Coefficient of $\cos(5t)$:
+
+   $$
+   10B = \dfrac{1}{100} \quad \Rightarrow \quad B = \dfrac{1}{100} \times \dfrac{1}{10} = \dfrac{1}{1000}
+   $$
+
+### Write the Particular Solution
+
+Substitute $A = 0$ and $B = \dfrac{1}{1000}$:
+
+$$
+y_p(t) = t \left( 0 \cdot \cos(5t) + \dfrac{1}{1000} \sin(5t) \right) = \dfrac{t}{1000} \sin(5t)
+$$
+
+### Form the General Solution
+
+The general solution is:
+
+$$
+y(t) = y_h(t) + y_p(t) = C_1 \cos(5t) + C_2 \sin(5t) + \dfrac{t}{1000} \sin(5t)
+$$
+
+### Apply Initial Conditions
+
+Given $y(0) = 0$ and $y'(0) = 0$:
+
+1. **At $t = 0$:**
+
+   $$
+   y(0) = C_1 \cos(0) + C_2 \sin(0) + \dfrac{0}{1000} \sin(0) = C_1
+   $$
+
+   Since $y(0) = 0$:
+
+   $$
+   C_1 = 0
+   $$
+
+2. **First Derivative $y'(t)$:**
+
+   $$
+   \begin{aligned}
+   y'(t) &= -5 C_1 \sin(5t) + 5 C_2 \cos(5t) + \dfrac{d}{dt} \left( \dfrac{t}{1000} \sin(5t) \right) \\
+   &= 5 C_2 \cos(5t) + \dfrac{1}{1000} \sin(5t) + \dfrac{5t}{1000} \cos(5t)
+   \end{aligned}
+   $$
+
+   **At $t = 0$:**
+
+   $$
+   y'(0) = 5 C_2 \cos(0) + \dfrac{1}{1000} \sin(0) + \dfrac{5 \cdot 0}{1000} \cos(0) = 5 C_2
+   $$
+
+   Since $y'(0) = 0$:
+
+   $$
+   C_2 = 0
+   $$
+
+### Final Solution
+
+With $C_1 = 0$ and $C_2 = 0$, the solution simplifies to:
+
+$$
+y(t) = \dfrac{t}{1000} \sin(5t)
+$$
+
+:::
+
 ::: {.callout-note icon=false collapse="true"}
 ## **Problem**
 
@@ -41,18 +259,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
-
-:::
-
-::: {.callout-note icon=false collapse="true"}
-## **Problem**
-
-
-:::
-
-::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -65,7 +272,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -76,7 +283,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -89,7 +296,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -100,7 +307,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -113,7 +320,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -124,7 +331,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -137,7 +344,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -148,7 +355,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -161,7 +368,7 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
 
@@ -172,6 +379,6 @@ Where:
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
-## **Answer:**
+## **Solution:**
 
 :::
