@@ -605,14 +605,200 @@ $$
 
 ## **Variation of Parameters Problems**
 
+::: {.callout-tip collapse="true"}
+## **Formula**
+**Theorem 4.4.2 - Variation of Parameters Method**
+
+For the differential equation
+$$
+y'' + a_1 y' + a_0 y = f(t),
+$$
+where $f$ is continuous, assume that $y_1$ and $y_2$ are linearly independent solutions of the corresponding homogeneous equation
+$$
+y'' + a_1 y' + a_0 y = 0.
+$$
+Then, a particular solution to the non-homogeneous equation is $y_p = u_1 y_1 + u_2 y_2$, where $u_1$ and $u_2$ satisfy
+
+$$
+u_1 = \int \frac{y_2 f}{y_2 y_1' - y_1 y_2'} \, dt \quad \text{and} \quad u_2 = \int \frac{y_1 f}{y_1 y_2' - y_2 y_1'} \, dt.
+$$
+
+:::
+
 ::: {.callout-note icon=false collapse="true"}
 ## **Problem**
+Solve the non-homogeneous linear differential equation:
 
+$$
+y'' - 2 y' + y = \dfrac{e^{t}}{t}, \quad t > 0
+$$
+
+using the **Variation of Parameters** method.
 
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
 ## **Solution:**
+
+### Solve the Homogeneous Equation
+
+First, find the general solution to the corresponding homogeneous equation:
+
+$$
+y'' - 2 y' + y = 0
+$$
+
+**Characteristic Equation:**
+
+Replace $y''$ with $r^2$, $y'$ with $r$, and $y$ with 1:
+
+$$
+r^2 - 2 r + 1 = 0
+$$
+
+**Solve for $r$:**
+
+Factor the quadratic equation:
+
+$$
+(r - 1)^2 = 0
+$$
+
+We have a **repeated root** at $r = 1$.
+
+**General Solution to the Homogeneous Equation:**
+
+For a repeated root $r = 1$, the general solution is:
+
+$$
+y_h(t) = C_1 e^{r t} + C_2 t e^{r t} = C_1 e^{t} + C_2 t e^{t}
+$$
+
+where $C_1$ and $C_2$ are arbitrary constants.
+
+
+### Step 2: Identify $y_1(t)$ and $y_2(t)$
+
+From the homogeneous solution, the linearly independent solutions are:
+
+- $y_1(t) = e^{t}$
+- $y_2(t) = t e^{t}$
+
+
+### Compute the Wronskian $W(y_1, y_2)(t)$
+
+The Wronskian is:
+
+$$
+W(y_1, y_2)(t) = y_1(t) y_2'(t) - y_1'(t) y_2(t)
+$$
+
+**Compute $y_1'(t)$ and $y_2'(t)$:**
+
+- $y_1'(t) = e^{t}$
+- $y_2'(t) = \dfrac{d}{dt} [ t e^{t} ] = e^{t} + t e^{t} = e^{t} (1 + t)$
+
+**Compute the Wronskian:**
+
+$$
+\begin{aligned}
+W(y_1, y_2)(t) &= y_1(t) y_2'(t) - y_1'(t) y_2(t) \\
+&= e^{t} \cdot e^{t} (1 + t) - e^{t} \cdot t e^{t} \\
+&= e^{2t} (1 + t) - e^{2t} t \\
+&= e^{2t} (1 + t - t) \\
+&= e^{2t}
+\end{aligned}
+$$
+
+$$
+W(y_1, y_2)(t) = e^{2t}
+$$
+
+### Compute $u_1(t)$ and $u_2(t)$
+
+**Given:**
+
+$$
+u_1(t) = \int \dfrac{y_2(t) f(t)}{W(y_1, y_2)(t)} \, dt, \quad u_2(t) = -\int \dfrac{y_1(t) f(t)}{W(y_1, y_2)(t)} \, dt
+$$
+
+**Compute $u_1(t)$:**
+
+$$
+\begin{aligned}
+u_1(t) &= \int \dfrac{y_2(t) f(t)}{W(y_1, y_2)(t)} \, dt \\
+&= \int \dfrac{ t e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&= \int \dfrac{ t e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&= \int \dfrac{ e^{t} \cdot e^{t} }{ e^{2t} } \, dt \\
+&= \int \dfrac{ e^{2t} }{ e^{2t} } \, dt \\
+&= \int 1 \, dt \\
+&= t + C_1
+\end{aligned}
+$$
+
+**Compute $u_2(t)$:**
+
+$$
+\begin{aligned}
+u_2(t) &= -\int \dfrac{ y_1(t) f(t) }{ W(y_1, y_2)(t) } \, dt \\
+&= -\int \dfrac{ e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&= -\int \dfrac{ e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&= -\int \dfrac{ e^{2t} }{ t e^{2t} } \, dt \\
+&= -\int \dfrac{1}{t} \, dt \\
+&= -\ln |t| + C_2
+\end{aligned}
+$$
+
+Since $t > 0$, drop the absolute value:
+
+$$
+u_2(t) = -\ln t + C_2
+$$
+
+
+### Construct the Particular Solution $y_p(t)$
+
+The particular solution is:
+
+$$
+\begin{aligned}
+y_p(t) &= u_1(t) y_1(t) + u_2(t) y_2(t) \\
+&= [ t + C_1 ] \cdot e^{t} + [ -\ln t + C_2 ] \cdot t e^{t} \\
+&= e^{t} \left( t + C_1 - t \ln t + C_2 t \right)
+\end{aligned}
+$$
+
+Since the constants $C_1$ and $C_2$ will be absorbed into the homogeneous solution, we can set $C_1 = 0$ and $C_2 = 0$ for the particular solution:
+
+$$
+y_p(t) = e^{t} \left( t - t \ln t \right) = t e^{t} (1 - \ln t)
+$$
+
+
+
+### General Solution
+
+$$
+\begin{aligned}
+y(t) &= y_h(t) + y_p(t) \\
+&= C_1 e^{t} + C_2 t e^{t} + t e^{t} (1 - \ln t)
+\end{aligned}
+$$
+
+Simplify the expression:
+
+$$
+y(t) = e^{t} \left[ C_1 + C_2 t + t (1 - \ln t) \right]
+$$
+
+
+### **Final Answer**
+
+The general solution to the differential equation is:
+
+$$
+ y(t) = e^{t} \left[ C_1 + C_2 t + t (1 - \ln t) \right]
+$$
 
 :::
 

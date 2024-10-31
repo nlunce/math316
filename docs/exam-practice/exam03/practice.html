@@ -5535,40 +5535,32 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </section>
 <section id="variation-of-parameters-problems" class="level2">
 <h2 class="anchored" data-anchor-id="variation-of-parameters-problems"><strong>Variation of Parameters Problems</strong></h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Problem</strong>
+<strong>Formula</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<strong>Solution:</strong>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-
+<p><strong>Theorem 4.4.2 - Variation of Parameters Method</strong></p>
+<p>For the differential equation <span class="math display">
+y&#39;&#39; + a_1 y&#39; + a_0 y = f(t),
+</span> where <span class="math inline">f</span> is continuous, assume that <span class="math inline">y_1</span> and <span class="math inline">y_2</span> are linearly independent solutions of the corresponding homogeneous equation <span class="math display">
+y&#39;&#39; + a_1 y&#39; + a_0 y = 0.
+</span> Then, a particular solution to the non-homogeneous equation is <span class="math inline">y_p = u_1 y_1 + u_2 y_2</span>, where <span class="math inline">u_1</span> and <span class="math inline">u_2</span> satisfy</p>
+<p><span class="math display">
+u_1 = \int \frac{y_2 f}{y_2 y_1&#39; - y_1 y_2&#39;} \, dt \quad \text{and} \quad u_2 = \int \frac{y_1 f}{y_1 y_2&#39; - y_2 y_1&#39;} \, dt.
+</span></p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5577,19 +5569,164 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>Solve the non-homogeneous linear differential equation:</p>
+<p><span class="math display">
+y&#39;&#39; - 2 y&#39; + y = \dfrac{e^{t}}{t}, \quad t &gt; 0
+</span></p>
+<p>using the <strong>Variation of Parameters</strong> method.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <strong>Solution:</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="solve-the-homogeneous-equation-2" class="level3">
+<h3 class="anchored" data-anchor-id="solve-the-homogeneous-equation-2">Solve the Homogeneous Equation</h3>
+<p>First, find the general solution to the corresponding homogeneous equation:</p>
+<p><span class="math display">
+y&#39;&#39; - 2 y&#39; + y = 0
+</span></p>
+<p><strong>Characteristic Equation:</strong></p>
+<p>Replace <span class="math inline">y&#39;&#39;</span> with <span class="math inline">r^2</span>, <span class="math inline">y&#39;</span> with <span class="math inline">r</span>, and <span class="math inline">y</span> with 1:</p>
+<p><span class="math display">
+r^2 - 2 r + 1 = 0
+</span></p>
+<p><strong>Solve for <span class="math inline">r</span>:</strong></p>
+<p>Factor the quadratic equation:</p>
+<p><span class="math display">
+(r - 1)^2 = 0
+</span></p>
+<p>We have a <strong>repeated root</strong> at <span class="math inline">r = 1</span>.</p>
+<p><strong>General Solution to the Homogeneous Equation:</strong></p>
+<p>For a repeated root <span class="math inline">r = 1</span>, the general solution is:</p>
+<p><span class="math display">
+y_h(t) = C_1 e^{r t} + C_2 t e^{r t} = C_1 e^{t} + C_2 t e^{t}
+</span></p>
+<p>where <span class="math inline">C_1</span> and <span class="math inline">C_2</span> are arbitrary constants.</p>
+</section>
+<section id="step-2-identify-y_1t-and-y_2t" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-identify-y_1t-and-y_2t">Step 2: Identify <span class="math inline">y_1(t)</span> and <span class="math inline">y_2(t)</span></h3>
+<p>From the homogeneous solution, the linearly independent solutions are:</p>
+<ul>
+<li><span class="math inline">y_1(t) = e^{t}</span></li>
+<li><span class="math inline">y_2(t) = t e^{t}</span></li>
+</ul>
+</section>
+<section id="compute-the-wronskian-wy_1-y_2t" class="level3">
+<h3 class="anchored" data-anchor-id="compute-the-wronskian-wy_1-y_2t">Compute the Wronskian <span class="math inline">W(y_1, y_2)(t)</span></h3>
+<p>The Wronskian is:</p>
+<p><span class="math display">
+W(y_1, y_2)(t) = y_1(t) y_2&#39;(t) - y_1&#39;(t) y_2(t)
+</span></p>
+<p><strong>Compute <span class="math inline">y_1&#39;(t)</span> and <span class="math inline">y_2&#39;(t)</span>:</strong></p>
+<ul>
+<li><span class="math inline">y_1&#39;(t) = e^{t}</span></li>
+<li><span class="math inline">y_2&#39;(t) = \dfrac{d}{dt} [ t e^{t} ] = e^{t} + t e^{t} = e^{t} (1 + t)</span></li>
+</ul>
+<p><strong>Compute the Wronskian:</strong></p>
+<p><span class="math display">
+\begin{aligned}
+W(y_1, y_2)(t) &amp;= y_1(t) y_2&#39;(t) - y_1&#39;(t) y_2(t) \\
+&amp;= e^{t} \cdot e^{t} (1 + t) - e^{t} \cdot t e^{t} \\
+&amp;= e^{2t} (1 + t) - e^{2t} t \\
+&amp;= e^{2t} (1 + t - t) \\
+&amp;= e^{2t}
+\end{aligned}
+</span></p>
+<p><span class="math display">
+W(y_1, y_2)(t) = e^{2t}
+</span></p>
+</section>
+<section id="compute-u_1t-and-u_2t" class="level3">
+<h3 class="anchored" data-anchor-id="compute-u_1t-and-u_2t">Compute <span class="math inline">u_1(t)</span> and <span class="math inline">u_2(t)</span></h3>
+<p><strong>Given:</strong></p>
+<p><span class="math display">
+u_1(t) = \int \dfrac{y_2(t) f(t)}{W(y_1, y_2)(t)} \, dt, \quad u_2(t) = -\int \dfrac{y_1(t) f(t)}{W(y_1, y_2)(t)} \, dt
+</span></p>
+<p><strong>Compute <span class="math inline">u_1(t)</span>:</strong></p>
+<p><span class="math display">
+\begin{aligned}
+u_1(t) &amp;= \int \dfrac{y_2(t) f(t)}{W(y_1, y_2)(t)} \, dt \\
+&amp;= \int \dfrac{ t e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&amp;= \int \dfrac{ t e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&amp;= \int \dfrac{ e^{t} \cdot e^{t} }{ e^{2t} } \, dt \\
+&amp;= \int \dfrac{ e^{2t} }{ e^{2t} } \, dt \\
+&amp;= \int 1 \, dt \\
+&amp;= t + C_1
+\end{aligned}
+</span></p>
+<p><strong>Compute <span class="math inline">u_2(t)</span>:</strong></p>
+<p><span class="math display">
+\begin{aligned}
+u_2(t) &amp;= -\int \dfrac{ y_1(t) f(t) }{ W(y_1, y_2)(t) } \, dt \\
+&amp;= -\int \dfrac{ e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&amp;= -\int \dfrac{ e^{t} \cdot \dfrac{e^{t}}{t} }{ e^{2t} } \, dt \\
+&amp;= -\int \dfrac{ e^{2t} }{ t e^{2t} } \, dt \\
+&amp;= -\int \dfrac{1}{t} \, dt \\
+&amp;= -\ln |t| + C_2
+\end{aligned}
+</span></p>
+<p>Since <span class="math inline">t &gt; 0</span>, drop the absolute value:</p>
+<p><span class="math display">
+u_2(t) = -\ln t + C_2
+</span></p>
+</section>
+<section id="construct-the-particular-solution-y_pt" class="level3">
+<h3 class="anchored" data-anchor-id="construct-the-particular-solution-y_pt">Construct the Particular Solution <span class="math inline">y_p(t)</span></h3>
+<p>The particular solution is:</p>
+<p><span class="math display">
+\begin{aligned}
+y_p(t) &amp;= u_1(t) y_1(t) + u_2(t) y_2(t) \\
+&amp;= [ t + C_1 ] \cdot e^{t} + [ -\ln t + C_2 ] \cdot t e^{t} \\
+&amp;= e^{t} \left( t + C_1 - t \ln t + C_2 t \right)
+\end{aligned}
+</span></p>
+<p>Since the constants <span class="math inline">C_1</span> and <span class="math inline">C_2</span> will be absorbed into the homogeneous solution, we can set <span class="math inline">C_1 = 0</span> and <span class="math inline">C_2 = 0</span> for the particular solution:</p>
+<p><span class="math display">
+y_p(t) = e^{t} \left( t - t \ln t \right) = t e^{t} (1 - \ln t)
+</span></p>
+</section>
+<section id="general-solution" class="level3">
+<h3 class="anchored" data-anchor-id="general-solution">General Solution</h3>
+<p><span class="math display">
+\begin{aligned}
+y(t) &amp;= y_h(t) + y_p(t) \\
+&amp;= C_1 e^{t} + C_2 t e^{t} + t e^{t} (1 - \ln t)
+\end{aligned}
+</span></p>
+<p>Simplify the expression:</p>
+<p><span class="math display">
+y(t) = e^{t} \left[ C_1 + C_2 t + t (1 - \ln t) \right]
+</span></p>
+</section>
+<section id="final-answer-3" class="level3">
+<h3 class="anchored" data-anchor-id="final-answer-3"><strong>Final Answer</strong></h3>
+<p>The general solution to the differential equation is:</p>
+<p><span class="math display">
+y(t) = e^{t} \left[ C_1 + C_2 t + t (1 - \ln t) \right]
+</span></p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Problem</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -5599,16 +5736,13 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </div>
 </div>
 </div>
-</section>
-<section id="mixing-problems" class="level2">
-<h2 class="anchored" data-anchor-id="mixing-problems"><strong>Mixing Problems</strong></h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Problem</strong>
+<strong>Solution:</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -5618,13 +5752,16 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+</section>
+<section id="mixing-problems" class="level2">
+<h2 class="anchored" data-anchor-id="mixing-problems"><strong>Mixing Problems</strong></h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Solution:</strong>
+<strong>Problem</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -5634,13 +5771,13 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Problem</strong>
+<strong>Solution:</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -5650,8 +5787,24 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Problem</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5660,7 +5813,7 @@ y(t) = (C_1 + C_2 t + C_3 t^2 + C_4 t^3)e^{-t}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 
 </div>
