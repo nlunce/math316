@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - '*.qmd' # Render all .qmd files in the root directory
+    - '!exams/' # Ignore the entire exams folder
+    - '!site_libs/' # Ignore the entire site_libs folder
+
+website:
+  title: 'MATH316'
+  navbar:
+    tools:
+      - icon: github
+        href: https://github.com/nlunce/math316
+    left:
+      - href: ./homework/index.qmd
+        text: HOMEWORK
+      - href: ./homework/index.qmd
+        text: EXAM PRACTICE
+      - href: ./notes/index.qmd
+        text: NOTES
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true

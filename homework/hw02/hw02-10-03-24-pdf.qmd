@@ -1,0 +1,1437 @@
+---
+title: "Homework 02"
+subtitle: "MATH316"
+author: "Nathan Lunceford"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 2
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+    
+---
+
+{{< pagebreak >}}
+
+# Section 1.7
+
+::: {.callout-tip}
+ **Assigned:** 4, 5
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.7.4
+
+### Problem:
+Give an example of two $2 \times 2$  matrices $A$ and $B$ such that $AB \neq BA$.
+
+### Solution:
+Let 
+$$
+A = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}, \quad B = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+$$
+
+#### Calculate $AB$:
+$$
+AB = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} (1 \cdot 0 + 2 \cdot 1) & (1 \cdot 1 + 2 \cdot 0) \\ (0 \cdot 0 + 1 \cdot 1) & (0 \cdot 1 + 1 \cdot 0) \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 1 & 0 \end{bmatrix}
+$$
+
+#### Calculate $BA$:
+$$
+BA = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} (0 \cdot 1 + 1 \cdot 0) & (0 \cdot 2 + 1 \cdot 1) \\ (1 \cdot 1 + 0 \cdot 0) & (1 \cdot 2 + 0 \cdot 1) \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 1 & 2 \end{bmatrix}
+$$
+
+#### Compare:
+$$
+AB = \begin{bmatrix} 2 & 1 \\ 1 & 0 \end{bmatrix} \quad \text{and} \quad BA = \begin{bmatrix} 0 & 1 \\ 1 & 2 \end{bmatrix}
+$$
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+$$AB \neq BA$$
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.7.5
+
+
+### Problem:
+Give an example of two $2 \times 2$ matrices $A$ and $B$ such that $AB = BA$.
+
+### Solution:
+Let 
+$$
+A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, \quad B = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}
+$$
+
+#### Calculate $AB$:
+$$
+AB = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix} = \begin{bmatrix} (1 \cdot 2 + 0 \cdot 0) & (1 \cdot 0 + 0 \cdot 3) \\ (0 \cdot 2 + 1 \cdot 0) & (0 \cdot 0 + 1 \cdot 3) \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}
+$$
+
+#### Calculate $BA$:
+$$
+BA = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} (2 \cdot 1 + 0 \cdot 0) & (2 \cdot 0 + 0 \cdot 1) \\ (0 \cdot 1 + 3 \cdot 0) & (0 \cdot 0 + 3 \cdot 1) \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}
+$$
+
+#### Compare:
+$$
+AB = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix} \quad \text{and} \quad BA = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}
+$$
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+$$AB = BA$$
+:::
+:::
+
+{{< pagebreak >}}
+
+# Section 1.8
+
+::: {.callout-tip}
+## **Assigned:** 2, 5
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.8.2
+
+### Problem:
+Find the inverse of the matrix 
+$$
+A = \begin{bmatrix} 5 & 0 \\ 0 & -3 \end{bmatrix}
+$$
+or show that the inverse does not exist.
+
+### Solution:
+
+To find the inverse of a $2 \times 2$ matrix $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, the inverse exists if and only if $\det(A) \neq 0$, and the inverse is given by the formula:
+$$
+A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+$$
+
+#### Step 1: Calculate the determinant of $A$
+The determinant of matrix $A$ is:
+$$
+\det(A) = (5)(-3) - (0)(0) = -15
+$$
+
+Since $\det(A) = -15$, which is non-zero, the matrix is invertible.
+
+#### Step 2: Apply the inverse formula
+Using the formula for the inverse of a $2 \times 2$ matrix:
+$$
+A^{-1} = \frac{1}{-15} \begin{bmatrix} -3 & 0 \\ 0 & 5 \end{bmatrix}
+$$
+
+Multiply the scalar $\frac{1}{-15}$ with each element of the matrix:
+$$
+A^{-1} = \begin{bmatrix} \frac{-3}{-15} & \frac{0}{-15} \\ \frac{0}{-15} & \frac{5}{-15} \end{bmatrix} = \begin{bmatrix} \frac{1}{5} & 0 \\ 0 & \frac{-1}{3} \end{bmatrix}
+$$
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+
+$$
+A^{-1} = \begin{bmatrix} \frac{1}{5} & 0 \\ 0 & \frac{-1}{3} \end{bmatrix}
+$$
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.8.5
+### Problem:
+Find the inverse of the matrix 
+$$
+A = \begin{bmatrix} 
+1 & -2 & -1 \\ 
+-1 & 1 & 0 \\ 
+1 & 3 & 4 
+\end{bmatrix}
+$$
+using row reduction, or show that the inverse does not exist.
+
+### Solution:
+
+We will augment the matrix $A$ with the identity matrix and perform row operations to reduce $A$ to the identity matrix. The result on the right will be the inverse of $A$, if it exists.
+
+Start with the augmented matrix:
+$$
+\left[ A | I \right] = \begin{bmatrix} 
+1 & -2 & -1 & 1 & 0 & 0 \\ 
+-1 & 1 & 0 & 0 & 1 & 0 \\ 
+1 & 3 & 4 & 0 & 0 & 1 
+\end{bmatrix}
+$$
+
+#### Step 1: Make the pivot in the first row, first column, a 1.
+
+Since the first element is already a 1, no changes are needed.
+
+#### Step 2: Eliminate the elements below the pivot.
+
+- Add row 1 to row 2 to eliminate the $-1$ in the second row, first column:
+  $$
+  R_2 \rightarrow R_2 + R_1
+  $$
+  Result:
+  $$
+  \begin{bmatrix} 
+  1 & -2 & -1 & 1 & 0 & 0 \\ 
+  0 & -1 & -1 & 1 & 1 & 0 \\ 
+  1 & 3 & 4 & 0 & 0 & 1 
+  \end{bmatrix}
+  $$
+
+- Subtract row 1 from row 3 to eliminate the 1 in the third row, first column:
+  $$
+  R_3 \rightarrow R_3 - R_1
+  $$
+  Result:
+  $$
+  \begin{bmatrix} 
+  1 & -2 & -1 & 1 & 0 & 0 \\ 
+  0 & -1 & -1 & 1 & 1 & 0 \\ 
+  0 & 5 & 5 & -1 & 0 & 1 
+  \end{bmatrix}
+  $$
+
+#### Step 3: Make the pivot in the second row, second column, a 1.
+
+- Divide row 2 by $-1$ to make the pivot a 1:
+  $$
+  R_2 \rightarrow \frac{R_2}{-1}
+  $$
+  Result:
+  $$
+  \begin{bmatrix} 
+  1 & -2 & -1 & 1 & 0 & 0 \\ 
+  0 & 1 & 1 & -1 & -1 & 0 \\ 
+  0 & 5 & 5 & -1 & 0 & 1 
+  \end{bmatrix}
+  $$
+
+#### Step 4: Eliminate the elements above and below the pivot in the second column.
+
+- Add 2 times row 2 to row 1 to eliminate the $-2$ in the first row, second column:
+  $$
+  R_1 \rightarrow R_1 + 2R_2
+  $$
+  Result:
+  $$
+  \begin{bmatrix} 
+  1 & 0 & 1 & -1 & -2 & 0 \\ 
+  0 & 1 & 1 & -1 & -1 & 0 \\ 
+  0 & 5 & 5 & -1 & 0 & 1 
+  \end{bmatrix}
+  $$
+
+- Subtract 5 times row 2 from row 3 to eliminate the 5 in the third row, second column:
+  $$
+  R_3 \rightarrow R_3 - 5R_2
+  $$
+  Result:
+  $$
+  \begin{bmatrix} 
+  1 & 0 & 1 & -1 & -2 & 0 \\ 
+  0 & 1 & 1 & -1 & -1 & 0 \\ 
+  0 & 0 & 0 & 4 & 5 & 1 
+  \end{bmatrix}
+  $$
+
+#### Step 5: Check if the matrix is invertible.
+
+At this point, the third row of the matrix has become zero in the left side of the augmented matrix, which indicates that the matrix does not have full rank. Since we cannot get a 1 in the third row, third column, the matrix is not invertible.
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+
+The matrix $A = \begin{bmatrix} 1 & -2 & -1 \\ -1 & 1 & 0 \\ 1 & 3 & 4 \end{bmatrix}$ is not invertible because the third row becomes zero during the row-reduction process.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+# Section 1.9
+
+::: {.callout-tip}
+## **Assigned:** 1, 5, 17
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.9.1
+
+### Problem:
+Given the matrix 
+$$
+A = \begin{bmatrix} 2 & 1 \\ 2 & 2 \end{bmatrix}
+$$
+compute the determinant by hand and determine whether or not the matrix is invertible.
+
+### Solution:
+
+The determinant of a $2 \times 2$ matrix $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ is given by:
+$$
+\det(A) = ad - bc
+$$
+
+For the given matrix $A = \begin{bmatrix} 2 & 1 \\ 2 & 2 \end{bmatrix}$, we have:  
+
+- $a = 2$
+- $b = 1$
+- $c = 2$
+- $d = 2$
+
+Calculate the determinant:
+$$
+\det(A) = (2)(2) - (1)(2) = 4 - 2 = 2
+$$
+
+Since the determinant is not zero, $A$ is invertible.
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+
+- The determinant of $A$ is $2$.
+- The matrix is invertible.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.9.5
+
+### Problem:
+Given the matrix 
+$$
+A = \begin{bmatrix}
+-3 & 1 & 0 & 5 \\
+0 & 2 & -4 & 0 \\
+0 & 0 & -7 & 11 \\
+0 & 0 & 0 & 6
+\end{bmatrix}
+$$
+compute the determinant by hand and determine whether or not the matrix is invertible.
+
+### Solution:
+
+Since the matrix $A$ is upper triangular, the determinant is simply the product of the diagonal elements.
+
+The diagonal elements of the matrix are $-3$, $2$, $-7$, and $6$. So, the determinant is:
+$$
+\det(A) = (-3) \times (2) \times (-7) \times (6)
+$$
+
+Let's compute it step by step:
+$$
+\det(A) = (-3) \times (2) = -6
+$$
+$$
+\det(A) = -6 \times (-7) = 42
+$$
+$$
+\det(A) = 42 \times (6) = 252
+$$
+
+Since the determinant is not zero, $A$ is invertible.
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+
+- The determinant of $A$ is $252$.
+- The matrix is invertible.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.9.17
+
+### Problem:
+Suppose that $A^2$ is not invertible. Can you determine if $A$ is invertible or not? Explain.
+
+### Solution:
+If $A^2$ is not invertible, we can conclude that $A$ is also not invertible. 
+
+#### Explanation:
+
+- A matrix $A$ is invertible if and only if its determinant is non-zero, meaning $\det(A) \neq 0$.
+- The determinant of $A^2$ is related to the determinant of $A$ by the formula:
+  $$
+  \det(A^2) = (\det(A))^2
+  $$
+- If $A^2$ is not invertible, then $\det(A^2) = 0$. From the equation $\det(A^2) = (\det(A))^2$, the only way for this to be true is if $\det(A) = 0$.
+
+Thus, if $\det(A^2) = 0$, it must be that $\det(A) = 0$, meaning $A$ is not invertible.
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+If $A^2$ is not invertible, then $A$ is also not invertible.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+# Section 1.10
+
+::: {.callout-tip}
+## **Assigned:** 1, 5, 9, 11
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.10.1
+
+### Problem:
+Given the matrix 
+$$
+A = \begin{bmatrix} 5 & 1 \\ 0 & 3 \end{bmatrix}
+$$
+compute the eigenvalues and any corresponding real eigenvectors.
+
+### Solution:
+
+#### Step 1: Find the Eigenvalues
+The eigenvalues of a matrix are found by solving the characteristic equation:
+$$
+\det(A - \lambda I) = 0
+$$
+where $\lambda$ represents the eigenvalues and $I$ is the identity matrix.
+
+The matrix $A - \lambda I$ is:
+$$
+A - \lambda I = \begin{bmatrix} 5 - \lambda & 1 \\ 0 & 3 - \lambda \end{bmatrix}
+$$
+
+Calculate the determinant of $A - \lambda I$:
+$$
+\det(A - \lambda I) = (5 - \lambda)(3 - \lambda) - (1)(0) = (5 - \lambda)(3 - \lambda)
+$$
+
+The characteristic equation is:
+$$
+(5 - \lambda)(3 - \lambda) = 0
+$$
+
+Solving this equation gives the eigenvalues:
+$$
+\lambda_1 = 5 \quad \text{and} \quad \lambda_2 = 3
+$$
+
+#### Step 2: Find the Eigenvectors
+Find the eigenvectors corresponding to each eigenvalue.
+
+##### Eigenvalue $\lambda_1 = 5$:
+Substitute $\lambda_1 = 5$ into the matrix $A - \lambda I$:
+$$
+A - 5I = \begin{bmatrix} 5 - 5 & 1 \\ 0 & 3 - 5 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 0 & -2 \end{bmatrix}
+$$
+
+To find the eigenvector corresponding to $\lambda_1 = 5$, solve the equation:
+$$
+\begin{bmatrix} 0 & 1 \\ 0 & -2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+
+This gives the system of equations:
+$$
+x_2 = 0
+$$
+There is no condition on $x_1$, so $x_1$ can be any real number. Thus, the eigenvector corresponding to $\lambda_1 = 5$ is any scalar multiple of $\begin{bmatrix} 1 \\ 0 \end{bmatrix}$.
+
+##### Eigenvalue $\lambda_2 = 3$:
+Substitute $\lambda_2 = 3$ into the matrix $A - \lambda I$:
+$$
+A - 3I = \begin{bmatrix} 5 - 3 & 1 \\ 0 & 3 - 3 \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 0 & 0 \end{bmatrix}
+$$
+
+To find the eigenvector corresponding to $\lambda_2 = 3$, solve the equation:
+$$
+\begin{bmatrix} 2 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+
+This gives the system of equations:
+$$
+2x_1 + x_2 = 0
+$$
+From this, we get $x_2 = -2x_1$. Thus, the eigenvector corresponding to $\lambda_2 = 3$ is any scalar multiple of $\begin{bmatrix} 1 \\ -2 \end{bmatrix}$.
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+- The eigenvalues of $A$ are $\lambda_1 = 5$ and $\lambda_2 = 3$.
+- The eigenvector corresponding to $\lambda_1 = 5$ is $\begin{bmatrix} 1 \\ 0 \end{bmatrix}$.
+- The eigenvector corresponding to $\lambda_2 = 3$ is $\begin{bmatrix} 1 \\ -2 \end{bmatrix}$.
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.10.5
+
+### Problem:
+Given the matrix 
+$$
+A = \begin{bmatrix} 2 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{bmatrix}
+$$
+compute the eigenvalues and any corresponding real eigenvectors.
+
+### Solution:
+
+#### Step 1: Find the Eigenvalues
+The eigenvalues of a matrix are found by solving the characteristic equation:
+$$
+\det(A - \lambda I) = 0
+$$
+where $\lambda$ represents the eigenvalues and $I$ is the identity matrix.
+
+The matrix $A - \lambda I$ is:
+$$
+A - \lambda I = \begin{bmatrix} 2 - \lambda & 1 & 0 \\ 0 & 2 - \lambda & 1 \\ 0 & 0 & 2 - \lambda \end{bmatrix}
+$$
+
+Now, calculate the determinant of $A - \lambda I$:
+$$
+\det(A - \lambda I) = (2 - \lambda) \begin{vmatrix} 2 - \lambda & 1 \\ 0 & 2 - \lambda \end{vmatrix}
+$$
+
+The determinant of the $2 \times 2$ matrix is:
+$$
+(2 - \lambda)(2 - \lambda) - (1)(0) = (2 - \lambda)^2
+$$
+
+Thus, the characteristic equation becomes:
+$$
+(2 - \lambda)^3 = 0
+$$
+
+Solving this equation gives the eigenvalue:
+$$
+\lambda_1 = 2
+$$
+
+#### Step 2: Find the Eigenvector
+Substitute $\lambda_1 = 2$ into the matrix $A - \lambda I$:
+$$
+A - 2I = \begin{bmatrix} 2 - 2 & 1 & 0 \\ 0 & 2 - 2 & 1 \\ 0 & 0 & 2 - 2 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+To find the eigenvector corresponding to $\lambda_1 = 2$, solve the equation:
+$$
+\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+$$
+
+This gives the system of equations:
+$$
+x_2 = 0
+$$
+$$
+x_3 = 0
+$$
+
+There is no condition on $x_1$, so $x_1$ can be any real number. Thus, the eigenvector corresponding to $\lambda_1 = 2$ is any scalar multiple of $\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$.
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+- The eigenvalue of $A$ is $\lambda_1 = 2$.
+- The eigenvector corresponding to $\lambda_1 = 2$ is $\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.10.9
+
+### Problem:
+A $2 \times 2$ matrix $A$ has eigenvalues $5$ and $-1$ and corresponding eigenvectors $\mathbf{u} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ and $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$. Use this information to compute $A\mathbf{x}$, where $\mathbf{x} = \begin{bmatrix} -5 \\ 4 \end{bmatrix}$.
+
+
+### Given:
+
+- **Eigenvalues and eigenvectors:**
+  - $\lambda_1 = 5$ with eigenvector $\mathbf{u} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$
+  - $\lambda_2 = -1$ with eigenvector $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+- **Vector** $\mathbf{x} = \begin{bmatrix} -5 \\ 4 \end{bmatrix}$
+
+---
+
+### 1. Express $\mathbf{x}$ as a linear combination of the eigenvectors $\mathbf{v}$ and $\mathbf{u}$:
+
+Since $\mathbf{v}$ and $\mathbf{u}$ are the standard basis vectors, we can write:
+
+$$
+\mathbf{x} = x_1 \mathbf{v} + x_2 \mathbf{u}
+$$
+
+where $x_1 = -5$ and $x_2 = 4$. Therefore,
+
+$$
+\mathbf{x} = (-5)\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 4\begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -5 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 4 \end{bmatrix} = \begin{bmatrix} -5 \\ 4 \end{bmatrix}
+$$
+
+#### 2. Apply $A$ to $\mathbf{x}$:
+
+Using the linearity of $A$:
+
+$$
+A\mathbf{x} = A(-5\mathbf{v} + 4\mathbf{u}) = -5A\mathbf{v} + 4A\mathbf{u}
+$$
+
+#### 3. Use the eigenvalue equations $A\mathbf{v} = \lambda_2 \mathbf{v}$ and $A\mathbf{u} = \lambda_1 \mathbf{u}$:
+
+Substitute the eigenvalues and eigenvectors:
+
+$$
+\begin{align*}
+A\mathbf{v} &= \lambda_2 \mathbf{v} = (-1)\mathbf{v} \\
+A\mathbf{u} &= \lambda_1 \mathbf{u} = 5\mathbf{u}
+\end{align*}
+$$
+
+#### 4. Compute $A\mathbf{x}$:
+
+Substitute $A\mathbf{v}$ and $A\mathbf{u}$:
+
+$$
+\begin{align*}
+A\mathbf{x} &= -5(-1\mathbf{v}) + 4(5\mathbf{u}) \\
+&= 5\mathbf{v} + 20\mathbf{u}
+\end{align*}
+$$
+
+#### 5. Express $A\mathbf{x}$ in component form:
+
+Since $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\mathbf{u} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$:
+
+$$
+\begin{align*}
+5\mathbf{v} &= 5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 5 \\ 0 \end{bmatrix} \\
+20\mathbf{u} &= 20 \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 20 \end{bmatrix}
+\end{align*}
+$$
+
+Add the results:
+
+$$
+A\mathbf{x} = \begin{bmatrix} 5 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 20 \end{bmatrix} = \begin{bmatrix} 5 \\ 20 \end{bmatrix}
+$$
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+$$
+A\mathbf{x} = \begin{bmatrix} 5 \\ 20 \end{bmatrix}
+$$
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.10.11
+
+### Problem:
+Consider the matrix 
+$$
+A = \begin{bmatrix} -2 & 1 & 1 \\ 1 & -2 & 1 \\ 1 & 1 & -2 \end{bmatrix}
+$$
+(a) Determine the eigenvalues and eigenvectors of $A$.  
+(b) Does $\mathbb{R}^3$ have a linearly independent spanning set that consists of eigenvectors of $A$?
+
+### Solution:
+
+#### (a) Determine the eigenvalues and eigenvectors of $A$:
+
+Given:
+
+$$
+A = \begin{bmatrix}
+-2 & 1 & 1 \\
+1 & -2 & 1 \\
+1 & 1 & -2
+\end{bmatrix}
+$$
+
+##### Step 1: Find the eigenvalues by solving $\det(A - \lambda I) = 0$.
+
+Compute $A - \lambda I$:
+
+$$
+A - \lambda I = \begin{bmatrix}
+-2 - \lambda & 1 & 1 \\
+1 & -2 - \lambda & 1 \\
+1 & 1 & -2 - \lambda
+\end{bmatrix}
+$$
+
+Compute the determinant:
+
+$$
+\begin{align*}
+\det(A - \lambda I) &= \left| \begin{matrix}
+-2 - \lambda & 1 & 1 \\
+1 & -2 - \lambda & 1 \\
+1 & 1 & -2 - \lambda
+\end{matrix} \right| \\
+&= (-2 - \lambda) \left( (-2 - \lambda)^2 - 1 \cdot 1 \right) - 1 \left( 1 \cdot (-2 - \lambda) - 1 \cdot 1 \right) + 1 \left( 1 \cdot 1 - 1 \cdot (-2 - \lambda) \right) \\
+&= (-2 - \lambda) \left( (\lambda + 2)^2 - 1 \right) + ( \lambda + 3 ) + ( \lambda + 3 )
+\end{align*}
+$$
+
+Compute $(\lambda + 2)^2$:
+
+$$
+(\lambda + 2)^2 = \lambda^2 + 4\lambda + 4
+$$
+
+Compute the determinant:
+
+$$
+\begin{align*}
+\det(A - \lambda I) &= (-2 - \lambda) \left( \lambda^2 + 4\lambda + 4 - 1 \right) + 2(\lambda + 3) \\
+&= (-2 - \lambda)(\lambda^2 + 4\lambda + 3) + 2(\lambda + 3)
+\end{align*}
+$$
+
+Simplify:
+
+$$
+\begin{align*}
+(-2 - \lambda)(\lambda^2 + 4\lambda + 3) &= -(\lambda + 2)(\lambda^2 + 4\lambda + 3) \\
+&= -\left( \lambda^3 + 4\lambda^2 + 3\lambda + 2\lambda^2 + 8\lambda + 6 \right) \\
+&= -\left( \lambda^3 + 6\lambda^2 + 11\lambda + 6 \right)
+\end{align*}
+$$
+
+So the determinant becomes:
+
+$$
+\det(A - \lambda I) = -\left( \lambda^3 + 6\lambda^2 + 11\lambda + 6 \right) + 2(\lambda + 3)
+$$
+
+Simplify:
+
+$$
+\begin{align*}
+\det(A - \lambda I) &= -\lambda^3 - 6\lambda^2 - 11\lambda - 6 + 2\lambda + 6 \\
+&= -\lambda^3 - 6\lambda^2 - 9\lambda
+\end{align*}
+$$
+
+Multiply both sides by $-1$:
+
+$$
+\lambda^3 + 6\lambda^2 + 9\lambda = 0
+$$
+
+Factor out $\lambda$:
+
+$$
+\lambda (\lambda^2 + 6\lambda + 9) = 0
+$$
+
+Factor the quadratic:
+
+$$
+\lambda^2 + 6\lambda + 9 = (\lambda + 3)^2
+$$
+
+Set each factor to zero:
+
+1. $\lambda = 0$
+
+2. $(\lambda + 3)^2 = 0 \implies \lambda = -3$ (with multiplicity 2)
+
+**Eigenvalues:**
+
+- $\lambda_1 = 0$
+
+- $\lambda_2 = \lambda_3 = -3$
+
+---
+
+##### Step 2: Find the eigenvectors for each eigenvalue.
+
+###### Eigenvalue $\lambda = 0$:
+
+To find the eigenvectors corresponding to $\lambda = 0$, we need to solve the homogeneous system:
+
+$$
+(A - 0I)\mathbf{x} = \mathbf{0}
+$$
+
+Which simplifies to:
+
+$$
+A\mathbf{x} = \mathbf{0}
+$$
+
+Set up the augmented matrix for the system $A\mathbf{x} = \mathbf{0}$:
+
+$$
+\begin{bmatrix}
+-2 & 1 & 1 & | & 0 \\
+1 & -2 & 1 & | & 0 \\
+1 & 1 & -2 & | & 0 \\
+\end{bmatrix}
+$$
+
+In row-echelon form:
+
+$$
+\begin{bmatrix}
+1 & -2 & 1 & | & 0 \\
+0 & -3 & 3 & | & 0 \\
+0 & 0 & 0 & | & 0 \\
+\end{bmatrix}
+$$
+
+**Solve for the variables.**
+
+From **Row 2**:
+
+$$
+-3 x_2 + 3 x_3 = 0 \implies -3(x_2 - x_3) = 0 \implies x_2 = x_3
+$$
+
+From **Row 1**:
+
+$$
+x_1 - 2 x_2 + x_3 = 0
+$$
+
+Since $x_2 = x_3$:
+
+$$
+x_1 - 2 x_2 + x_2 = 0 \implies x_1 - x_2 = 0 \implies x_1 = x_2
+$$
+
+**Conclusion:**
+
+We have:
+
+$$
+x_1 = x_2 = x_3
+$$
+
+Therefore, the eigenvectors corresponding to $\lambda = 0$ are all scalar multiples of the vector:
+
+$$
+\mathbf{v}_1 = \begin{bmatrix}
+1 \\
+1 \\
+1
+\end{bmatrix}
+$$
+
+---
+
+###### Eigenvalue $\lambda = -3$:
+
+Solve $(A + 3I)\mathbf{x} = \mathbf{0}$.
+
+Compute $A + 3I$:
+
+$$
+A + 3I = \begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{bmatrix}
+$$
+
+Set up the equation:
+
+$$
+x_1 + x_2 + x_3 = 0
+$$
+
+This equation defines a plane in $\mathbb{R}^3$.
+
+Find two linearly independent eigenvectors:
+
+**First Eigenvector:**
+
+Let $x_1 = -1$, $x_2 = 1$.
+
+Then:
+
+$$
+x_3 = - (x_1 + x_2) = - (-1 + 1) = 0
+$$
+
+Eigenvector:
+
+$$
+\mathbf{v}_2 = \begin{bmatrix}
+-1 \\
+1 \\
+0
+\end{bmatrix}
+$$
+
+**Second Eigenvector:**
+
+Let $x_1 = -1$, $x_2 = 0$.
+
+Then:
+
+$$
+x_3 = - (-1 + 0) = 1
+$$
+
+Eigenvector:
+
+$$
+\mathbf{v}_3 = \begin{bmatrix}
+-1 \\
+0 \\
+1
+\end{bmatrix}
+$$
+
+---
+
+### (b) Does $\mathbb{R}^3$ have a linearly independent spanning set that consists of eigenvectors of $A$?
+
+Yes, it does.
+
+#### **Proof:**
+
+We have three eigenvectors:
+
+1. **Eigenvector for** $\lambda = 0$:
+
+   $$
+   \mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
+   $$
+
+2. **Eigenvectors for** $\lambda = -3$:
+
+   - First eigenvector:
+
+     $$
+     \mathbf{v}_2 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+     $$
+
+   - Second eigenvector:
+
+     $$
+     \mathbf{v}_3 = \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}
+     $$
+
+Verify that these vectors are linearly independent.
+
+Suppose there exist scalars $c_1$, $c_2$, and $c_3$ (not all zero) such that:
+
+$$
+c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + c_3 \mathbf{v}_3 = \mathbf{0}
+$$
+
+Substitute the eigenvectors:
+
+$$
+c_1 \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} + c_2 \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} + c_3 \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+$$
+
+Represent this system of equations as an augmented matrix:
+
+$$
+\left[
+\begin{array}{ccc|c}
+1 & -1 & -1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 \\
+\end{array}
+\right]
+$$
+
+Reduced row echelon form:
+
+$$
+\left[
+\begin{array}{ccc|c}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}
+\right]
+$$
+
+**Conclusion:**
+
+- The only solution is:
+
+  $$
+  c_1 = c_2 = c_3 = 0
+  $$
+
+- Therefore, the vectors $\mathbf{v}_1$, $\mathbf{v}_2$, and $\mathbf{v}_3$ are linearly independent.
+
+Therefore, $\mathbb{R}^3$ does have a linearly independent spanning set consisting of eigenvectors of $A$.
+
+---
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+**(a)** 
+
+**Eigenvalues:**
+
+- $\lambda = -3$ (with multiplicity 2)
+
+- $\lambda = 0$
+
+**Corresponding Eigenvectors:**
+
+- For $\lambda = -3$:
+
+  $$
+  \mathbf{v}_2 = \begin{bmatrix}
+  -1 \\
+  1 \\
+  0
+  \end{bmatrix}, \quad \mathbf{v}_3 = \begin{bmatrix}
+  -1 \\
+  0 \\
+  1
+  \end{bmatrix}
+  $$
+
+- For $\lambda = 0$:
+
+  $$
+  \mathbf{v}_1 = \begin{bmatrix}
+  1 \\
+  1 \\
+  1
+  \end{bmatrix}
+  $$
+
+
+**(b)** 
+
+Yes, $\mathbb{R}^3$ has a linearly independent spanning set of eigenvectors of $A$. The eigenvectors $\mathbf{v}_1$, $\mathbf{v}_2$, and $\mathbf{v}_3$ are linearly independent and span $\mathbb{R}^3$.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+# Section 1.11
+
+::: {.callout-tip}
+## **Assigned:** 3, 17, 29
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.11.3
+
+### Problem:
+Determine whether the set $H = \left\{ t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} : t \in \mathbb{R} \right\}$ is a subspace of the vector space $V = \mathbb{R}^3$. If $H$ is a subspace, show that it satisfies the three required properties.
+
+### Solution:
+To determine whether $H$ is a subspace of $V = \mathbb{R}^3$, we need to verify if $H$ satisfies the three properties required for a subspace:  
+
+1. **Contains the Zero Vector**.
+2. **Closed Under Scalar Multiplication**.
+3. **Closed Under Vector Addition**.
+
+#### 1. Contains the Zero Vector:
+For $H$ to be a subspace, it must contain the zero vector. In this case, when $t = 0$, we have:
+$$
+t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} = 0 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+$$
+Thus, $H$ contains the zero vector.
+
+#### 2. Closed Under Scalar Multiplication:
+To check if $H$ is closed under scalar multiplication, consider any vector in $H$, say $t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$, and a scalar $c \in \mathbb{R}$. The scalar multiplication is:
+$$
+c \left( t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} \right) = (ct) \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
+$$
+Since $ct \in \mathbb{R}$, the result is still a scalar multiple of $\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$, meaning that the vector remains in $H$. Therefore, $H$ is closed under scalar multiplication.
+
+#### 3. Closed Under Vector Addition:
+Consider two vectors in $H$: $t_1 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$ and $t_2 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$. Their sum is:
+$$
+t_1 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} + t_2 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} = (t_1 + t_2) \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
+$$
+Since $t_1 + t_2 \in \mathbb{R}$, the result is still a scalar multiple of $\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$, meaning the sum is in $H$. Therefore, $H$ is closed under vector addition.
+
+### Conclusion:
+The set $H = \left\{ t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} : t \in \mathbb{R} \right\}$ satisfies all three conditions for being a subspace. 
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+$H$ is a subspace of $V = \mathbb{R}^3$.
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.11.17
+
+### Problem:
+For the matrix 
+$$
+A = \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}
+$$
+describe all of the eigenspaces of $A$.
+
+### Solution:
+To find the eigenspaces of matrix $A$, follow these steps:
+
+1. **Find the eigenvalues** by solving the characteristic equation.
+2. **Find the corresponding eigenvectors** for each eigenvalue.
+3. **Describe the eigenspaces**.
+
+#### Step 1: Find the Eigenvalues
+The eigenvalues are found by solving the characteristic equation:
+$$
+\det(A - \lambda I) = 0
+$$
+where $A = \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}$ and $I$ is the identity matrix.
+
+The matrix $A - \lambda I$ is:
+$$
+A - \lambda I = \begin{bmatrix} 2 - \lambda & -1 \\ -1 & 2 - \lambda \end{bmatrix}
+$$
+
+The determinant of this matrix is:
+$$
+\det(A - \lambda I) = (2 - \lambda)(2 - \lambda) - (-1)(-1) = (2 - \lambda)^2 - 1
+$$
+This simplifies to:
+$$
+(2 - \lambda)^2 - 1 = 0 \implies (2 - \lambda)^2 = 1
+$$
+Taking the square root of both sides:
+$$
+2 - \lambda = \pm 1
+$$
+Thus, the eigenvalues are:
+$$
+\lambda_1 = 1 \quad \text{and} \quad \lambda_2 = 3
+$$
+
+#### Step 2: Find the Eigenvectors
+Next, find the eigenvectors corresponding to each eigenvalue.
+
+##### Eigenvalue $\lambda_1 = 1$:
+Substitute $\lambda_1 = 1$ into $A - \lambda I$:
+$$
+A - I = \begin{bmatrix} 2 - 1 & -1 \\ -1 & 2 - 1 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix}
+$$
+
+Solve:
+$$
+\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+This gives the system of equations:
+$$
+x_1 - x_2 = 0 \\
+-x_1 + x_2 = 0
+$$
+From the first equation, we see that $x_1 = x_2$. Therefore, the eigenvector corresponding to $\lambda_1 = 1$ is any scalar multiple of $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$.
+
+Thus, the eigenspace for $\lambda_1 = 1$ is:
+$$
+E_1 = \text{Span} \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right\}
+$$
+
+##### Eigenvalue $\lambda_2 = 3$:
+Substitute $\lambda_2 = 3$ into $A - \lambda I$:
+$$
+A - 3I = \begin{bmatrix} 2 - 3 & -1 \\ -1 & 2 - 3 \end{bmatrix} = \begin{bmatrix} -1 & -1 \\ -1 & -1 \end{bmatrix}
+$$
+
+Solve:
+$$
+\begin{bmatrix} -1 & -1 \\ -1 & -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+This gives the system of equations:
+$$
+-x_1 - x_2 = 0 \\
+-x_1 - x_2 = 0
+$$
+From the first equation, we get $x_1 = -x_2$. Therefore, the eigenvector corresponding to $\lambda_2 = 3$ is any scalar multiple of $\begin{bmatrix} 1 \\ -1 \end{bmatrix}$.
+
+Thus, the eigenspace for $\lambda_2 = 3$ is:
+$$
+E_2 = \text{Span} \left\{ \begin{bmatrix} 1 \\ -1 \end{bmatrix} \right\}
+$$
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+The matrix $A = \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}$ has two eigenspaces:
+
+1. For $\lambda_1 = 1$, the eigenspace is $E_1 = \text{Span} \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right\}$.
+2. For $\lambda_2 = 3$, the eigenspace is $E_2 = \text{Span} \left\{ \begin{bmatrix} 1 \\ -1 \end{bmatrix} \right\}$.
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.11.29
+
+### Problem:
+Consider the differential equation $y' = 3y - 3$. Explain why any function of the form $y = Ce^{3t} + 1$ is a solution to this equation. Is the set of all these solutions a subspace of the vector space of continuous functions?
+
+### Verification:
+
+We are given the differential equation:
+$$
+y' = 3y - 3
+$$
+We need to verify that the function $y = Ce^{3t} + 1$ satisfies this equation. To do so, we first compute the derivative of $y$:
+
+1. The derivative of $y = Ce^{3t} + 1$ is:
+   $$
+   y' = 3Ce^{3t}
+   $$
+
+2. Now substitute $y = Ce^{3t} + 1$ and $y' = 3Ce^{3t}$ into the differential equation $y' = 3y - 3$:
+   $$
+   3Ce^{3t} = 3(Ce^{3t} + 1) - 3
+   $$
+   Simplifying the right-hand side:
+   $$
+   3Ce^{3t} = 3Ce^{3t} + 3 - 3
+   $$
+   $$
+   3Ce^{3t} = 3Ce^{3t}
+   $$
+
+Since both sides are equal, the function $y = Ce^{3t} + 1$ is indeed a solution to the differential equation.
+
+---
+
+### Subspace Consideration:
+
+Is the set $S = \{ y \mid y = Ce^{3t} + 1,\ C \in \mathbb{R} \}$ a subspace of the vector space $V$ of continuous functions.
+
+A subset $S$ of a vector space $V$ is a subspace if it satisfies three conditions:
+
+1. **Contains the Zero Vector:** The zero function $f_0(t) = 0$ must be in $S$.
+2. **Closed Under Addition:** For any $f, g \in S$, the function $f + g$ must be in $S$.
+3. **Closed Under Scalar Multiplication:** For any $f \in S$ and scalar $\alpha \in \mathbb{R}$, the function $\alpha f$ must be in $S$.
+
+---
+
+**1. Contains the Zero Vector:**
+
+The zero function is $y(t) = 0$. There is no real number $C$ such that $Ce^{3t} + 1 = 0$ for all $t$. Therefore, $S$ does not contain the zero vector.
+
+---
+
+**2. Closed Under Addition:**
+
+Let $y_1 = C_1e^{3t} + 1$ and $y_2 = C_2e^{3t} + 1$ be functions in $S$. Then:
+$$
+\begin{align*}
+y_1 + y_2 &= (C_1e^{3t} + 1) + (C_2e^{3t} + 1) \\
+&= (C_1 + C_2)e^{3t} + 2
+\end{align*}
+$$
+
+This sum is not of the form $Ce^{3t} + 1$, since the constant term is $2$, not $1$. Thus, $S$ is not closed under addition.
+
+---
+
+**3. Closed Under Scalar Multiplication:**
+
+For a scalar $\alpha$ and $y = Ce^{3t} + 1$ in $S$:
+$$
+\begin{align*}
+\alpha y &= \alpha (Ce^{3t} + 1) \\
+&= (\alpha C)e^{3t} + \alpha
+\end{align*}
+$$
+
+Again, the constant term is $\alpha$, not $1$, so $\alpha y$ is not in $S$ unless $\alpha = 1$. Therefore, $S$ is not closed under scalar multiplication.
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+Substituting $y = Ce^{3t} + 1$ into $y' = 3y - 3$ satisfies the equation, any such function is a solution. However, these functions do not form a subspace of the space of continuous functions, since they are not closed under addition or scalar multiplication and do not include the zero function.
+
+:::
+:::
+
+{{< pagebreak >}}
+
+# Section 1.12
+
+::: {.callout-tip}
+## **Assigned:** 1, 9, 13, 14
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.12.1
+
+### Problem:
+In the vector space $V = \mathbb{R}^3$, $H$ is the subspace defined by:
+$$
+H = \left\{ t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} : t \in \mathbb{R} \right\}
+$$
+Determine a basis for the subspace $H$ and state the dimension of $H$.
+
+### Solution:
+1. **Basis for $H$**:
+   The subspace $H$ consists of all scalar multiples of the vector $\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}$. This means $H$ is spanned by this vector. Therefore, the set $\left\{ \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ forms a basis for $H$.
+
+2. **Dimension of $H$**:
+   Since the basis consists of one vector, the dimension of $H$ is 1.
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+- The basis for $H$ is $\left\{ \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} \right\}$.
+- The dimension of $H$ is 1.
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.12.9
+
+### Problem:
+Is the set $S = \left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix} \right\}$ a basis for $\mathbb{R}^2$? Justify your answer.
+
+### Solution:
+To determine whether the set $S$ is a basis for $\mathbb{R}^2$, we need to check two conditions:
+
+1. **Linear Independence**:  
+   The vectors in $S$ must be linearly independent.
+   
+2. **Spanning**:  
+   The vectors in $S$ must span $\mathbb{R}^2$.
+
+#### 1. Check for Linear Independence:
+The set of vectors $S = \left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix} \right\}$ is linearly independent if the only solution to the equation:
+$$
+c_1 \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+is $c_1 = 0$ and $c_2 = 0$.
+
+Writing this as an augmented matrix:
+$$
+\begin{bmatrix} 
+1 & 2 & | & 0 \\ 
+2 & 1 & | & 0 
+\end{bmatrix}
+$$
+
+In row reduced echelon form:
+
+$$
+\begin{bmatrix} 
+1 & 0 & | & 0 \\ 
+0 & 1 & | & 0 
+\end{bmatrix}
+$$
+
+The row-reduced matrix shows that $c_1 = 0$ and $c_2 = 0$.
+
+Since the only solution to the system is $c_1 = 0$ and $c_2 = 0$, the vectors are linearly independent.
+
+#### 2. Check for Spanning:
+Since the set $S$ consists of two linearly independent vectors in $\mathbb{R}^2$, it automatically spans $\mathbb{R}^2$. A set of two linearly independent vectors in $\mathbb{R}^2$ spans the entire space.
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+Yes, the set $S = \left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix} \right\}$ is a basis for $\mathbb{R}^2$ because the vectors are linearly independent and span $\mathbb{R}^2$.
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.12.13
+
+### Problem:
+Can a set with three vectors be a basis for $\mathbb{R}^4$? Why or why not?
+
+### Solution:
+To be a basis for a vector space, a set of vectors must satisfy two conditions:
+
+1. **The vectors must be linearly independent.**
+2. **The set must span the entire space.**
+
+In $\mathbb{R}^4$, the dimension of the space is 4. This means that any basis for $\mathbb{R}^4$ must consist of exactly 4 linearly independent vectors. A set of three vectors, even if linearly independent, cannot span the entire space $\mathbb{R}^4$, because it lacks the necessary fourth vector to cover all four dimensions.
+
+Geometrically, three vectors in $\mathbb{R}^4$ can at most define a 3-dimensional object, but they cannot fully describe the 4-dimensional space. A full basis requires four vectors to span $\mathbb{R}^4$ completely.
+
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+A set of three vectors is insufficient to be a basis for $\mathbb{R}^4$.
+:::
+:::
+
+{{< pagebreak >}}
+
+::: {.callout-note icon=false collapse="true"}
+## 1.12.14
+
+### Problem:
+Can a set with seven vectors be a basis for $\mathbb{R}^6$? Why or why not?
+
+### Solution:
+To be a basis for a vector space, a set of vectors must satisfy two conditions:  
+
+1. **The vectors must be linearly independent.**
+2. **The set must span the entire space.**
+
+In $\mathbb{R}^6$, the dimension of the space is 6. This means that any basis for $\mathbb{R}^6$ must consist of exactly 6 linearly independent vectors. If you have more than 6 vectors in $\mathbb{R}^6$, those vectors cannot all be linearly independent. 
+
+With seven vectors in $\mathbb{R}^6$, at least one of the vectors must be a linear combination of the others, meaning the set is linearly dependent. Therefore, the set of seven vectors cannot form a basis for $\mathbb{R}^6$, as it violates the condition of linear independence.
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+A set of seven vectors cannot be a basis for $\mathbb{R}^6$.
+:::
+:::
+

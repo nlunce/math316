@@ -1,0 +1,1714 @@
+---
+title: "HOMEWORK 04"
+author: "Nathan Lunceford"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-SECTIONs: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+---
+
+# SECTION 2.5
+---
+
+::: {.callout-tip}
+## **Assigned:** 15, 19, 23, 29, 37, 41
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.5.15
+
+### Problem:
+Solve the differential equation $y' = 10y$.
+
+### Solution:
+
+1. Rewrite the equation:
+   $$
+   \frac{dy}{dt} = 10y
+   $$
+
+2. Separate the variables $y$ and $t$:
+   $$
+   \frac{1}{y} \, dy = 10 \, dt
+   $$
+
+3. Integrate both sides:
+   $$
+   \int \frac{1}{y} \, dy = \int 10 \, dt
+   $$
+
+4. The result of the integration is:
+   $$
+   \ln|y| = 10t + C
+   $$
+
+5. Exponentiate both sides to solve for $y$:
+   $$
+   |y| = e^{10t + C} = e^C \cdot e^{10t}
+   $$
+
+6. Let $A = e^C$:
+   $$
+   y = A e^{10t}
+   $$
+
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+
+The general solution is:
+$$y = A e^{10t}$$
+where $A$ is the constant of integration.
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.5.19
+
+### Problem:
+Solve the differential equation $t^2 y' + y^2 = 1$.
+
+### Solution:
+
+1. Rewrite the equation:
+   $$
+   t^2 \frac{dy}{dt} + y^2 = 1
+   $$
+
+2. Rearrange the equation to isolate $\frac{dy}{dt}$:
+   $$
+   t^2 \frac{dy}{dt} = 1 - y^2
+   $$
+
+3. Separate the variables $y$ and $t$:
+   $$
+   \frac{dy}{1 - y^2} = \frac{dt}{t^2}
+   $$
+
+4. Now use partial fraction decomposition on $\frac{1}{1 - y^2}$:
+   $$
+   \frac{1}{1 - y^2} = \frac{1}{2} \left( \frac{1}{1 - y} + \frac{1}{1 + y} \right)
+   $$
+
+5. Substitute the partial fraction decomposition back into the equation:
+   $$
+   \frac{1}{2} \left( \frac{1}{1 - y} + \frac{1}{1 + y} \right) dy = \frac{dt}{t^2}
+   $$
+
+6. Integrate both sides:
+   - Left-hand side:
+     $$
+     \frac{1}{2} \left( \int \frac{1}{1 - y} \, dy + \int \frac{1}{1 + y} \, dy \right)
+     = \frac{1}{2} \left( -\ln|1 - y| + \ln|1 + y| \right)
+     $$
+     Simplifying:
+     $$
+     \frac{1}{2} \ln\left|\frac{1 + y}{1 - y}\right|
+     $$
+
+   - Right-hand side:
+     $$
+     \int \frac{1}{t^2} \, dt = -\frac{1}{t}
+     $$
+
+7. Combine the integrals:
+   $$
+   \frac{1}{2} \ln\left|\frac{1 + y}{1 - y}\right| = -\frac{1}{t} + C
+   $$
+
+8. Multiply through by 2:
+   $$
+   \ln\left|\frac{1 + y}{1 - y}\right| = -\frac{2}{t} + 2C
+   $$
+
+9. Exponentiate both sides to remove the logarithm:
+   $$
+   \left|\frac{1 + y}{1 - y}\right| = e^{-\frac{2}{t} + 2C}
+   $$
+
+10. Let $A = e^{2C}$, which simplifies the equation to:
+    $$
+    \frac{1 + y}{1 - y} = A e^{-\frac{2}{t}}
+    $$
+
+11. Solve for $y$:
+
+    Cross-multiply:
+    $$
+    1 + y = (1 - y) A e^{-\frac{2}{t}}
+    $$
+
+    Expand the right-hand side:
+    $$
+    1 + y = A e^{-\frac{2}{t}} - A e^{-\frac{2}{t}} y
+    $$
+
+    Now gather terms involving $y$ on one side:
+    $$
+    y + A e^{-\frac{2}{t}} y = A e^{-\frac{2}{t}} - 1
+    $$
+
+    Factor out $y$ on the left-hand side:
+    $$
+    y(1 + A e^{-\frac{2}{t}}) = A e^{-\frac{2}{t}} - 1
+    $$
+
+    Solve for $y$:
+    $$
+    y = \frac{A e^{-\frac{2}{t}} - 1}{1 + A e^{-\frac{2}{t}}}
+    $$
+
+
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+
+The general solution is:
+$$
+y = \frac{A e^{-\frac{2}{t}} - 1}{1 + A e^{-\frac{2}{t}}}
+$$
+where $A$ is the constant of integration.
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.5.23
+
+### Problem:
+Solve the differential equation:
+$$
+y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}
+$$
+
+### Solution:
+
+1. **Rearrange the equation:**
+
+   Start by moving all terms involving $\frac{dy}{dt}$ to one side:
+   $$
+   y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}
+   $$
+   Rearranging the terms involving $\frac{dy}{dt}$:
+   $$
+   y = 6 + \frac{dy}{dt} \left( 3t^2 - t \right)
+   $$
+
+2. **Solve for $\frac{dy}{dt}$:**
+
+   Isolate $\frac{dy}{dt}$:
+   $$
+   y - 6 = \frac{dy}{dt} (3t^2 - t)
+   $$
+   Now, solve for $\frac{dy}{dt}$:
+   $$
+   \frac{dy}{dt} = \frac{y - 6}{3t^2 - t}
+   $$
+
+3. **Separate the variables:**
+
+   Separate the variables $y$ and $t$:
+   $$
+   \frac{dy}{y - 6} = \frac{dt}{t(1 - 3t)}
+   $$
+
+4. **Integrate both sides:**
+
+   Now we will integrate both sides:
+   - The left-hand side:
+     $$
+     \int \frac{1}{y - 6} \, dy = \ln|y - 6|
+     $$
+
+   - The right-hand side can be handled by using partial fraction decomposition on $\frac{1}{t(1 - 3t)}$:
+
+     We decompose:
+     $$
+     \frac{1}{t(1 - 3t)} = \frac{A}{t} + \frac{B}{1 - 3t}
+     $$
+
+     Multiply both sides by $t(1 - 3t)$:
+     $$
+     1 = A(1 - 3t) + Bt
+     $$
+
+     Expand:
+     $$
+     1 = A - 3At + Bt
+     $$
+
+     Group terms involving $t$:
+     $$
+     1 = A + t(B - 3A)
+     $$
+
+     Equating coefficients gives the system:
+     $$
+     A = 1 \quad \text{and} \quad B - 3A = 0
+     $$
+     From $A = 1$, we have $B = 3$.
+
+     The partial fraction decomposition is:
+     $$
+     \frac{1}{t(1 - 3t)} = \frac{1}{t} + \frac{3}{1 - 3t}
+     $$
+
+     Now integrate both terms:
+     $$
+     \int \frac{1}{t} \, dt + \int \frac{3}{1 - 3t} \, dt = \ln|t| - \ln|1 - 3t|
+     $$
+
+5. **Combine the integrals:**
+
+   Combine the results from both sides:
+   $$
+   \ln|y - 6| = \ln|t| - \ln|1 - 3t| + C
+   $$
+
+6. **Simplify the logarithms:**
+
+   Simplify the right-hand side using properties of logarithms:
+   $$
+   \ln|y - 6| = \ln\left|\frac{t}{1 - 3t}\right| + C
+   $$
+
+   Exponentiate both sides to remove the logarithms:
+   $$
+   |y - 6| = e^C \left|\frac{t}{1 - 3t}\right|
+   $$
+
+   Let $A = e^C$, so:
+   $$
+   y - 6 = A \frac{t}{1 - 3t}
+   $$
+
+7. **Solve for $y$:**
+
+   $$
+   y = 6 + A \frac{t}{1 - 3t}
+   $$
+
+::: {.callout-tip icon=false }
+## **Final Answer:**
+
+The solution to the differential equation is:
+$$
+y = 6 + A \frac{t}{1 - 3t}
+$$
+where $A$ is the constant of integration.
+:::
+:::
+
+
+::: {.callout-note icon=false collapse="true"}
+## 2.5.29
+
+### Problem:
+
+Solve the initial value problem $y' = 10y$, with the initial condition $y(0) = 3$.
+
+### Solution:
+We know from **Problem 2.5.15** that the general solution to the differential equation $y' = 10y$ is:
+
+$$
+y = A e^{10t}
+$$
+
+1. Use the initial condition $y(0) = 3$ to find $A$:
+   $$
+   y(0) = A e^{10 \cdot 0} = A = 3
+   $$
+
+   Therefore, $A = 3$.
+
+2. The particular solution is:
+   $$
+   y = 3 e^{10t}
+   $$
+
+#### Plotting the Direction Field and Solution:
+
+```{python}
+#| label: vector-plot
+#| code-summary: Show code
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the differential equation dy/dt = 10y
+def dydt(t, y):
+    return 10 * y
+
+# Generate grid for direction field
+t = np.linspace(0, 0.5, 20)  
+y = np.linspace(-5, 30, 20)   
+T, Y = np.meshgrid(t, y)
+
+# Calculate slope for direction field
+slope = dydt(T, Y)
+
+# Normalize the direction field arrows
+norm = np.sqrt(1 + slope**2)
+T_dir = 1 / norm
+Y_dir = slope / norm
+
+# Plot the direction field
+plt.figure(figsize=(8, 6))
+plt.quiver(T, Y, T_dir, Y_dir, angles="xy", color="gray")
+
+# Plot the solution curve 
+t_vals = np.linspace(0, 0.5, 200)
+y_vals = 3 * np.exp(10 * t_vals)
+
+plt.plot(t_vals, y_vals, 'r', linewidth=2, label="Particular Solution")
+
+# Add labels, title, and limits
+plt.title("Direction Field and Particular Solution", fontsize=14)
+plt.xlabel("t", fontsize=12)
+plt.ylabel("y", fontsize=12)
+plt.xlim([0, 0.5])
+plt.ylim([0, 30])
+
+# Add grid and legend
+plt.grid(True)
+plt.legend(loc="upper left")
+
+# Display the plot
+plt.show()
+
+```
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+
+The solution to the initial value problem is:
+$$
+y = 3 e^{10t}
+$$
+This solution represents exponential growth with an initial value of 3 at $t = 0$, as reflected in the direction field and solution curve plot.
+
+:::
+:::
+
+
+::: {.callout-note icon=false collapse="true"}
+## 2.5.37
+
+### Problem:
+Solve the initial value problem:
+$$
+y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}, \quad y(1) = 5
+$$
+
+### Solution:
+
+We know from **Problem 2.5.23** that the general solution to this differential equation is:
+$$
+y = 6 + A \frac{t}{1 - 3t}
+$$
+
+Use the initial condition $y(1) = 5$ to find the value of $A$.
+
+1. **Substitute the initial condition $t = 1$ and $y = 5$ into the general solution:**
+   $$
+   5 = 6 + A \frac{1}{1 - 3 \cdot 1}
+   $$
+
+2. **Simplify the equation:**
+   $$
+   5 = 6 + A \frac{1}{-2}
+   $$
+   This simplifies to:
+   $$
+   5 = 6 - \frac{A}{2}
+   $$
+
+3. **Solve for $A$:**
+
+   Subtract 6 from both sides:
+   $$
+   -1 = -\frac{A}{2}
+   $$
+
+   Multiply both sides by -2:
+   $$
+   A = 2
+   $$
+
+4. **Substitute $A = 2$ into the general solution:**
+   $$
+   y = 6 + 2 \frac{t}{1 - 3t}
+   $$
+
+The particular solution to the initial value problem is:
+$$
+y = 6 + \frac{2t}{1 - 3t}
+$$
+
+#### Plotting the Direction Field and Solution:
+
+```{python}
+#| label: vector-plot2
+#| code-summary: Show code
+
+# Define the differential equation dy/dt = (y - 6) / (t - 3t^2)
+def dydt(t, y):
+    return (y - 6) / (t - (3 * t**2))
+
+# Generate grid for direction field
+t = np.linspace(0.5, 5, 20)  
+y = np.linspace(5, 6, 20)    
+T, Y = np.meshgrid(t, y)
+
+# Calculate slope for direction field
+slope = dydt(T, Y)
+
+# Normalize the direction field arrows
+norm = np.sqrt(1 + slope**2)
+T_dir = 1 / norm
+Y_dir = slope / norm
+
+# Plot the direction field
+plt.figure(figsize=(8, 6))
+plt.quiver(T, Y, T_dir, Y_dir, angles="xy", color="gray")
+
+# Plot the particular solution curve y = 6 + 2t / (1 - 3t)
+t_vals = np.linspace(0.5, 5, 200)  
+y_vals = 6 + ((2 * t_vals) / (1 - 3 * t_vals))
+
+plt.plot(t_vals, y_vals, 'r', linewidth=2, label="Particular Solution")
+
+# Add labels, title, and limits
+plt.title("Direction Field and Particular Solution", fontsize=14)
+plt.xlabel("t", fontsize=12)
+plt.ylabel("y", fontsize=12)
+plt.xlim([0.5, 5]) 
+plt.ylim([5, 6]) 
+
+# Add grid and legend
+plt.grid(True)
+plt.legend(loc="upper left")
+
+# Display the plot
+plt.show()
+
+
+```
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+
+The solution to the initial value problem is:
+$$
+y = 6 + \frac{2t}{1 - 3t}
+$$
+
+:::
+:::
+
+
+::: {.callout-note icon=false collapse="true"}
+## 2.5.41
+
+### Problem:
+Solve the initial value problem:
+$$
+(y + t) y' + y = t, \quad y(0) = 1
+$$
+with the initial condition $y(0) = 1$, and then plot an appropriate direction field and sketch your solution.
+
+### Solution:
+
+#### Rearrange the equation
+The given equation is:
+$$
+(y + t) \frac{dy}{dt} + y = t
+$$
+
+Rewrite it as:
+$$
+\frac{dy}{dt} = \frac{t - y}{y + t}
+$$
+
+Cross multiply:
+$$
+(t-y)dt = (y+t)dy
+$$
+
+This can be rewritten as:
+$$
+(y - t) dt + (y + t) dy = 0
+$$
+
+Which is now in the standard form of an exact equation:
+$$
+M(t, y) dt + N(t, y) dy = 0
+$$
+
+#### Identify $M(t, y)$ and $N(t, y)$
+
+From the rewritten form of the equation:
+$$
+(y - t) dt + (y + t) dy = 0
+$$
+we can identify the functions $M(t, y)$ and $N(t, y)$ as:
+$$
+M(t, y) = y - t \quad \text{and} \quad N(t, y) = y + t
+$$
+
+#### Test for exactness
+
+To check if the equation is exact, verify the condition for exactness:
+$$
+\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}
+$$
+
+Compute the partial derivatives:
+
+- $M(t, y) = y - t$, so $\frac{\partial M}{\partial y} = 1$
+- $N(t, y) = y + t$, so $\frac{\partial N}{\partial t} = 1$
+
+Since $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}$, the equation is exact.
+
+#### Find the potential function
+
+Since the equation is exact, there exists a potential function $\Phi(t, y)$ such that:
+$$
+\frac{\partial \Phi}{\partial t} = M(t, y) = y - t
+\quad \text{and} \quad
+\frac{\partial \Phi}{\partial y} = N(t, y) = y + t
+$$
+
+##### Integrate $M(t, y)$ with respect to $t$
+
+Integrate $M(t, y) = y - t$ with respect to $t$:
+$$
+\Phi(t, y) = \int (y - t) \, dt = yt - \frac{t^2}{2} + h(y)
+$$
+where $h(y)$ is a function of $y$ only.
+
+##### Differentiate $\Phi(t, y)$ with respect to $y$
+Differentiate $\Phi(t, y)$ with respect to $y$ and set it equal to $N(t, y) = y + t$:
+$$
+\frac{\partial \Phi}{\partial y} = t + h'(y) = y + t
+$$
+Simplifying:
+$$
+h'(y) = y
+$$
+
+##### Integrate $h'(y)$
+
+Integrating $h'(y) = y$ with respect to $y$:
+$$
+h(y) = \frac{y^2}{2} + C
+$$
+
+The potential function is:
+$$
+\Phi(t, y) = yt - \frac{t^2}{2} + \frac{y^2}{2} + C
+$$
+
+#### General solution
+
+The general solution of an exact differential equation is obtained by setting the potential function $\Phi(t, y)$ equal to a constant:
+$$
+yt - \frac{t^2}{2} + \frac{y^2}{2} = K
+$$
+
+#### Apply the initial condition
+
+We are given $y(0) = 1$. Substituting $t = 0$ and $y = 1$ into the equation:
+$$
+1(0) - \frac{0^2}{2} + \frac{1^2}{2} = K
+$$
+$$
+K = \frac{1}{2}
+$$
+
+#### Final implicit solution
+
+Substitute $K = \frac{1}{2}$ back into the equation:
+$$
+yt - \frac{t^2}{2} + \frac{y^2}{2} = \frac{1}{2}
+$$
+
+Multiply through by 2 to simplify:
+$$
+2yt - t^2 + y^2 = 1
+$$
+
+This is the implicit solution of the differential equation:
+$$
+2yt - t^2 + y^2 = 1
+$$
+
+#### Solve for $y$ using the quadratic formula
+
+Solve this quadratic equation for $y$. Rearrange the equation:
+$$
+y^2 + 2ty + (- t^2 - 1) = 0
+$$
+
+This is a quadratic equation of the form $ay^2 + by + c = 0$, where:
+
+- $a = 1$
+- $b = 2t$
+- $c = - t^2 - 1$
+
+Use the quadratic formula to solve for $y$:
+$$
+y = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+Substitute the values of $a$, $b$, and $c$:
+$$
+y = \frac{-2t \pm \sqrt{(2t)^2 - 4(1)(- t^2 - 1)}}{2}
+$$
+Simplifying:
+$$
+y = \frac{-2t \pm \sqrt{4t^2 - 4(- t^2 - 1)}}{2}
+$$
+$$
+y = \frac{-2t \pm \sqrt{4t^2 + 4 + 4t^2}}{2}
+$$
+$$
+y = \frac{-2t \pm \sqrt{8t^2 + 4}}{2}
+$$
+Factor out 4 from inside the square root:
+$$
+y = \frac{-2t \pm \sqrt{4(2t^2 + 1)}}{2}
+$$
+$$
+y = \frac{-2t \pm 2\sqrt{2t^2 + 1}}{2}
+$$
+$$
+y = -t \pm \sqrt{2t^2 + 1}
+$$
+
+#### Apply the initial condition
+
+We are given $y(0) = 1$. Substituting $t = 0$ into the equation:
+$$
+1 = -0 \pm \sqrt{2(0)^2 - 1}
+$$
+$$
+1 = \pm \sqrt{1}
+$$
+
+$$
+1 \ne -1
+$$
+
+So our only solution is:
+$$
+y = -t + \sqrt{2t^2 - 1}
+$$
+
+#### Plotting the Direction Field and Solution:
+
+```{python}
+#| label: vector-plot3
+#| code-summary: Show code
+
+# Define the differential equation dy/dt = (t - y) / (y + t)
+def dydt(t, y):
+    return (t - y) / (y + t)
+
+# Generate grid for direction field
+t = np.linspace(0.1, 5, 20)  
+y = np.linspace(0.1, 5, 20)  
+T, Y = np.meshgrid(t, y)
+
+# Calculate slope for direction field
+slope = dydt(T, Y)
+
+# Normalize the direction field arrows
+norm = np.sqrt(1 + slope**2)
+T_dir = 1 / norm
+Y_dir = slope / norm
+
+# Plot the direction field
+plt.figure(figsize=(8, 6))
+plt.quiver(T, Y, T_dir, Y_dir, angles="xy", color="gray")
+
+# Define the particular solution y = -t + sqrt(2t^2 + 1)
+def particular_solution(t):
+    return -t + np.sqrt(2 * t**2 + 1)
+
+# Plot the particular solution curve
+t_vals = np.linspace(0, 5, 200) 
+y_vals = particular_solution(t_vals)
+
+plt.plot(t_vals, y_vals, 'r', linewidth=2, label="Particular Solution")
+
+# Add labels, title, and limits
+plt.title("Direction Field and Particular Solution", fontsize=14)
+plt.xlabel("t", fontsize=12)
+plt.ylabel("y", fontsize=12)
+plt.xlim([0, 5])
+plt.ylim([0, 5])
+
+# Add grid and legend
+plt.grid(True)
+plt.legend(loc="upper left")
+
+# Display the plot
+plt.show()
+
+```
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+The solution to the initial value problem is:
+$$
+y = -t + \sqrt{2t^2 - 1}
+$$
+:::
+:::
+
+
+
+# SECTION 2.6
+
+::: {.callout-tip}
+## **Assigned:** 5, 7, 11
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.6.5
+
+### Problem:
+Solve the initial value problem:
+
+$$
+y' + 2ty = 0, \quad y(0) = -2
+$$
+
+using Euler's method with $h = 0.1$ on the interval $[0, 1]$. Additionally, find the exact solution and compare the values and plots of the approximate and exact solutions.
+
+### Solution:
+
+#### Exact solution
+
+The given equation is:
+$$
+y' + 2ty = 0
+$$
+
+This is a first-order linear differential equation, and it can be solved by using an integrating factor. The general form of a linear differential equation is:
+$$
+y' + p(t) y = 0
+$$
+where $p(t) = 2t$. The integrating factor $\mu(t)$ is:
+$$
+\mu(t) = e^{\int p(t) \, dt} = e^{t^2}
+$$
+
+Multiplying both sides of the equation by $e^{t^2}$:
+$$
+e^{t^2} y' + 2t e^{t^2} y = 0
+$$
+
+This simplifies to:
+$$
+\frac{d}{dt} \left( e^{t^2} y \right) = 0
+$$
+
+Integrating both sides:
+$$
+e^{t^2} y = C
+$$
+
+The general solution is:
+$$
+y = C e^{-t^2}
+$$
+
+Apply the initial condition $y(0) = -2$:
+$$
+-2 = C e^0 \quad \Rightarrow \quad C = -2
+$$
+
+The particular solution is:
+$$
+y = -2 e^{-t^2}
+$$
+
+#### Euler’s method
+
+Euler’s method uses the formula:
+$$
+y_{n+1} = y_n + h f(t_n, y_n)
+$$
+where $f(t, y) = -2ty$ from the original equation $y' = -2ty$.
+
+We are given $h = 0.1$ and the initial condition $y(0) = -2$. We will approximate the solution for $t \in [0, 1]$.
+
+- Step size: $h = 0.1$
+- Initial condition: $y(0) = -2$
+- Differential equation: $y' = -2ty$
+
+#### Comparison of approximate and exact solutions
+
+##### Table:
+
+```{python}
+#| label: table
+#| code-summary: Show code
+
+import pandas as pd
+
+# Given initial condition and step size
+h = 0.1
+t_vals_euler = np.arange(0, 1.1, h)
+y_euler = np.zeros(len(t_vals_euler))
+y_euler[0] = -2  # y(0) = -2
+
+# Define the function for the differential equation y' = -2ty
+def f(t, y):
+    return -2 * t * y
+
+# Euler's method iteration
+for i in range(1, len(t_vals_euler)):
+    y_euler[i] = y_euler[i-1] + h * f(t_vals_euler[i-1], y_euler[i-1])
+
+# Exact solution
+def exact_solution(t):
+    return -2 * np.exp(-t**2)
+
+# Create a table for Euler's method and the exact solution
+t_vals_exact_small = t_vals_euler  # Use the same t-values for comparison
+y_exact_small = exact_solution(t_vals_exact_small)
+
+# Create a DataFrame to compare Euler's method with the exact solution
+data = {
+    't': t_vals_euler,
+    'Euler Approximation': y_euler,
+    'Exact Solution': y_exact_small
+}
+df_comparison = pd.DataFrame(data)
+
+table_markdown = df_comparison.to_markdown(index=False)
+# print(table_markdown) 
+```
+
+|   t |   Euler Approximation |   Exact Solution |
+|----:|----------------------:|-----------------:|
+| 0   |             -2        |        -2        |
+| 0.1 |             -2        |        -1.9801   |
+| 0.2 |             -1.96     |        -1.92158  |
+| 0.3 |             -1.8816   |        -1.82786  |
+| 0.4 |             -1.7687   |        -1.70429  |
+| 0.5 |             -1.62721  |        -1.5576   |
+| 0.6 |             -1.46449  |        -1.39535  |
+| 0.7 |             -1.28875  |        -1.22525  |
+| 0.8 |             -1.10832  |        -1.05458  |
+| 0.9 |             -0.930992 |        -0.889716 |
+| 1   |             -0.763413 |        -0.735759 |
+
+##### Graph:
+
+```{python}
+#| label: graph
+#| code-summary: Show code
+
+t_vals_exact = np.linspace(0, 1, 200)
+y_exact = exact_solution(t_vals_exact)
+
+# Plot Euler's Method approximation and exact solution
+plt.figure(figsize=(8, 6))
+plt.plot(t_vals_exact, y_exact, 'r', label="Exact solution", linewidth=2)
+plt.plot(t_vals_euler, y_euler, 'bo-', label="Euler's Method", markersize=5)
+
+# Add labels, title, and legend
+plt.title("Euler's Method vs Exact Solution", fontsize=14)
+plt.xlabel("t", fontsize=12)
+plt.ylabel("y", fontsize=12)
+plt.grid(True)
+plt.legend()
+
+# Display the plot
+plt.show()
+```
+
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+
+The **exact solution** to the differential equation is:
+$$
+y = -2 e^{-t^2}
+$$
+
+The graph compares Euler's method with the exact solution. Euler's method provides a reasonable approximation but slightly underestimates the true values as $t$ increases.
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.6.7
+
+
+### Problem:
+Solve the initial value problem using Euler's method with $h = 0.1$ on the interval $[0, 1]$:
+$$
+y' - y = 0, \quad y(0) = 2
+$$
+
+In addition, find the exact solution and compare the values and plots of the approximate and exact solutions.
+
+### Solution:
+
+#### Exact Solution
+
+The given equation is:
+$$
+y' - y = 0
+$$
+This is a separable differential equation. Rearrange it:
+$$
+\frac{dy}{dt} = y
+$$
+
+Separate the variables:
+$$
+\frac{1}{y} \, dy = dt
+$$
+
+Integrate both sides:
+$$
+\int \frac{1}{y} \, dy = \int dt
+$$
+$$
+\ln|y| = t + C
+$$
+
+Exponentiate both sides to solve for $y$:
+$$
+|y| = e^{t+C} = e^C \cdot e^t
+$$
+Let $A = e^C$, so:
+$$
+y = A e^t
+$$
+
+Use the initial condition $y(0) = 2$ to find $A$:
+$$
+2 = A e^0 \quad \Rightarrow \quad A = 2
+$$
+
+The particular solution is:
+$$
+y = 2 e^t
+$$
+
+#### Euler's Method
+
+Euler's method uses the formula:
+$$
+y_{n+1} = y_n + h f(t_n, y_n)
+$$
+where $f(t, y) = y$ (from the original equation $y' = y$).
+
+Given:
+
+- Step size $h = 0.1$
+- Initial condition $y(0) = 2$
+- Differential equation: $y' = y$
+
+#### Comparison of approximate and exact solutions
+##### Table
+
+```{python}
+#| label: table2
+#| code-summary: Show code
+
+# Step size and initial conditions
+h = 0.1
+t_vals_euler = np.arange(0, 1.1, h)
+y_euler = np.zeros(len(t_vals_euler))
+y_euler[0] = 2  # Initial condition y(0) = 2
+
+# Define the differential equation y' = y
+def f(t, y):
+    return y
+
+# Euler's method iteration
+for i in range(1, len(t_vals_euler)):
+    y_euler[i] = y_euler[i-1] + h * f(t_vals_euler[i-1], y_euler[i-1])
+
+# Exact solution
+def exact_solution(t):
+    return 2 * np.exp(t)
+
+# Exact solution values for comparison
+t_vals_exact = np.linspace(0, 1, 200)
+y_exact = exact_solution(t_vals_exact)
+
+# Create a DataFrame for comparison
+y_exact_small = exact_solution(t_vals_euler)
+df_comparison = pd.DataFrame({
+    't': t_vals_euler,
+    'Euler Approximation': y_euler,
+    'Exact Solution': y_exact_small
+})
+
+table_markdown = df_comparison.to_markdown(index=False)
+# print(table_markdown)
+
+```
+
+|   t |   Euler Approximation |   Exact Solution |
+|----:|----------------------:|-----------------:|
+| 0   |               2       |          2       |
+| 0.1 |               2.2     |          2.21034 |
+| 0.2 |               2.42    |          2.44281 |
+| 0.3 |               2.662   |          2.69972 |
+| 0.4 |               2.9282  |          2.98365 |
+| 0.5 |               3.22102 |          3.29744 |
+| 0.6 |               3.54312 |          3.64424 |
+| 0.7 |               3.89743 |          4.02751 |
+| 0.8 |               4.28718 |          4.45108 |
+| 0.9 |               4.7159  |          4.91921 |
+| 1   |               5.18748 |          5.43656 |
+
+##### Graph:
+
+```{python}
+#| label: graph2
+#| code-summary: Show code
+
+# Plot Euler's Method approximation and exact solution
+plt.figure(figsize=(8, 6))
+plt.plot(t_vals_exact, y_exact, 'r', label="Exact Solution", linewidth=2)
+plt.plot(t_vals_euler, y_euler, 'bo-', label="Euler's Method", markersize=5)
+
+# Add labels, title, and legend
+plt.title("Euler's Method vs Exact Solution", fontsize=14)
+plt.xlabel("t", fontsize=12)
+plt.ylabel("y", fontsize=12)
+plt.grid(True)
+plt.legend()
+
+# Display the plot
+plt.show()
+```
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+The **exact solution** to the differential equation is:
+$$
+y = 2 e^t
+$$
+
+The graph compares Euler's method with the exact solution. Euler's method provides a reasonable approximation but slightly underestimates the true values as $t$ increases.
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.6.11
+
+### Problem:
+Solve the initial value problem using Euler's method with $h = 0.1$ on the interval $[0, 1]$:
+$$
+(y')^2 - 2y^2 = t, \quad y(0) = 2
+$$
+In addition, explain why it is not possible to solve the IVP exactly by established methods.
+
+### Solution:
+
+#### Rearrange the Differential Equation
+
+We are given:
+$$
+(y')^2 - 2y^2 = t
+$$
+First, solve for $y'$:
+$$
+(y')^2 = t + 2y^2
+$$
+
+Taking the square root of both sides (assuming the positive root):
+$$
+y' = \sqrt{t + 2y^2}
+$$
+
+#### Euler's Method
+
+Euler's method uses the formula:
+$$
+y_{n+1} = y_n + h f(t_n, y_n)
+$$
+where $f(t, y) = \sqrt{t + 2y^2}$, and the initial condition is $y(0) = 2$.
+
+Given:
+
+- Step size $h = 0.1$
+- Initial condition $y(0) = 2$
+- Differential equation: $y' = \sqrt{t + 2y^2}$
+
+Calculate the approximate solution using Euler's method.
+
+#### Table
+
+```{python}
+#| label: approx
+#| code-summary: Show code
+
+h = 0.1
+t_vals_euler = np.arange(0, 1.1, h)
+y_euler = np.zeros(len(t_vals_euler))
+y_euler[0] = 2  # Initial condition y(0) = 2
+
+# Define the differential equation y' = sqrt(t + 2y^2)
+def f(t, y):
+    return np.sqrt(t + 2 * y**2)
+
+# Euler's method iteration
+for i in range(1, len(t_vals_euler)):
+    y_euler[i] = y_euler[i-1] + h * f(t_vals_euler[i-1], y_euler[i-1])
+
+# Create a DataFrame to display the Euler method approximation
+df_euler_approximation = pd.DataFrame({
+    't': t_vals_euler,
+    'Euler Approximation': y_euler
+})
+
+table_markdown = df_euler_approximation.to_markdown(index=False)
+
+# print(table_markdown)
+```
+
+|   t |   Euler Approximation |
+|----:|----------------------:|
+| 0   |               2       |
+| 0.1 |               2.28284 |
+| 0.2 |               2.60723 |
+| 0.3 |               2.97865 |
+| 0.4 |               3.40344 |
+| 0.5 |               3.8889  |
+| 0.6 |               4.4434  |
+| 0.7 |               5.07655 |
+| 0.8 |               5.79934 |
+| 0.9 |               6.62435 |
+| 1   |               7.56597 |
+
+#### Graph
+
+```{python}
+#| label: graph3
+#| code-summary: Show code
+
+plt.figure(figsize=(8, 6))
+plt.plot(t_vals_euler, y_euler, 'bo-', label="Euler's Method", markersize=5)
+
+# Add labels, title, and legend
+plt.title("Euler's Method Approximation", fontsize=14)
+plt.xlabel("t", fontsize=12)
+plt.ylabel("y", fontsize=12)
+plt.grid(True)
+plt.legend()
+
+# Display the plot
+plt.show()
+```
+
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+The equation involves $(y')^2$, making it non-linear and not separable. As a result, standard methods like separation of variables or integrating factors cannot be applied, so numerical methods such as Euler's method are needed to approximate the solution.
+
+:::
+:::
+
+# SECTION 2.7
+
+::: {.callout-tip}
+## **Assigned:** 1, 3, 7
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.7.1
+
+### **Problem:**
+For a population $P(t)$ that exhibits logistic growth according to the general model
+$$
+\frac{dP}{dt} = kP \left(1 - \frac{P}{A}\right), \quad P(0) = P_0
+$$
+where $k$ and $A$ are constants, solve the following:
+
+(a) Determine the values of $P$ (in terms of $A$ and $k$) for which $P$ is an increasing function.
+
+(b) Sketch by hand the direction field for the differential equation, clearly indicating the role of the constant $A$ in your sketch.
+
+(c) Determine the value(s) of $P$ (in terms of $A$ and $k$) for which $P$ is increasing most rapidly, and justify your answer.
+
+(d) Solve the initial-value problem explicitly for $P$ to show that
+$$
+P(t) = \frac{A}{1 + Me^{-kt}}
+$$
+and determine $M$ in terms of $A$ and $P_0$.
+
+### **Solution:**
+
+#### Part (a)
+To determine when $P(t)$ is an increasing function, analyze the sign of $\frac{dP}{dt}$:
+$$
+\frac{dP}{dt} = kP \left(1 - \frac{P}{A}\right)
+$$
+Since $k$ is a positive constant, $\frac{dP}{dt}$ will be positive when $P \left(1 - \frac{P}{A}\right) > 0$.
+
+1. $P > 0$ for population values (negative population is impossible).
+2. The expression $1 - \frac{P}{A} > 0$ implies $P < A$.
+
+So, $\frac{dP}{dt} > 0$ when $0 < P < A$. Therefore, $P(t)$ is increasing for $0 < P < A$.
+
+#### Part (b)
+
+```{python}
+#| label: direction-field-2-7-1
+#| code-summary: "Show Code"
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+k = 0.75  # Growth rate constant
+A = 100  # Carrying capacity
+
+
+def dP_dt(P):
+    return k * P * (1 - P / A)
+
+
+P_values = np.linspace(0, 120, 20)  
+t_values = np.linspace(0, 10, 20)  
+
+
+P_grid, t_grid = np.meshgrid(P_values, t_values)
+dP = dP_dt(P_grid)
+
+
+norm = np.sqrt(1 + dP**2)
+dt = 1 / norm
+dP = dP / norm
+
+
+plt.figure(figsize=(10, 6))
+plt.quiver(t_grid, P_grid, dt, dP, angles='xy', scale=20, color="blue")
+plt.axhline(A, color="red", linestyle="-", linewidth=9, label="Carrying Capacity A")
+
+plt.xticks([])
+plt.yticks([])
+
+
+plt.xlabel("Time (t)")
+plt.ylabel("Population (P)")
+plt.title("Direction Field for Logistic Growth Equation")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+```
+
+
+#### Part (c)
+To find the value of $P$ at which $P$ is increasing most rapidly take the derivative of $\frac{dP}{dt}$ with respect to $P$ and set it to zero:
+
+
+1. Differentiate with respect to $P$:
+   $$
+   \frac{d}{dP}\left(kP \left(1 - \frac{P}{A}\right)\right) = k \left(1 - \frac{2P}{A}\right)
+   $$
+
+2. Set the derivative to zero to find the critical point:
+   $$
+   1 - \frac{2P}{A} = 0
+   $$
+   Solving for $P$:
+   $$
+   P = \frac{A}{2}
+   $$
+
+$P = \frac{A}{2}$ is the population level at which $P(t)$ is increasing most rapidly.
+
+Got it! If we let $M = e^{-C}$ instead of $\frac{1}{M}$, then the equation becomes simpler. I'll go through the steps again with this adjustment.
+
+### Solution (with adjusted Step 4)
+
+#### Part (d)
+$$
+\frac{dP}{dt} = kP \left(1 - \frac{P}{A}\right)
+$$
+
+1. **Separate variables:**  
+   $$
+   \frac{1}{P \left(1 - \frac{P}{A}\right)} \, dP = k \, dt
+   $$
+
+2. **Rewrite the left side using partial fractions:**  
+   $$
+   \frac{1}{P \left(1 - \frac{P}{A}\right)} = \frac{1}{P} + \frac{1}{A - P}
+   $$
+   $$
+   \left( \frac{1}{P} + \frac{1}{A - P} \right) \, dP = k \, dt
+   $$
+
+3. **Integrate both sides:**  
+   $$
+   \int \left( \frac{1}{P} + \frac{1}{A - P} \right) \, dP = \int k \, dt
+   $$
+
+4. **Solve the integrals and multiply by $-1$:**  
+
+   $$
+   \ln |A - P| - \ln |P| = -kt - C
+   $$
+
+5. **Combine the logarithms:**  
+   $$
+   \ln \left| \frac{A - P}{P} \right| = -kt - C
+   $$
+
+6. **Exponentiate both sides to solve for $P$:**  
+   $$
+   \frac{A - P}{P} = e^{-kt - C} = M e^{-kt} \quad \text{(where $M = e^{-C}$)}
+   $$
+
+7. **Solve for $P$:**  
+   $$
+   A - P = P \cdot M e^{-kt}
+   $$
+   Move terms involving $P$ to one side:
+   $$
+   P + P \cdot M e^{-kt} = A
+   $$
+   Factor out $P$:
+   $$
+   P (1 + M e^{-kt}) = A
+   $$
+   Solve for $P$:
+   $$
+   P = \frac{A}{1 + M e^{-kt}}
+   $$
+
+8. **Apply the initial condition $P(0) = P_0$ to determine $M$:**  
+   $$
+   P_0 = \frac{A}{1 + M}
+   $$
+   Solving for $M$:
+   $$
+   M = \frac{A - P_0}{P_0}
+   $$
+
+The explicit solution is:
+$$
+P(t) = \frac{A}{1 + \left(\frac{A - P_0}{P_0}\right)e^{-kt}}
+$$
+where $A$ is the carrying capacity, $k$ is the growth rate constant, and $P_0$ is the initial population.
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+
+- **(a)** $P(t)$ is an increasing function for $0 < P < A$.
+- **(b)** The direction field shows arrows pointing upwards for $0 < P < A$, horizontal at $P = A$ (the carrying capacity), and downwards for $P > A$.
+- **(c)** The value of $P$ at which $P$ is increasing most rapidly is $P = \frac{A}{2}$.
+- **(d)** The explicit solution to the logistic growth equation is:
+  $$
+  P(t) = \frac{A}{1 + \left(\frac{A - P_0}{P_0}\right)e^{-kt}}
+  $$
+  where $A$ is the carrying capacity, $k$ is the growth rate constant, and $P_0$ is the initial population.
+
+
+:::
+:::
+
+
+::: {.callout-note icon=false collapse="true"}
+## 2.7.3
+
+### **Problem:**
+Consider the differential equation
+$$
+\frac{dP}{dt} = -0.02 P^2 + 0.08 P
+$$
+
+(a) What are the equilibrium solutions to this equation?
+
+(b) Determine whether each equilibrium solution is stable or unstable.
+
+(c) At what value of $P$ is the function growing most rapidly?
+
+(d) Under the initial condition $P(0) = 0.25$, determine the time at which $P(t) = 3$.
+
+### **Solution:**
+
+#### Part (a)
+To find the equilibrium solutions, set $\frac{dP}{dt} = 0$:
+$$
+-0.02 P^2 + 0.08 P = 0
+$$
+
+1. Factor out $P$:
+   $$
+   P \left(-0.02 P + 0.08\right) = 0
+   $$
+
+2. Set each factor to zero:
+   - $P = 0$
+   - $-0.02 P + 0.08 = 0$
+
+3. Solve for $P$ in the second equation:
+   $$
+   -0.02 P = -0.08
+   $$
+   $$
+   P = 4
+   $$
+
+The equilibrium solutions are $P = 0$ and $P = 4$.
+
+#### Part (b)
+To determine the stability of each equilibrium solution, examine the sign of $\frac{dP}{dt}$ around $P = 0$ and $P = 4$.
+
+1. **For $P = 0$:**
+   - When $P$ is slightly positive (just above 0), $\frac{dP}{dt} = -0.02 P^2 + 0.08 P$ is positive, which means $P$ increases.
+
+   Therefore, $P = 0$ is **unstable**.
+
+2. **For $P = 4$:**
+   - When $P$ is slightly less than 4, $\frac{dP}{dt} = -0.02 P^2 + 0.08 P$ is positive, which means $P$ increases toward 4.
+   - When $P$ is slightly more than 4, $\frac{dP}{dt}$ is negative, which means $P$ decreases toward 4.
+
+   Therefore, $P = 4$ is **stable**.
+
+#### Part (c)
+
+1. Differentiate $\frac{dP}{dt}$ with respect to $P$:
+   $$
+   \frac{d}{dP} \left(-0.02 P^2 + 0.08 P\right) = -0.04 P + 0.08
+   $$
+
+2. Set the derivative to zero to find the critical point:
+   $$
+   -0.04 P + 0.08 = 0
+   $$
+   $$
+   P = 2
+   $$
+
+$P(t)$ is growing most rapidly when $P = 2$.
+
+#### Part (d)
+To solve for the time $t$ when $P(t) = 3$ with the initial condition $P(0) = 0.25$, we start by solving the differential equation explicitly.
+
+1. **Rewrite the differential equation:**
+   $$
+   \frac{dP}{dt} = -0.02 P^2 + 0.08 P
+   $$
+   Factor the right side:
+   $$
+   \frac{dP}{dt} = 0.02 P (4 - P)
+   $$
+
+2. **Separate variables:**
+   $$
+   \frac{1}{P (4 - P)} \, dP = 0.02 \, dt
+   $$
+
+3. **Use partial fraction decomposition on the left side:**
+   $$
+   \frac{1}{P (4 - P)} = \frac{1}{4} \left(\frac{1}{P} + \frac{1}{4 - P}\right)
+   $$
+   So the equation becomes:
+   $$
+   \frac{1}{4} \left(\frac{1}{P} + \frac{1}{4 - P}\right) \, dP = 0.02 \, dt
+   $$
+
+4. **Integrate both sides:**
+   $$
+   \int \frac{1}{4} \left(\frac{1}{P} + \frac{1}{4 - P}\right) \, dP = \int 0.02 \, dt
+   $$
+   $$
+   \frac{1}{4} \left(\ln |P| - \ln |4 - P|\right) = 0.02 t + C
+   $$
+
+5. **Combine the logarithms:**
+   $$
+   \ln \left| \frac{P}{4 - P} \right| = 0.08 t + B
+   $$
+   where $B = 4C$ is a constant.
+
+6. **Exponentiate both sides to solve for $P$:**
+   $$
+   \frac{P}{4 - P} = M e^{0.08 t}
+   $$
+   where $M = e^{B}$.
+
+7. **Apply the initial condition $P(0) = 0.25$ to find $M$:**
+   $$
+   \frac{0.25}{4 - 0.25} = M
+   $$
+   $$
+   M = \frac{0.25}{3.75} = \frac{1}{15}
+   $$
+
+8. **Solve for $t$ when $P(t) = 3$:**
+   $$
+   \frac{3}{4 - 3} = \frac{1}{15} e^{0.08 t}
+   $$
+   $$
+   3 = \frac{1}{15} e^{0.08 t}
+   $$
+   $$
+   e^{0.08 t} = 45
+   $$
+   $$
+   0.08 t = \ln 45
+   $$
+   $$
+   t = \frac{\ln 45}{0.08}
+   $$
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+- **(a)** The equilibrium solutions are $P = 0$ and $P = 4$.
+- **(b)** The equilibrium $P = 0$ is unstable, and $P = 4$ is stable.
+- **(c)** The function $P(t)$ is growing most rapidly when $P = 2$.
+- **(d)** The time $t$ at which $P(t) = 3$ with the initial condition $P(0) = 0.25$ is:
+  $$
+  t = \frac{\ln 45}{0.08}
+  $$
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2.7.7
+
+### **Problem:**
+A cylindrical tank of height $4 \, \text{m}$ and radius $1 \, \text{m}$ is full of water. A small hole of diameter $1 \, \text{cm}$ is opened in the bottom of the tank. Use Torricelli’s law to determine how long it will take for all the water to drain from the tank.
+
+### **Solution:**
+
+**Torricelli's Law:**
+$$
+\frac{dV}{dt} = -a v = -a \sqrt{2gh}
+$$
+Where:
+
+- $V$ is the volume of water in the tank,
+- $a$ is the cross-SECTIONal area of the hole,
+- $v = \sqrt{2gh}$ is the velocity of the water leaving the hole,
+- $g$ is the acceleration due to gravity ($9.8 \, \text{m/s}^2$),
+- $h$ is the height of the water above the hole.
+
+#### Define Areas
+
+Let:
+
+- The cross-SECTIONal area of the tank be $A_t = \pi \times (1)^2 = \pi \, \text{m}^2$,
+- The area of the hole be $a = \pi \times \left(\frac{0.01}{2}\right)^2 = 5 \times 10^{-5} \pi \, \text{m}^2$.
+
+#### Relate $\frac{dV}{dt}$ and $\frac{dh}{dt}$
+
+The volume $V$ of water in the tank is related to the height $h$ by $V = A_t h$.
+$$
+\frac{dV}{dt} = A_t \frac{dh}{dt}
+$$
+
+Substitute this into our initial equation:
+$$
+A_t \frac{dh}{dt} = -a \sqrt{2gh}
+$$
+
+#### Substitute Known Values
+
+Substitute $A_t = \pi \, \text{m}^2$ and $a = 2.5 \times 10^{-5} \pi \, \text{m}^2$:
+$$
+\pi \frac{dh}{dt} = -2.5 \times 10^{-5} \pi \sqrt{2gh}
+$$
+
+Cancel $\pi$ from both sides:
+$$
+\frac{dh}{dt} = -2.5 \times 10^{-5} \sqrt{2gh}
+$$
+
+#### Separate Variables and Integrate
+
+Rewrite the equation as:
+$$
+\frac{dh}{\sqrt{h}} = -2.5 \times 10^{-5} \sqrt{2g} \, dt
+$$
+
+Integrate both sides with respect to $h$ and $t$:
+$$
+\int \frac{1}{\sqrt{h}} \, dh = -2.5 \times 10^{-5} \sqrt{2g} \int dt
+$$
+
+$$
+2 \sqrt{h} = -2.5 \times 10^{-5} \sqrt{2g} \, t + C
+$$
+
+#### Apply Initial Conditions
+
+Initially, $h(0) = 4$ meters. Substitute $h = 4$ and $t = 0$ to solve for $C$:
+$$
+2 \sqrt{4} = C
+$$
+$$
+C = 4
+$$
+
+So the equation becomes:
+$$
+2 \sqrt{h} = -2.5 \times 10^{-5} \sqrt{2g} \, t + 4
+$$
+
+#### Solve for $t$ when $h = 0$
+
+When the tank is empty, $h = 0$. Substitute $h = 0$ into the equation:
+$$
+2 \sqrt{0} = -2.5 \times 10^{-5} \sqrt{2g} \, t + 4
+$$
+$$
+0 = -2.5 \times 10^{-5} \sqrt{2g} \, t + 4
+$$
+$$
+2.5 \times 10^{-5} \sqrt{2g} \, t = 4
+$$
+$$
+t = \frac{4}{2.5 \times 10^{-5} \sqrt{2g}}
+$$
+
+#### Substitute $g = 9.8 \, \text{m/s}^2$ and Calculate $t$
+
+$$
+t = \frac{4}{2.5 \times 10^{-5} \sqrt{2 \times 9.8}}
+$$
+
+::: {.callout-tip icon=false}
+## **Final Answer:**
+
+The time required to drain the tank is:
+
+$$
+t = \frac{4}{2.5 \times 10^{-5} \sqrt{2 \times 9.8}} \, \text{ seconds} \approx  10.04 \text{ hours}
+$$
+
+:::
+:::
+
