@@ -15,7 +15,7 @@ website:
     left:
       - href: ./homework/index.qmd
         text: HOMEWORK
-      - href: ./homework/index.qmd
+      - href: ./exam-practice/index.qmd
         text: EXAM PRACTICE
       - href: ./notes/index.qmd
         text: NOTES

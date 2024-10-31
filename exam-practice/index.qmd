@@ -1,3 +1,37 @@
 ---
 title: "EXAM PRACTICE"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+    
 ---
+
+## EXAM 01
+- [Overview](./exam01/overview.html)
+- [Practice](./exam01/practice.html)
+
+
+## EXAM 02
+- [Overview](./exam02/overview.html)
+- [Practice](./exam02/practice.html)
+
+## EXAM 03
+
+- [Overview](./exam03/overview.html)
+- [Practice](./exam03/practice.html)
+
+

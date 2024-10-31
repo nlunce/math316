@@ -25,5 +25,26 @@
   },
   "homework/hw02/hw02-10-03-24-pdf.qmd": {
     "hw02-10-03-24-pdf.html": "3eaeb0e6"
+  },
+  "exam-practice/exam03/topics.qmd": {
+    "topics.html": "898d7f61"
+  },
+  "exam-practice/exam01/overview.qmd": {
+    "overview.html": "7b68754f"
+  },
+  "exam-practice/exam02/overview.qmd": {
+    "overview.html": "b933b50e"
+  },
+  "exam-practice/exam03/overview.qmd": {
+    "overview.html": "d3b8e7ed"
+  },
+  "exam-practice/exam03/practice.qmd": {
+    "practice.html": "2f594e0d"
+  },
+  "exam-practice/exam01/practice.qmd": {
+    "practice.html": "2586349f"
+  },
+  "exam-practice/exam02/practice.qmd": {
+    "practice.html": "136ca712"
   }
 }

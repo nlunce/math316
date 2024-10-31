@@ -1,0 +1,21 @@
+---
+title: "EXAM 03 OVERVIEW"
+---
+
+1. **Spring-Mass Equation**  
+   - Analyze and solve differential equations related to the motion of a spring-mass system.
+
+2. **Fourth-Order Homogeneous Differential Equation**  
+   - Solve a fourth-order homogeneous differential equation using the characteristic equation method.
+
+3. **Eigenvectors and Eigenvalues**  
+   - Given a matrix $A$ with an eigenvalue, find the corresponding eigenvector.
+
+4. **Nonhomogeneous Second-Order Differential Equation**  
+   - Solve a second-order nonhomogeneous differential equation using the method of undetermined coefficients.
+
+5. **Variation of Parameters**  
+   - Use the method of variation of parameters to find a particular solution for a given differential equation.
+
+6. **Mixing Problem**  
+   - Formulate and solve a differential equation for the concentration of sugar in a mixing tank over time, considering both inflow and outflow, along with appropriate initial conditions.
