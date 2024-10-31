@@ -1,4 +1,177 @@
 ---
 title: "EXAM 03 PRACTICE"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
 ---
 
+
+## **Spring-Mass Equation Problems**
+
+$$
+y'' + \frac{c}{m} y' + \frac{k}{m} y = \frac{1}{m} F(t)
+$$
+
+Where:
+
+- $m$: Mass of the object attached to the spring.
+- $k$: Spring constant, which measures the stiffness of the spring. A higher $k$ value indicates a stiffer spring.
+- $c$: Damping constant, which represents the resistance (e.g., due to friction or air resistance) that opposes the motion of the mass. A higher $c$ value implies more resistance and faster dissipation of energy.
+- $y(t)$: Displacement of the mass from its equilibrium position at time $t$.
+- $F(t)$: External force applied to the system as a function of time.
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+## **Fourth-Order Homogeneous Differential Equation Problems**
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+## **Eigenvectors/Eigenvalues Problems**
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+## **Nonhomogeneous Second-Order Differential Equation Problems**
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+## **Variation of Parameters Problems**
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+## **Mixing Problems**
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## **Problem**
+
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## **Answer:**
+
+:::
