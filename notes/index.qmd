@@ -1,4 +1,23 @@
 ---
 title: "NOTES"
-author: "Nathan Lunceford"
+editor: 
+   render-on-save: true
 ---
+
+## WEEK 01
+
+## WEEK 02
+
+## WEEK 03
+
+## WEEK 04
+
+## WEEK 05
+
+## WEEK 06
+
+## WEEK 07
+
+## WEEK 08
+
+- [Generalized Eigenvectors in Differential Equations](./w08/generalized-eigenvectors-DE.html)

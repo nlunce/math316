@@ -3,8 +3,9 @@ project:
   output-dir: docs
   render:
     - '*.qmd' # Render all .qmd files in the root directory
-    - '!exams/' # Ignore the entire exams folder
-    - '!site_libs/' # Ignore the entire site_libs folder
+    - '!exams/'
+    - '!book/'
+    - '!site_libs/'
 
 website:
   title: 'MATH316'
