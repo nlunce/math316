@@ -1,6 +1,6 @@
 ---
-title: "HOMEWORK 03"
-author: "Nathan Lunceford"
+title: 'HOMEWORK 03'
+author: 'Nathan Lunceford'
 format:
   html:
     self-contained: true
@@ -11,44 +11,52 @@ format:
     number-SECTIONs: false
     html-math-method: katex
     code-fold: true
-    code-summary: "Show the code"
+    code-summary: 'Show the code'
     code-overflow: wrap
     code-copy: hover
     code-tools:
-        source: false
-        toggle: true
-        caption: See code
+      source: false
+      toggle: true
+      caption: See code
 ---
 
 # SECTION 2.2
+
 ---
 
 ::: {.callout-tip}
+
 ## **Assigned:** 1, 9, 13, 23
+
 :::
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.2.1
 
 ### Problem:
+
 Consider the differential equation $y'' = 4y$.
 
-  (a) What is the order of this equation?
+(a) What is the order of this equation?
 
-  (b) Show via substitution that the function $y = e^{2t}$ is a solution to this equation.
+(b) Show via substitution that the function $y = e^{2t}$ is a solution to this
+equation.
 
-  (c) Are there any other functions of the form $y = e^{rt}$ $(r \neq 2)$ that are also 
-       solutions to the equation? If so, which? Justify your answer.
-
+(c) Are there any other functions of the form $y = e^{rt}$ $(r \neq 2)$ that are
+also solutions to the equation? If so, which? Justify your answer.
 
 ### Solution:
 
 #### Part (a)
-The order of the equation is the highest derivative, so in this case the order is 2.
 
+The order of the equation is the highest derivative, so in this case the order
+is 2.
 
 #### Part (b)
-To verify that $y = e^{2t}$ is a solution to $y'' = 4y$, we compute the derivatives:
+
+To verify that $y = e^{2t}$ is a solution to $y'' = 4y$, we compute the
+derivatives:
 
 - First derivative:  
   $y' = 2e^{2t}$
@@ -57,13 +65,15 @@ To verify that $y = e^{2t}$ is a solution to $y'' = 4y$, we compute the derivati
   $y'' = 4e^{2t}$
 
 Substitute into the equation:
+
 $$
 4e^{2t} = 4 \cdot e^{2t}
 $$
+
 Both sides match, confirming that $y = e^{2t}$ is a solution.
 
-
 #### Part (c)
+
 For solutions of the form $y = e^{rt}$:
 
 - First derivative:  
@@ -73,22 +83,27 @@ For solutions of the form $y = e^{rt}$:
   $y'' = r^2 e^{rt}$
 
 Substitute into the equation:
+
 $$
 r^2 e^{rt} = 4 e^{rt}
 $$
+
 Divide by $e^{rt}$ (assuming $e^{rt} \neq 0$):
+
 $$
 r^2 = 4
 $$
+
 Solve for $r$:
+
 $$
 r = \pm 2
 $$
 
 Thus, the two solutions are $y = e^{2t}$ and $y = e^{-2t}$.
 
-
 ::: {.callout-tip icon=false }
+
 ## **Final Answer:**
 
 - **(a):** The order is 2.
@@ -98,17 +113,14 @@ Thus, the two solutions are $y = e^{2t}$ and $y = e^{-2t}$.
 :::
 :::
 
-
-
-
-
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.2.9
 
-
-
 ### Problem:
+
 Solve the differential equation:
+
 $$
 y' = t + \cos t
 $$
@@ -124,6 +136,7 @@ To find the family of solutions, we integrate both sides with respect to $t$.
    $$
 
 2. **Use linearity of integration:**
+
    $$
    y = \int t \, dt + \int \cos t \, dt
    $$
@@ -145,24 +158,24 @@ To find the family of solutions, we integrate both sides with respect to $t$.
 ---
 
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 $$
 y = \frac{t^2}{2} + \sin t + C
 $$
+
 :::
 :::
-
-
-
-
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.2.13
 
-
 ### Problem:
+
 Solve the differential equation:
+
 $$
 y' = t \sin t
 $$
@@ -180,15 +193,18 @@ We integrate both sides with respect to $t$ to find the general solution.
 2. **Use integration by parts:**
 
    Let:
+
    - $u = t$, so $du = dt$
    - $dv = \sin t \, dt$, so $v = -\cos t$
 
    Now apply the formula for integration by parts:
+
    $$
    \int u \, dv = u v - \int v \, du
    $$
 
    Substituting the values:
+
    $$
    y = -t \cos t - \int (-\cos t) \, dt
    $$
@@ -211,32 +227,28 @@ We integrate both sides with respect to $t$ to find the general solution.
 
    where $C$ is the constant of integration.
 
-
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 $$
 y = -t \cos t + \sin t + C
 $$
+
 :::
 :::
-
-
-
-
-
-
-
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.2.23
 
 ### Problem:
+
 Solve the initial value problem:
+
 $$
 y' = t e^{-t^2}, \quad y(0) = -1
 $$
-
 
 ### Solution:
 
@@ -249,6 +261,7 @@ $$
 2. **Use substitution:**
 
    Let $u = -t^2$, so that:
+
    $$
    du = -2t \, dt \quad \Rightarrow \quad -\frac{1}{2} du = t \, dt
    $$
@@ -304,106 +317,118 @@ $$
 ---
 
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 $$
 y = -\frac{1}{2} e^{-t^2} - \frac{1}{2}
 $$
-:::
-:::
 
+:::
+:::
 
 # SECTION 2.3
+
 ---
 
 ::: {.callout-tip}
+
 ## **Assigned:** 1, 3, 7, 15
+
 :::
 
 ::: {.callout-note icon=false collapse="true"}
+
 ### 2.3.1
 
 ### Problem:
+
 Classify the equation $y' + 7y = e^t$ as linear or nonlinear.
 
 ### Solution:
 
-A differential equation is **linear** if the unknown function $y(t)$ and its derivatives:
+A differential equation is **linear** if the unknown function $y(t)$ and its
+derivatives:
 
 - Appear only to the first power (no exponents).
 - Are not multiplied by each other.
 
 The given equation is:
+
 $$
 y' + 7y = e^t
 $$
 
 - $y'$ and $y$ appear to the first power.
 - There are no products or powers involving $y$ and its derivatives.
-- $e^t$ is a function of $t$ only, and it does not affect the linearity with respect to $y(t)$.
-
+- $e^t$ is a function of $t$ only, and it does not affect the linearity with
+  respect to $y(t)$.
 
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 The equation is **linear**.
+
 :::
 :::
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.3.3
 
-
 ### Problem:
-Classify the equation $\cos y' + \sin y = t^2$ as linear or nonlinear.
 
+Classify the equation $\cos y' + \sin y = t^2$ as linear or nonlinear.
 
 ### Solution:
 
-A differential equation is **linear** if the unknown function $y(t)$ and its derivatives:
+A differential equation is **linear** if the unknown function $y(t)$ and its
+derivatives:
 
 - Appear only to the first power (no exponents).
 - Are not multiplied by each other.
-- All coefficients can be functions of $t$, but must not involve $y(t)$ or its derivatives nonlinearly.
+- All coefficients can be functions of $t$, but must not involve $y(t)$ or its
+  derivatives nonlinearly.
 
 Let’s analyze the given equation:
+
 $$
 \cos y' + \sin y = t^2
 $$
 
-- $\cos y'$ involves a trigonometric function applied to the derivative $y'$, which makes it **nonlinear**.
-- $\sin y$ applies a trigonometric function to the unknown function $y$, further making the equation **nonlinear**.
+- $\cos y'$ involves a trigonometric function applied to the derivative $y'$,
+  which makes it **nonlinear**.
+- $\sin y$ applies a trigonometric function to the unknown function $y$, further
+  making the equation **nonlinear**.
 
 ---
 
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 The equation is **nonlinear**.
+
 :::
 :::
-
-
-
-
-
-
-
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.3.7
 
-
 ### Problem:
+
 Solve the differential equation:
+
 $$
 y' + y = 0
 $$
 
-
 ### Solution:
 
-This is a first-order, linear, homogeneous differential equation. To solve it, we can use **separation of variables**.
+This is a first-order, linear, homogeneous differential equation. To solve it,
+we can use **separation of variables**.
 
 1. **Rewrite the equation:**
 
@@ -453,24 +478,25 @@ This is a first-order, linear, homogeneous differential equation. To solve it, w
 
    where $C$ is any real constant.
 
-
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 $$
 y = C e^{-t}
 $$
+
 :::
 :::
-
-
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.3.15
 
-
 ### Problem:
+
 Solve the differential equation:
+
 $$
 y' + 2y = 2t
 $$
@@ -478,21 +504,25 @@ $$
 ### Solution:
 
 1. **Rewrite the equation in standard form.**
+
    $$
    y' + 2y = 2t
    $$
 
 2. **Find the integrating factor.**
+
    $$
    \mu(t) = e^{\int 2 \, dt} = e^{2t}
    $$
 
 3. **Multiply both sides by the integrating factor.**
+
    $$
    e^{2t} y' + 2 e^{2t} y = 2t e^{2t}
    $$
 
    The left side becomes:
+
    $$
    \frac{d}{dt} \left( e^{2t} y \right) = 2t e^{2t}
    $$
@@ -500,11 +530,13 @@ $$
 4. **Integrate both sides.**
 
    We need to solve:
+
    $$
    e^{2t} y = \int 2t e^{2t} \, dt
    $$
 
    Using **integration by parts**:
+
    - $u = 2t$, so $du = 2 \, dt$
    - $dv = e^{2t} \, dt$, so $v = \frac{1}{2} e^{2t}$
 
@@ -519,245 +551,312 @@ $$
 5. **Solve for $y$.**
 
    Now we have:
+
    $$
-   e^{2t} y = t e^{2t} - \frac{1}{2}e^{2t} + C$$
+   e^{2t} y = t e^{2t} - \frac{1}{2}e^{2t} + C
+   $$
 
    Divide both sides by $e^{2t}$:
+
    $$
    y = t - \frac{1}{2} + C e^{-2t}
    $$
 
-
-
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
 $$
 y = t - \frac{1}{2} + C e^{-2t}
 $$
-:::
-:::
 
+:::
+:::
 
 # SECTION 2.4
+
 ---
+
 ::: {.callout-tip}
+
 ## **Assigned:** 3, 8, 15
+
 :::
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.4.3
 
 ### Problem:
-The evaporation rate of moisture from a sheet hung on a clothesline is proportional to the sheet's moisture content. If half of the moisture evaporates in the first 30 minutes, how long will it take for 95% of the moisture to evaporate?
+
+The evaporation rate of moisture from a sheet hung on a clothesline is
+proportional to the sheet's moisture content. If half of the moisture evaporates
+in the first 30 minutes, how long will it take for 95% of the moisture to
+evaporate?
 
 ### Solution:
 
 #### Step 1: Solve the differential equation.
+
 The general solution for exponential decay is:
+
 $$
 M(t) = M_0 e^{-kt}
 $$
+
 where $M_0$ is the initial amount of moisture.
 
 #### Step 2: Use the information that half the moisture evaporates in 30 minutes.
+
 When $t = 30$, the remaining moisture is half of the initial moisture $M_0$:
+
 $$
 M(30) = \frac{M_0}{2}
 $$
 
 Substitute into the general solution:
+
 $$
 \frac{M_0}{2} = M_0 e^{-30k}
 $$
 
 Divide both sides by $M_0$:
+
 $$
 \frac{1}{2} = e^{-30k}
 $$
 
 Take the natural logarithm of both sides:
+
 $$
 \ln \left(\frac{1}{2}\right) = -30k
 $$
 
 Since $\ln \left(\frac{1}{2}\right) = -\ln 2$, we have:
+
 $$
 -\ln 2 = -30k
 $$
 
 Solve for $k$:
+
 $$
 k = \frac{\ln 2}{30}
 $$
 
 #### Step 3: Find the time for 95% evaporation.
+
 If 95% of the moisture evaporates, 5% remains. So:
+
 $$
 M(t) = 0.05 M_0
 $$
 
 Substitute into the general solution:
+
 $$
 0.05 M_0 = M_0 e^{-kt}
 $$
 
 Divide both sides by $M_0$:
+
 $$
 0.05 = e^{-kt}
 $$
 
 Take the natural logarithm of both sides:
+
 $$
 \ln(0.05) = -kt
 $$
 
 Substitute $k = \frac{\ln 2}{30}$:
+
 $$
 \ln(0.05) = -\frac{\ln 2}{30} \cdot t
 $$
 
 Solve for $t$:
+
 $$
 t = \frac{30 \ln(0.05)}{-\ln 2}
 $$
 
 #### Step 4: Simplify the expression.
-Using the fact that $\ln(0.05) = \ln\left(\frac{1}{20}\right) = -\ln 20$, we get:
+
+Using the fact that $\ln(0.05) = \ln\left(\frac{1}{20}\right) = -\ln 20$, we
+get:
+
 $$
 t = \frac{30 \ln 20}{\ln 2}
 $$
 
 Using $\ln 20 \approx 2.9957$ and $\ln 2 \approx 0.6931$:
+
 $$
 t = \frac{30 \times 2.9957}{0.6931} \approx \frac{89.871}{0.6931} \approx 129.6 \, \text{minutes}.
 $$
 
-
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
-It will take approximately **129.6 minutes** for 95% of the moisture to evaporate.
+It will take approximately **129.6 minutes** for 95% of the moisture to
+evaporate.
+
 :::
 :::
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.4.8
 
 ### Problem:
-Brine is entering a 25-m$^3$ tank at flow rate of 0.5 m$^3$/min and at a concentration of 6 g/m$^3$. The uniformly mixed solution exits the tank at a rate of 0.25 m$^3$/min. Assume that initially there are 5 m$^3$ of solution in the tank at a concentration of 25 g/m$^3$. 
 
-   (a) State an IVP that is satisfied by the amount of salt $A(t)$ in grams in the tank at time $t$.
+Brine is entering a 25-m$^3$ tank at flow rate of 0.5 m$^3$/min and at a
+concentration of 6 g/m$^3$. The uniformly mixed solution exits the tank at a
+rate of 0.25 m$^3$/min. Assume that initially there are 5 m$^3$ of solution in
+the tank at a concentration of 25 g/m$^3$.
 
-   (b) Solve the IVP stated in (a). For what values of $t$ is this problem valid? Why?
+(a) State an IVP that is satisfied by the amount of salt $A(t)$ in grams in the
+tank at time $t$.
 
-   (c) At exactly what time will the least amount of salt be present in the tank? How much salt will there be at that time?
+(b) Solve the IVP stated in (a). For what values of $t$ is this problem valid?
+Why?
 
-   (d) Plot a direction field for the IVP stated in (a), including a plot of the solution. Discuss why this direction field and the solution make sense in the physical context of the problem.
+(c) At exactly what time will the least amount of salt be present in the tank?
+How much salt will there be at that time?
 
+(d) Plot a direction field for the IVP stated in (a), including a plot of the
+solution. Discuss why this direction field and the solution make sense in the
+physical context of the problem.
 
 ### Solution:
 
 #### (a) State an IVP that is satisfied by the amount of salt $A(t)$ in grams in the tank at time $t$.
-Set up a differential equation to represent the amount of salt $A(t)$ in the tank at time $t$.
+
+Set up a differential equation to represent the amount of salt $A(t)$ in the
+tank at time $t$.
 
 - **Flow of brine into the tank:**
+
   - Inflow rate: 0.5 m$^3$/min
   - Concentration of inflow: 6 g/m$^3$
-  - **Salt inflow rate:**  
+  - **Salt inflow rate:**
     $$
     \text{Inflow rate of salt} = (0.5 \, \text{m}^3/\text{min}) \cdot (6 \, \text{g/m}^3) = 3 \, \text{g/min}
     $$
 
 - **Flow of solution out of the tank:**
+
   - Outflow rate: 0.25 m$^3$/min
-  - **Concentration of outflow:** Since the solution is uniformly mixed, the concentration of the outflow is:
+  - **Concentration of outflow:** Since the solution is uniformly mixed, the
+    concentration of the outflow is:
     $$
     \frac{A(t)}{V(t)}
     $$
     where $V(t)$ is the volume of the solution in the tank at time $t$.
 
 - **Volume change in the tank:**  
-  Initially, there are 5 m$^3$ in the tank, and the inflow adds 0.5 m$^3$/min while the outflow removes 0.25 m$^3$/min.  
+  Initially, there are 5 m$^3$ in the tank, and the inflow adds 0.5 m$^3$/min
+  while the outflow removes 0.25 m$^3$/min.  
   So the volume at time $t$ is:
+
   $$
   V(t) = 5 + (0.5 - 0.25)t = 5 + 0.25t \, \text{m}^3
   $$
 
-- **Outflow rate of salt:**  
+- **Outflow rate of salt:**
+
   $$
   \text{Outflow rate of salt} = 0.25 \cdot \frac{A(t)}{V(t)}
   $$
 
-- **Differential equation:**
-  The change in salt amount over time is given by:
+- **Differential equation:** The change in salt amount over time is given by:
+
   $$
   \frac{dA}{dt} = \text{Salt inflow rate} - \text{Salt outflow rate}
   $$
+
   Substituting:
+
   $$
   \frac{dA}{dt} = 3 - 0.25 \cdot \frac{A(t)}{5 + 0.25t}
   $$
 
 - **Initial condition:**  
-  At $t = 0$, the concentration in the tank is 25 g/m$^3$ over 5 m$^3$, so the initial amount of salt is:
+  At $t = 0$, the concentration in the tank is 25 g/m$^3$ over 5 m$^3$, so the
+  initial amount of salt is:
   $$
   A(0) = 25 \cdot 5 = 125 \, \text{g}
   $$
 
 The IVP is:
+
 $$
 \frac{dA}{dt} = 3 - 0.25 \cdot \frac{A(t)}{5 + 0.25t}, \quad A(0) = 125
-  $$
-
+$$
 
 #### (b) Solve the IVP. For what values of $t$ is this problem valid?
+
 Solve this **linear differential equation** using an integrating factor.
 
 1. **Rewrite the equation:**
+
    $$
    \frac{dA}{dt} + \frac{0.25}{5 + 0.25t} A(t) = 3
    $$
 
 2. **Find the integrating factor:**
+
    $$
    \mu(t) = e^{\int \frac{0.25}{5 + 0.25t} \, dt}
    $$
+
    Let $u = 5 + 0.25t$, so $du = 0.25 \, dt$. The integral becomes:
+
    $$
    \mu(t) = e^{\ln(u)} = u = 5 + 0.25t
    $$
 
 3. **Multiply both sides by the integrating factor:**
+
    $$
    (5 + 0.25t) \frac{dA}{dt} + 0.25 A(t) = 3(5 + 0.25t)
    $$
 
 4. **Rewrite as a derivative:**
+
    $$
    \frac{d}{dt} \left( A(t) (5 + 0.25t) \right) = 3(5 + 0.25t)
    $$
 
 5. **Integrate both sides:**
+
    $$
    A(t) (5 + 0.25t) = \int 3(5 + 0.25t) \, dt
    $$
+
    $$
    A(t) (5 + 0.25t) = 3 \left( 5t + \frac{0.25}{2} t^2 \right) + C
    $$
+
    $$
    A(t) (5 + 0.25t) = 15t + 0.375t^2 + C
    $$
 
 6. **Solve for $A(t)$:**
+
    $$
    A(t) = \frac{15t + 0.375t^2 + C}{5 + 0.25t}
    $$
 
 7. **Apply the initial condition $A(0) = 125$:**
+
    $$
    125 = \frac{15(0) + 0.375(0)^2 + C}{5 + 0.25(0)} = \frac{C}{5}
    $$
+
    $$
    C = 125 \cdot 5 = 625
    $$
@@ -767,11 +866,12 @@ Solve this **linear differential equation** using an integrating factor.
    A(t) = \frac{15t + 0.375t^2 + 625}{5 + 0.25t}
    $$
 
-The solution is valid as long as the volume in the tank does not exceed 25 m$^3$, meaning:
+The solution is valid as long as the volume in the tank does not exceed 25
+m$^3$, meaning:
+
 $$
 5 + 0.25t \leq 25 \quad \Rightarrow \quad t \leq 80 \, \text{min}.
 $$
-
 
 #### (c) At exactly what time will the least amount of salt be present in the tank? How much salt will there be at that time?
 
@@ -787,7 +887,8 @@ $$
 A(t) = \frac{15t + 0.375t^2 + 625}{5 + 0.25t}
 $$
 
-We want to find the time $t$ when the amount of salt in the tank is minimized. This occurs when:
+We want to find the time $t$ when the amount of salt in the tank is minimized.
+This occurs when:
 
 $$
 \frac{dA}{dt} = 0
@@ -821,8 +922,8 @@ $$
 A(15.59) = \frac{949.95}{8.8975} \approx 106.75 \, \text{grams}
 $$
 
-At $t \approx 15.59$ minutes, the amount of salt in the tank will be approximately **106.75 grams**.
-
+At $t \approx 15.59$ minutes, the amount of salt in the tank will be
+approximately **106.75 grams**.
 
 #### (d) Plot a direction field and solution curve.
 
@@ -876,18 +977,25 @@ plt.show()
 
 ```
 
-
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
 
-- **(a):** The IVP is $\frac{dA}{dt} = 3 - 0.25 \cdot \frac{A(t)}{5 + 0.25t}, \quad A(0) = 125$.
-- **(b):** The solution is $A(t) = \frac{15t + 0.375t^2 + 625}{5 + 0.25t}$, valid for $t \leq 80 \, \text{min}$.
-- **(c):** The least amount of salt is approximately **106.75 grams**, which occurs at $t \approx 15.59 \, \text{min}$.
-- **(d):** The direction field plot shows how the salt content evolves over time, with the solution curve representing the salt content decreasing to a minimum of about 106.75 grams before increasing again.
+- **(a):** The IVP is
+  $\frac{dA}{dt} = 3 - 0.25 \cdot \frac{A(t)}{5 + 0.25t}, \quad A(0) = 125$.
+- **(b):** The solution is $A(t) = \frac{15t + 0.375t^2 + 625}{5 + 0.25t}$,
+  valid for $t \leq 80 \, \text{min}$.
+- **(c):** The least amount of salt is approximately **106.75 grams**, which
+  occurs at $t \approx 15.59 \, \text{min}$.
+- **(d):** The direction field plot shows how the salt content evolves over
+  time, with the solution curve representing the salt content decreasing to a
+  minimum of about 106.75 grams before increasing again.
+
 :::
 :::
 
 ::: {.callout-note icon=false collapse="true"}
+
 ## 2.4.15
 
 ### Solution:
@@ -906,10 +1014,10 @@ where:
 - $k$ is the cooling constant,
 - $t$ is the time in **hours** after the furnace fails (starting at 10 pm).
 
-
 #### Find the Cooling Constant $k$
 
-At 2 am (4 hours after the furnace failure), the indoor temperature is $60^\circ \text{F}$. Substituting into the formula:
+At 2 am (4 hours after the furnace failure), the indoor temperature is
+$60^\circ \text{F}$. Substituting into the formula:
 
 $$
 60 = 4 + (68 - 4) e^{-4k}.
@@ -937,11 +1045,10 @@ $$
 k = \frac{\ln\left(\frac{7}{8}\right)}{-4} = \frac{\ln(7)-\ln(8)}{-4} = \frac{\ln(8)-\ln(7)}{4}
 $$
 
-
 #### Find the Time When $T(t) = 32^\circ \text{F}$
 
-We want to find the time $t$ when the indoor temperature reaches $32^\circ \text{F}$. Substituting into the formula:
-
+We want to find the time $t$ when the indoor temperature reaches
+$32^\circ \text{F}$. Substituting into the formula:
 
 $$
 32 = 4 + 64 e^{\frac{\ln(8) - \ln(7)}{4} \cdot (-t)}.
@@ -995,10 +1102,10 @@ $$
 t = \frac{4 \left(\ln(7) - 4 \ln(2)\right)}{\ln(7) - \ln(8)} \approx 24.76
 $$
 
-
 #### Determine the Exact Time
 
-The furnace failed at **10 pm**, so the temperature will drop to $32^\circ \text{F}$ approximately:
+The furnace failed at **10 pm**, so the temperature will drop to
+$32^\circ \text{F}$ approximately:
 
 $$
 10 \, \text{pm} + 24.76 \, \text{hours}.
@@ -1010,11 +1117,15 @@ $$
 0.76 \times 60 = 45.6 \, \text{minutes}.
 $$
 
-The indoor temperature will reach $32^\circ \text{F}$ at approximately **10:45 pm the following day**.
-
+The indoor temperature will reach $32^\circ \text{F}$ at approximately **10:45
+pm the following day**.
 
 ::: {.callout-tip icon=false}
+
 ## **Final Answer:**
-The homeowner will need to start worrying about the pipes freezing at after **24.76 hours** or at approximately **10:45 pm the following day**.
+
+The homeowner will need to start worrying about the pipes freezing at after
+**24.76 hours** or at approximately **10:45 pm the following day**.
+
 :::
 :::

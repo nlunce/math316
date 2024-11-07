@@ -4921,19 +4921,24 @@ window.Quarto = {
 <section id="solution" class="level3">
 <h3 class="anchored" data-anchor-id="solution">Solution:</h3>
 <ol type="1">
-<li><p>Rewrite the equation: <span class="math display">
+<li><p>Rewrite the equation:</p>
+<p><span class="math display">
 \frac{dy}{dt} = 10y
 </span></p></li>
-<li><p>Separate the variables <span class="math inline">y</span> and <span class="math inline">t</span>: <span class="math display">
+<li><p>Separate the variables <span class="math inline">y</span> and <span class="math inline">t</span>:</p>
+<p><span class="math display">
 \frac{1}{y} \, dy = 10 \, dt
 </span></p></li>
-<li><p>Integrate both sides: <span class="math display">
+<li><p>Integrate both sides:</p>
+<p><span class="math display">
 \int \frac{1}{y} \, dy = \int 10 \, dt
 </span></p></li>
-<li><p>The result of the integration is: <span class="math display">
+<li><p>The result of the integration is:</p>
+<p><span class="math display">
 \ln|y| = 10t + C
 </span></p></li>
-<li><p>Exponentiate both sides to solve for <span class="math inline">y</span>: <span class="math display">
+<li><p>Exponentiate both sides to solve for <span class="math inline">y</span>:</p>
+<p><span class="math display">
 |y| = e^{10t + C} = e^C \cdot e^{10t}
 </span></p></li>
 <li><p>Let <span class="math inline">A = e^C</span>: <span class="math display">
@@ -4976,59 +4981,76 @@ y = A e^{10t}
 <section id="solution-1" class="level3">
 <h3 class="anchored" data-anchor-id="solution-1">Solution:</h3>
 <ol type="1">
-<li><p>Rewrite the equation: <span class="math display">
+<li><p>Rewrite the equation:</p>
+<p><span class="math display">
 t^2 \frac{dy}{dt} + y^2 = 1
 </span></p></li>
-<li><p>Rearrange the equation to isolate <span class="math inline">\frac{dy}{dt}</span>: <span class="math display">
+<li><p>Rearrange the equation to isolate <span class="math inline">\frac{dy}{dt}</span>:</p>
+<p><span class="math display">
 t^2 \frac{dy}{dt} = 1 - y^2
 </span></p></li>
-<li><p>Separate the variables <span class="math inline">y</span> and <span class="math inline">t</span>: <span class="math display">
+<li><p>Separate the variables <span class="math inline">y</span> and <span class="math inline">t</span>:</p>
+<p><span class="math display">
 \frac{dy}{1 - y^2} = \frac{dt}{t^2}
 </span></p></li>
-<li><p>Now use partial fraction decomposition on <span class="math inline">\frac{1}{1 - y^2}</span>: <span class="math display">
+<li><p>Now use partial fraction decomposition on <span class="math inline">\frac{1}{1 - y^2}</span>:</p>
+<p><span class="math display">
 \frac{1}{1 - y^2} = \frac{1}{2} \left( \frac{1}{1 - y} + \frac{1}{1 + y} \right)
 </span></p></li>
-<li><p>Substitute the partial fraction decomposition back into the equation: <span class="math display">
+<li><p>Substitute the partial fraction decomposition back into the equation:</p>
+<p><span class="math display">
 \frac{1}{2} \left( \frac{1}{1 - y} + \frac{1}{1 + y} \right) dy = \frac{dt}{t^2}
 </span></p></li>
 <li><p>Integrate both sides:</p>
 <ul>
-<li><p>Left-hand side: <span class="math display">
+<li><p>Left-hand side:</p>
+<p><span class="math display">
 \frac{1}{2} \left( \int \frac{1}{1 - y} \, dy + \int \frac{1}{1 + y} \, dy \right)
 = \frac{1}{2} \left( -\ln|1 - y| + \ln|1 + y| \right)
-</span> Simplifying: <span class="math display">
+</span></p>
+<p>Simplifying:</p>
+<p><span class="math display">
 \frac{1}{2} \ln\left|\frac{1 + y}{1 - y}\right|
 </span></p></li>
 <li><p>Right-hand side: <span class="math display">
 \int \frac{1}{t^2} \, dt = -\frac{1}{t}
 </span></p></li>
 </ul></li>
-<li><p>Combine the integrals: <span class="math display">
+<li><p>Combine the integrals:</p>
+<p><span class="math display">
 \frac{1}{2} \ln\left|\frac{1 + y}{1 - y}\right| = -\frac{1}{t} + C
 </span></p></li>
-<li><p>Multiply through by 2: <span class="math display">
+<li><p>Multiply through by 2:</p>
+<p><span class="math display">
 \ln\left|\frac{1 + y}{1 - y}\right| = -\frac{2}{t} + 2C
 </span></p></li>
-<li><p>Exponentiate both sides to remove the logarithm: <span class="math display">
+<li><p>Exponentiate both sides to remove the logarithm:</p>
+<p><span class="math display">
 \left|\frac{1 + y}{1 - y}\right| = e^{-\frac{2}{t} + 2C}
 </span></p></li>
-<li><p>Let <span class="math inline">A = e^{2C}</span>, which simplifies the equation to: <span class="math display">
+<li><p>Let <span class="math inline">A = e^{2C}</span>, which simplifies the equation to:</p>
+<p><span class="math display">
 \frac{1 + y}{1 - y} = A e^{-\frac{2}{t}}
 </span></p></li>
 <li><p>Solve for <span class="math inline">y</span>:</p>
-<p>Cross-multiply: <span class="math display">
+<p>Cross-multiply:</p>
+<p><span class="math display">
 1 + y = (1 - y) A e^{-\frac{2}{t}}
 </span></p>
-<p>Expand the right-hand side: <span class="math display">
+<p>Expand the right-hand side:</p>
+<p><span class="math display">
 1 + y = A e^{-\frac{2}{t}} - A e^{-\frac{2}{t}} y
 </span></p>
-<p>Now gather terms involving <span class="math inline">y</span> on one side: <span class="math display">
+<p>Now gather terms involving <span class="math inline">y</span> on one side:</p>
+<p><span class="math display">
 y + A e^{-\frac{2}{t}} y = A e^{-\frac{2}{t}} - 1
 </span></p>
-<p>Factor out <span class="math inline">y</span> on the left-hand side: <span class="math display">
+<p>Factor out <span class="math inline">y</span> on the left-hand side:</p>
+<p><span class="math display">
 y(1 + A e^{-\frac{2}{t}}) = A e^{-\frac{2}{t}} - 1
 </span></p>
-<p>Solve for <span class="math inline">y</span>: <span class="math display">
+<p>Solve for <span class="math inline">y</span>:</p>
+<p><span class="math display">
 y = \frac{A e^{-\frac{2}{t}} - 1}{1 + A e^{-\frac{2}{t}}}
 </span></p></li>
 </ol>
@@ -5042,9 +5064,11 @@ y = \frac{A e^{-\frac{2}{t}} - 1}{1 + A e^{-\frac{2}{t}}}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The general solution is: <span class="math display">
+<p>The general solution is:</p>
+<p><span class="math display">
 y = \frac{A e^{-\frac{2}{t}} - 1}{1 + A e^{-\frac{2}{t}}}
-</span> where <span class="math inline">A</span> is the constant of integration.</p>
+</span></p>
+<p>where <span class="math inline">A</span> is the constant of integration.</p>
 </div>
 </div>
 </section>
@@ -5065,7 +5089,8 @@ y = \frac{A e^{-\frac{2}{t}} - 1}{1 + A e^{-\frac{2}{t}}}
 <div class="callout-body-container callout-body">
 <section id="problem-2" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2">Problem:</h3>
-<p>Solve the differential equation: <span class="math display">
+<p>Solve the differential equation:</p>
+<p><span class="math display">
 y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}
 </span></p>
 </section>
@@ -5073,62 +5098,82 @@ y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}
 <h3 class="anchored" data-anchor-id="solution-2">Solution:</h3>
 <ol type="1">
 <li><p><strong>Rearrange the equation:</strong></p>
-<p>Start by moving all terms involving <span class="math inline">\frac{dy}{dt}</span> to one side: <span class="math display">
+<p>Start by moving all terms involving <span class="math inline">\frac{dy}{dt}</span> to one side:</p>
+<p><span class="math display">
 y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}
-</span> Rearranging the terms involving <span class="math inline">\frac{dy}{dt}</span>: <span class="math display">
+</span></p>
+<p>Rearranging the terms involving <span class="math inline">\frac{dy}{dt}</span>:</p>
+<p><span class="math display">
 y = 6 + \frac{dy}{dt} \left( 3t^2 - t \right)
 </span></p></li>
 <li><p><strong>Solve for <span class="math inline">\frac{dy}{dt}</span>:</strong></p>
-<p>Isolate <span class="math inline">\frac{dy}{dt}</span>: <span class="math display">
+<p>Isolate <span class="math inline">\frac{dy}{dt}</span>:</p>
+<p><span class="math display">
 y - 6 = \frac{dy}{dt} (3t^2 - t)
-</span> Now, solve for <span class="math inline">\frac{dy}{dt}</span>: <span class="math display">
+</span></p>
+<p>Now, solve for <span class="math inline">\frac{dy}{dt}</span>:</p>
+<p><span class="math display">
 \frac{dy}{dt} = \frac{y - 6}{3t^2 - t}
 </span></p></li>
 <li><p><strong>Separate the variables:</strong></p>
-<p>Separate the variables <span class="math inline">y</span> and <span class="math inline">t</span>: <span class="math display">
+<p>Separate the variables <span class="math inline">y</span> and <span class="math inline">t</span>:</p>
+<p><span class="math display">
 \frac{dy}{y - 6} = \frac{dt}{t(1 - 3t)}
 </span></p></li>
 <li><p><strong>Integrate both sides:</strong></p>
 <p>Now we will integrate both sides:</p>
 <ul>
-<li><p>The left-hand side: <span class="math display">
+<li><p>The left-hand side:</p>
+<p><span class="math display">
 \int \frac{1}{y - 6} \, dy = \ln|y - 6|
 </span></p></li>
 <li><p>The right-hand side can be handled by using partial fraction decomposition on <span class="math inline">\frac{1}{t(1 - 3t)}</span>:</p>
-<p>We decompose: <span class="math display">
+<p>We decompose:</p>
+<p><span class="math display">
 \frac{1}{t(1 - 3t)} = \frac{A}{t} + \frac{B}{1 - 3t}
 </span></p>
-<p>Multiply both sides by <span class="math inline">t(1 - 3t)</span>: <span class="math display">
+<p>Multiply both sides by <span class="math inline">t(1 - 3t)</span>:</p>
+<p><span class="math display">
 1 = A(1 - 3t) + Bt
 </span></p>
-<p>Expand: <span class="math display">
+<p>Expand:</p>
+<p><span class="math display">
 1 = A - 3At + Bt
 </span></p>
-<p>Group terms involving <span class="math inline">t</span>: <span class="math display">
+<p>Group terms involving <span class="math inline">t</span>:</p>
+<p><span class="math display">
 1 = A + t(B - 3A)
 </span></p>
-<p>Equating coefficients gives the system: <span class="math display">
+<p>Equating coefficients gives the system:</p>
+<p><span class="math display">
 A = 1 \quad \text{and} \quad B - 3A = 0
-</span> From <span class="math inline">A = 1</span>, we have <span class="math inline">B = 3</span>.</p>
-<p>The partial fraction decomposition is: <span class="math display">
+</span></p>
+<p>From <span class="math inline">A = 1</span>, we have <span class="math inline">B = 3</span>.</p>
+<p>The partial fraction decomposition is:</p>
+<p><span class="math display">
 \frac{1}{t(1 - 3t)} = \frac{1}{t} + \frac{3}{1 - 3t}
 </span></p>
-<p>Now integrate both terms: <span class="math display">
+<p>Now integrate both terms:</p>
+<p><span class="math display">
 \int \frac{1}{t} \, dt + \int \frac{3}{1 - 3t} \, dt = \ln|t| - \ln|1 - 3t|
 </span></p></li>
 </ul></li>
 <li><p><strong>Combine the integrals:</strong></p>
-<p>Combine the results from both sides: <span class="math display">
+<p>Combine the results from both sides:</p>
+<p><span class="math display">
 \ln|y - 6| = \ln|t| - \ln|1 - 3t| + C
 </span></p></li>
 <li><p><strong>Simplify the logarithms:</strong></p>
-<p>Simplify the right-hand side using properties of logarithms: <span class="math display">
+<p>Simplify the right-hand side using properties of logarithms:</p>
+<p><span class="math display">
 \ln|y - 6| = \ln\left|\frac{t}{1 - 3t}\right| + C
 </span></p>
-<p>Exponentiate both sides to remove the logarithms: <span class="math display">
+<p>Exponentiate both sides to remove the logarithms:</p>
+<p><span class="math display">
 |y - 6| = e^C \left|\frac{t}{1 - 3t}\right|
 </span></p>
-<p>Let <span class="math inline">A = e^C</span>, so: <span class="math display">
+<p>Let <span class="math inline">A = e^C</span>, so:</p>
+<p><span class="math display">
 y - 6 = A \frac{t}{1 - 3t}
 </span></p></li>
 <li><p><strong>Solve for <span class="math inline">y</span>:</strong></p>
@@ -5146,9 +5191,11 @@ y = 6 + A \frac{t}{1 - 3t}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The solution to the differential equation is: <span class="math display">
+<p>The solution to the differential equation is:</p>
+<p><span class="math display">
 y = 6 + A \frac{t}{1 - 3t}
-</span> where <span class="math inline">A</span> is the constant of integration.</p>
+</span></p>
+<p>where <span class="math inline">A</span> is the constant of integration.</p>
 </div>
 </div>
 </section>
@@ -5178,7 +5225,8 @@ y = 6 + A \frac{t}{1 - 3t}
 y = A e^{10t}
 </span></p>
 <ol type="1">
-<li><p>Use the initial condition <span class="math inline">y(0) = 3</span> to find <span class="math inline">A</span>: <span class="math display">
+<li><p>Use the initial condition <span class="math inline">y(0) = 3</span> to find <span class="math inline">A</span>:</p>
+<p><span class="math display">
 y(0) = A e^{10 \cdot 0} = A = 3
 </span></p>
 <p>Therefore, <span class="math inline">A = 3</span>.</p></li>
@@ -5199,8 +5247,8 @@ y = 3 e^{10t}
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">10</span> <span class="op">*</span> y</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate grid for direction field</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">20</span>)  </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">30</span>, <span class="dv">20</span>)   </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">20</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">30</span>, <span class="dv">20</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>T, Y <span class="op">=</span> np.meshgrid(t, y)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate slope for direction field</span></span>
@@ -5215,7 +5263,7 @@ y = 3 e^{10t}
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.quiver(T, Y, T_dir, Y_dir, angles<span class="op">=</span><span class="st">&quot;xy&quot;</span>, color<span class="op">=</span><span class="st">&quot;gray&quot;</span>)</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the solution curve </span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the solution curve</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>t_vals <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">200</span>)</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> np.exp(<span class="dv">10</span> <span class="op">*</span> t_vals)</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
@@ -5253,9 +5301,11 @@ y = 3 e^{10t}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The solution to the initial value problem is: <span class="math display">
+<p>The solution to the initial value problem is:</p>
+<p><span class="math display">
 y = 3 e^{10t}
-</span> This solution represents exponential growth with an initial value of 3 at <span class="math inline">t = 0</span>, as reflected in the direction field and solution curve plot.</p>
+</span></p>
+<p>This solution represents exponential growth with an initial value of 3 at <span class="math inline">t = 0</span>, as reflected in the direction field and solution curve plot.</p>
 </div>
 </div>
 </section>
@@ -5277,37 +5327,46 @@ y = 3 e^{10t}
 <div class="callout-body-container callout-body">
 <section id="problem-4" class="level3">
 <h3 class="anchored" data-anchor-id="problem-4">Problem:</h3>
-<p>Solve the initial value problem: <span class="math display">
+<p>Solve the initial value problem:</p>
+<p><span class="math display">
 y - t \frac{dy}{dt} = 6 - 3t^2 \frac{dy}{dt}, \quad y(1) = 5
 </span></p>
 </section>
 <section id="solution-4" class="level3">
 <h3 class="anchored" data-anchor-id="solution-4">Solution:</h3>
-<p>We know from <strong>Problem 2.5.23</strong> that the general solution to this differential equation is: <span class="math display">
+<p>We know from <strong>Problem 2.5.23</strong> that the general solution to this differential equation is:</p>
+<p><span class="math display">
 y = 6 + A \frac{t}{1 - 3t}
 </span></p>
 <p>Use the initial condition <span class="math inline">y(1) = 5</span> to find the value of <span class="math inline">A</span>.</p>
 <ol type="1">
-<li><p><strong>Substitute the initial condition <span class="math inline">t = 1</span> and <span class="math inline">y = 5</span> into the general solution:</strong> <span class="math display">
+<li><p><strong>Substitute the initial condition <span class="math inline">t = 1</span> and <span class="math inline">y = 5</span> into the general solution:</strong></p>
+<p><span class="math display">
 5 = 6 + A \frac{1}{1 - 3 \cdot 1}
 </span></p></li>
-<li><p><strong>Simplify the equation:</strong> <span class="math display">
+<li><p><strong>Simplify the equation:</strong></p>
+<p><span class="math display">
 5 = 6 + A \frac{1}{-2}
-</span> This simplifies to: <span class="math display">
+</span></p>
+<p>This simplifies to:</p>
+<p><span class="math display">
 5 = 6 - \frac{A}{2}
 </span></p></li>
 <li><p><strong>Solve for <span class="math inline">A</span>:</strong></p>
-<p>Subtract 6 from both sides: <span class="math display">
+<p>Subtract 6 from both sides:</p>
+<p><span class="math display">
 -1 = -\frac{A}{2}
 </span></p>
-<p>Multiply both sides by -2: <span class="math display">
+<p>Multiply both sides by -2:</p>
+<p><span class="math display">
 A = 2
 </span></p></li>
 <li><p><strong>Substitute <span class="math inline">A = 2</span> into the general solution:</strong> <span class="math display">
 y = 6 + 2 \frac{t}{1 - 3t}
 </span></p></li>
 </ol>
-<p>The particular solution to the initial value problem is: <span class="math display">
+<p>The particular solution to the initial value problem is:</p>
+<p><span class="math display">
 y = 6 + \frac{2t}{1 - 3t}
 </span></p>
 <section id="plotting-the-direction-field-and-solution-1" class="level4">
@@ -5320,8 +5379,8 @@ y = 6 + \frac{2t}{1 - 3t}
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (y <span class="op">-</span> <span class="dv">6</span>) <span class="op">/</span> (t <span class="op">-</span> (<span class="dv">3</span> <span class="op">*</span> t<span class="op">**</span><span class="dv">2</span>))</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate grid for direction field</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">20</span>)  </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">20</span>)    </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">20</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">20</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>T, Y <span class="op">=</span> np.meshgrid(t, y)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate slope for direction field</span></span>
@@ -5337,7 +5396,7 @@ y = 6 + \frac{2t}{1 - 3t}
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.quiver(T, Y, T_dir, Y_dir, angles<span class="op">=</span><span class="st">&quot;xy&quot;</span>, color<span class="op">=</span><span class="st">&quot;gray&quot;</span>)</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the particular solution curve y = 6 + 2t / (1 - 3t)</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>t_vals <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">200</span>)  </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>t_vals <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> ((<span class="dv">2</span> <span class="op">*</span> t_vals) <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> <span class="dv">3</span> <span class="op">*</span> t_vals))</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.plot(t_vals, y_vals, <span class="st">&#39;r&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&quot;Particular Solution&quot;</span>)</span>
@@ -5346,8 +5405,8 @@ y = 6 + \frac{2t}{1 - 3t}
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Direction Field and Particular Solution&quot;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;t&quot;</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;y&quot;</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="fl">0.5</span>, <span class="dv">5</span>]) </span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">5</span>, <span class="dv">6</span>]) </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="fl">0.5</span>, <span class="dv">5</span>])</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">5</span>, <span class="dv">6</span>])</span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Add grid and legend</span></span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
@@ -5374,7 +5433,8 @@ y = 6 + \frac{2t}{1 - 3t}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The solution to the initial value problem is: <span class="math display">
+<p>The solution to the initial value problem is:</p>
+<p><span class="math display">
 y = 6 + \frac{2t}{1 - 3t}
 </span></p>
 </div>
@@ -5398,41 +5458,52 @@ y = 6 + \frac{2t}{1 - 3t}
 <div class="callout-body-container callout-body">
 <section id="problem-5" class="level3">
 <h3 class="anchored" data-anchor-id="problem-5">Problem:</h3>
-<p>Solve the initial value problem: <span class="math display">
+<p>Solve the initial value problem:</p>
+<p><span class="math display">
 (y + t) y&#39; + y = t, \quad y(0) = 1
-</span> with the initial condition <span class="math inline">y(0) = 1</span>, and then plot an appropriate direction field and sketch your solution.</p>
+</span></p>
+<p>with the initial condition <span class="math inline">y(0) = 1</span>, and then plot an appropriate direction field and sketch your solution.</p>
 </section>
 <section id="solution-5" class="level3">
 <h3 class="anchored" data-anchor-id="solution-5">Solution:</h3>
 <section id="rearrange-the-equation" class="level4">
 <h4 class="anchored" data-anchor-id="rearrange-the-equation">Rearrange the equation</h4>
-<p>The given equation is: <span class="math display">
+<p>The given equation is:</p>
+<p><span class="math display">
 (y + t) \frac{dy}{dt} + y = t
 </span></p>
-<p>Rewrite it as: <span class="math display">
+<p>Rewrite it as:</p>
+<p><span class="math display">
 \frac{dy}{dt} = \frac{t - y}{y + t}
 </span></p>
-<p>Cross multiply: <span class="math display">
+<p>Cross multiply:</p>
+<p><span class="math display">
 (t-y)dt = (y+t)dy
 </span></p>
-<p>This can be rewritten as: <span class="math display">
+<p>This can be rewritten as:</p>
+<p><span class="math display">
 (y - t) dt + (y + t) dy = 0
 </span></p>
-<p>Which is now in the standard form of an exact equation: <span class="math display">
+<p>Which is now in the standard form of an exact equation:</p>
+<p><span class="math display">
 M(t, y) dt + N(t, y) dy = 0
 </span></p>
 </section>
 <section id="identify-mt-y-and-nt-y" class="level4">
 <h4 class="anchored" data-anchor-id="identify-mt-y-and-nt-y">Identify <span class="math inline">M(t, y)</span> and <span class="math inline">N(t, y)</span></h4>
-<p>From the rewritten form of the equation: <span class="math display">
+<p>From the rewritten form of the equation:</p>
+<p><span class="math display">
 (y - t) dt + (y + t) dy = 0
-</span> we can identify the functions <span class="math inline">M(t, y)</span> and <span class="math inline">N(t, y)</span> as: <span class="math display">
+</span></p>
+<p>we can identify the functions <span class="math inline">M(t, y)</span> and <span class="math inline">N(t, y)</span> as:</p>
+<p><span class="math display">
 M(t, y) = y - t \quad \text{and} \quad N(t, y) = y + t
 </span></p>
 </section>
 <section id="test-for-exactness" class="level4">
 <h4 class="anchored" data-anchor-id="test-for-exactness">Test for exactness</h4>
-<p>To check if the equation is exact, verify the condition for exactness: <span class="math display">
+<p>To check if the equation is exact, verify the condition for exactness:</p>
+<p><span class="math display">
 \frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}
 </span></p>
 <p>Compute the partial derivatives:</p>
@@ -5444,64 +5515,79 @@ M(t, y) = y - t \quad \text{and} \quad N(t, y) = y + t
 </section>
 <section id="find-the-potential-function" class="level4">
 <h4 class="anchored" data-anchor-id="find-the-potential-function">Find the potential function</h4>
-<p>Since the equation is exact, there exists a potential function <span class="math inline">\Phi(t, y)</span> such that: <span class="math display">
+<p>Since the equation is exact, there exists a potential function <span class="math inline">\Phi(t, y)</span> such that:</p>
+<p><span class="math display">
 \frac{\partial \Phi}{\partial t} = M(t, y) = y - t
 \quad \text{and} \quad
 \frac{\partial \Phi}{\partial y} = N(t, y) = y + t
 </span></p>
 <section id="integrate-mt-y-with-respect-to-t" class="level5">
 <h5 class="anchored" data-anchor-id="integrate-mt-y-with-respect-to-t">Integrate <span class="math inline">M(t, y)</span> with respect to <span class="math inline">t</span></h5>
-<p>Integrate <span class="math inline">M(t, y) = y - t</span> with respect to <span class="math inline">t</span>: <span class="math display">
+<p>Integrate <span class="math inline">M(t, y) = y - t</span> with respect to <span class="math inline">t</span>:</p>
+<p><span class="math display">
 \Phi(t, y) = \int (y - t) \, dt = yt - \frac{t^2}{2} + h(y)
-</span> where <span class="math inline">h(y)</span> is a function of <span class="math inline">y</span> only.</p>
+</span></p>
+<p>where <span class="math inline">h(y)</span> is a function of <span class="math inline">y</span> only.</p>
 </section>
 <section id="differentiate-phit-y-with-respect-to-y" class="level5">
 <h5 class="anchored" data-anchor-id="differentiate-phit-y-with-respect-to-y">Differentiate <span class="math inline">\Phi(t, y)</span> with respect to <span class="math inline">y</span></h5>
-<p>Differentiate <span class="math inline">\Phi(t, y)</span> with respect to <span class="math inline">y</span> and set it equal to <span class="math inline">N(t, y) = y + t</span>: <span class="math display">
+<p>Differentiate <span class="math inline">\Phi(t, y)</span> with respect to <span class="math inline">y</span> and set it equal to <span class="math inline">N(t, y) = y + t</span>:</p>
+<p><span class="math display">
 \frac{\partial \Phi}{\partial y} = t + h&#39;(y) = y + t
-</span> Simplifying: <span class="math display">
+</span></p>
+<p>Simplifying:</p>
+<p><span class="math display">
 h&#39;(y) = y
 </span></p>
 </section>
 <section id="integrate-hy" class="level5">
 <h5 class="anchored" data-anchor-id="integrate-hy">Integrate <span class="math inline">h&#39;(y)</span></h5>
-<p>Integrating <span class="math inline">h&#39;(y) = y</span> with respect to <span class="math inline">y</span>: <span class="math display">
+<p>Integrating <span class="math inline">h&#39;(y) = y</span> with respect to <span class="math inline">y</span>:</p>
+<p><span class="math display">
 h(y) = \frac{y^2}{2} + C
 </span></p>
-<p>The potential function is: <span class="math display">
+<p>The potential function is:</p>
+<p><span class="math display">
 \Phi(t, y) = yt - \frac{t^2}{2} + \frac{y^2}{2} + C
 </span></p>
 </section>
 </section>
 <section id="general-solution" class="level4">
 <h4 class="anchored" data-anchor-id="general-solution">General solution</h4>
-<p>The general solution of an exact differential equation is obtained by setting the potential function <span class="math inline">\Phi(t, y)</span> equal to a constant: <span class="math display">
+<p>The general solution of an exact differential equation is obtained by setting the potential function <span class="math inline">\Phi(t, y)</span> equal to a constant:</p>
+<p><span class="math display">
 yt - \frac{t^2}{2} + \frac{y^2}{2} = K
 </span></p>
 </section>
 <section id="apply-the-initial-condition" class="level4">
 <h4 class="anchored" data-anchor-id="apply-the-initial-condition">Apply the initial condition</h4>
-<p>We are given <span class="math inline">y(0) = 1</span>. Substituting <span class="math inline">t = 0</span> and <span class="math inline">y = 1</span> into the equation: <span class="math display">
+<p>We are given <span class="math inline">y(0) = 1</span>. Substituting <span class="math inline">t = 0</span> and <span class="math inline">y = 1</span> into the equation:</p>
+<p><span class="math display">
 1(0) - \frac{0^2}{2} + \frac{1^2}{2} = K
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 K = \frac{1}{2}
 </span></p>
 </section>
 <section id="final-implicit-solution" class="level4">
 <h4 class="anchored" data-anchor-id="final-implicit-solution">Final implicit solution</h4>
-<p>Substitute <span class="math inline">K = \frac{1}{2}</span> back into the equation: <span class="math display">
+<p>Substitute <span class="math inline">K = \frac{1}{2}</span> back into the equation:</p>
+<p><span class="math display">
 yt - \frac{t^2}{2} + \frac{y^2}{2} = \frac{1}{2}
 </span></p>
-<p>Multiply through by 2 to simplify: <span class="math display">
+<p>Multiply through by 2 to simplify:</p>
+<p><span class="math display">
 2yt - t^2 + y^2 = 1
 </span></p>
-<p>This is the implicit solution of the differential equation: <span class="math display">
+<p>This is the implicit solution of the differential equation:</p>
+<p><span class="math display">
 2yt - t^2 + y^2 = 1
 </span></p>
 </section>
 <section id="solve-for-y-using-the-quadratic-formula" class="level4">
 <h4 class="anchored" data-anchor-id="solve-for-y-using-the-quadratic-formula">Solve for <span class="math inline">y</span> using the quadratic formula</h4>
-<p>Solve this quadratic equation for <span class="math inline">y</span>. Rearrange the equation: <span class="math display">
+<p>Solve this quadratic equation for <span class="math inline">y</span>. Rearrange the equation:</p>
+<p><span class="math display">
 y^2 + 2ty + (- t^2 - 1) = 0
 </span></p>
 <p>This is a quadratic equation of the form <span class="math inline">ay^2 + by + c = 0</span>, where:</p>
@@ -5510,35 +5596,49 @@ y^2 + 2ty + (- t^2 - 1) = 0
 <li><span class="math inline">b = 2t</span></li>
 <li><span class="math inline">c = - t^2 - 1</span></li>
 </ul>
-<p>Use the quadratic formula to solve for <span class="math inline">y</span>: <span class="math display">
+<p>Use the quadratic formula to solve for <span class="math inline">y</span>:</p>
+<p><span class="math display">
 y = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-</span> Substitute the values of <span class="math inline">a</span>, <span class="math inline">b</span>, and <span class="math inline">c</span>: <span class="math display">
+</span></p>
+<p>Substitute the values of <span class="math inline">a</span>, <span class="math inline">b</span>, and <span class="math inline">c</span>:</p>
+<p><span class="math display">
 y = \frac{-2t \pm \sqrt{(2t)^2 - 4(1)(- t^2 - 1)}}{2}
-</span> Simplifying: <span class="math display">
+</span></p>
+<p>Simplifying:</p>
+<p><span class="math display">
 y = \frac{-2t \pm \sqrt{4t^2 - 4(- t^2 - 1)}}{2}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 y = \frac{-2t \pm \sqrt{4t^2 + 4 + 4t^2}}{2}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 y = \frac{-2t \pm \sqrt{8t^2 + 4}}{2}
-</span> Factor out 4 from inside the square root: <span class="math display">
+</span></p>
+<p>Factor out 4 from inside the square root:</p>
+<p><span class="math display">
 y = \frac{-2t \pm \sqrt{4(2t^2 + 1)}}{2}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 y = \frac{-2t \pm 2\sqrt{2t^2 + 1}}{2}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 y = -t \pm \sqrt{2t^2 + 1}
 </span></p>
 </section>
 <section id="apply-the-initial-condition-1" class="level4">
 <h4 class="anchored" data-anchor-id="apply-the-initial-condition-1">Apply the initial condition</h4>
-<p>We are given <span class="math inline">y(0) = 1</span>. Substituting <span class="math inline">t = 0</span> into the equation: <span class="math display">
+<p>We are given <span class="math inline">y(0) = 1</span>. Substituting <span class="math inline">t = 0</span> into the equation:</p>
+<p><span class="math display">
 1 = -0 \pm \sqrt{2(0)^2 - 1}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 1 = \pm \sqrt{1}
 </span></p>
 <p><span class="math display">
 1 \ne -1
 </span></p>
-<p>So our only solution is: <span class="math display">
+<p>So our only solution is:</p>
+<p><span class="math display">
 y = -t + \sqrt{2t^2 - 1}
 </span></p>
 </section>
@@ -5552,8 +5652,8 @@ y = -t + \sqrt{2t^2 - 1}
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (t <span class="op">-</span> y) <span class="op">/</span> (y <span class="op">+</span> t)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate grid for direction field</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">20</span>)  </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">20</span>)  </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">20</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">20</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>T, Y <span class="op">=</span> np.meshgrid(t, y)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate slope for direction field</span></span>
@@ -5573,7 +5673,7 @@ y = -t + \sqrt{2t^2 - 1}
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>t <span class="op">+</span> np.sqrt(<span class="dv">2</span> <span class="op">*</span> t<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the particular solution curve</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>t_vals <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">200</span>) </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>t_vals <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> particular_solution(t_vals)</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.plot(t_vals, y_vals, <span class="st">&#39;r&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&quot;Particular Solution&quot;</span>)</span>
@@ -5610,7 +5710,8 @@ y = -t + \sqrt{2t^2 - 1}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The solution to the initial value problem is: <span class="math display">
+<p>The solution to the initial value problem is:</p>
+<p><span class="math display">
 y = -t + \sqrt{2t^2 - 1}
 </span></p>
 </div>
@@ -5660,38 +5761,50 @@ y&#39; + 2ty = 0, \quad y(0) = -2
 <h3 class="anchored" data-anchor-id="solution-6">Solution:</h3>
 <section id="exact-solution" class="level4">
 <h4 class="anchored" data-anchor-id="exact-solution">Exact solution</h4>
-<p>The given equation is: <span class="math display">
+<p>The given equation is:</p>
+<p><span class="math display">
 y&#39; + 2ty = 0
 </span></p>
-<p>This is a first-order linear differential equation, and it can be solved by using an integrating factor. The general form of a linear differential equation is: <span class="math display">
+<p>This is a first-order linear differential equation, and it can be solved by using an integrating factor. The general form of a linear differential equation is:</p>
+<p><span class="math display">
 y&#39; + p(t) y = 0
-</span> where <span class="math inline">p(t) = 2t</span>. The integrating factor <span class="math inline">\mu(t)</span> is: <span class="math display">
+</span></p>
+<p>where <span class="math inline">p(t) = 2t</span>. The integrating factor <span class="math inline">\mu(t)</span> is:</p>
+<p><span class="math display">
 \mu(t) = e^{\int p(t) \, dt} = e^{t^2}
 </span></p>
-<p>Multiplying both sides of the equation by <span class="math inline">e^{t^2}</span>: <span class="math display">
+<p>Multiplying both sides of the equation by <span class="math inline">e^{t^2}</span>:</p>
+<p><span class="math display">
 e^{t^2} y&#39; + 2t e^{t^2} y = 0
 </span></p>
-<p>This simplifies to: <span class="math display">
+<p>This simplifies to:</p>
+<p><span class="math display">
 \frac{d}{dt} \left( e^{t^2} y \right) = 0
 </span></p>
-<p>Integrating both sides: <span class="math display">
+<p>Integrating both sides:</p>
+<p><span class="math display">
 e^{t^2} y = C
 </span></p>
-<p>The general solution is: <span class="math display">
+<p>The general solution is:</p>
+<p><span class="math display">
 y = C e^{-t^2}
 </span></p>
-<p>Apply the initial condition <span class="math inline">y(0) = -2</span>: <span class="math display">
+<p>Apply the initial condition <span class="math inline">y(0) = -2</span>:</p>
+<p><span class="math display">
 -2 = C e^0 \quad \Rightarrow \quad C = -2
 </span></p>
-<p>The particular solution is: <span class="math display">
+<p>The particular solution is:</p>
+<p><span class="math display">
 y = -2 e^{-t^2}
 </span></p>
 </section>
 <section id="eulers-method" class="level4">
 <h4 class="anchored" data-anchor-id="eulers-method">Euler’s method</h4>
-<p>Euler’s method uses the formula: <span class="math display">
+<p>Euler’s method uses the formula:</p>
+<p><span class="math display">
 y_{n+1} = y_n + h f(t_n, y_n)
-</span> where <span class="math inline">f(t, y) = -2ty</span> from the original equation <span class="math inline">y&#39; = -2ty</span>.</p>
+</span></p>
+<p>where <span class="math inline">f(t, y) = -2ty</span> from the original equation <span class="math inline">y&#39; = -2ty</span>.</p>
 <p>We are given <span class="math inline">h = 0.1</span> and the initial condition <span class="math inline">y(0) = -2</span>. We will approximate the solution for <span class="math inline">t \in [0, 1]</span>.</p>
 <ul>
 <li>Step size: <span class="math inline">h = 0.1</span></li>
@@ -5739,7 +5852,7 @@ y_{n+1} = y_n + h f(t_n, y_n)
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>df_comparison <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>table_markdown <span class="op">=</span> df_comparison.to_markdown(index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co"># print(table_markdown) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co"># print(table_markdown)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <table class="caption-top table">
@@ -5850,7 +5963,8 @@ y_{n+1} = y_n + h f(t_n, y_n)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <strong>exact solution</strong> to the differential equation is: <span class="math display">
+<p>The <strong>exact solution</strong> to the differential equation is:</p>
+<p><span class="math display">
 y = -2 e^{-t^2}
 </span></p>
 <p>The graph compares Euler’s method with the exact solution. Euler’s method provides a reasonable approximation but slightly underestimates the true values as <span class="math inline">t</span> increases.</p>
@@ -5876,7 +5990,8 @@ y = -2 e^{-t^2}
 <div class="callout-body-container callout-body">
 <section id="problem-7" class="level3">
 <h3 class="anchored" data-anchor-id="problem-7">Problem:</h3>
-<p>Solve the initial value problem using Euler’s method with <span class="math inline">h = 0.1</span> on the interval <span class="math inline">[0, 1]</span>: <span class="math display">
+<p>Solve the initial value problem using Euler’s method with <span class="math inline">h = 0.1</span> on the interval <span class="math inline">[0, 1]</span>:</p>
+<p><span class="math display">
 y&#39; - y = 0, \quad y(0) = 2
 </span></p>
 <p>In addition, find the exact solution and compare the values and plots of the approximate and exact solutions.</p>
@@ -5885,36 +6000,49 @@ y&#39; - y = 0, \quad y(0) = 2
 <h3 class="anchored" data-anchor-id="solution-7">Solution:</h3>
 <section id="exact-solution-1" class="level4">
 <h4 class="anchored" data-anchor-id="exact-solution-1">Exact Solution</h4>
-<p>The given equation is: <span class="math display">
+<p>The given equation is:</p>
+<p><span class="math display">
 y&#39; - y = 0
-</span> This is a separable differential equation. Rearrange it: <span class="math display">
+</span></p>
+<p>This is a separable differential equation. Rearrange it:</p>
+<p><span class="math display">
 \frac{dy}{dt} = y
 </span></p>
-<p>Separate the variables: <span class="math display">
+<p>Separate the variables:</p>
+<p><span class="math display">
 \frac{1}{y} \, dy = dt
 </span></p>
-<p>Integrate both sides: <span class="math display">
+<p>Integrate both sides:</p>
+<p><span class="math display">
 \int \frac{1}{y} \, dy = \int dt
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \ln|y| = t + C
 </span></p>
-<p>Exponentiate both sides to solve for <span class="math inline">y</span>: <span class="math display">
+<p>Exponentiate both sides to solve for <span class="math inline">y</span>:</p>
+<p><span class="math display">
 |y| = e^{t+C} = e^C \cdot e^t
-</span> Let <span class="math inline">A = e^C</span>, so: <span class="math display">
+</span></p>
+<p>Let <span class="math inline">A = e^C</span>, so:</p>
+<p><span class="math display">
 y = A e^t
 </span></p>
-<p>Use the initial condition <span class="math inline">y(0) = 2</span> to find <span class="math inline">A</span>: <span class="math display">
+<p>Use the initial condition <span class="math inline">y(0) = 2</span> to find <span class="math inline">A</span>:</p>
+<p><span class="math display">
 2 = A e^0 \quad \Rightarrow \quad A = 2
 </span></p>
-<p>The particular solution is: <span class="math display">
+<p>The particular solution is:</p>
+<p><span class="math display">
 y = 2 e^t
 </span></p>
 </section>
 <section id="eulers-method-1" class="level4">
 <h4 class="anchored" data-anchor-id="eulers-method-1">Euler’s Method</h4>
-<p>Euler’s method uses the formula: <span class="math display">
+<p>Euler’s method uses the formula:</p>
+<p><span class="math display">
 y_{n+1} = y_n + h f(t_n, y_n)
-</span> where <span class="math inline">f(t, y) = y</span> (from the original equation <span class="math inline">y&#39; = y</span>).</p>
+</span></p>
+<p>where <span class="math inline">f(t, y) = y</span> (from the original equation <span class="math inline">y&#39; = y</span>).</p>
 <p>Given:</p>
 <ul>
 <li>Step size <span class="math inline">h = 0.1</span></li>
@@ -6068,7 +6196,8 @@ y_{n+1} = y_n + h f(t_n, y_n)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <strong>exact solution</strong> to the differential equation is: <span class="math display">
+<p>The <strong>exact solution</strong> to the differential equation is:</p>
+<p><span class="math display">
 y = 2 e^t
 </span></p>
 <p>The graph compares Euler’s method with the exact solution. Euler’s method provides a reasonable approximation but slightly underestimates the true values as <span class="math inline">t</span> increases.</p>
@@ -6094,28 +6223,36 @@ y = 2 e^t
 <div class="callout-body-container callout-body">
 <section id="problem-8" class="level3">
 <h3 class="anchored" data-anchor-id="problem-8">Problem:</h3>
-<p>Solve the initial value problem using Euler’s method with <span class="math inline">h = 0.1</span> on the interval <span class="math inline">[0, 1]</span>: <span class="math display">
+<p>Solve the initial value problem using Euler’s method with <span class="math inline">h = 0.1</span> on the interval <span class="math inline">[0, 1]</span>:</p>
+<p><span class="math display">
 (y&#39;)^2 - 2y^2 = t, \quad y(0) = 2
-</span> In addition, explain why it is not possible to solve the IVP exactly by established methods.</p>
+</span></p>
+<p>In addition, explain why it is not possible to solve the IVP exactly by established methods.</p>
 </section>
 <section id="solution-8" class="level3">
 <h3 class="anchored" data-anchor-id="solution-8">Solution:</h3>
 <section id="rearrange-the-differential-equation" class="level4">
 <h4 class="anchored" data-anchor-id="rearrange-the-differential-equation">Rearrange the Differential Equation</h4>
-<p>We are given: <span class="math display">
+<p>We are given:</p>
+<p><span class="math display">
 (y&#39;)^2 - 2y^2 = t
-</span> First, solve for <span class="math inline">y&#39;</span>: <span class="math display">
+</span></p>
+<p>First, solve for <span class="math inline">y&#39;</span>:</p>
+<p><span class="math display">
 (y&#39;)^2 = t + 2y^2
 </span></p>
-<p>Taking the square root of both sides (assuming the positive root): <span class="math display">
+<p>Taking the square root of both sides (assuming the positive root):</p>
+<p><span class="math display">
 y&#39; = \sqrt{t + 2y^2}
 </span></p>
 </section>
 <section id="eulers-method-2" class="level4">
 <h4 class="anchored" data-anchor-id="eulers-method-2">Euler’s Method</h4>
-<p>Euler’s method uses the formula: <span class="math display">
+<p>Euler’s method uses the formula:</p>
+<p><span class="math display">
 y_{n+1} = y_n + h f(t_n, y_n)
-</span> where <span class="math inline">f(t, y) = \sqrt{t + 2y^2}</span>, and the initial condition is <span class="math inline">y(0) = 2</span>.</p>
+</span></p>
+<p>where <span class="math inline">f(t, y) = \sqrt{t + 2y^2}</span>, and the initial condition is <span class="math inline">y(0) = 2</span>.</p>
 <p>Given:</p>
 <ul>
 <li>Step size <span class="math inline">h = 0.1</span></li>
@@ -6282,25 +6419,31 @@ y_{n+1} = y_n + h f(t_n, y_n)
 <div class="callout-body-container callout-body">
 <section id="problem-9" class="level3">
 <h3 class="anchored" data-anchor-id="problem-9"><strong>Problem:</strong></h3>
-<p>For a population <span class="math inline">P(t)</span> that exhibits logistic growth according to the general model <span class="math display">
+<p>For a population <span class="math inline">P(t)</span> that exhibits logistic growth according to the general model</p>
+<p><span class="math display">
 \frac{dP}{dt} = kP \left(1 - \frac{P}{A}\right), \quad P(0) = P_0
-</span> where <span class="math inline">k</span> and <span class="math inline">A</span> are constants, solve the following:</p>
+</span></p>
+<p>where <span class="math inline">k</span> and <span class="math inline">A</span> are constants, solve the following:</p>
 <ol type="a">
 <li><p>Determine the values of <span class="math inline">P</span> (in terms of <span class="math inline">A</span> and <span class="math inline">k</span>) for which <span class="math inline">P</span> is an increasing function.</p></li>
 <li><p>Sketch by hand the direction field for the differential equation, clearly indicating the role of the constant <span class="math inline">A</span> in your sketch.</p></li>
 <li><p>Determine the value(s) of <span class="math inline">P</span> (in terms of <span class="math inline">A</span> and <span class="math inline">k</span>) for which <span class="math inline">P</span> is increasing most rapidly, and justify your answer.</p></li>
-<li><p>Solve the initial-value problem explicitly for <span class="math inline">P</span> to show that <span class="math display">
-P(t) = \frac{A}{1 + Me^{-kt}}
-</span> and determine <span class="math inline">M</span> in terms of <span class="math inline">A</span> and <span class="math inline">P_0</span>.</p></li>
+<li><p>Solve the initial-value problem explicitly for <span class="math inline">P</span> to show that</p></li>
 </ol>
+<p><span class="math display">
+P(t) = \frac{A}{1 + Me^{-kt}}
+</span></p>
+<p>and determine <span class="math inline">M</span> in terms of <span class="math inline">A</span> and <span class="math inline">P_0</span>.</p>
 </section>
 <section id="solution-9" class="level3">
 <h3 class="anchored" data-anchor-id="solution-9"><strong>Solution:</strong></h3>
 <section id="part-a" class="level4">
 <h4 class="anchored" data-anchor-id="part-a">Part (a)</h4>
-<p>To determine when <span class="math inline">P(t)</span> is an increasing function, analyze the sign of <span class="math inline">\frac{dP}{dt}</span>: <span class="math display">
+<p>To determine when <span class="math inline">P(t)</span> is an increasing function, analyze the sign of <span class="math inline">\frac{dP}{dt}</span>:</p>
+<p><span class="math display">
 \frac{dP}{dt} = kP \left(1 - \frac{P}{A}\right)
-</span> Since <span class="math inline">k</span> is a positive constant, <span class="math inline">\frac{dP}{dt}</span> will be positive when <span class="math inline">P \left(1 - \frac{P}{A}\right) &gt; 0</span>.</p>
+</span></p>
+<p>Since <span class="math inline">k</span> is a positive constant, <span class="math inline">\frac{dP}{dt}</span> will be positive when <span class="math inline">P \left(1 - \frac{P}{A}\right) &gt; 0</span>.</p>
 <ol type="1">
 <li><span class="math inline">P &gt; 0</span> for population values (negative population is impossible).</li>
 <li>The expression <span class="math inline">1 - \frac{P}{A} &gt; 0</span> implies <span class="math inline">P &lt; A</span>.</li>
@@ -6324,8 +6467,8 @@ P(t) = \frac{A}{1 + Me^{-kt}}
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> k <span class="op">*</span> P <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> P <span class="op">/</span> A)</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>P_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">120</span>, <span class="dv">20</span>)  </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>t_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">20</span>)  </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>P_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">120</span>, <span class="dv">20</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>t_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">20</span>)</span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>P_grid, t_grid <span class="op">=</span> np.meshgrid(P_values, t_values)</span>
@@ -6365,7 +6508,8 @@ P(t) = \frac{A}{1 + Me^{-kt}}
 <h4 class="anchored" data-anchor-id="part-c">Part (c)</h4>
 <p>To find the value of <span class="math inline">P</span> at which <span class="math inline">P</span> is increasing most rapidly take the derivative of <span class="math inline">\frac{dP}{dt}</span> with respect to <span class="math inline">P</span> and set it to zero:</p>
 <ol type="1">
-<li><p>Differentiate with respect to <span class="math inline">P</span>: <span class="math display">
+<li><p>Differentiate with respect to <span class="math inline">P</span>:</p>
+<p><span class="math display">
 \frac{d}{dP}\left(kP \left(1 - \frac{P}{A}\right)\right) = k \left(1 - \frac{2P}{A}\right)
 </span></p></li>
 <li><p>Set the derivative to zero to find the critical point: <span class="math display">
@@ -6386,52 +6530,60 @@ P = \frac{A}{2}
 \frac{dP}{dt} = kP \left(1 - \frac{P}{A}\right)
 </span></p>
 <ol type="1">
-<li><p><strong>Separate variables:</strong><br>
-<span class="math display">
+<li><p><strong>Separate variables:</strong></p>
+<p><span class="math display">
 \frac{1}{P \left(1 - \frac{P}{A}\right)} \, dP = k \, dt
 </span></p></li>
-<li><p><strong>Rewrite the left side using partial fractions:</strong><br>
-<span class="math display">
+<li><p><strong>Rewrite the left side using partial fractions:</strong></p>
+<p><span class="math display">
 \frac{1}{P \left(1 - \frac{P}{A}\right)} = \frac{1}{P} + \frac{1}{A - P}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \left( \frac{1}{P} + \frac{1}{A - P} \right) \, dP = k \, dt
 </span></p></li>
-<li><p><strong>Integrate both sides:</strong><br>
-<span class="math display">
+<li><p><strong>Integrate both sides:</strong></p>
+<p><span class="math display">
 \int \left( \frac{1}{P} + \frac{1}{A - P} \right) \, dP = \int k \, dt
 </span></p></li>
 <li><p><strong>Solve the integrals and multiply by <span class="math inline">-1</span>:</strong></p>
 <p><span class="math display">
 \ln |A - P| - \ln |P| = -kt - C
 </span></p></li>
-<li><p><strong>Combine the logarithms:</strong><br>
-<span class="math display">
+<li><p><strong>Combine the logarithms:</strong></p>
+<p><span class="math display">
 \ln \left| \frac{A - P}{P} \right| = -kt - C
 </span></p></li>
-<li><p><strong>Exponentiate both sides to solve for <span class="math inline">P</span>:</strong><br>
-<span class="math display">
+<li><p><strong>Exponentiate both sides to solve for <span class="math inline">P</span>:</strong></p>
+<p><span class="math display">
 \frac{A - P}{P} = e^{-kt - C} = M e^{-kt} \quad \text{(where $M = e^{-C}$)}
 </span></p></li>
-<li><p><strong>Solve for <span class="math inline">P</span>:</strong><br>
-<span class="math display">
+<li><p><strong>Solve for <span class="math inline">P</span>:</strong></p>
+<p><span class="math display">
 A - P = P \cdot M e^{-kt}
-</span> Move terms involving <span class="math inline">P</span> to one side: <span class="math display">
+</span></p>
+<p>Move terms involving <span class="math inline">P</span> to one side:</p>
+<p><span class="math display">
 P + P \cdot M e^{-kt} = A
-</span> Factor out <span class="math inline">P</span>: <span class="math display">
+</span></p>
+<p>Factor out <span class="math inline">P</span>:</p>
+<p><span class="math display">
 P (1 + M e^{-kt}) = A
-</span> Solve for <span class="math inline">P</span>: <span class="math display">
+</span></p>
+<p>Solve for <span class="math inline">P</span>:</p>
+<p><span class="math display">
 P = \frac{A}{1 + M e^{-kt}}
 </span></p></li>
-<li><p><strong>Apply the initial condition <span class="math inline">P(0) = P_0</span> to determine <span class="math inline">M</span>:</strong><br>
-<span class="math display">
+<li><p><strong>Apply the initial condition <span class="math inline">P(0) = P_0</span> to determine <span class="math inline">M</span>:</strong> <span class="math display">
 P_0 = \frac{A}{1 + M}
 </span> Solving for <span class="math inline">M</span>: <span class="math display">
 M = \frac{A - P_0}{P_0}
 </span></p></li>
 </ol>
-<p>The explicit solution is: <span class="math display">
+<p>The explicit solution is:</p>
+<p><span class="math display">
 P(t) = \frac{A}{1 + \left(\frac{A - P_0}{P_0}\right)e^{-kt}}
-</span> where <span class="math inline">A</span> is the carrying capacity, <span class="math inline">k</span> is the growth rate constant, and <span class="math inline">P_0</span> is the initial population.</p>
+</span></p>
+<p>where <span class="math inline">A</span> is the carrying capacity, <span class="math inline">k</span> is the growth rate constant, and <span class="math inline">P_0</span> is the initial population.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -6471,7 +6623,8 @@ P(t) = \frac{A}{1 + \left(\frac{A - P_0}{P_0}\right)e^{-kt}}
 <div class="callout-body-container callout-body">
 <section id="problem-10" class="level3">
 <h3 class="anchored" data-anchor-id="problem-10"><strong>Problem:</strong></h3>
-<p>Consider the differential equation <span class="math display">
+<p>Consider the differential equation</p>
+<p><span class="math display">
 \frac{dP}{dt} = -0.02 P^2 + 0.08 P
 </span></p>
 <ol type="a">
@@ -6485,11 +6638,13 @@ P(t) = \frac{A}{1 + \left(\frac{A - P_0}{P_0}\right)e^{-kt}}
 <h3 class="anchored" data-anchor-id="solution-10"><strong>Solution:</strong></h3>
 <section id="part-a-1" class="level4">
 <h4 class="anchored" data-anchor-id="part-a-1">Part (a)</h4>
-<p>To find the equilibrium solutions, set <span class="math inline">\frac{dP}{dt} = 0</span>: <span class="math display">
+<p>To find the equilibrium solutions, set <span class="math inline">\frac{dP}{dt} = 0</span>:</p>
+<p><span class="math display">
 -0.02 P^2 + 0.08 P = 0
 </span></p>
 <ol type="1">
-<li><p>Factor out <span class="math inline">P</span>: <span class="math display">
+<li><p>Factor out <span class="math inline">P</span>:</p>
+<p><span class="math display">
 P \left(-0.02 P + 0.08\right) = 0
 </span></p></li>
 <li><p>Set each factor to zero:</p>
@@ -6525,7 +6680,8 @@ P = 4
 <section id="part-c-1" class="level4">
 <h4 class="anchored" data-anchor-id="part-c-1">Part (c)</h4>
 <ol type="1">
-<li><p>Differentiate <span class="math inline">\frac{dP}{dt}</span> with respect to <span class="math inline">P</span>: <span class="math display">
+<li><p>Differentiate <span class="math inline">\frac{dP}{dt}</span> with respect to <span class="math inline">P</span>:</p>
+<p><span class="math display">
 \frac{d}{dP} \left(-0.02 P^2 + 0.08 P\right) = -0.04 P + 0.08
 </span></p></li>
 <li><p>Set the derivative to zero to find the critical point: <span class="math display">
@@ -6540,33 +6696,48 @@ P = 2
 <h4 class="anchored" data-anchor-id="part-d-1">Part (d)</h4>
 <p>To solve for the time <span class="math inline">t</span> when <span class="math inline">P(t) = 3</span> with the initial condition <span class="math inline">P(0) = 0.25</span>, we start by solving the differential equation explicitly.</p>
 <ol type="1">
-<li><p><strong>Rewrite the differential equation:</strong> <span class="math display">
+<li><p><strong>Rewrite the differential equation:</strong></p>
+<p><span class="math display">
 \frac{dP}{dt} = -0.02 P^2 + 0.08 P
-</span> Factor the right side: <span class="math display">
+</span></p>
+<p>Factor the right side:</p>
+<p><span class="math display">
 \frac{dP}{dt} = 0.02 P (4 - P)
 </span></p></li>
-<li><p><strong>Separate variables:</strong> <span class="math display">
+<li><p><strong>Separate variables:</strong></p>
+<p><span class="math display">
 \frac{1}{P (4 - P)} \, dP = 0.02 \, dt
 </span></p></li>
-<li><p><strong>Use partial fraction decomposition on the left side:</strong> <span class="math display">
+<li><p><strong>Use partial fraction decomposition on the left side:</strong></p>
+<p><span class="math display">
 \frac{1}{P (4 - P)} = \frac{1}{4} \left(\frac{1}{P} + \frac{1}{4 - P}\right)
-</span> So the equation becomes: <span class="math display">
+</span></p>
+<p>So the equation becomes:</p>
+<p><span class="math display">
 \frac{1}{4} \left(\frac{1}{P} + \frac{1}{4 - P}\right) \, dP = 0.02 \, dt
 </span></p></li>
-<li><p><strong>Integrate both sides:</strong> <span class="math display">
+<li><p><strong>Integrate both sides:</strong></p>
+<p><span class="math display">
 \int \frac{1}{4} \left(\frac{1}{P} + \frac{1}{4 - P}\right) \, dP = \int 0.02 \, dt
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \frac{1}{4} \left(\ln |P| - \ln |4 - P|\right) = 0.02 t + C
 </span></p></li>
-<li><p><strong>Combine the logarithms:</strong> <span class="math display">
+<li><p><strong>Combine the logarithms:</strong></p>
+<p><span class="math display">
 \ln \left| \frac{P}{4 - P} \right| = 0.08 t + B
-</span> where <span class="math inline">B = 4C</span> is a constant.</p></li>
-<li><p><strong>Exponentiate both sides to solve for <span class="math inline">P</span>:</strong> <span class="math display">
+</span></p>
+<p>where <span class="math inline">B = 4C</span> is a constant.</p></li>
+<li><p><strong>Exponentiate both sides to solve for <span class="math inline">P</span>:</strong></p>
+<p><span class="math display">
 \frac{P}{4 - P} = M e^{0.08 t}
-</span> where <span class="math inline">M = e^{B}</span>.</p></li>
-<li><p><strong>Apply the initial condition <span class="math inline">P(0) = 0.25</span> to find <span class="math inline">M</span>:</strong> <span class="math display">
+</span></p>
+<p>where <span class="math inline">M = e^{B}</span>.</p></li>
+<li><p><strong>Apply the initial condition <span class="math inline">P(0) = 0.25</span> to find <span class="math inline">M</span>:</strong></p>
+<p><span class="math display">
 \frac{0.25}{4 - 0.25} = M
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 M = \frac{0.25}{3.75} = \frac{1}{15}
 </span></p></li>
 <li><p><strong>Solve for <span class="math inline">t</span> when <span class="math inline">P(t) = 3</span>:</strong> <span class="math display">
@@ -6624,9 +6795,11 @@ t = \frac{\ln 45}{0.08}
 </section>
 <section id="solution-11" class="level3">
 <h3 class="anchored" data-anchor-id="solution-11"><strong>Solution:</strong></h3>
-<p><strong>Torricelli’s Law:</strong> <span class="math display">
+<p><strong>Torricelli’s Law:</strong></p>
+<p><span class="math display">
 \frac{dV}{dt} = -a v = -a \sqrt{2gh}
-</span> Where:</p>
+</span></p>
+<p>Where:</p>
 <ul>
 <li><span class="math inline">V</span> is the volume of water in the tank,</li>
 <li><span class="math inline">a</span> is the cross-SECTIONal area of the hole,</li>
@@ -6644,28 +6817,34 @@ t = \frac{\ln 45}{0.08}
 </section>
 <section id="relate-fracdvdt-and-fracdhdt" class="level4">
 <h4 class="anchored" data-anchor-id="relate-fracdvdt-and-fracdhdt">Relate <span class="math inline">\frac{dV}{dt}</span> and <span class="math inline">\frac{dh}{dt}</span></h4>
-<p>The volume <span class="math inline">V</span> of water in the tank is related to the height <span class="math inline">h</span> by <span class="math inline">V = A_t h</span>. <span class="math display">
+<p>The volume <span class="math inline">V</span> of water in the tank is related to the height <span class="math inline">h</span> by <span class="math inline">V = A_t h</span>.</p>
+<p><span class="math display">
 \frac{dV}{dt} = A_t \frac{dh}{dt}
 </span></p>
-<p>Substitute this into our initial equation: <span class="math display">
+<p>Substitute this into our initial equation:</p>
+<p><span class="math display">
 A_t \frac{dh}{dt} = -a \sqrt{2gh}
 </span></p>
 </section>
 <section id="substitute-known-values" class="level4">
 <h4 class="anchored" data-anchor-id="substitute-known-values">Substitute Known Values</h4>
-<p>Substitute <span class="math inline">A_t = \pi \, \text{m}^2</span> and <span class="math inline">a = 2.5 \times 10^{-5} \pi \, \text{m}^2</span>: <span class="math display">
+<p>Substitute <span class="math inline">A_t = \pi \, \text{m}^2</span> and <span class="math inline">a = 2.5 \times 10^{-5} \pi \, \text{m}^2</span>:</p>
+<p><span class="math display">
 \pi \frac{dh}{dt} = -2.5 \times 10^{-5} \pi \sqrt{2gh}
 </span></p>
-<p>Cancel <span class="math inline">\pi</span> from both sides: <span class="math display">
+<p>Cancel <span class="math inline">\pi</span> from both sides:</p>
+<p><span class="math display">
 \frac{dh}{dt} = -2.5 \times 10^{-5} \sqrt{2gh}
 </span></p>
 </section>
 <section id="separate-variables-and-integrate" class="level4">
 <h4 class="anchored" data-anchor-id="separate-variables-and-integrate">Separate Variables and Integrate</h4>
-<p>Rewrite the equation as: <span class="math display">
+<p>Rewrite the equation as:</p>
+<p><span class="math display">
 \frac{dh}{\sqrt{h}} = -2.5 \times 10^{-5} \sqrt{2g} \, dt
 </span></p>
-<p>Integrate both sides with respect to <span class="math inline">h</span> and <span class="math inline">t</span>: <span class="math display">
+<p>Integrate both sides with respect to <span class="math inline">h</span> and <span class="math inline">t</span>:</p>
+<p><span class="math display">
 \int \frac{1}{\sqrt{h}} \, dh = -2.5 \times 10^{-5} \sqrt{2g} \int dt
 </span></p>
 <p><span class="math display">
@@ -6674,24 +6853,31 @@ A_t \frac{dh}{dt} = -a \sqrt{2gh}
 </section>
 <section id="apply-initial-conditions" class="level4">
 <h4 class="anchored" data-anchor-id="apply-initial-conditions">Apply Initial Conditions</h4>
-<p>Initially, <span class="math inline">h(0) = 4</span> meters. Substitute <span class="math inline">h = 4</span> and <span class="math inline">t = 0</span> to solve for <span class="math inline">C</span>: <span class="math display">
+<p>Initially, <span class="math inline">h(0) = 4</span> meters. Substitute <span class="math inline">h = 4</span> and <span class="math inline">t = 0</span> to solve for <span class="math inline">C</span>:</p>
+<p><span class="math display">
 2 \sqrt{4} = C
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 C = 4
 </span></p>
-<p>So the equation becomes: <span class="math display">
+<p>So the equation becomes:</p>
+<p><span class="math display">
 2 \sqrt{h} = -2.5 \times 10^{-5} \sqrt{2g} \, t + 4
 </span></p>
 </section>
 <section id="solve-for-t-when-h-0" class="level4">
 <h4 class="anchored" data-anchor-id="solve-for-t-when-h-0">Solve for <span class="math inline">t</span> when <span class="math inline">h = 0</span></h4>
-<p>When the tank is empty, <span class="math inline">h = 0</span>. Substitute <span class="math inline">h = 0</span> into the equation: <span class="math display">
+<p>When the tank is empty, <span class="math inline">h = 0</span>. Substitute <span class="math inline">h = 0</span> into the equation:</p>
+<p><span class="math display">
 2 \sqrt{0} = -2.5 \times 10^{-5} \sqrt{2g} \, t + 4
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 0 = -2.5 \times 10^{-5} \sqrt{2g} \, t + 4
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 2.5 \times 10^{-5} \sqrt{2g} \, t = 4
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 t = \frac{4}{2.5 \times 10^{-5} \sqrt{2g}}
 </span></p>
 </section>

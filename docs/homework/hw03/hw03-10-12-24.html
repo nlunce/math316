@@ -4938,9 +4938,11 @@ window.Quarto = {
 <li><p>Second derivative:<br>
 <span class="math inline">y&#39;&#39; = 4e^{2t}</span></p></li>
 </ul>
-<p>Substitute into the equation: <span class="math display">
+<p>Substitute into the equation:</p>
+<p><span class="math display">
 4e^{2t} = 4 \cdot e^{2t}
-</span> Both sides match, confirming that <span class="math inline">y = e^{2t}</span> is a solution.</p>
+</span></p>
+<p>Both sides match, confirming that <span class="math inline">y = e^{2t}</span> is a solution.</p>
 </section>
 <section id="part-c" class="level4">
 <h4 class="anchored" data-anchor-id="part-c">Part (c)</h4>
@@ -4951,11 +4953,16 @@ window.Quarto = {
 <li><p>Second derivative:<br>
 <span class="math inline">y&#39;&#39; = r^2 e^{rt}</span></p></li>
 </ul>
-<p>Substitute into the equation: <span class="math display">
+<p>Substitute into the equation:</p>
+<p><span class="math display">
 r^2 e^{rt} = 4 e^{rt}
-</span> Divide by <span class="math inline">e^{rt}</span> (assuming <span class="math inline">e^{rt} \neq 0</span>): <span class="math display">
+</span></p>
+<p>Divide by <span class="math inline">e^{rt}</span> (assuming <span class="math inline">e^{rt} \neq 0</span>):</p>
+<p><span class="math display">
 r^2 = 4
-</span> Solve for <span class="math inline">r</span>: <span class="math display">
+</span></p>
+<p>Solve for <span class="math inline">r</span>:</p>
+<p><span class="math display">
 r = \pm 2
 </span></p>
 <p>Thus, the two solutions are <span class="math inline">y = e^{2t}</span> and <span class="math inline">y = e^{-2t}</span>.</p>
@@ -4995,7 +5002,8 @@ r = \pm 2
 <div class="callout-body-container callout-body">
 <section id="problem-1" class="level3">
 <h3 class="anchored" data-anchor-id="problem-1">Problem:</h3>
-<p>Solve the differential equation: <span class="math display">
+<p>Solve the differential equation:</p>
+<p><span class="math display">
 y&#39; = t + \cos t
 </span></p>
 </section>
@@ -5007,7 +5015,8 @@ y&#39; = t + \cos t
 <p><span class="math display">
 y = \int (t + \cos t) \, dt
 </span></p></li>
-<li><p><strong>Use linearity of integration:</strong> <span class="math display">
+<li><p><strong>Use linearity of integration:</strong></p>
+<p><span class="math display">
 y = \int t \, dt + \int \cos t \, dt
 </span></p></li>
 <li><p><strong>Evaluate the integrals:</strong></p>
@@ -5055,7 +5064,8 @@ y = \frac{t^2}{2} + \sin t + C
 <div class="callout-body-container callout-body">
 <section id="problem-2" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2">Problem:</h3>
-<p>Solve the differential equation: <span class="math display">
+<p>Solve the differential equation:</p>
+<p><span class="math display">
 y&#39; = t \sin t
 </span></p>
 </section>
@@ -5073,10 +5083,12 @@ y = \int t \sin t \, dt
 <li><span class="math inline">u = t</span>, so <span class="math inline">du = dt</span></li>
 <li><span class="math inline">dv = \sin t \, dt</span>, so <span class="math inline">v = -\cos t</span></li>
 </ul>
-<p>Now apply the formula for integration by parts: <span class="math display">
+<p>Now apply the formula for integration by parts:</p>
+<p><span class="math display">
 \int u \, dv = u v - \int v \, du
 </span></p>
-<p>Substituting the values: <span class="math display">
+<p>Substituting the values:</p>
+<p><span class="math display">
 y = -t \cos t - \int (-\cos t) \, dt
 </span></p></li>
 <li><p><strong>Simplify the integral:</strong></p>
@@ -5125,7 +5137,8 @@ y = -t \cos t + \sin t + C
 <div class="callout-body-container callout-body">
 <section id="problem-3" class="level3">
 <h3 class="anchored" data-anchor-id="problem-3">Problem:</h3>
-<p>Solve the initial value problem: <span class="math display">
+<p>Solve the initial value problem:</p>
+<p><span class="math display">
 y&#39; = t e^{-t^2}, \quad y(0) = -1
 </span></p>
 </section>
@@ -5137,7 +5150,8 @@ y&#39; = t e^{-t^2}, \quad y(0) = -1
 y = \int t e^{-t^2} \, dt
 </span></p></li>
 <li><p><strong>Use substitution:</strong></p>
-<p>Let <span class="math inline">u = -t^2</span>, so that: <span class="math display">
+<p>Let <span class="math inline">u = -t^2</span>, so that:</p>
+<p><span class="math display">
 du = -2t \, dt \quad \Rightarrow \quad -\frac{1}{2} du = t \, dt
 </span></p>
 <p>Substituting into the integral:</p>
@@ -5233,7 +5247,8 @@ y = -\frac{1}{2} e^{-t^2} - \frac{1}{2}
 <li>Appear only to the first power (no exponents).</li>
 <li>Are not multiplied by each other.</li>
 </ul>
-<p>The given equation is: <span class="math display">
+<p>The given equation is:</p>
+<p><span class="math display">
 y&#39; + 7y = e^t
 </span></p>
 <ul>
@@ -5282,7 +5297,8 @@ y&#39; + 7y = e^t
 <li>Are not multiplied by each other.</li>
 <li>All coefficients can be functions of <span class="math inline">t</span>, but must not involve <span class="math inline">y(t)</span> or its derivatives nonlinearly.</li>
 </ul>
-<p>Let’s analyze the given equation: <span class="math display">
+<p>Let’s analyze the given equation:</p>
+<p><span class="math display">
 \cos y&#39; + \sin y = t^2
 </span></p>
 <ul>
@@ -5321,7 +5337,8 @@ y&#39; + 7y = e^t
 <div class="callout-body-container callout-body">
 <section id="problem-6" class="level3">
 <h3 class="anchored" data-anchor-id="problem-6">Problem:</h3>
-<p>Solve the differential equation: <span class="math display">
+<p>Solve the differential equation:</p>
+<p><span class="math display">
 y&#39; + y = 0
 </span></p>
 </section>
@@ -5394,27 +5411,33 @@ y = C e^{-t}
 <div class="callout-body-container callout-body">
 <section id="problem-7" class="level3">
 <h3 class="anchored" data-anchor-id="problem-7">Problem:</h3>
-<p>Solve the differential equation: <span class="math display">
+<p>Solve the differential equation:</p>
+<p><span class="math display">
 y&#39; + 2y = 2t
 </span></p>
 </section>
 <section id="solution-7" class="level3">
 <h3 class="anchored" data-anchor-id="solution-7">Solution:</h3>
 <ol type="1">
-<li><p><strong>Rewrite the equation in standard form.</strong> <span class="math display">
+<li><p><strong>Rewrite the equation in standard form.</strong></p>
+<p><span class="math display">
 y&#39; + 2y = 2t
 </span></p></li>
-<li><p><strong>Find the integrating factor.</strong> <span class="math display">
+<li><p><strong>Find the integrating factor.</strong></p>
+<p><span class="math display">
 \mu(t) = e^{\int 2 \, dt} = e^{2t}
 </span></p></li>
-<li><p><strong>Multiply both sides by the integrating factor.</strong> <span class="math display">
+<li><p><strong>Multiply both sides by the integrating factor.</strong></p>
+<p><span class="math display">
 e^{2t} y&#39; + 2 e^{2t} y = 2t e^{2t}
 </span></p>
-<p>The left side becomes: <span class="math display">
+<p>The left side becomes:</p>
+<p><span class="math display">
 \frac{d}{dt} \left( e^{2t} y \right) = 2t e^{2t}
 </span></p></li>
 <li><p><strong>Integrate both sides.</strong></p>
-<p>We need to solve: <span class="math display">
+<p>We need to solve:</p>
+<p><span class="math display">
 e^{2t} y = \int 2t e^{2t} \, dt
 </span></p>
 <p>Using <strong>integration by parts</strong>:</p>
@@ -5429,9 +5452,12 @@ e^{2t} y = \int 2t e^{2t} \, dt
 = t e^{2t} - \frac{1}{2}e^{2t} + C
 </span></p></li>
 <li><p><strong>Solve for <span class="math inline">y</span>.</strong></p>
-<p>Now we have: <span class="math display">
-e^{2t} y = t e^{2t} - \frac{1}{2}e^{2t} + C</span></p>
-<p>Divide both sides by <span class="math inline">e^{2t}</span>: <span class="math display">
+<p>Now we have:</p>
+<p><span class="math display">
+e^{2t} y = t e^{2t} - \frac{1}{2}e^{2t} + C
+</span></p>
+<p>Divide both sides by <span class="math inline">e^{2t}</span>:</p>
+<p><span class="math display">
 y = t - \frac{1}{2} + C e^{-2t}
 </span></p></li>
 </ol>
@@ -5491,58 +5517,74 @@ y = t - \frac{1}{2} + C e^{-2t}
 <h3 class="anchored" data-anchor-id="solution-8">Solution:</h3>
 <section id="step-1-solve-the-differential-equation." class="level4">
 <h4 class="anchored" data-anchor-id="step-1-solve-the-differential-equation.">Step 1: Solve the differential equation.</h4>
-<p>The general solution for exponential decay is: <span class="math display">
+<p>The general solution for exponential decay is:</p>
+<p><span class="math display">
 M(t) = M_0 e^{-kt}
-</span> where <span class="math inline">M_0</span> is the initial amount of moisture.</p>
+</span></p>
+<p>where <span class="math inline">M_0</span> is the initial amount of moisture.</p>
 </section>
 <section id="step-2-use-the-information-that-half-the-moisture-evaporates-in-30-minutes." class="level4">
 <h4 class="anchored" data-anchor-id="step-2-use-the-information-that-half-the-moisture-evaporates-in-30-minutes.">Step 2: Use the information that half the moisture evaporates in 30 minutes.</h4>
-<p>When <span class="math inline">t = 30</span>, the remaining moisture is half of the initial moisture <span class="math inline">M_0</span>: <span class="math display">
+<p>When <span class="math inline">t = 30</span>, the remaining moisture is half of the initial moisture <span class="math inline">M_0</span>:</p>
+<p><span class="math display">
 M(30) = \frac{M_0}{2}
 </span></p>
-<p>Substitute into the general solution: <span class="math display">
+<p>Substitute into the general solution:</p>
+<p><span class="math display">
 \frac{M_0}{2} = M_0 e^{-30k}
 </span></p>
-<p>Divide both sides by <span class="math inline">M_0</span>: <span class="math display">
+<p>Divide both sides by <span class="math inline">M_0</span>:</p>
+<p><span class="math display">
 \frac{1}{2} = e^{-30k}
 </span></p>
-<p>Take the natural logarithm of both sides: <span class="math display">
+<p>Take the natural logarithm of both sides:</p>
+<p><span class="math display">
 \ln \left(\frac{1}{2}\right) = -30k
 </span></p>
-<p>Since <span class="math inline">\ln \left(\frac{1}{2}\right) = -\ln 2</span>, we have: <span class="math display">
+<p>Since <span class="math inline">\ln \left(\frac{1}{2}\right) = -\ln 2</span>, we have:</p>
+<p><span class="math display">
 -\ln 2 = -30k
 </span></p>
-<p>Solve for <span class="math inline">k</span>: <span class="math display">
+<p>Solve for <span class="math inline">k</span>:</p>
+<p><span class="math display">
 k = \frac{\ln 2}{30}
 </span></p>
 </section>
 <section id="step-3-find-the-time-for-95-evaporation." class="level4">
 <h4 class="anchored" data-anchor-id="step-3-find-the-time-for-95-evaporation.">Step 3: Find the time for 95% evaporation.</h4>
-<p>If 95% of the moisture evaporates, 5% remains. So: <span class="math display">
+<p>If 95% of the moisture evaporates, 5% remains. So:</p>
+<p><span class="math display">
 M(t) = 0.05 M_0
 </span></p>
-<p>Substitute into the general solution: <span class="math display">
+<p>Substitute into the general solution:</p>
+<p><span class="math display">
 0.05 M_0 = M_0 e^{-kt}
 </span></p>
-<p>Divide both sides by <span class="math inline">M_0</span>: <span class="math display">
+<p>Divide both sides by <span class="math inline">M_0</span>:</p>
+<p><span class="math display">
 0.05 = e^{-kt}
 </span></p>
-<p>Take the natural logarithm of both sides: <span class="math display">
+<p>Take the natural logarithm of both sides:</p>
+<p><span class="math display">
 \ln(0.05) = -kt
 </span></p>
-<p>Substitute <span class="math inline">k = \frac{\ln 2}{30}</span>: <span class="math display">
+<p>Substitute <span class="math inline">k = \frac{\ln 2}{30}</span>:</p>
+<p><span class="math display">
 \ln(0.05) = -\frac{\ln 2}{30} \cdot t
 </span></p>
-<p>Solve for <span class="math inline">t</span>: <span class="math display">
+<p>Solve for <span class="math inline">t</span>:</p>
+<p><span class="math display">
 t = \frac{30 \ln(0.05)}{-\ln 2}
 </span></p>
 </section>
 <section id="step-4-simplify-the-expression." class="level4">
 <h4 class="anchored" data-anchor-id="step-4-simplify-the-expression.">Step 4: Simplify the expression.</h4>
-<p>Using the fact that <span class="math inline">\ln(0.05) = \ln\left(\frac{1}{20}\right) = -\ln 20</span>, we get: <span class="math display">
+<p>Using the fact that <span class="math inline">\ln(0.05) = \ln\left(\frac{1}{20}\right) = -\ln 20</span>, we get:</p>
+<p><span class="math display">
 t = \frac{30 \ln 20}{\ln 2}
 </span></p>
-<p>Using <span class="math inline">\ln 20 \approx 2.9957</span> and <span class="math inline">\ln 2 \approx 0.6931</span>: <span class="math display">
+<p>Using <span class="math inline">\ln 20 \approx 2.9957</span> and <span class="math inline">\ln 2 \approx 0.6931</span>:</p>
+<p><span class="math display">
 t = \frac{30 \times 2.9957}{0.6931} \approx \frac{89.871}{0.6931} \approx 129.6 \, \text{minutes}.
 </span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -5595,8 +5637,7 @@ t = \frac{30 \times 2.9957}{0.6931} \approx \frac{89.871}{0.6931} \approx 129.6 
 <ul>
 <li>Inflow rate: 0.5 m<span class="math inline">^3</span>/min</li>
 <li>Concentration of inflow: 6 g/m<span class="math inline">^3</span></li>
-<li><strong>Salt inflow rate:</strong><br>
-<span class="math display">
+<li><strong>Salt inflow rate:</strong> <span class="math display">
 \text{Inflow rate of salt} = (0.5 \, \text{m}^3/\text{min}) \cdot (6 \, \text{g/m}^3) = 3 \, \text{g/min}
 </span></li>
 </ul></li>
@@ -5609,16 +5650,20 @@ t = \frac{30 \times 2.9957}{0.6931} \approx \frac{89.871}{0.6931} \approx 129.6 
 </ul></li>
 <li><p><strong>Volume change in the tank:</strong><br>
 Initially, there are 5 m<span class="math inline">^3</span> in the tank, and the inflow adds 0.5 m<span class="math inline">^3</span>/min while the outflow removes 0.25 m<span class="math inline">^3</span>/min.<br>
-So the volume at time <span class="math inline">t</span> is: <span class="math display">
+So the volume at time <span class="math inline">t</span> is:</p>
+<p><span class="math display">
 V(t) = 5 + (0.5 - 0.25)t = 5 + 0.25t \, \text{m}^3
 </span></p></li>
-<li><p><strong>Outflow rate of salt:</strong><br>
-<span class="math display">
+<li><p><strong>Outflow rate of salt:</strong></p>
+<p><span class="math display">
 \text{Outflow rate of salt} = 0.25 \cdot \frac{A(t)}{V(t)}
 </span></p></li>
-<li><p><strong>Differential equation:</strong> The change in salt amount over time is given by: <span class="math display">
+<li><p><strong>Differential equation:</strong> The change in salt amount over time is given by:</p>
+<p><span class="math display">
 \frac{dA}{dt} = \text{Salt inflow rate} - \text{Salt outflow rate}
-</span> Substituting: <span class="math display">
+</span></p>
+<p>Substituting:</p>
+<p><span class="math display">
 \frac{dA}{dt} = 3 - 0.25 \cdot \frac{A(t)}{5 + 0.25t}
 </span></p></li>
 <li><p><strong>Initial condition:</strong><br>
@@ -5626,48 +5671,62 @@ At <span class="math inline">t = 0</span>, the concentration in the tank is 25 g
 A(0) = 25 \cdot 5 = 125 \, \text{g}
 </span></p></li>
 </ul>
-<p>The IVP is: <span class="math display">
+<p>The IVP is:</p>
+<p><span class="math display">
 \frac{dA}{dt} = 3 - 0.25 \cdot \frac{A(t)}{5 + 0.25t}, \quad A(0) = 125
-  </span></p>
+</span></p>
 </section>
 <section id="b-solve-the-ivp.-for-what-values-of-t-is-this-problem-valid" class="level4">
 <h4 class="anchored" data-anchor-id="b-solve-the-ivp.-for-what-values-of-t-is-this-problem-valid">(b) Solve the IVP. For what values of <span class="math inline">t</span> is this problem valid?</h4>
 <p>Solve this <strong>linear differential equation</strong> using an integrating factor.</p>
 <ol type="1">
-<li><p><strong>Rewrite the equation:</strong> <span class="math display">
+<li><p><strong>Rewrite the equation:</strong></p>
+<p><span class="math display">
 \frac{dA}{dt} + \frac{0.25}{5 + 0.25t} A(t) = 3
 </span></p></li>
-<li><p><strong>Find the integrating factor:</strong> <span class="math display">
+<li><p><strong>Find the integrating factor:</strong></p>
+<p><span class="math display">
 \mu(t) = e^{\int \frac{0.25}{5 + 0.25t} \, dt}
-</span> Let <span class="math inline">u = 5 + 0.25t</span>, so <span class="math inline">du = 0.25 \, dt</span>. The integral becomes: <span class="math display">
+</span></p>
+<p>Let <span class="math inline">u = 5 + 0.25t</span>, so <span class="math inline">du = 0.25 \, dt</span>. The integral becomes:</p>
+<p><span class="math display">
 \mu(t) = e^{\ln(u)} = u = 5 + 0.25t
 </span></p></li>
-<li><p><strong>Multiply both sides by the integrating factor:</strong> <span class="math display">
+<li><p><strong>Multiply both sides by the integrating factor:</strong></p>
+<p><span class="math display">
 (5 + 0.25t) \frac{dA}{dt} + 0.25 A(t) = 3(5 + 0.25t)
 </span></p></li>
-<li><p><strong>Rewrite as a derivative:</strong> <span class="math display">
+<li><p><strong>Rewrite as a derivative:</strong></p>
+<p><span class="math display">
 \frac{d}{dt} \left( A(t) (5 + 0.25t) \right) = 3(5 + 0.25t)
 </span></p></li>
-<li><p><strong>Integrate both sides:</strong> <span class="math display">
+<li><p><strong>Integrate both sides:</strong></p>
+<p><span class="math display">
 A(t) (5 + 0.25t) = \int 3(5 + 0.25t) \, dt
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 A(t) (5 + 0.25t) = 3 \left( 5t + \frac{0.25}{2} t^2 \right) + C
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 A(t) (5 + 0.25t) = 15t + 0.375t^2 + C
 </span></p></li>
-<li><p><strong>Solve for <span class="math inline">A(t)</span>:</strong> <span class="math display">
+<li><p><strong>Solve for <span class="math inline">A(t)</span>:</strong></p>
+<p><span class="math display">
 A(t) = \frac{15t + 0.375t^2 + C}{5 + 0.25t}
 </span></p></li>
-<li><p><strong>Apply the initial condition <span class="math inline">A(0) = 125</span>:</strong> <span class="math display">
+<li><p><strong>Apply the initial condition <span class="math inline">A(0) = 125</span>:</strong></p>
+<p><span class="math display">
 125 = \frac{15(0) + 0.375(0)^2 + C}{5 + 0.25(0)} = \frac{C}{5}
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 C = 125 \cdot 5 = 625
 </span></p></li>
 <li><p><strong>Substitute <span class="math inline">C = 625</span> into the solution:</strong> <span class="math display">
 A(t) = \frac{15t + 0.375t^2 + 625}{5 + 0.25t}
 </span></p></li>
 </ol>
-<p>The solution is valid as long as the volume in the tank does not exceed 25 m<span class="math inline">^3</span>, meaning: <span class="math display">
+<p>The solution is valid as long as the volume in the tank does not exceed 25 m<span class="math inline">^3</span>, meaning:</p>
+<p><span class="math display">
 5 + 0.25t \leq 25 \quad \Rightarrow \quad t \leq 80 \, \text{min}.
 </span></p>
 </section>

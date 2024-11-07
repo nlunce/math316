@@ -1,7 +1,7 @@
 ---
 title: "NOTES"
-editor: 
-   render-on-save: true
+editor:
+  render-on-save: true
 ---
 
 ## WEEK 01

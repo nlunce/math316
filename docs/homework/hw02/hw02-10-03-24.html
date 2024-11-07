@@ -4889,7 +4889,8 @@ window.Quarto = {
 </section>
 <section id="solution" class="level3">
 <h3 class="anchored" data-anchor-id="solution">Solution:</h3>
-<p>Let <span class="math display">
+<p>Let</p>
+<p><span class="math display">
 A = \begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{bmatrix}, \quad B = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}
 </span></p>
 <section id="calculate-ab" class="level4">
@@ -4945,7 +4946,8 @@ AB = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 0 \end{bmatrix} \quad \text{and} \quad
 </section>
 <section id="solution-1" class="level3">
 <h3 class="anchored" data-anchor-id="solution-1">Solution:</h3>
-<p>Let <span class="math display">
+<p>Let</p>
+<p><span class="math display">
 A = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}, \quad B = \begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}
 </span></p>
 <section id="calculate-ab-1" class="level4">
@@ -5014,28 +5016,34 @@ AB = \begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{bmatrix} \quad \text{and} \quad
 <div class="callout-body-container callout-body">
 <section id="problem-2" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2">Problem:</h3>
-<p>Find the inverse of the matrix <span class="math display">
+<p>Find the inverse of the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix} 5 &amp; 0 \\ 0 &amp; -3 \end{bmatrix}
-</span> or show that the inverse does not exist.</p>
+</span></p>
+<p>or show that the inverse does not exist.</p>
 </section>
 <section id="solution-2" class="level3">
 <h3 class="anchored" data-anchor-id="solution-2">Solution:</h3>
-<p>To find the inverse of a <span class="math inline">2 \times 2</span> matrix <span class="math inline">A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}</span>, the inverse exists if and only if <span class="math inline">\det(A) \neq 0</span>, and the inverse is given by the formula: <span class="math display">
+<p>To find the inverse of a <span class="math inline">2 \times 2</span> matrix <span class="math inline">A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}</span>, the inverse exists if and only if <span class="math inline">\det(A) \neq 0</span>, and the inverse is given by the formula:</p>
+<p><span class="math display">
 A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}
 </span></p>
 <section id="step-1-calculate-the-determinant-of-a" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-calculate-the-determinant-of-a">Step 1: Calculate the determinant of <span class="math inline">A</span></h4>
-<p>The determinant of matrix <span class="math inline">A</span> is: <span class="math display">
+<p>The determinant of matrix <span class="math inline">A</span> is:</p>
+<p><span class="math display">
 \det(A) = (5)(-3) - (0)(0) = -15
 </span></p>
 <p>Since <span class="math inline">\det(A) = -15</span>, which is non-zero, the matrix is invertible.</p>
 </section>
 <section id="step-2-apply-the-inverse-formula" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-apply-the-inverse-formula">Step 2: Apply the inverse formula</h4>
-<p>Using the formula for the inverse of a <span class="math inline">2 \times 2</span> matrix: <span class="math display">
+<p>Using the formula for the inverse of a <span class="math inline">2 \times 2</span> matrix:</p>
+<p><span class="math display">
 A^{-1} = \frac{1}{-15} \begin{bmatrix} -3 &amp; 0 \\ 0 &amp; 5 \end{bmatrix}
 </span></p>
-<p>Multiply the scalar <span class="math inline">\frac{1}{-15}</span> with each element of the matrix: <span class="math display">
+<p>Multiply the scalar <span class="math inline">\frac{1}{-15}</span> with each element of the matrix:</p>
+<p><span class="math display">
 A^{-1} = \begin{bmatrix} \frac{-3}{-15} &amp; \frac{0}{-15} \\ \frac{0}{-15} &amp; \frac{5}{-15} \end{bmatrix} = \begin{bmatrix} \frac{1}{5} &amp; 0 \\ 0 &amp; \frac{-1}{3} \end{bmatrix}
 </span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -5072,18 +5080,21 @@ A^{-1} = \begin{bmatrix} \frac{1}{5} &amp; 0 \\ 0 &amp; \frac{-1}{3} \end{bmatri
 <div class="callout-body-container callout-body">
 <section id="problem-3" class="level3">
 <h3 class="anchored" data-anchor-id="problem-3">Problem:</h3>
-<p>Find the inverse of the matrix <span class="math display">
+<p>Find the inverse of the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix}
 1 &amp; -2 &amp; -1 \\
 -1 &amp; 1 &amp; 0 \\
 1 &amp; 3 &amp; 4
 \end{bmatrix}
-</span> using row reduction, or show that the inverse does not exist.</p>
+</span></p>
+<p>using row reduction, or show that the inverse does not exist.</p>
 </section>
 <section id="solution-3" class="level3">
 <h3 class="anchored" data-anchor-id="solution-3">Solution:</h3>
 <p>We will augment the matrix <span class="math inline">A</span> with the identity matrix and perform row operations to reduce <span class="math inline">A</span> to the identity matrix. The result on the right will be the inverse of <span class="math inline">A</span>, if it exists.</p>
-<p>Start with the augmented matrix: <span class="math display">
+<p>Start with the augmented matrix:</p>
+<p><span class="math display">
 \left[ A | I \right] = \begin{bmatrix}
 1 &amp; -2 &amp; -1 &amp; 1 &amp; 0 &amp; 0 \\
 -1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
@@ -5097,9 +5108,12 @@ A = \begin{bmatrix}
 <section id="step-2-eliminate-the-elements-below-the-pivot." class="level4">
 <h4 class="anchored" data-anchor-id="step-2-eliminate-the-elements-below-the-pivot.">Step 2: Eliminate the elements below the pivot.</h4>
 <ul>
-<li><p>Add row 1 to row 2 to eliminate the <span class="math inline">-1</span> in the second row, first column: <span class="math display">
+<li><p>Add row 1 to row 2 to eliminate the <span class="math inline">-1</span> in the second row, first column:</p>
+<p><span class="math display">
 R_2 \rightarrow R_2 + R_1
-</span> Result: <span class="math display">
+</span></p>
+<p>Result:</p>
+<p><span class="math display">
 \begin{bmatrix}
 1 &amp; -2 &amp; -1 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; -1 &amp; -1 &amp; 1 &amp; 1 &amp; 0 \\
@@ -5134,9 +5148,12 @@ R_2 \rightarrow \frac{R_2}{-1}
 <section id="step-4-eliminate-the-elements-above-and-below-the-pivot-in-the-second-column." class="level4">
 <h4 class="anchored" data-anchor-id="step-4-eliminate-the-elements-above-and-below-the-pivot-in-the-second-column.">Step 4: Eliminate the elements above and below the pivot in the second column.</h4>
 <ul>
-<li><p>Add 2 times row 2 to row 1 to eliminate the <span class="math inline">-2</span> in the first row, second column: <span class="math display">
+<li><p>Add 2 times row 2 to row 1 to eliminate the <span class="math inline">-2</span> in the first row, second column:</p>
+<p><span class="math display">
 R_1 \rightarrow R_1 + 2R_2
-</span> Result: <span class="math display">
+</span></p>
+<p>Result:</p>
+<p><span class="math display">
 \begin{bmatrix}
 1 &amp; 0 &amp; 1 &amp; -1 &amp; -2 &amp; 0 \\
 0 &amp; 1 &amp; 1 &amp; -1 &amp; -1 &amp; 0 \\
@@ -5206,13 +5223,16 @@ R_3 \rightarrow R_3 - 5R_2
 <div class="callout-body-container callout-body">
 <section id="problem-4" class="level3">
 <h3 class="anchored" data-anchor-id="problem-4">Problem:</h3>
-<p>Given the matrix <span class="math display">
+<p>Given the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix} 2 &amp; 1 \\ 2 &amp; 2 \end{bmatrix}
-</span> compute the determinant by hand and determine whether or not the matrix is invertible.</p>
+</span></p>
+<p>compute the determinant by hand and determine whether or not the matrix is invertible.</p>
 </section>
 <section id="solution-4" class="level3">
 <h3 class="anchored" data-anchor-id="solution-4">Solution:</h3>
-<p>The determinant of a <span class="math inline">2 \times 2</span> matrix <span class="math inline">A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}</span> is given by: <span class="math display">
+<p>The determinant of a <span class="math inline">2 \times 2</span> matrix <span class="math inline">A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}</span> is given by:</p>
+<p><span class="math display">
 \det(A) = ad - bc
 </span></p>
 <p>For the given matrix <span class="math inline">A = \begin{bmatrix} 2 &amp; 1 \\ 2 &amp; 2 \end{bmatrix}</span>, we have:</p>
@@ -5222,7 +5242,8 @@ A = \begin{bmatrix} 2 &amp; 1 \\ 2 &amp; 2 \end{bmatrix}
 <li><span class="math inline">c = 2</span></li>
 <li><span class="math inline">d = 2</span></li>
 </ul>
-<p>Calculate the determinant: <span class="math display">
+<p>Calculate the determinant:</p>
+<p><span class="math display">
 \det(A) = (2)(2) - (1)(2) = 4 - 2 = 2
 </span></p>
 <p>Since the determinant is not zero, <span class="math inline">A</span> is invertible.</p>
@@ -5260,26 +5281,32 @@ A = \begin{bmatrix} 2 &amp; 1 \\ 2 &amp; 2 \end{bmatrix}
 <div class="callout-body-container callout-body">
 <section id="problem-5" class="level3">
 <h3 class="anchored" data-anchor-id="problem-5">Problem:</h3>
-<p>Given the matrix <span class="math display">
+<p>Given the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix}
 -3 &amp; 1 &amp; 0 &amp; 5 \\
 0 &amp; 2 &amp; -4 &amp; 0 \\
 0 &amp; 0 &amp; -7 &amp; 11 \\
 0 &amp; 0 &amp; 0 &amp; 6
 \end{bmatrix}
-</span> compute the determinant by hand and determine whether or not the matrix is invertible.</p>
+</span></p>
+<p>compute the determinant by hand and determine whether or not the matrix is invertible.</p>
 </section>
 <section id="solution-5" class="level3">
 <h3 class="anchored" data-anchor-id="solution-5">Solution:</h3>
 <p>Since the matrix <span class="math inline">A</span> is upper triangular, the determinant is simply the product of the diagonal elements.</p>
-<p>The diagonal elements of the matrix are <span class="math inline">-3</span>, <span class="math inline">2</span>, <span class="math inline">-7</span>, and <span class="math inline">6</span>. So, the determinant is: <span class="math display">
+<p>The diagonal elements of the matrix are <span class="math inline">-3</span>, <span class="math inline">2</span>, <span class="math inline">-7</span>, and <span class="math inline">6</span>. So, the determinant is:</p>
+<p><span class="math display">
 \det(A) = (-3) \times (2) \times (-7) \times (6)
 </span></p>
-<p>Let’s compute it step by step: <span class="math display">
+<p>Let’s compute it step by step:</p>
+<p><span class="math display">
 \det(A) = (-3) \times (2) = -6
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \det(A) = -6 \times (-7) = 42
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \det(A) = 42 \times (6) = 252
 </span></p>
 <p>Since the determinant is not zero, <span class="math inline">A</span> is invertible.</p>
@@ -5381,27 +5408,35 @@ A = \begin{bmatrix}
 <div class="callout-body-container callout-body">
 <section id="problem-7" class="level3">
 <h3 class="anchored" data-anchor-id="problem-7">Problem:</h3>
-<p>Given the matrix <span class="math display">
+<p>Given the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix} 5 &amp; 1 \\ 0 &amp; 3 \end{bmatrix}
-</span> compute the eigenvalues and any corresponding real eigenvectors.</p>
+</span></p>
+<p>compute the eigenvalues and any corresponding real eigenvectors.</p>
 </section>
 <section id="solution-7" class="level3">
 <h3 class="anchored" data-anchor-id="solution-7">Solution:</h3>
 <section id="step-1-find-the-eigenvalues" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-find-the-eigenvalues">Step 1: Find the Eigenvalues</h4>
-<p>The eigenvalues of a matrix are found by solving the characteristic equation: <span class="math display">
+<p>The eigenvalues of a matrix are found by solving the characteristic equation:</p>
+<p><span class="math display">
 \det(A - \lambda I) = 0
-</span> where <span class="math inline">\lambda</span> represents the eigenvalues and <span class="math inline">I</span> is the identity matrix.</p>
-<p>The matrix <span class="math inline">A - \lambda I</span> is: <span class="math display">
+</span></p>
+<p>where <span class="math inline">\lambda</span> represents the eigenvalues and <span class="math inline">I</span> is the identity matrix.</p>
+<p>The matrix <span class="math inline">A - \lambda I</span> is:</p>
+<p><span class="math display">
 A - \lambda I = \begin{bmatrix} 5 - \lambda &amp; 1 \\ 0 &amp; 3 - \lambda \end{bmatrix}
 </span></p>
-<p>Calculate the determinant of <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Calculate the determinant of <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 \det(A - \lambda I) = (5 - \lambda)(3 - \lambda) - (1)(0) = (5 - \lambda)(3 - \lambda)
 </span></p>
-<p>The characteristic equation is: <span class="math display">
+<p>The characteristic equation is:</p>
+<p><span class="math display">
 (5 - \lambda)(3 - \lambda) = 0
 </span></p>
-<p>Solving this equation gives the eigenvalues: <span class="math display">
+<p>Solving this equation gives the eigenvalues:</p>
+<p><span class="math display">
 \lambda_1 = 5 \quad \text{and} \quad \lambda_2 = 3
 </span></p>
 </section>
@@ -5410,27 +5445,35 @@ A - \lambda I = \begin{bmatrix} 5 - \lambda &amp; 1 \\ 0 &amp; 3 - \lambda \end{
 <p>Find the eigenvectors corresponding to each eigenvalue.</p>
 <section id="eigenvalue-lambda_1-5" class="level5">
 <h5 class="anchored" data-anchor-id="eigenvalue-lambda_1-5">Eigenvalue <span class="math inline">\lambda_1 = 5</span>:</h5>
-<p>Substitute <span class="math inline">\lambda_1 = 5</span> into the matrix <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Substitute <span class="math inline">\lambda_1 = 5</span> into the matrix <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 A - 5I = \begin{bmatrix} 5 - 5 &amp; 1 \\ 0 &amp; 3 - 5 \end{bmatrix} = \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; -2 \end{bmatrix}
 </span></p>
-<p>To find the eigenvector corresponding to <span class="math inline">\lambda_1 = 5</span>, solve the equation: <span class="math display">
+<p>To find the eigenvector corresponding to <span class="math inline">\lambda_1 = 5</span>, solve the equation:</p>
+<p><span class="math display">
 \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; -2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
-<p>This gives the system of equations: <span class="math display">
+<p>This gives the system of equations:</p>
+<p><span class="math display">
 x_2 = 0
-</span> There is no condition on <span class="math inline">x_1</span>, so <span class="math inline">x_1</span> can be any real number. Thus, the eigenvector corresponding to <span class="math inline">\lambda_1 = 5</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ 0 \end{bmatrix}</span>.</p>
+</span></p>
+<p>There is no condition on <span class="math inline">x_1</span>, so <span class="math inline">x_1</span> can be any real number. Thus, the eigenvector corresponding to <span class="math inline">\lambda_1 = 5</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ 0 \end{bmatrix}</span>.</p>
 </section>
 <section id="eigenvalue-lambda_2-3" class="level5">
 <h5 class="anchored" data-anchor-id="eigenvalue-lambda_2-3">Eigenvalue <span class="math inline">\lambda_2 = 3</span>:</h5>
-<p>Substitute <span class="math inline">\lambda_2 = 3</span> into the matrix <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Substitute <span class="math inline">\lambda_2 = 3</span> into the matrix <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 A - 3I = \begin{bmatrix} 5 - 3 &amp; 1 \\ 0 &amp; 3 - 3 \end{bmatrix} = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 0 \end{bmatrix}
 </span></p>
-<p>To find the eigenvector corresponding to <span class="math inline">\lambda_2 = 3</span>, solve the equation: <span class="math display">
+<p>To find the eigenvector corresponding to <span class="math inline">\lambda_2 = 3</span>, solve the equation:</p>
+<p><span class="math display">
 \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
-<p>This gives the system of equations: <span class="math display">
+<p>This gives the system of equations:</p>
+<p><span class="math display">
 2x_1 + x_2 = 0
-</span> From this, we get <span class="math inline">x_2 = -2x_1</span>. Thus, the eigenvector corresponding to <span class="math inline">\lambda_2 = 3</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ -2 \end{bmatrix}</span>.</p>
+</span></p>
+<p>From this, we get <span class="math inline">x_2 = -2x_1</span>. Thus, the eigenvector corresponding to <span class="math inline">\lambda_2 = 3</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ -2 \end{bmatrix}</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5468,44 +5511,57 @@ A - 3I = \begin{bmatrix} 5 - 3 &amp; 1 \\ 0 &amp; 3 - 3 \end{bmatrix} = \begin{b
 <div class="callout-body-container callout-body">
 <section id="problem-8" class="level3">
 <h3 class="anchored" data-anchor-id="problem-8">Problem:</h3>
-<p>Given the matrix <span class="math display">
+<p>Given the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{bmatrix}
-</span> compute the eigenvalues and any corresponding real eigenvectors.</p>
+</span></p>
+<p>compute the eigenvalues and any corresponding real eigenvectors.</p>
 </section>
 <section id="solution-8" class="level3">
 <h3 class="anchored" data-anchor-id="solution-8">Solution:</h3>
 <section id="step-1-find-the-eigenvalues-1" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-find-the-eigenvalues-1">Step 1: Find the Eigenvalues</h4>
-<p>The eigenvalues of a matrix are found by solving the characteristic equation: <span class="math display">
+<p>The eigenvalues of a matrix are found by solving the characteristic equation:</p>
+<p><span class="math display">
 \det(A - \lambda I) = 0
-</span> where <span class="math inline">\lambda</span> represents the eigenvalues and <span class="math inline">I</span> is the identity matrix.</p>
-<p>The matrix <span class="math inline">A - \lambda I</span> is: <span class="math display">
+</span></p>
+<p>where <span class="math inline">\lambda</span> represents the eigenvalues and <span class="math inline">I</span> is the identity matrix.</p>
+<p>The matrix <span class="math inline">A - \lambda I</span> is:</p>
+<p><span class="math display">
 A - \lambda I = \begin{bmatrix} 2 - \lambda &amp; 1 &amp; 0 \\ 0 &amp; 2 - \lambda &amp; 1 \\ 0 &amp; 0 &amp; 2 - \lambda \end{bmatrix}
 </span></p>
-<p>Now, calculate the determinant of <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Now, calculate the determinant of <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 \det(A - \lambda I) = (2 - \lambda) \begin{vmatrix} 2 - \lambda &amp; 1 \\ 0 &amp; 2 - \lambda \end{vmatrix}
 </span></p>
-<p>The determinant of the <span class="math inline">2 \times 2</span> matrix is: <span class="math display">
+<p>The determinant of the <span class="math inline">2 \times 2</span> matrix is:</p>
+<p><span class="math display">
 (2 - \lambda)(2 - \lambda) - (1)(0) = (2 - \lambda)^2
 </span></p>
-<p>Thus, the characteristic equation becomes: <span class="math display">
+<p>Thus, the characteristic equation becomes:</p>
+<p><span class="math display">
 (2 - \lambda)^3 = 0
 </span></p>
-<p>Solving this equation gives the eigenvalue: <span class="math display">
+<p>Solving this equation gives the eigenvalue:</p>
+<p><span class="math display">
 \lambda_1 = 2
 </span></p>
 </section>
 <section id="step-2-find-the-eigenvector" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-find-the-eigenvector">Step 2: Find the Eigenvector</h4>
-<p>Substitute <span class="math inline">\lambda_1 = 2</span> into the matrix <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Substitute <span class="math inline">\lambda_1 = 2</span> into the matrix <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 A - 2I = \begin{bmatrix} 2 - 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 - 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 - 2 \end{bmatrix} = \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}
 </span></p>
-<p>To find the eigenvector corresponding to <span class="math inline">\lambda_1 = 2</span>, solve the equation: <span class="math display">
+<p>To find the eigenvector corresponding to <span class="math inline">\lambda_1 = 2</span>, solve the equation:</p>
+<p><span class="math display">
 \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
 </span></p>
-<p>This gives the system of equations: <span class="math display">
+<p>This gives the system of equations:</p>
+<p><span class="math display">
 x_2 = 0
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 x_3 = 0
 </span></p>
 <p>There is no condition on <span class="math inline">x_1</span>, so <span class="math inline">x_1</span> can be any real number. Thus, the eigenvector corresponding to <span class="math inline">\lambda_1 = 2</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}</span>.</p>
@@ -5642,10 +5698,15 @@ A\mathbf{x} = \begin{bmatrix} 5 \\ 20 \end{bmatrix}
 <div class="callout-body-container callout-body">
 <section id="problem-10" class="level3">
 <h3 class="anchored" data-anchor-id="problem-10">Problem:</h3>
-<p>Consider the matrix <span class="math display">
+<p>Consider the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix} -2 &amp; 1 &amp; 1 \\ 1 &amp; -2 &amp; 1 \\ 1 &amp; 1 &amp; -2 \end{bmatrix}
-</span> (a) Determine the eigenvalues and eigenvectors of <span class="math inline">A</span>.<br>
-(b) Does <span class="math inline">\mathbb{R}^3</span> have a linearly independent spanning set that consists of eigenvectors of <span class="math inline">A</span>?</p>
+</span></p>
+<ol type="a">
+<li>Determine the eigenvalues and eigenvectors of <span class="math inline">A</span>.<br>
+</li>
+<li>Does <span class="math inline">\mathbb{R}^3</span> have a linearly independent spanning set that consists of eigenvectors of <span class="math inline">A</span>?</li>
+</ol>
 </section>
 <section id="solution-9" class="level3">
 <h3 class="anchored" data-anchor-id="solution-9">Solution:</h3>
@@ -5994,21 +6055,27 @@ c_1 = c_2 = c_3 = 0
 </ol>
 <section id="contains-the-zero-vector" class="level4">
 <h4 class="anchored" data-anchor-id="contains-the-zero-vector">1. Contains the Zero Vector:</h4>
-<p>For <span class="math inline">H</span> to be a subspace, it must contain the zero vector. In this case, when <span class="math inline">t = 0</span>, we have: <span class="math display">
+<p>For <span class="math inline">H</span> to be a subspace, it must contain the zero vector. In this case, when <span class="math inline">t = 0</span>, we have:</p>
+<p><span class="math display">
 t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} = 0 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
-</span> Thus, <span class="math inline">H</span> contains the zero vector.</p>
+</span></p>
+<p>Thus, <span class="math inline">H</span> contains the zero vector.</p>
 </section>
 <section id="closed-under-scalar-multiplication" class="level4">
 <h4 class="anchored" data-anchor-id="closed-under-scalar-multiplication">2. Closed Under Scalar Multiplication:</h4>
-<p>To check if <span class="math inline">H</span> is closed under scalar multiplication, consider any vector in <span class="math inline">H</span>, say <span class="math inline">t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>, and a scalar <span class="math inline">c \in \mathbb{R}</span>. The scalar multiplication is: <span class="math display">
+<p>To check if <span class="math inline">H</span> is closed under scalar multiplication, consider any vector in <span class="math inline">H</span>, say <span class="math inline">t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>, and a scalar <span class="math inline">c \in \mathbb{R}</span>. The scalar multiplication is:</p>
+<p><span class="math display">
 c \left( t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} \right) = (ct) \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
-</span> Since <span class="math inline">ct \in \mathbb{R}</span>, the result is still a scalar multiple of <span class="math inline">\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>, meaning that the vector remains in <span class="math inline">H</span>. Therefore, <span class="math inline">H</span> is closed under scalar multiplication.</p>
+</span></p>
+<p>Since <span class="math inline">ct \in \mathbb{R}</span>, the result is still a scalar multiple of <span class="math inline">\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>, meaning that the vector remains in <span class="math inline">H</span>. Therefore, <span class="math inline">H</span> is closed under scalar multiplication.</p>
 </section>
 <section id="closed-under-vector-addition" class="level4">
 <h4 class="anchored" data-anchor-id="closed-under-vector-addition">3. Closed Under Vector Addition:</h4>
-<p>Consider two vectors in <span class="math inline">H</span>: <span class="math inline">t_1 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span> and <span class="math inline">t_2 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>. Their sum is: <span class="math display">
+<p>Consider two vectors in <span class="math inline">H</span>: <span class="math inline">t_1 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span> and <span class="math inline">t_2 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>. Their sum is:</p>
+<p><span class="math display">
 t_1 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} + t_2 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} = (t_1 + t_2) \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
-</span> Since <span class="math inline">t_1 + t_2 \in \mathbb{R}</span>, the result is still a scalar multiple of <span class="math inline">\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>, meaning the sum is in <span class="math inline">H</span>. Therefore, <span class="math inline">H</span> is closed under vector addition.</p>
+</span></p>
+<p>Since <span class="math inline">t_1 + t_2 \in \mathbb{R}</span>, the result is still a scalar multiple of <span class="math inline">\begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}</span>, meaning the sum is in <span class="math inline">H</span>. Therefore, <span class="math inline">H</span> is closed under vector addition.</p>
 </section>
 </section>
 <section id="conclusion" class="level3">
@@ -6045,9 +6112,11 @@ t_1 \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} + t_2 \begin{bmatrix} 2 \\ 0 \\ -
 <div class="callout-body-container callout-body">
 <section id="problem-12" class="level3">
 <h3 class="anchored" data-anchor-id="problem-12">Problem:</h3>
-<p>For the matrix <span class="math display">
+<p>For the matrix</p>
+<p><span class="math display">
 A = \begin{bmatrix} 2 &amp; -1 \\ -1 &amp; 2 \end{bmatrix}
-</span> describe all of the eigenspaces of <span class="math inline">A</span>.</p>
+</span></p>
+<p>describe all of the eigenspaces of <span class="math inline">A</span>.</p>
 </section>
 <section id="solution-11" class="level3">
 <h3 class="anchored" data-anchor-id="solution-11">Solution:</h3>
@@ -6059,19 +6128,29 @@ A = \begin{bmatrix} 2 &amp; -1 \\ -1 &amp; 2 \end{bmatrix}
 </ol>
 <section id="step-1-find-the-eigenvalues-2" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-find-the-eigenvalues-2">Step 1: Find the Eigenvalues</h4>
-<p>The eigenvalues are found by solving the characteristic equation: <span class="math display">
+<p>The eigenvalues are found by solving the characteristic equation:</p>
+<p><span class="math display">
 \det(A - \lambda I) = 0
-</span> where <span class="math inline">A = \begin{bmatrix} 2 &amp; -1 \\ -1 &amp; 2 \end{bmatrix}</span> and <span class="math inline">I</span> is the identity matrix.</p>
-<p>The matrix <span class="math inline">A - \lambda I</span> is: <span class="math display">
+</span></p>
+<p>where <span class="math inline">A = \begin{bmatrix} 2 &amp; -1 \\ -1 &amp; 2 \end{bmatrix}</span> and <span class="math inline">I</span> is the identity matrix.</p>
+<p>The matrix <span class="math inline">A - \lambda I</span> is:</p>
+<p><span class="math display">
 A - \lambda I = \begin{bmatrix} 2 - \lambda &amp; -1 \\ -1 &amp; 2 - \lambda \end{bmatrix}
 </span></p>
-<p>The determinant of this matrix is: <span class="math display">
+<p>The determinant of this matrix is:</p>
+<p><span class="math display">
 \det(A - \lambda I) = (2 - \lambda)(2 - \lambda) - (-1)(-1) = (2 - \lambda)^2 - 1
-</span> This simplifies to: <span class="math display">
+</span></p>
+<p>This simplifies to:</p>
+<p><span class="math display">
 (2 - \lambda)^2 - 1 = 0 \implies (2 - \lambda)^2 = 1
-</span> Taking the square root of both sides: <span class="math display">
+</span></p>
+<p>Taking the square root of both sides:</p>
+<p><span class="math display">
 2 - \lambda = \pm 1
-</span> Thus, the eigenvalues are: <span class="math display">
+</span></p>
+<p>Thus, the eigenvalues are:</p>
+<p><span class="math display">
 \lambda_1 = 1 \quad \text{and} \quad \lambda_2 = 3
 </span></p>
 </section>
@@ -6080,31 +6159,43 @@ A - \lambda I = \begin{bmatrix} 2 - \lambda &amp; -1 \\ -1 &amp; 2 - \lambda \en
 <p>Next, find the eigenvectors corresponding to each eigenvalue.</p>
 <section id="eigenvalue-lambda_1-1" class="level5">
 <h5 class="anchored" data-anchor-id="eigenvalue-lambda_1-1">Eigenvalue <span class="math inline">\lambda_1 = 1</span>:</h5>
-<p>Substitute <span class="math inline">\lambda_1 = 1</span> into <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Substitute <span class="math inline">\lambda_1 = 1</span> into <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 A - I = \begin{bmatrix} 2 - 1 &amp; -1 \\ -1 &amp; 2 - 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; -1 \\ -1 &amp; 1 \end{bmatrix}
 </span></p>
-<p>Solve: <span class="math display">
+<p>Solve:</p>
+<p><span class="math display">
 \begin{bmatrix} 1 &amp; -1 \\ -1 &amp; 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-</span> This gives the system of equations: <span class="math display">
+</span></p>
+<p>This gives the system of equations:</p>
+<p><span class="math display">
 x_1 - x_2 = 0 \\
 -x_1 + x_2 = 0
-</span> From the first equation, we see that <span class="math inline">x_1 = x_2</span>. Therefore, the eigenvector corresponding to <span class="math inline">\lambda_1 = 1</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>.</p>
-<p>Thus, the eigenspace for <span class="math inline">\lambda_1 = 1</span> is: <span class="math display">
+</span></p>
+<p>From the first equation, we see that <span class="math inline">x_1 = x_2</span>. Therefore, the eigenvector corresponding to <span class="math inline">\lambda_1 = 1</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>.</p>
+<p>Thus, the eigenspace for <span class="math inline">\lambda_1 = 1</span> is:</p>
+<p><span class="math display">
 E_1 = \text{Span} \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right\}
 </span></p>
 </section>
 <section id="eigenvalue-lambda_2-3-1" class="level5">
 <h5 class="anchored" data-anchor-id="eigenvalue-lambda_2-3-1">Eigenvalue <span class="math inline">\lambda_2 = 3</span>:</h5>
-<p>Substitute <span class="math inline">\lambda_2 = 3</span> into <span class="math inline">A - \lambda I</span>: <span class="math display">
+<p>Substitute <span class="math inline">\lambda_2 = 3</span> into <span class="math inline">A - \lambda I</span>:</p>
+<p><span class="math display">
 A - 3I = \begin{bmatrix} 2 - 3 &amp; -1 \\ -1 &amp; 2 - 3 \end{bmatrix} = \begin{bmatrix} -1 &amp; -1 \\ -1 &amp; -1 \end{bmatrix}
 </span></p>
-<p>Solve: <span class="math display">
+<p>Solve:</p>
+<p><span class="math display">
 \begin{bmatrix} -1 &amp; -1 \\ -1 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-</span> This gives the system of equations: <span class="math display">
+</span></p>
+<p>This gives the system of equations:</p>
+<p><span class="math display">
 -x_1 - x_2 = 0 \\
 -x_1 - x_2 = 0
-</span> From the first equation, we get <span class="math inline">x_1 = -x_2</span>. Therefore, the eigenvector corresponding to <span class="math inline">\lambda_2 = 3</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ -1 \end{bmatrix}</span>.</p>
-<p>Thus, the eigenspace for <span class="math inline">\lambda_2 = 3</span> is: <span class="math display">
+</span></p>
+<p>From the first equation, we get <span class="math inline">x_1 = -x_2</span>. Therefore, the eigenvector corresponding to <span class="math inline">\lambda_2 = 3</span> is any scalar multiple of <span class="math inline">\begin{bmatrix} 1 \\ -1 \end{bmatrix}</span>.</p>
+<p>Thus, the eigenspace for <span class="math inline">\lambda_2 = 3</span> is:</p>
+<p><span class="math display">
 E_2 = \text{Span} \left\{ \begin{bmatrix} 1 \\ -1 \end{bmatrix} \right\}
 </span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -6148,11 +6239,14 @@ E_2 = \text{Span} \left\{ \begin{bmatrix} 1 \\ -1 \end{bmatrix} \right\}
 </section>
 <section id="verification" class="level3">
 <h3 class="anchored" data-anchor-id="verification">Verification:</h3>
-<p>We are given the differential equation: <span class="math display">
+<p>We are given the differential equation:</p>
+<p><span class="math display">
 y&#39; = 3y - 3
-</span> We need to verify that the function <span class="math inline">y = Ce^{3t} + 1</span> satisfies this equation. To do so, we first compute the derivative of <span class="math inline">y</span>:</p>
+</span></p>
+<p>We need to verify that the function <span class="math inline">y = Ce^{3t} + 1</span> satisfies this equation. To do so, we first compute the derivative of <span class="math inline">y</span>:</p>
 <ol type="1">
-<li><p>The derivative of <span class="math inline">y = Ce^{3t} + 1</span> is: <span class="math display">
+<li><p>The derivative of <span class="math inline">y = Ce^{3t} + 1</span> is:</p>
+<p><span class="math display">
 y&#39; = 3Ce^{3t}
 </span></p></li>
 <li><p>Now substitute <span class="math inline">y = Ce^{3t} + 1</span> and <span class="math inline">y&#39; = 3Ce^{3t}</span> into the differential equation <span class="math inline">y&#39; = 3y - 3</span>: <span class="math display">
@@ -6180,7 +6274,8 @@ y&#39; = 3Ce^{3t}
 <p>The zero function is <span class="math inline">y(t) = 0</span>. There is no real number <span class="math inline">C</span> such that <span class="math inline">Ce^{3t} + 1 = 0</span> for all <span class="math inline">t</span>. Therefore, <span class="math inline">S</span> does not contain the zero vector.</p>
 <hr>
 <p><strong>2. Closed Under Addition:</strong></p>
-<p>Let <span class="math inline">y_1 = C_1e^{3t} + 1</span> and <span class="math inline">y_2 = C_2e^{3t} + 1</span> be functions in <span class="math inline">S</span>. Then: <span class="math display">
+<p>Let <span class="math inline">y_1 = C_1e^{3t} + 1</span> and <span class="math inline">y_2 = C_2e^{3t} + 1</span> be functions in <span class="math inline">S</span>. Then:</p>
+<p><span class="math display">
 \begin{align*}
 y_1 + y_2 &amp;= (C_1e^{3t} + 1) + (C_2e^{3t} + 1) \\
 &amp;= (C_1 + C_2)e^{3t} + 2
@@ -6189,7 +6284,8 @@ y_1 + y_2 &amp;= (C_1e^{3t} + 1) + (C_2e^{3t} + 1) \\
 <p>This sum is not of the form <span class="math inline">Ce^{3t} + 1</span>, since the constant term is <span class="math inline">2</span>, not <span class="math inline">1</span>. Thus, <span class="math inline">S</span> is not closed under addition.</p>
 <hr>
 <p><strong>3. Closed Under Scalar Multiplication:</strong></p>
-<p>For a scalar <span class="math inline">\alpha</span> and <span class="math inline">y = Ce^{3t} + 1</span> in <span class="math inline">S</span>: <span class="math display">
+<p>For a scalar <span class="math inline">\alpha</span> and <span class="math inline">y = Ce^{3t} + 1</span> in <span class="math inline">S</span>:</p>
+<p><span class="math display">
 \begin{align*}
 \alpha y &amp;= \alpha (Ce^{3t} + 1) \\
 &amp;= (\alpha C)e^{3t} + \alpha
@@ -6244,9 +6340,11 @@ y_1 + y_2 &amp;= (C_1e^{3t} + 1) + (C_2e^{3t} + 1) \\
 <div class="callout-body-container callout-body">
 <section id="problem-14" class="level3">
 <h3 class="anchored" data-anchor-id="problem-14">Problem:</h3>
-<p>In the vector space <span class="math inline">V = \mathbb{R}^3</span>, <span class="math inline">H</span> is the subspace defined by: <span class="math display">
+<p>In the vector space <span class="math inline">V = \mathbb{R}^3</span>, <span class="math inline">H</span> is the subspace defined by:</p>
+<p><span class="math display">
 H = \left\{ t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} : t \in \mathbb{R} \right\}
-</span> Determine a basis for the subspace <span class="math inline">H</span> and state the dimension of <span class="math inline">H</span>.</p>
+</span></p>
+<p>Determine a basis for the subspace <span class="math inline">H</span> and state the dimension of <span class="math inline">H</span>.</p>
 </section>
 <section id="solution-12" class="level3">
 <h3 class="anchored" data-anchor-id="solution-12">Solution:</h3>
@@ -6294,17 +6392,20 @@ H = \left\{ t \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix} : t \in \mathbb{R} \rig
 <h3 class="anchored" data-anchor-id="solution-13">Solution:</h3>
 <p>To determine whether the set <span class="math inline">S</span> is a basis for <span class="math inline">\mathbb{R}^2</span>, we need to check two conditions:</p>
 <ol type="1">
-<li><p><strong>Linear Independence</strong>:<br>
-The vectors in <span class="math inline">S</span> must be linearly independent.</p></li>
-<li><p><strong>Spanning</strong>:<br>
-The vectors in <span class="math inline">S</span> must span <span class="math inline">\mathbb{R}^2</span>.</p></li>
+<li><strong>Linear Independence</strong>:<br>
+The vectors in <span class="math inline">S</span> must be linearly independent.</li>
+<li><strong>Spanning</strong>:<br>
+The vectors in <span class="math inline">S</span> must span <span class="math inline">\mathbb{R}^2</span>.</li>
 </ol>
 <section id="check-for-linear-independence" class="level4">
 <h4 class="anchored" data-anchor-id="check-for-linear-independence">1. Check for Linear Independence:</h4>
-<p>The set of vectors <span class="math inline">S = \left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix} \right\}</span> is linearly independent if the only solution to the equation: <span class="math display">
+<p>The set of vectors <span class="math inline">S = \left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix} \right\}</span> is linearly independent if the only solution to the equation:</p>
+<p><span class="math display">
 c_1 \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-</span> is <span class="math inline">c_1 = 0</span> and <span class="math inline">c_2 = 0</span>.</p>
-<p>Writing this as an augmented matrix: <span class="math display">
+</span></p>
+<p>is <span class="math inline">c_1 = 0</span> and <span class="math inline">c_2 = 0</span>.</p>
+<p>Writing this as an augmented matrix:</p>
+<p><span class="math display">
 \begin{bmatrix}
 1 &amp; 2 &amp; | &amp; 0 \\
 2 &amp; 1 &amp; | &amp; 0

@@ -5067,7 +5067,7 @@ y(t) = \frac{t}{1000} \sin(5t) = \frac{t}{10^3} \sin(5t)
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">1000</span>)  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">1000</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> (t <span class="op">/</span> <span class="dv">1000</span>) <span class="op">*</span> np.sin(<span class="dv">5</span> <span class="op">*</span> t)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -5256,7 +5256,7 @@ y(t) = -\frac{1}{36} \cos(6t) - \frac{1}{36} \sin(6t) + \frac{1}{36} e^{6t}
 <div id="cell-graph-4-5-3" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1000</span>)  </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="dv">36</span>) <span class="op">*</span> np.cos(<span class="dv">6</span> <span class="op">*</span> t) <span class="op">-</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">36</span>) <span class="op">*</span> np.sin(<span class="dv">6</span> <span class="op">*</span> t) <span class="op">+</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">36</span>) <span class="op">*</span> np.exp(<span class="dv">6</span> <span class="op">*</span> t)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -5334,7 +5334,8 @@ y(t) = -\frac{1}{36} \cos(6t) - \frac{1}{36} \sin(6t) + \frac{1}{36} e^{6t}
 <p>Consider the system of differential equations given by</p>
 <p><span class="math display">
 x_1&#39; = -x_1 + 2x_2
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 x_2&#39; = -7x_1 + 8x_2
 </span></p>
 <ol type="a">
@@ -5350,51 +5351,75 @@ x_2&#39; = -7x_1 + 8x_2
 <h3 class="anchored" data-anchor-id="solution-4"><strong>Solution:</strong></h3>
 <section id="a-determine-the-matrix-mathbfa" class="level4">
 <h4 class="anchored" data-anchor-id="a-determine-the-matrix-mathbfa">(a) Determine the Matrix <span class="math inline">\mathbf{A}</span></h4>
-<p>The system is: <span class="math display">
+<p>The system is:</p>
+<p><span class="math display">
 x_1&#39; = -x_1 + 2x_2
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 x_2&#39; = -7x_1 + 8x_2
-</span> This can be written in matrix form as: <span class="math display">
+</span></p>
+<p>This can be written in matrix form as:</p>
+<p><span class="math display">
 \mathbf{x}&#39; = \begin{bmatrix} -1 &amp; 2 \\ -7 &amp; 8 \end{bmatrix} \mathbf{x}
-</span> So, the matrix <span class="math inline">\mathbf{A}</span> is: <span class="math display">
+</span></p>
+<p>So, the matrix <span class="math inline">\mathbf{A}</span> is:</p>
+<p><span class="math display">
 \mathbf{A} = \begin{bmatrix} -1 &amp; 2 \\ -7 &amp; 8 \end{bmatrix}
 </span></p>
 </section>
 <section id="b-determine-all-constant-solutions" class="level4">
 <h4 class="anchored" data-anchor-id="b-determine-all-constant-solutions">(b) Determine All Constant Solutions</h4>
-<p>Constant solutions satisfy <span class="math inline">\mathbf{x}&#39; = \mathbf{0}</span>, so: <span class="math display">
+<p>Constant solutions satisfy <span class="math inline">\mathbf{x}&#39; = \mathbf{0}</span>, so:</p>
+<p><span class="math display">
 \mathbf{A} \mathbf{x} = \mathbf{0}
-</span> This leads to the homogeneous system: <span class="math display">
+</span></p>
+<p>This leads to the homogeneous system:</p>
+<p><span class="math display">
 - x_1 + 2 x_2 = 0
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 -7 x_1 + 8 x_2 = 0
-</span> Solving, we find that <span class="math inline">x_1 = x_2 = 0</span>. So, the only constant solution is: <span class="math display">
+</span></p>
+<p>Solving, we find that <span class="math inline">x_1 = x_2 = 0</span>. So, the only constant solution is:</p>
+<p><span class="math display">
 \mathbf{x} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
 </section>
 <section id="c-compute-the-eigenvalues-and-eigenvectors-of-mathbfa" class="level4">
 <h4 class="anchored" data-anchor-id="c-compute-the-eigenvalues-and-eigenvectors-of-mathbfa">(c) Compute the Eigenvalues and Eigenvectors of <span class="math inline">\mathbf{A}</span></h4>
-<p>Compute the characteristic equation: <span class="math display">
+<p>Compute the characteristic equation:</p>
+<p><span class="math display">
 \det(\mathbf{A} - \lambda \mathbf{I}) = 0
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \begin{vmatrix} -1 - \lambda &amp; 2 \\ -7 &amp; 8 - \lambda \end{vmatrix} = (-1 - \lambda)(8 - \lambda) - (-7)(2) = 0
-</span> Simplify: <span class="math display">
+</span></p>
+<p>Simplify:</p>
+<p><span class="math display">
 \lambda^2 - 7\lambda + 6 = 0 \implies (\lambda - 6)(\lambda - 1) = 0
-</span> Eigenvalues are <span class="math inline">\lambda_1 = 6</span> and <span class="math inline">\lambda_2 = 1</span>.</p>
-<p>For <span class="math inline">\lambda = 1</span>: <span class="math display">
+</span></p>
+<p>Eigenvalues are <span class="math inline">\lambda_1 = 6</span> and <span class="math inline">\lambda_2 = 1</span>.</p>
+<p>For <span class="math inline">\lambda = 1</span>:</p>
+<p><span class="math display">
 (\mathbf{A} - \mathbf{I})\mathbf{v} = \mathbf{0} \implies \begin{bmatrix} -2 &amp; 2 \\ -7 &amp; 7 \end{bmatrix} \mathbf{v} = \mathbf{0}
-</span> This yields <span class="math inline">v_1 = v_2</span>. So, an eigenvector is: <span class="math display">
+</span></p>
+<p>This yields <span class="math inline">v_1 = v_2</span>. So, an eigenvector is:</p>
+<p><span class="math display">
 \mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 </span></p>
-<p>For <span class="math inline">\lambda = 6</span>: <span class="math display">
+<p>For <span class="math inline">\lambda = 6</span>:</p>
+<p><span class="math display">
 (\mathbf{A} - 6\mathbf{I})\mathbf{v} = \mathbf{0} \implies \begin{bmatrix} -7 &amp; 2 \\ -7 &amp; 2 \end{bmatrix} \mathbf{v} = \mathbf{0}
-</span> This gives <span class="math inline">v_2 = \frac{7}{2}v_1</span>. An eigenvector is: <span class="math display">
+</span></p>
+<p>This gives <span class="math inline">v_2 = \frac{7}{2}v_1</span>. An eigenvector is:</p>
+<p><span class="math display">
 \mathbf{v}_2 = \begin{bmatrix} 2 \\ 7 \end{bmatrix}
 </span></p>
 </section>
 <section id="d-determine-all-straight-line-solutions" class="level4">
 <h4 class="anchored" data-anchor-id="d-determine-all-straight-line-solutions">(d) Determine All Straight-Line Solutions</h4>
-<p>Straight-line solutions are of the form <span class="math inline">\mathbf{x}(t) = \mathbf{v} e^{\lambda t}</span>: <span class="math display">
+<p>Straight-line solutions are of the form <span class="math inline">\mathbf{x}(t) = \mathbf{v} e^{\lambda t}</span>:</p>
+<p><span class="math display">
 \mathbf{x}_1(t) = c_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{t}, \quad \mathbf{x}_2(t) = c_2 \begin{bmatrix} 2 \\ 7 \end{bmatrix} e^{6t}
 </span></p>
 </section>
@@ -5406,14 +5431,19 @@ x_2&#39; = -7x_1 + 8x_2
 </section>
 <section id="f-solve-the-initial-value-problem" class="level4">
 <h4 class="anchored" data-anchor-id="f-solve-the-initial-value-problem">(f) Solve the Initial-Value Problem</h4>
-<p>Initial condition <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} -2 \\ 0 \end{bmatrix}</span>: <span class="math display">
+<p>Initial condition <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} -2 \\ 0 \end{bmatrix}</span>:</p>
+<p><span class="math display">
 \begin{cases}
 c_1 + 2c_2 = -2 \\
 c_1 + 7c_2 = 0
 \end{cases}
-</span> Solving: <span class="math display">
+</span></p>
+<p>Solving:</p>
+<p><span class="math display">
 c_2 = \frac{2}{5}, \quad c_1 = -\frac{14}{5}
-</span> So the solution is: <span class="math display">
+</span></p>
+<p>So the solution is:</p>
+<p><span class="math display">
 \mathbf{x}(t) = -\frac{14}{5} \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{t} + \frac{2}{5} \begin{bmatrix} 2 \\ 7 \end{bmatrix} e^{6t}
 </span></p>
 </section>
@@ -5432,22 +5462,28 @@ c_2 = \frac{2}{5}, \quad c_1 = -\frac{14}{5}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>(a)</strong> An explicit matrix <span class="math inline">\mathbf{A}</span> is  <span class="math display">
+<p><strong>(a)</strong> An explicit matrix <span class="math inline">\mathbf{A}</span> is</p>
+<p><span class="math display">
 \mathbf{A} = \begin{bmatrix} -1 &amp; 2 \\ -7 &amp; 8 \end{bmatrix}
 </span></p>
-<p><strong>(b)</strong> All constant solutions satisfy  <span class="math display">
+<p><strong>(b)</strong> All constant solutions satisfy</p>
+<p><span class="math display">
 \mathbf{x} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
-<p><strong>(c)</strong> Eigenvalues are <span class="math inline">\lambda = 6</span> and <span class="math inline">\lambda = 1</span>; corresponding eigenvectors are  <span class="math display">
+<p><strong>(c)</strong> Eigenvalues are <span class="math inline">\lambda = 6</span> and <span class="math inline">\lambda = 1</span>; corresponding eigenvectors are</p>
+<p><span class="math display">
 \mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix},\quad \mathbf{v}_2 = \begin{bmatrix} 2 \\ 7 \end{bmatrix}
 </span></p>
-<p><strong>(d)</strong> All straight-line solutions are  <span class="math display">
+<p><strong>(d)</strong> All straight-line solutions are</p>
+<p><span class="math display">
 \mathbf{x}(t) = c_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{t} + c_2 \begin{bmatrix} 2 \\ 7 \end{bmatrix} e^{6t}
 </span></p>
-<p><strong>(e)</strong> The general solution is the linear combination of straight-line solutions:  <span class="math display">
+<p><strong>(e)</strong> The general solution is the linear combination of straight-line solutions:</p>
+<p><span class="math display">
 \mathbf{x}(t) = c_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{t} + c_2 \begin{bmatrix} 2 \\ 7 \end{bmatrix} e^{6t}
 </span></p>
-<p><strong>(f)</strong> Solving the initial-value problem gives: <span class="math display">
+<p><strong>(f)</strong> Solving the initial-value problem gives:</p>
+<p><span class="math display">
 \mathbf{x}(t) = -\frac{14}{5} \begin{bmatrix} 1 \\ 1 \end{bmatrix} e^{t} + \frac{2}{5} \begin{bmatrix} 2 \\ 7 \end{bmatrix} e^{6t}
 </span></p>
 <p><strong>Graphical behavior:</strong> As <span class="math inline">t \to \infty</span>, <span class="math inline">e^{6t}</span> dominates <span class="math inline">e^{t}</span>, so <span class="math inline">\mathbf{x}(t)</span> grows exponentially in the direction of <span class="math inline">\begin{bmatrix} 2 \\ 7 \end{bmatrix}</span>.</p>
@@ -5475,7 +5511,8 @@ c_2 = \frac{2}{5}, \quad c_1 = -\frac{14}{5}
 <p>Consider the system of differential equations given by</p>
 <p><span class="math display">
 x_1&#39; = -2x_1 + x_2
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 x_2&#39; = -2x_2
 </span></p>
 <ol type="a">
@@ -5491,71 +5528,104 @@ x_2&#39; = -2x_2
 <h3 class="anchored" data-anchor-id="solution-5"><strong>Solution:</strong></h3>
 <section id="a-determine-the-matrix-mathbfa-1" class="level4">
 <h4 class="anchored" data-anchor-id="a-determine-the-matrix-mathbfa-1">(a) Determine the Matrix <span class="math inline">\mathbf{A}</span></h4>
-<p>The system is: <span class="math display">
+<p>The system is:</p>
+<p><span class="math display">
 x_1&#39; = -2x_1 + x_2
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 x_2&#39; = -2x_2
-</span> This can be written in matrix form as: <span class="math display">
+</span></p>
+<p>This can be written in matrix form as:</p>
+<p><span class="math display">
 \mathbf{x}&#39; = \begin{bmatrix} -2 &amp; 1 \\ 0 &amp; -2 \end{bmatrix} \mathbf{x}
-</span> So, the matrix <span class="math inline">\mathbf{A}</span> is: <span class="math display">
+</span></p>
+<p>So, the matrix <span class="math inline">\mathbf{A}</span> is:</p>
+<p><span class="math display">
 \mathbf{A} = \begin{bmatrix} -2 &amp; 1 \\ 0 &amp; -2 \end{bmatrix}
 </span></p>
 </section>
 <section id="b-determine-all-constant-solutions-1" class="level4">
 <h4 class="anchored" data-anchor-id="b-determine-all-constant-solutions-1">(b) Determine All Constant Solutions</h4>
-<p>Constant solutions satisfy <span class="math inline">\mathbf{x}&#39; = \mathbf{0}</span>, so: <span class="math display">
+<p>Constant solutions satisfy <span class="math inline">\mathbf{x}&#39; = \mathbf{0}</span>, so:</p>
+<p><span class="math display">
 \mathbf{A} \mathbf{x} = \mathbf{0}
-</span> This leads to the homogeneous system: <span class="math display">
+</span></p>
+<p>This leads to the homogeneous system:</p>
+<p><span class="math display">
 -2 x_1 + x_2 = 0
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 -2 x_2 = 0
-</span> From the second equation, <span class="math inline">x_2 = 0</span>. Substituting into the first equation gives <span class="math inline">x_1 = 0</span>. Therefore, the only constant solution is: <span class="math display">
+</span></p>
+<p>From the second equation, <span class="math inline">x_2 = 0</span>. Substituting into the first equation gives <span class="math inline">x_1 = 0</span>. Therefore, the only constant solution is:</p>
+<p><span class="math display">
 \mathbf{x} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
 </section>
 <section id="c-compute-the-eigenvalues-and-eigenvectors-of-mathbfa-1" class="level4">
 <h4 class="anchored" data-anchor-id="c-compute-the-eigenvalues-and-eigenvectors-of-mathbfa-1">(c) Compute the Eigenvalues and Eigenvectors of <span class="math inline">\mathbf{A}</span></h4>
-<p>Compute the characteristic equation: <span class="math display">
+<p>Compute the characteristic equation:</p>
+<p><span class="math display">
 \det(\mathbf{A} - \lambda \mathbf{I}) = 0
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 \begin{vmatrix} -2 - \lambda &amp; 1 \\ 0 &amp; -2 - \lambda \end{vmatrix} = (-2 - \lambda)^2 = 0
-</span> <span class="math inline">\lambda = -2</span> is a repeated eigenvalue.</p>
-<p>To find the eigenvectors, solve <span class="math inline">(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{0}</span>: <span class="math display">
+</span></p>
+<p><span class="math inline">\lambda = -2</span> is a repeated eigenvalue.</p>
+<p>To find the eigenvectors, solve <span class="math inline">(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{0}</span>:</p>
+<p><span class="math display">
 \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \mathbf{v} = \mathbf{0}
-</span> This gives <span class="math inline">v_2 = 0</span>, so an eigenvector corresponding to <span class="math inline">\lambda = -2</span> is: <span class="math display">
+</span></p>
+<p>This gives <span class="math inline">v_2 = 0</span>, so an eigenvector corresponding to <span class="math inline">\lambda = -2</span> is:</p>
+<p><span class="math display">
 \mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 </span></p>
-<p>Since <span class="math inline">\lambda = -2</span> is a repeated eigenvalue with only one linearly independent eigenvector, we must find a generalized eigenvector by solving <span class="math inline">(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{v}_1</span>: <span class="math display">
+<p>Since <span class="math inline">\lambda = -2</span> is a repeated eigenvalue with only one linearly independent eigenvector, we must find a generalized eigenvector by solving <span class="math inline">(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{v}_1</span>:</p>
+<p><span class="math display">
 \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-</span> This gives <span class="math inline">v_2 = 1</span>. Thus, a generalized eigenvector is: <span class="math display">
+</span></p>
+<p>This gives <span class="math inline">v_2 = 1</span>. Thus, a generalized eigenvector is:</p>
+<p><span class="math display">
 \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 </span></p>
 </section>
 <section id="d-determine-all-straight-line-solutions-1" class="level4">
 <h4 class="anchored" data-anchor-id="d-determine-all-straight-line-solutions-1">(d) Determine All Straight-Line Solutions</h4>
-<p>Straight-line solutions are of the form <span class="math inline">\mathbf{x}(t) = \mathbf{v} e^{\lambda t}</span>. Since we only have one eigenvector, we have a solution: <span class="math display">
+<p>Straight-line solutions are of the form <span class="math inline">\mathbf{x}(t) = \mathbf{v} e^{\lambda t}</span>. Since we only have one eigenvector, we have a solution:</p>
+<p><span class="math display">
 \mathbf{x}_1(t) = c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t}
 </span></p>
 </section>
 <section id="e-general-solution-using-the-generalized-eigenvector" class="level4">
 <h4 class="anchored" data-anchor-id="e-general-solution-using-the-generalized-eigenvector">(e) General Solution Using the Generalized Eigenvector</h4>
-<p>Since we have a repeated eigenvalue and a generalized eigenvector, the general solution takes the form: <span class="math display">
+<p>Since we have a repeated eigenvalue and a generalized eigenvector, the general solution takes the form:</p>
+<p><span class="math display">
 \mathbf{x}(t) = c_1 \mathbf{v}_1 e^{-2t} + c_2 (\mathbf{v}_2 t e^{-2t} + \mathbf{v}_1 e^{-2t})
-</span> Substituting <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>, we get: <span class="math display">
+</span></p>
+<p>Substituting <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>, we get:</p>
+<p><span class="math display">
 \mathbf{x}(t) = c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + c_2 \left( \begin{bmatrix} 0 \\ 1 \end{bmatrix} t e^{-2t} + \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} \right)
-</span> Simplifying, the general solution is: <span class="math display">
+</span></p>
+<p>Simplifying, the general solution is:</p>
+<p><span class="math display">
 \mathbf{x}(t) = \left( c_1 + c_2 \right) \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + c_2 \begin{bmatrix} 0 \\ t \end{bmatrix} e^{-2t}
 </span></p>
 </section>
 <section id="f-solve-the-initial-value-problem-1" class="level4">
 <h4 class="anchored" data-anchor-id="f-solve-the-initial-value-problem-1">(f) Solve the Initial-Value Problem</h4>
-<p>Given <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>, we apply the initial conditions: <span class="math display">
+<p>Given <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>, we apply the initial conditions:</p>
+<p><span class="math display">
 \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \left( c_1 + c_2 \right) \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-</span> This gives the system: <span class="math display">
+</span></p>
+<p>This gives the system:</p>
+<p><span class="math display">
 c_1 + c_2 = 1
-</span> <span class="math display">
+</span></p>
+<p><span class="math display">
 c_2 = 1
-</span> Solving these, we find <span class="math inline">c_2 = 1</span> and <span class="math inline">c_1 = 0</span>. So, the solution to the initial-value problem is: <span class="math display">
+</span></p>
+<p>Solving these, we find <span class="math inline">c_2 = 1</span> and <span class="math inline">c_1 = 0</span>. So, the solution to the initial-value problem is:</p>
+<p><span class="math display">
 \mathbf{x}(t) = \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + \begin{bmatrix} 0 \\ t \end{bmatrix} e^{-2t} = \begin{bmatrix} e^{-2t} \\ t e^{-2t} \end{bmatrix}
 </span></p>
 </section>
@@ -5564,26 +5634,32 @@ c_2 = 1
 <p>The solution <span class="math inline">\mathbf{x}(t) = \begin{bmatrix} e^{-2t} \\ t e^{-2t} \end{bmatrix}</span> shows that as <span class="math inline">t \to \infty</span>, both components approach zero because of the <span class="math inline">e^{-2t}</span> factor. However, the term <span class="math inline">t e^{-2t}</span> causes the solution to decay slower in the <span class="math inline">x_2</span>-direction, resulting in a solution that initially grows in the <span class="math inline">x_2</span>-direction before eventually decaying to zero.</p>
 <hr>
 <p><strong>Final Answer:</strong></p>
-<p><strong>(a)</strong> An explicit matrix <span class="math inline">\mathbf{A}</span> is  <span class="math display">
+<p><strong>(a)</strong> An explicit matrix <span class="math inline">\mathbf{A}</span> is</p>
+<p><span class="math display">
 \mathbf{A} = \begin{bmatrix} -2 &amp; 1 \\ 0 &amp; -2 \end{bmatrix}
 </span></p>
-<p><strong>(b)</strong> The only constant solution is  <span class="math display">
+<p><strong>(b)</strong> The only constant solution is</p>
+<p><span class="math display">
 \mathbf{x} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
-<p><strong>(c)</strong> The eigenvalue is <span class="math inline">\lambda = -2</span> (repeated); corresponding eigenvectors are  <span class="math display">
+<p><strong>(c)</strong> The eigenvalue is <span class="math inline">\lambda = -2</span> (repeated); corresponding eigenvectors are</p>
+<p><span class="math display">
 \mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 </span></p>
-<p>with generalized eigenvector </p>
+<p>with generalized eigenvector</p>
 <p><span class="math display">
 \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 </span></p>
-<p><strong>(d)</strong> A straight-line solution is  <span class="math display">
+<p><strong>(d)</strong> A straight-line solution is</p>
+<p><span class="math display">
 \mathbf{x}_1(t) = c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t}
 </span></p>
-<p><strong>(e)</strong> The general solution is  <span class="math display">
+<p><strong>(e)</strong> The general solution is</p>
+<p><span class="math display">
 \mathbf{x}(t) = \left( c_1 + c_2 \right) \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + c_2 \begin{bmatrix} 0 \\ t \end{bmatrix} e^{-2t}
 </span></p>
-<p><strong>(f)</strong> The solution to the initial-value problem is  <span class="math display">
+<p><strong>(f)</strong> The solution to the initial-value problem is</p>
+<p><span class="math display">
 \mathbf{x}(t) = \begin{bmatrix} e^{-2t} \\ t e^{-2t} \end{bmatrix}
 </span></p>
 <p><strong>Interpretation:</strong> The term <span class="math inline">t e^{-2t}</span> results in an initial growth in the <span class="math inline">x_2</span>-direction before the solution eventually decays to zero, indicating a slower decay in the <span class="math inline">x_2</span>-component due to the generalized eigenvector.</p>
