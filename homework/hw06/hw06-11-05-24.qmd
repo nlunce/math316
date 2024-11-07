@@ -788,14 +788,14 @@ $$
 $$
 
 Since $\lambda = -2$ is a repeated eigenvalue with only one linearly independent
-eigenvector, we must find a generalized eigenvector by solving
+eigenvector, find a generalized eigenvector by solving
 $(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{v}_1$:
 
 $$
 \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 $$
 
-This gives $v_2 = 1$. Thus, a generalized eigenvector is:
+This gives $v_2 = 1$. So a generalized eigenvector is:
 
 $$
 \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
@@ -804,7 +804,7 @@ $$
 #### (d) Determine All Straight-Line Solutions
 
 Straight-line solutions are of the form
-$\mathbf{x}(t) = \mathbf{v} e^{\lambda t}$. Since we only have one eigenvector,
+$\mathbf{x}(t) = \mathbf{v} e^{\lambda t}$. Since there is only one eigenvector,
 we have a solution:
 
 $$
@@ -813,7 +813,7 @@ $$
 
 #### (e) General Solution Using the Generalized Eigenvector
 
-Since we have a repeated eigenvalue and a generalized eigenvector, the general
+Since there is a repeated eigenvalue and a generalized eigenvector, the general
 solution takes the form:
 
 $$
@@ -821,7 +821,7 @@ $$
 $$
 
 Substituting $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and
-$\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$, we get:
+$\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$:
 
 $$
 \mathbf{x}(t) = c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + c_2 \left( \begin{bmatrix} 0 \\ 1 \end{bmatrix} t e^{-2t} + \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} \right)
@@ -835,7 +835,7 @@ $$
 
 #### (f) Solve the Initial-Value Problem
 
-Given $\mathbf{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, we apply the
+Given $\mathbf{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, apply the
 initial conditions:
 
 $$
@@ -852,7 +852,7 @@ $$
 c_2 = 1
 $$
 
-Solving these, we find $c_2 = 1$ and $c_1 = 0$. So, the solution to the
+Solving these, $c_2 = 1$ and $c_1 = 0$. So, the solution to the
 initial-value problem is:
 
 $$
@@ -868,9 +868,9 @@ factor. However, the term $t e^{-2t}$ causes the solution to decay slower in the
 $x_2$-direction, resulting in a solution that initially grows in the
 $x_2$-direction before eventually decaying to zero.
 
----
+::: {.callout-tip icon=false}
 
-**Final Answer:**
+## **Final Answer:**
 
 **(a)** An explicit matrix $\mathbf{A}$ is
 
@@ -919,10 +919,6 @@ $$
 $x_2$-direction before the solution eventually decays to zero, indicating a
 slower decay in the $x_2$-component due to the generalized eigenvector.
 
-::: {.callout-tip icon=false}
-
-## **Final Answer:**
-
 :::
 :::
 
@@ -932,11 +928,65 @@ slower decay in the $x_2$-component due to the generalized eigenvector.
 
 ### **Problem:**
 
+Convert the second-order differential equation
+
+$$
+y'' + y' - 12y = 0
+$$
+
+into a system of first-order equations through an appropriate substitution.
+
 ### **Solution:**
+
+To convert this into a first-order system, let:
+
+$$
+x_1 = y
+$$
+
+$$
+x_2 = y'
+$$
+
+$$
+x_1' = y' = x_2
+$$
+
+$$
+x_2' = y'' = -y' + 12y = -x_2 + 12x_1
+$$
+
+The system can be written as:
+
+$$
+x_1' = x_2
+$$
+
+$$
+x_2' = -x_2 + 12x_1
+$$
+
+or in matrix form:
+
+$$
+\mathbf{x}' = \begin{bmatrix} 0 & 1 \\ 12 & -1 \end{bmatrix} \mathbf{x}
+$$
+
+where
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} y \\ y' \end{bmatrix}
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The equivalent system of first-order equations is:
+
+$$
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}' = \begin{bmatrix} 0 & 1 \\ 12 & -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+$$
 
 :::
 :::

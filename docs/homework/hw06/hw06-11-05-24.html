@@ -5580,29 +5580,29 @@ x_2&#39; = -2x_2
 <p><span class="math display">
 \mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 </span></p>
-<p>Since <span class="math inline">\lambda = -2</span> is a repeated eigenvalue with only one linearly independent eigenvector, we must find a generalized eigenvector by solving <span class="math inline">(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{v}_1</span>:</p>
+<p>Since <span class="math inline">\lambda = -2</span> is a repeated eigenvalue with only one linearly independent eigenvector, find a generalized eigenvector by solving <span class="math inline">(\mathbf{A} + 2\mathbf{I}) \mathbf{v} = \mathbf{v}_1</span>:</p>
 <p><span class="math display">
 \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 </span></p>
-<p>This gives <span class="math inline">v_2 = 1</span>. Thus, a generalized eigenvector is:</p>
+<p>This gives <span class="math inline">v_2 = 1</span>. So a generalized eigenvector is:</p>
 <p><span class="math display">
 \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 </span></p>
 </section>
 <section id="d-determine-all-straight-line-solutions-1" class="level4">
 <h4 class="anchored" data-anchor-id="d-determine-all-straight-line-solutions-1">(d) Determine All Straight-Line Solutions</h4>
-<p>Straight-line solutions are of the form <span class="math inline">\mathbf{x}(t) = \mathbf{v} e^{\lambda t}</span>. Since we only have one eigenvector, we have a solution:</p>
+<p>Straight-line solutions are of the form <span class="math inline">\mathbf{x}(t) = \mathbf{v} e^{\lambda t}</span>. Since there is only one eigenvector, we have a solution:</p>
 <p><span class="math display">
 \mathbf{x}_1(t) = c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t}
 </span></p>
 </section>
 <section id="e-general-solution-using-the-generalized-eigenvector" class="level4">
 <h4 class="anchored" data-anchor-id="e-general-solution-using-the-generalized-eigenvector">(e) General Solution Using the Generalized Eigenvector</h4>
-<p>Since we have a repeated eigenvalue and a generalized eigenvector, the general solution takes the form:</p>
+<p>Since there is a repeated eigenvalue and a generalized eigenvector, the general solution takes the form:</p>
 <p><span class="math display">
 \mathbf{x}(t) = c_1 \mathbf{v}_1 e^{-2t} + c_2 (\mathbf{v}_2 t e^{-2t} + \mathbf{v}_1 e^{-2t})
 </span></p>
-<p>Substituting <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>, we get:</p>
+<p>Substituting <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>:</p>
 <p><span class="math display">
 \mathbf{x}(t) = c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + c_2 \left( \begin{bmatrix} 0 \\ 1 \end{bmatrix} t e^{-2t} + \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} \right)
 </span></p>
@@ -5613,7 +5613,7 @@ x_2&#39; = -2x_2
 </section>
 <section id="f-solve-the-initial-value-problem-1" class="level4">
 <h4 class="anchored" data-anchor-id="f-solve-the-initial-value-problem-1">(f) Solve the Initial-Value Problem</h4>
-<p>Given <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>, we apply the initial conditions:</p>
+<p>Given <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>, apply the initial conditions:</p>
 <p><span class="math display">
 \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \left( c_1 + c_2 \right) \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 </span></p>
@@ -5624,7 +5624,7 @@ c_1 + c_2 = 1
 <p><span class="math display">
 c_2 = 1
 </span></p>
-<p>Solving these, we find <span class="math inline">c_2 = 1</span> and <span class="math inline">c_1 = 0</span>. So, the solution to the initial-value problem is:</p>
+<p>Solving these, <span class="math inline">c_2 = 1</span> and <span class="math inline">c_1 = 0</span>. So, the solution to the initial-value problem is:</p>
 <p><span class="math display">
 \mathbf{x}(t) = \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{-2t} + \begin{bmatrix} 0 \\ t \end{bmatrix} e^{-2t} = \begin{bmatrix} e^{-2t} \\ t e^{-2t} \end{bmatrix}
 </span></p>
@@ -5632,8 +5632,16 @@ c_2 = 1
 <section id="interpretation-of-the-solution" class="level4">
 <h4 class="anchored" data-anchor-id="interpretation-of-the-solution">Interpretation of the Solution</h4>
 <p>The solution <span class="math inline">\mathbf{x}(t) = \begin{bmatrix} e^{-2t} \\ t e^{-2t} \end{bmatrix}</span> shows that as <span class="math inline">t \to \infty</span>, both components approach zero because of the <span class="math inline">e^{-2t}</span> factor. However, the term <span class="math inline">t e^{-2t}</span> causes the solution to decay slower in the <span class="math inline">x_2</span>-direction, resulting in a solution that initially grows in the <span class="math inline">x_2</span>-direction before eventually decaying to zero.</p>
-<hr>
-<p><strong>Final Answer:</strong></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>(a)</strong> An explicit matrix <span class="math inline">\mathbf{A}</span> is</p>
 <p><span class="math display">
 \mathbf{A} = \begin{bmatrix} -2 &amp; 1 \\ 0 &amp; -2 \end{bmatrix}
@@ -5663,17 +5671,6 @@ c_2 = 1
 \mathbf{x}(t) = \begin{bmatrix} e^{-2t} \\ t e^{-2t} \end{bmatrix}
 </span></p>
 <p><strong>Interpretation:</strong> The term <span class="math inline">t e^{-2t}</span> results in an initial growth in the <span class="math inline">x_2</span>-direction before the solution eventually decays to zero, indicating a slower decay in the <span class="math inline">x_2</span>-component due to the generalized eigenvector.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<strong>Final Answer:</strong>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
 </div>
 </div>
 </section>
@@ -5695,9 +5692,42 @@ c_2 = 1
 <div class="callout-body-container callout-body">
 <section id="problem-4" class="level3">
 <h3 class="anchored" data-anchor-id="problem-4"><strong>Problem:</strong></h3>
+<p>Convert the second-order differential equation</p>
+<p><span class="math display">
+y&#39;&#39; + y&#39; - 12y = 0
+</span></p>
+<p>into a system of first-order equations through an appropriate substitution.</p>
 </section>
 <section id="solution-6" class="level3">
 <h3 class="anchored" data-anchor-id="solution-6"><strong>Solution:</strong></h3>
+<p>To convert this into a first-order system, let:</p>
+<p><span class="math display">
+x_1 = y
+</span></p>
+<p><span class="math display">
+x_2 = y&#39;
+</span></p>
+<p><span class="math display">
+x_1&#39; = y&#39; = x_2
+</span></p>
+<p><span class="math display">
+x_2&#39; = y&#39;&#39; = -y&#39; + 12y = -x_2 + 12x_1
+</span></p>
+<p>The system can be written as:</p>
+<p><span class="math display">
+x_1&#39; = x_2
+</span></p>
+<p><span class="math display">
+x_2&#39; = -x_2 + 12x_1
+</span></p>
+<p>or in matrix form:</p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} 0 &amp; 1 \\ 12 &amp; -1 \end{bmatrix} \mathbf{x}
+</span></p>
+<p>where</p>
+<p><span class="math display">
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} y \\ y&#39; \end{bmatrix}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5708,7 +5738,10 @@ c_2 = 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The equivalent system of first-order equations is:</p>
+<p><span class="math display">
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}&#39; = \begin{bmatrix} 0 &amp; 1 \\ 12 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+</span></p>
 </div>
 </div>
 </section>
