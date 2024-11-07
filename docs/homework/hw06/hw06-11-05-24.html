@@ -5764,6 +5764,387 @@ x_2&#39; = -x_2 + 12x_1
 
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.3.4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5"><strong>Problem:</strong></h3>
+<p>Use the Wronskian to determine if the given set of vector functions is linearly independent:</p>
+<p><span class="math display">
+\mathbf{x}_1(t) = \begin{bmatrix} e^{-t} \\ -e^{-t} \end{bmatrix}, \quad \mathbf{x}_2(t) = \begin{bmatrix} e^{2t} \\ 2e^{2t} \end{bmatrix}
+</span></p>
+</section>
+<section id="solution-7" class="level3">
+<h3 class="anchored" data-anchor-id="solution-7"><strong>Solution:</strong></h3>
+<p>To determine if <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> are linearly independent, calculate the Wronskian.</p>
+<section id="set-up-the-wronskian" class="level4">
+<h4 class="anchored" data-anchor-id="set-up-the-wronskian">Set Up the Wronskian</h4>
+<p>The Wronskian <span class="math inline">W(\mathbf{x}_1, \mathbf{x}_2)</span> of two vector functions <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> is defined as:</p>
+<p><span class="math display">
+W(\mathbf{x}_1, \mathbf{x}_2) = \det \begin{bmatrix} e^{-t} &amp; e^{2t} \\ -e^{-t} &amp; 2e^{2t} \end{bmatrix}
+</span></p>
+</section>
+<section id="calculate-the-determinant" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-the-determinant">Calculate the Determinant</h4>
+<p>Expanding the determinant:</p>
+<p><span class="math display">
+W(\mathbf{x}_1, \mathbf{x}_2) = \left( e^{-t} \cdot 2e^{2t} \right) - \left( e^{2t} \cdot -e^{-t} \right)
+</span></p>
+<p><span class="math display">
+= 2e^{t} + e^{t} = 3e^{t}
+</span></p>
+</section>
+<section id="result" class="level4">
+<h4 class="anchored" data-anchor-id="result">Result</h4>
+<p>Since <span class="math inline">W(\mathbf{x}_1, \mathbf{x}_2) = 3e^t</span>, which is nonzero for all <span class="math inline">t</span>, the vector functions <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> are linearly independent.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The vector functions <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> are <strong>linearly independent</strong> because the Wronskian <span class="math inline">W(\mathbf{x}_1, \mathbf{x}_2) = 3e^t</span> is nonzero for all <span class="math inline">t</span>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.3.5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6"><strong>Problem:</strong></h3>
+<p>Use the Wronskian to determine if the given set of vector functions is linearly independent:</p>
+<p><span class="math display">
+\mathbf{x}_1(t) = \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}, \quad \mathbf{x}_2(t) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+</span></p>
+</section>
+<section id="solution-8" class="level3">
+<h3 class="anchored" data-anchor-id="solution-8"><strong>Solution:</strong></h3>
+<p>To determine if <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> are linearly independent, calculate the Wronskian.</p>
+<section id="set-up-the-wronskian-1" class="level4">
+<h4 class="anchored" data-anchor-id="set-up-the-wronskian-1">Set Up the Wronskian</h4>
+<p>The Wronskian <span class="math inline">W(\mathbf{x}_1, \mathbf{x}_2)</span> of two vector functions <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> is defined as:</p>
+<p><span class="math display">
+W(\mathbf{x}_1, \mathbf{x}_2) = \det \begin{bmatrix} \cos t &amp; \sin t \\ \sin t &amp; \cos t \end{bmatrix}
+</span></p>
+</section>
+<section id="calculate-the-determinant-1" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-the-determinant-1">Calculate the Determinant</h4>
+<p>Expanding the determinant:</p>
+<p><span class="math display">
+W(\mathbf{x}_1, \mathbf{x}_2) = \left( \cos t \cdot \cos t \right) - \left( \sin t \cdot \sin t \right)
+</span></p>
+<p><span class="math display">
+= \cos^2 t - \sin^2 t
+</span></p>
+<p>Using the trigonometric identity <span class="math inline">\cos^2 t - \sin^2 t = \cos(2t)</span>:</p>
+<p><span class="math display">
+W(\mathbf{x}_1, \mathbf{x}_2) = \cos(2t)
+</span></p>
+</section>
+<section id="theorem-3.3.5" class="level4">
+<h4 class="anchored" data-anchor-id="theorem-3.3.5">Theorem 3.3.5</h4>
+<p>According to <strong>Theorem 3.3.5</strong>, a set of functions is linearly independent on an interval <span class="math inline">I</span> if the Wronskian is nonzero at <strong>at least one point</strong> within <span class="math inline">I</span>.</p>
+<p>In this case, <span class="math inline">W(\mathbf{x}_1, \mathbf{x}_2) = \cos(2t)</span>, which is <strong>not identically zero</strong> on any open interval. Although <span class="math inline">\cos(2t)</span> becomes zero at specific points (e.g., <span class="math inline">t = \frac{\pi}{4}, \frac{3\pi}{4}, \ldots</span>), it is nonzero for many other points within any interval.</p>
+</section>
+</section>
+<section id="final-answer-6" class="level3">
+<h3 class="anchored" data-anchor-id="final-answer-6"><strong>Final Answer:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The vector functions <span class="math inline">\mathbf{x}_1(t) = \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}</span> and <span class="math inline">\mathbf{x}_2(t) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}</span> are <strong>linearly independent</strong>.</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.3.11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7"><strong>Problem:</strong></h3>
+<p>Given the system <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span> with matrix</p>
+<p><span class="math display">
+A = \begin{bmatrix} 3 &amp; 1 \\ 0 &amp; 3 \end{bmatrix}
+</span></p>
+<ol type="a">
+<li><p>Compute the eigenvalues and eigenvectors of <span class="math inline">A</span>. Explain why you have found one linearly independent solution to the system, but still need to determine another.</p></li>
+<li><p>Verify through direct substitution that <span class="math inline">\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span> is a solution to the given system <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p></li>
+<li><p>Show that the solution you found in (a) and the solution <span class="math inline">\mathbf{x}_2(t)</span> in (b) are linearly independent, and hence state the general solution to the system.</p></li>
+<li><p>Solve the initial value problem (IVP) with the initial condition <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span>.</p></li>
+</ol>
+</section>
+<section id="solution-9" class="level3">
+<h3 class="anchored" data-anchor-id="solution-9"><strong>Solution:</strong></h3>
+<section id="a-compute-the-eigenvalues-and-eigenvectors-and-explain-the-need-for-another-solution" class="level4">
+<h4 class="anchored" data-anchor-id="a-compute-the-eigenvalues-and-eigenvectors-and-explain-the-need-for-another-solution">(a) Compute the Eigenvalues and Eigenvectors, and Explain the Need for Another Solution</h4>
+<ol type="1">
+<li><p><strong>Find the Eigenvalues</strong>:</p>
+<p>To find the eigenvalues of <span class="math inline">A</span>, solve <span class="math inline">\det(A - \lambda I) = 0</span>:</p>
+<p><span class="math display">
+A - \lambda I = \begin{bmatrix} 3 - \lambda &amp; 1 \\ 0 &amp; 3 - \lambda \end{bmatrix}
+</span></p>
+<p><span class="math display">
+\det(A - \lambda I) = (3 - \lambda)(3 - \lambda) - (1)(0) = (3 - \lambda)^2 = 0
+</span></p>
+<p>This gives a repeated eigenvalue <span class="math inline">\lambda = 3</span> with algebraic multiplicity 2.</p></li>
+<li><p><strong>Find the Eigenvectors</strong>:</p>
+<p>To find the eigenvectors corresponding to <span class="math inline">\lambda = 3</span>, solve <span class="math inline">(A - 3I) \mathbf{v} = 0</span>:</p>
+<p><span class="math display">
+A - 3I = \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix}
+</span></p>
+<p>Solving <span class="math inline">\begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span>, we find that any vector of the form <span class="math inline">\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> is an eigenvector. So there is only one linearly independent eigenvector <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span>.</p></li>
+<li><p><strong>Explain the Need for Another Solution</strong>:</p>
+<p>According to <strong>Theorem 3.3.3</strong>, for an <span class="math inline">n \times n</span> matrix <span class="math inline">A</span>, we need <span class="math inline">n</span> linearly independent eigenvectors to form a complete set of solutions for the system <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>. Each eigenvector <span class="math inline">\mathbf{v}_i</span> with its corresponding eigenvalue <span class="math inline">\lambda_i</span> provides a term <span class="math inline">c_i e^{\lambda_i t} \mathbf{v}_i</span> in the general solution.</p>
+<p>In our problem, the matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 0 &amp; 3 \end{bmatrix}</span> has a repeated eigenvalue <span class="math inline">\lambda = 3</span> but only one eigenvector. This is insufficient to meet the requirement of <strong>Theorem 3.3.3</strong> for two linearly independent solutions (since <span class="math inline">A</span> is <span class="math inline">2 \times 2</span>). Therefore, we need to find a second solution using a <strong>generalized eigenvector</strong> to form a complete, linearly independent solution set.</p></li>
+</ol>
+</section>
+<section id="b-verify-mathbfx_2t-t-e3t-beginbmatrix-1-0-endbmatrix-e3t-beginbmatrix-0-1-endbmatrix-as-a-solution" class="level4">
+<h4 class="anchored" data-anchor-id="b-verify-mathbfx_2t-t-e3t-beginbmatrix-1-0-endbmatrix-e3t-beginbmatrix-0-1-endbmatrix-as-a-solution">(b) Verify <span class="math inline">\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span> as a Solution</h4>
+<p>To verify that <span class="math inline">\mathbf{x}_2(t)</span> is a solution, compute <span class="math inline">\mathbf{x}_2&#39;(t)</span> and check if <span class="math inline">\mathbf{x}_2&#39;(t) = A \mathbf{x}_2(t)</span>.</p>
+<ol type="1">
+<li><p><strong>Calculate <span class="math inline">\mathbf{x}_2&#39;(t)</span></strong>:</p>
+<p><span class="math display">
+\mathbf{x}_2(t) = \begin{bmatrix} t e^{3t} \\ e^{3t} \end{bmatrix}
+</span></p>
+<p>Differentiating each component with respect to <span class="math inline">t</span>:</p>
+<p><span class="math display">
+\mathbf{x}_2&#39;(t) = \begin{bmatrix} \frac{d}{dt} (t e^{3t}) \\ \frac{d}{dt} (e^{3t}) \end{bmatrix} = \begin{bmatrix} e^{3t} + 3t e^{3t} \\ 3e^{3t} \end{bmatrix}
+</span></p></li>
+<li><p><strong>Compute <span class="math inline">A \mathbf{x}_2(t)</span></strong>: <span class="math display">
+A \mathbf{x}_2(t) = \begin{bmatrix} 3 &amp; 1 \\ 0 &amp; 3 \end{bmatrix} \begin{bmatrix} t e^{3t} \\ e^{3t} \end{bmatrix} = \begin{bmatrix} 3(t e^{3t}) + e^{3t} \\ 3e^{3t} \end{bmatrix} = \begin{bmatrix} e^{3t} + 3t e^{3t} \\ 3e^{3t} \end{bmatrix}
+</span></p></li>
+</ol>
+<p>Since <span class="math inline">\mathbf{x}_2&#39;(t) = A \mathbf{x}_2(t)</span>, <span class="math inline">\mathbf{x}_2(t)</span> is indeed a solution.</p>
+</section>
+<section id="c-show-linear-independence-and-state-the-general-solution" class="level4">
+<h4 class="anchored" data-anchor-id="c-show-linear-independence-and-state-the-general-solution">(c) Show Linear Independence and State the General Solution</h4>
+<p>The solutions are:</p>
+<p><span class="math display">
+\mathbf{x}_1(t) = e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+</span></p>
+<p>To show that <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> are linearly independent, consider a linear combination:</p>
+<p><span class="math display">
+c_1 \mathbf{x}_1(t) + c_2 \mathbf{x}_2(t) = 0
+</span></p>
+<p>Since <span class="math inline">\mathbf{x}_1(t)</span> and <span class="math inline">\mathbf{x}_2(t)</span> are not multiples of each other, they form a linearly independent set (you can verify this by calculating the Wronskian). So the general solution to the system is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = c_1 e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \left( t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+</span></p>
+</section>
+<section id="d-solve-the-ivp-with-initial-condition-mathbfx0-beginbmatrix-3-2-endbmatrix" class="level4">
+<h4 class="anchored" data-anchor-id="d-solve-the-ivp-with-initial-condition-mathbfx0-beginbmatrix-3-2-endbmatrix">(d) Solve the IVP with Initial Condition <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span></h4>
+<p>Using the initial condition <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span>, substitute <span class="math inline">t = 0</span> into the general solution:</p>
+<p><span class="math display">
+\mathbf{x}(0) = c_1 e^{0} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \left( 0 \cdot e^{0} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{0} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+</span></p>
+<p><span class="math display">
+= c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+</span></p>
+<p>From this, <span class="math inline">c_1 = 3</span> and <span class="math inline">c_2 = 2</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>(a)</strong> The matrix <span class="math inline">A</span> has a repeated eigenvalue <span class="math inline">\lambda = 3</span> with only one corresponding eigenvector:</p>
+<p><span class="math display">
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+</span></p>
+<p>According to <strong>Theorem 3.3.3</strong>, to form a complete solution for the system <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>, we need two linearly independent solutions (since <span class="math inline">A</span> is a <span class="math inline">2 \times 2</span> matrix). However, since we only have one eigenvector, we must find a second solution by using a <strong>generalized eigenvector</strong>.</p>
+<p><strong>(b)</strong> By direct substitution</p>
+<p><span class="math display">
+\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+</span></p>
+<p>is a solution to the system <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p>
+<p><strong>(c)</strong> The solutions <span class="math inline">\mathbf{x}_1(t) = e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span> are linearly independent. Therefore, the general solution to the system is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = c_1 e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \left( t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+</span></p>
+<p><strong>(d)</strong> Solving the initial value problem with <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span>, we find <span class="math inline">c_1 = 3</span> and <span class="math inline">c_2 = 2</span>. So the solution to the IVP is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} 3 + 2t \\ 2 \end{bmatrix}
+</span></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.3.12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-8"><strong>Problem:</strong></h3>
+<p>Let <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span> be given by the matrix</p>
+<p><span class="math display">
+A = \begin{bmatrix} 3 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}
+</span></p>
+<p><strong>(a)</strong> Compute the eigenvalues and eigenvectors of <span class="math inline">A</span>. Explain why, despite the repeated eigenvalue, two linearly independent solutions to the system are found.</p>
+<p><strong>(b)</strong> State the general solution to the system.</p>
+<p><strong>(c)</strong> Solve the initial value problem with the initial condition <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span>.</p>
+<p><strong>(d)</strong> Explain how the original system could be solved <strong>without</strong> using eigenvalues and eigenvectors.</p>
+</section>
+<section id="solution-10" class="level3">
+<h3 class="anchored" data-anchor-id="solution-10"><strong>Solution:</strong></h3>
+<section id="a-compute-eigenvalues-and-eigenvectors" class="level4">
+<h4 class="anchored" data-anchor-id="a-compute-eigenvalues-and-eigenvectors"><strong>(a)</strong> <strong>Compute Eigenvalues and Eigenvectors</strong></h4>
+<ol type="1">
+<li><p><strong>Finding the Eigenvalues</strong>:</p>
+<p>To find the eigenvalues of <span class="math inline">A</span>, solve the characteristic equation <span class="math inline">\det(A - \lambda I) = 0</span>:</p>
+<p><span class="math display">
+A - \lambda I = \begin{bmatrix} 3 - \lambda &amp; 0 \\ 0 &amp; 3 - \lambda \end{bmatrix}
+</span></p>
+<p><span class="math display">
+\det(A - \lambda I) = (3 - \lambda)(3 - \lambda) = (3 - \lambda)^2 = 0
+</span></p>
+<p>This gives the repeated eigenvalue <span class="math inline">\lambda = 3</span>.</p></li>
+<li><p><strong>Finding the Eigenvectors</strong>:</p>
+<p>Find the eigenvectors corresponding to <span class="math inline">\lambda = 3</span> by solving <span class="math inline">(A - 3I) \mathbf{v} = 0</span>:</p>
+<p><span class="math display">
+A - 3I = \begin{bmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{bmatrix}
+</span></p>
+<p>This matrix has infinitely many solutions since any vector <span class="math inline">\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}</span> in <span class="math inline">\mathbb{R}^2</span> satisfies the equation. Two linearly independent vectors can be chosen, such as:</p>
+<p><span class="math display">
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+</span></p></li>
+<li><p><strong>Explanation</strong>:</p>
+<p>Despite having a repeated eigenvalue, two linearly independent solutions exist because the matrix <span class="math inline">A</span> scales the standard basis vectors by the same factor (3). This means that any vector in <span class="math inline">\mathbb{R}^2</span> can be represented using the chosen eigenvectors.</p></li>
+</ol>
+</section>
+<section id="b-state-the-general-solution-to-the-system" class="level4">
+<h4 class="anchored" data-anchor-id="b-state-the-general-solution-to-the-system"><strong>(b)</strong> <strong>State the General Solution to the System</strong></h4>
+<p>Given the two linearly independent eigenvectors, the general solution is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = c_1 e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+</span></p>
+<p>Simplifying this gives:</p>
+<p><span class="math display">
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+</span></p>
+</section>
+<section id="c-solve-the-ivp-with-initial-condition" class="level4">
+<h4 class="anchored" data-anchor-id="c-solve-the-ivp-with-initial-condition"><strong>(c)</strong> <strong>Solve the IVP with Initial Condition</strong></h4>
+<p>To solve the initial value problem with <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span>, substitute <span class="math inline">t = 0</span> into the general solution:</p>
+<p><span class="math display">
+\mathbf{x}(0) = e^{0} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+</span></p>
+<p>This gives <span class="math inline">c_1 = 3</span> and <span class="math inline">c_2 = 2</span>. So the solution to the IVP is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+</span></p>
+</section>
+<section id="d-solve-the-original-system-without-using-eigenvalues-and-eigenvectors" class="level4">
+<h4 class="anchored" data-anchor-id="d-solve-the-original-system-without-using-eigenvalues-and-eigenvectors"><strong>(d)</strong> <strong>Solve the Original System Without Using Eigenvalues and Eigenvectors</strong></h4>
+<p>Since <span class="math inline">A</span> is a diagonal matrix with constant entries, the system can be separated into two independent differential equations:</p>
+<ol type="1">
+<li><p>For the first component <span class="math inline">x_1</span>:</p>
+<p><span class="math display">
+x_1&#39; = 3x_1
+</span></p>
+<p>This is a first-order linear differential equation, with solution:</p>
+<p><span class="math display">
+x_1(t) = c_1 e^{3t}
+</span></p></li>
+<li><p>For the second component <span class="math inline">x_2</span>: <span class="math display">
+x_2&#39; = 3x_2
+</span> Similarly, this gives: <span class="math display">
+x_2(t) = c_2 e^{3t}
+</span></p></li>
+</ol>
+<p>Putting both components together yields:</p>
+<p><span class="math display">
+\mathbf{x}(t) = \begin{bmatrix} c_1 e^{3t} \\ c_2 e^{3t} \end{bmatrix} = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+</span></p>
+<p>This method solves the system directly by leveraging the diagonal structure of <span class="math inline">A</span>, without requiring eigenvalues or eigenvectors.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>(a)</strong> The matrix <span class="math inline">A</span> has an eigenvalue <span class="math inline">\lambda = 3</span>, with two linearly independent eigenvectors <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>. The two solutions exist because <span class="math inline">A</span> scales both basis vectors by the same factor, 3.</p>
+<p><strong>(b)</strong> The general solution to the system is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+</span></p>
+<p><strong>(c)</strong> The solution to the initial value problem with <span class="math inline">\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</span> is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+</span></p>
+<p><strong>(d)</strong> Without using eigenvalues, the system can be solved by treating <span class="math inline">x_1</span> and <span class="math inline">x_2</span> as separate differential equations, leading to the same general solution:</p>
+<p><span class="math display">
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+</span></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="section-3.4" class="level1">
 <h1>SECTION 3.4</h1>
@@ -5780,6 +6161,142 @@ x_2&#39; = -x_2 + 12x_1
 
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.4.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-9" class="level3">
+<h3 class="anchored" data-anchor-id="problem-9"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-11" class="level3">
+<h3 class="anchored" data-anchor-id="solution-11"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.4.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-10" class="level3">
+<h3 class="anchored" data-anchor-id="problem-10"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-12" class="level3">
+<h3 class="anchored" data-anchor-id="solution-12"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.4.7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-11" class="level3">
+<h3 class="anchored" data-anchor-id="problem-11"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-13" class="level3">
+<h3 class="anchored" data-anchor-id="solution-13"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.4.13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-12" class="level3">
+<h3 class="anchored" data-anchor-id="problem-12"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-14" class="level3">
+<h3 class="anchored" data-anchor-id="solution-14"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="section-3.5" class="level1">
 <h1>SECTION 3.5</h1>
@@ -5794,6 +6311,142 @@ x_2&#39; = -x_2 + 12x_1
 </div>
 <div class="callout-body-container callout-body">
 
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.5.9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-13" class="level3">
+<h3 class="anchored" data-anchor-id="problem-13"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-15" class="level3">
+<h3 class="anchored" data-anchor-id="solution-15"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.5.11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-14" class="level3">
+<h3 class="anchored" data-anchor-id="problem-14"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-16" class="level3">
+<h3 class="anchored" data-anchor-id="solution-16"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.5.15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-15" class="level3">
+<h3 class="anchored" data-anchor-id="problem-15"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-17" class="level3">
+<h3 class="anchored" data-anchor-id="solution-17"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.5.17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-16" class="level3">
+<h3 class="anchored" data-anchor-id="problem-16"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-18" class="level3">
+<h3 class="anchored" data-anchor-id="solution-18"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
 </div>
 </div>
 

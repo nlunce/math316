@@ -999,6 +999,404 @@ $$
 
 :::
 
+::: {.callout-note icon=false collapse="true"}
+
+## 3.3.4
+
+### **Problem:**
+
+Use the Wronskian to determine if the given set of vector functions is linearly independent:
+
+$$
+\mathbf{x}_1(t) = \begin{bmatrix} e^{-t} \\ -e^{-t} \end{bmatrix}, \quad \mathbf{x}_2(t) = \begin{bmatrix} e^{2t} \\ 2e^{2t} \end{bmatrix}
+$$
+
+### **Solution:**
+
+To determine if $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are linearly independent, calculate the Wronskian.
+
+#### Set Up the Wronskian
+
+The Wronskian $W(\mathbf{x}_1, \mathbf{x}_2)$ of two vector functions $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ is defined as:
+
+$$
+W(\mathbf{x}_1, \mathbf{x}_2) = \det \begin{bmatrix} e^{-t} & e^{2t} \\ -e^{-t} & 2e^{2t} \end{bmatrix}
+$$
+
+#### Calculate the Determinant
+
+Expanding the determinant:
+
+$$
+W(\mathbf{x}_1, \mathbf{x}_2) = \left( e^{-t} \cdot 2e^{2t} \right) - \left( e^{2t} \cdot -e^{-t} \right)
+$$
+
+$$
+= 2e^{t} + e^{t} = 3e^{t}
+$$
+
+#### Result
+
+Since $W(\mathbf{x}_1, \mathbf{x}_2) = 3e^t$, which is nonzero for all $t$, the vector functions $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are linearly independent.
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The vector functions $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are **linearly independent** because the Wronskian $W(\mathbf{x}_1, \mathbf{x}_2) = 3e^t$ is nonzero for all $t$.
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.3.5
+
+### **Problem:**
+
+Use the Wronskian to determine if the given set of vector functions is linearly independent:
+
+$$
+\mathbf{x}_1(t) = \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}, \quad \mathbf{x}_2(t) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+$$
+
+### **Solution:**
+
+To determine if $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are linearly independent, calculate the Wronskian.
+
+#### Set Up the Wronskian
+
+The Wronskian $W(\mathbf{x}_1, \mathbf{x}_2)$ of two vector functions $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ is defined as:
+
+$$
+W(\mathbf{x}_1, \mathbf{x}_2) = \det \begin{bmatrix} \cos t & \sin t \\ \sin t & \cos t \end{bmatrix}
+$$
+
+#### Calculate the Determinant
+
+Expanding the determinant:
+
+$$
+W(\mathbf{x}_1, \mathbf{x}_2) = \left( \cos t \cdot \cos t \right) - \left( \sin t \cdot \sin t \right)
+$$
+
+$$
+= \cos^2 t - \sin^2 t
+$$
+
+Using the trigonometric identity $\cos^2 t - \sin^2 t = \cos(2t)$:
+
+$$
+W(\mathbf{x}_1, \mathbf{x}_2) = \cos(2t)
+$$
+
+#### Theorem 3.3.5
+
+According to **Theorem 3.3.5**, a set of functions is linearly independent on an interval $I$ if the Wronskian is nonzero at **at least one point** within $I$.
+
+In this case, $W(\mathbf{x}_1, \mathbf{x}_2) = \cos(2t)$, which is **not identically zero** on any open interval. Although $\cos(2t)$ becomes zero at specific points (e.g., $t = \frac{\pi}{4}, \frac{3\pi}{4}, \ldots$), it is nonzero for many other points within any interval.
+
+### **Final Answer:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The vector functions $\mathbf{x}_1(t) = \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}$ and $\mathbf{x}_2(t) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}$ are **linearly independent**.
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.3.11
+
+### **Problem:**
+
+Given the system $\mathbf{x}' = A \mathbf{x}$ with matrix
+
+$$
+A = \begin{bmatrix} 3 & 1 \\ 0 & 3 \end{bmatrix}
+$$
+
+(a) Compute the eigenvalues and eigenvectors of $A$. Explain why you have found one linearly independent solution to the system, but still need to determine another.
+
+(b) Verify through direct substitution that $\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ is a solution to the given system $\mathbf{x}' = A \mathbf{x}$.
+
+(c) Show that the solution you found in (a) and the solution $\mathbf{x}_2(t)$ in (b) are linearly independent, and hence state the general solution to the system.
+
+(d) Solve the initial value problem (IVP) with the initial condition $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$.
+
+### **Solution:**
+
+#### (a) Compute the Eigenvalues and Eigenvectors, and Explain the Need for Another Solution
+
+1. **Find the Eigenvalues**:
+
+   To find the eigenvalues of $A$, solve $\det(A - \lambda I) = 0$:
+
+   $$
+   A - \lambda I = \begin{bmatrix} 3 - \lambda & 1 \\ 0 & 3 - \lambda \end{bmatrix}
+   $$
+
+   $$
+   \det(A - \lambda I) = (3 - \lambda)(3 - \lambda) - (1)(0) = (3 - \lambda)^2 = 0
+   $$
+
+   This gives a repeated eigenvalue $\lambda = 3$ with algebraic multiplicity 2.
+
+2. **Find the Eigenvectors**:
+
+   To find the eigenvectors corresponding to $\lambda = 3$, solve $(A - 3I) \mathbf{v} = 0$:
+
+   $$
+   A - 3I = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}
+   $$
+
+   Solving $\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$, we find that any vector of the form $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ is an eigenvector. So there is only one linearly independent eigenvector $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$.
+
+3. **Explain the Need for Another Solution**:
+
+   According to **Theorem 3.3.3**, for an $n \times n$ matrix $A$, we need $n$ linearly independent eigenvectors to form a complete set of solutions for the system $\mathbf{x}' = A \mathbf{x}$. Each eigenvector $\mathbf{v}_i$ with its corresponding eigenvalue $\lambda_i$ provides a term $c_i e^{\lambda_i t} \mathbf{v}_i$ in the general solution.
+
+   In our problem, the matrix $A = \begin{bmatrix} 3 & 1 \\ 0 & 3 \end{bmatrix}$ has a repeated eigenvalue $\lambda = 3$ but only one eigenvector. This is insufficient to meet the requirement of **Theorem 3.3.3** for two linearly independent solutions (since $A$ is $2 \times 2$). Therefore, we need to find a second solution using a **generalized eigenvector** to form a complete, linearly independent solution set.
+
+#### (b) Verify $\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ as a Solution
+
+To verify that $\mathbf{x}_2(t)$ is a solution, compute $\mathbf{x}_2'(t)$ and check if $\mathbf{x}_2'(t) = A \mathbf{x}_2(t)$.
+
+1. **Calculate $\mathbf{x}_2'(t)$**:
+
+   $$
+   \mathbf{x}_2(t) = \begin{bmatrix} t e^{3t} \\ e^{3t} \end{bmatrix}
+   $$
+
+   Differentiating each component with respect to $t$:
+
+   $$
+   \mathbf{x}_2'(t) = \begin{bmatrix} \frac{d}{dt} (t e^{3t}) \\ \frac{d}{dt} (e^{3t}) \end{bmatrix} = \begin{bmatrix} e^{3t} + 3t e^{3t} \\ 3e^{3t} \end{bmatrix}
+   $$
+
+2. **Compute $A \mathbf{x}_2(t)$**:
+   $$
+   A \mathbf{x}_2(t) = \begin{bmatrix} 3 & 1 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} t e^{3t} \\ e^{3t} \end{bmatrix} = \begin{bmatrix} 3(t e^{3t}) + e^{3t} \\ 3e^{3t} \end{bmatrix} = \begin{bmatrix} e^{3t} + 3t e^{3t} \\ 3e^{3t} \end{bmatrix}
+   $$
+
+Since $\mathbf{x}_2'(t) = A \mathbf{x}_2(t)$, $\mathbf{x}_2(t)$ is indeed a solution.
+
+#### (c) Show Linear Independence and State the General Solution
+
+The solutions are:
+
+$$
+\mathbf{x}_1(t) = e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
+
+To show that $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are linearly independent, consider a linear combination:
+
+$$
+c_1 \mathbf{x}_1(t) + c_2 \mathbf{x}_2(t) = 0
+$$
+
+Since $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are not multiples of each other, they form a linearly independent set (you can verify this by calculating the Wronskian). So the general solution to the system is:
+
+$$
+\mathbf{x}(t) = c_1 e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \left( t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+$$
+
+#### (d) Solve the IVP with Initial Condition $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$
+
+Using the initial condition $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$, substitute $t = 0$ into the general solution:
+
+$$
+\mathbf{x}(0) = c_1 e^{0} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \left( 0 \cdot e^{0} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{0} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+$$
+
+$$
+= c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+$$
+
+From this, $c_1 = 3$ and $c_2 = 2$.
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+**(a)** The matrix $A$ has a repeated eigenvalue $\lambda = 3$ with only one corresponding eigenvector:
+
+$$
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$
+
+According to **Theorem 3.3.3**, to form a complete solution for the system $\mathbf{x}' = A \mathbf{x}$, we need two linearly independent solutions (since $A$ is a $2 \times 2$ matrix). However, since we only have one eigenvector, we must find a second solution by using a **generalized eigenvector**.
+
+**(b)** By direct substitution
+
+$$
+\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
+
+is a solution to the system $\mathbf{x}' = A \mathbf{x}$.
+
+**(c)** The solutions $\mathbf{x}_1(t) = e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\mathbf{x}_2(t) = t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ are linearly independent. Therefore, the general solution to the system is:
+
+$$
+\mathbf{x}(t) = c_1 e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 \left( t e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+$$
+
+**(d)** Solving the initial value problem with $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$, we find $c_1 = 3$ and $c_2 = 2$. So the solution to the IVP is:
+
+$$
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} 3 + 2t \\ 2 \end{bmatrix}
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.3.12
+
+### **Problem:**
+
+Let $\mathbf{x}' = A \mathbf{x}$ be given by the matrix
+
+$$
+A = \begin{bmatrix} 3 & 0 \\ 0 & 3 \end{bmatrix}
+$$
+
+**(a)** Compute the eigenvalues and eigenvectors of $A$. Explain why, despite the repeated eigenvalue, two linearly independent solutions to the system are found.
+
+**(b)** State the general solution to the system.
+
+**(c)** Solve the initial value problem with the initial condition $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$.
+
+**(d)** Explain how the original system could be solved **without** using eigenvalues and eigenvectors.
+
+### **Solution:**
+
+#### **(a)** **Compute Eigenvalues and Eigenvectors**
+
+1. **Finding the Eigenvalues**:
+
+   To find the eigenvalues of $A$, solve the characteristic equation $\det(A - \lambda I) = 0$:
+
+   $$
+   A - \lambda I = \begin{bmatrix} 3 - \lambda & 0 \\ 0 & 3 - \lambda \end{bmatrix}
+   $$
+
+   $$
+   \det(A - \lambda I) = (3 - \lambda)(3 - \lambda) = (3 - \lambda)^2 = 0
+   $$
+
+   This gives the repeated eigenvalue $\lambda = 3$.
+
+2. **Finding the Eigenvectors**:
+
+   Find the eigenvectors corresponding to $\lambda = 3$ by solving $(A - 3I) \mathbf{v} = 0$:
+
+   $$
+   A - 3I = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}
+   $$
+
+   This matrix has infinitely many solutions since any vector $\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$ in $\mathbb{R}^2$ satisfies the equation. Two linearly independent vectors can be chosen, such as:
+
+   $$
+   \mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+   $$
+
+3. **Explanation**:
+
+   Despite having a repeated eigenvalue, two linearly independent solutions exist because the matrix $A$ scales the standard basis vectors by the same factor (3). This means that any vector in $\mathbb{R}^2$ can be represented using the chosen eigenvectors.
+
+#### **(b)** **State the General Solution to the System**
+
+Given the two linearly independent eigenvectors, the general solution is:
+
+$$
+\mathbf{x}(t) = c_1 e^{3t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{3t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
+
+Simplifying this gives:
+
+$$
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+$$
+
+#### **(c)** **Solve the IVP with Initial Condition**
+
+To solve the initial value problem with $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$, substitute $t = 0$ into the general solution:
+
+$$
+\mathbf{x}(0) = e^{0} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+$$
+
+This gives $c_1 = 3$ and $c_2 = 2$. So the solution to the IVP is:
+
+$$
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+$$
+
+#### **(d)** **Solve the Original System Without Using Eigenvalues and Eigenvectors**
+
+Since $A$ is a diagonal matrix with constant entries, the system can be separated into two independent differential equations:
+
+1. For the first component $x_1$:
+
+   $$
+   x_1' = 3x_1
+   $$
+
+   This is a first-order linear differential equation, with solution:
+
+   $$
+   x_1(t) = c_1 e^{3t}
+   $$
+
+2. For the second component $x_2$:
+   $$
+   x_2' = 3x_2
+   $$
+   Similarly, this gives:
+   $$
+   x_2(t) = c_2 e^{3t}
+   $$
+
+Putting both components together yields:
+
+$$
+\mathbf{x}(t) = \begin{bmatrix} c_1 e^{3t} \\ c_2 e^{3t} \end{bmatrix} = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+$$
+
+This method solves the system directly by leveraging the diagonal structure of $A$, without requiring eigenvalues or eigenvectors.
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+**(a)** The matrix $A$ has an eigenvalue $\lambda = 3$, with two linearly independent eigenvectors $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$. The two solutions exist because $A$ scales both basis vectors by the same factor, 3.
+
+**(b)** The general solution to the system is:
+
+$$
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+$$
+
+**(c)** The solution to the initial value problem with $\mathbf{x}(0) = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$ is:
+
+$$
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+$$
+
+**(d)** Without using eigenvalues, the system can be solved by treating $x_1$ and $x_2$ as separate differential equations, leading to the same general solution:
+
+$$
+\mathbf{x}(t) = e^{3t} \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+$$
+
+:::
+:::
+
 # SECTION 3.4
 
 ::: {.callout-tip}
@@ -1007,10 +1405,130 @@ $$
 
 :::
 
+::: {.callout-note icon=false collapse="true"}
+
+## 3.4.1
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.4.3
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.4.7
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.4.13
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
 # SECTION 3.5
 
 ::: {.callout-tip}
 
 ## **Assigned:** 9, 11, 15, 17
 
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.5.9
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.5.11
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.5.15
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.5.17
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
 :::
