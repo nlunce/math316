@@ -1,5 +1,5 @@
 ---
-title: "NOTES"
+title: 'NOTES'
 editor:
   render-on-save: true
 ---
@@ -21,3 +21,4 @@ editor:
 ## WEEK 08
 
 - [Generalized Eigenvectors in Differential Equations](./w08/generalized-eigenvectors-DE.html)
+- [Stability of the Origin in 2x2 Systems of Differential Equations](./w08/stability-of-origin-2x2.html)
