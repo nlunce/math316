@@ -254,7 +254,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### **Center (Neutral Stability)**
+### **Center (Stable)**
 
 - **Eigenvalues:** $\lambda = a \pm bi$ with $a = 0$ (purely imaginary eigenvalues).
 - **Description:** The origin neither attracts nor repels trajectories. Instead, they form closed orbits around the origin, resulting in a behavior called a _center_. This indicates neutral stability.

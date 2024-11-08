@@ -1,0 +1,92 @@
+---
+title: 'HOMEWORK 07'
+author: 'Nathan Lunceford'
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: 'Show the code'
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+      source: false
+      toggle: true
+      caption: See code
+editor:
+  render-on-save: true
+---
+
+# SECTION 3.6
+
+::: {.callout-tip}
+
+## **Assigned:** 9, 11, 17
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.6.9
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+# SECTION 3.7
+
+::: {.callout-tip}
+
+## **Assigned:** 9, 11, 17
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.7.9
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+# SECTION 3.8
+
+::: {.callout-tip}
+
+## **Assigned:** 9, 11, 17
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.8.9
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
