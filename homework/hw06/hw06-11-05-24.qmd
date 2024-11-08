@@ -1993,7 +1993,7 @@ U_norm = U / (speed + epsilon)
 V_norm = V / (speed + epsilon)
 
 # Plot the direction field
-plt.figure(figsize=(10, 10))
+plt.figure(figsize=(8, 8))
 plt.quiver(X1, X2, U_norm, V_norm, angles="xy", color="gray", scale=40, alpha=0.4, width=0.0035)
 
 # Plot the straight-line solutions (eigenvectors)
@@ -2224,17 +2224,68 @@ $$
 
 :::
 
+::: {.callout-tip collapse="true"}
+
+## **Table 3.1**
+
+| Eigenvalues Condition            | Stability and Classification                |
+| -------------------------------- | ------------------------------------------- |
+| $0 < \lambda_1 \leq \lambda_2$   | $0$ is unstable and called a repelling node |
+| $\lambda_1 < 0 < \lambda_2$      | $0$ is unstable and called a saddle         |
+| $\lambda_1 \leq \lambda_2 < 0$   | $0$ is stable and called an attracting node |
+| $\lambda = a \pm bi$ and $a > 0$ | $0$ is unstable and called a spiral source  |
+| $\lambda = a \pm bi$ and $a = 0$ | $0$ is stable and called a center           |
+| $\lambda = a \pm bi$ and $a < 0$ | $0$ is stable and called a spiral sink      |
+
+:::
+
 ::: {.callout-note icon=false collapse="true"}
 
 ## 3.5.9
 
 ### **Problem:**
 
+For the matrix $A$ with characteristic polynomial
+
+$$
+p(\lambda) = \lambda^2 + 4,
+$$
+
+find the eigenvalues of $A$ and classify the stability of the origin as an equilibrium point of the system given by $\mathbf{x}' = A\mathbf{x}$.
+
 ### **Solution:**
+
+#### **Determine the Eigenvalues**
+
+The eigenvalues $\lambda$ are obtained by solving the characteristic equation:
+
+$$
+p(\lambda) = \lambda^2 + 4 = 0.
+$$
+
+Solving for $\lambda$:
+
+$$
+\lambda^2 = -4
+$$
+
+$$
+\lambda = \pm 2i.
+$$
+
+The eigenvalues are $\lambda = 2i$ and $\lambda = -2i$, which are purely imaginary (with no real part).
+
+#### **Classify the Stability of the Equilibrium Point**
+
+Using Table 3.1, if the eigenvalues are of the form $\lambda = a \pm bi$ with $a = 0$ (purely imaginary),
+then the origin is classified as **stable** and is called a **center**. This classification indicates that
+the origin exhibits **neutral stability**, where solutions oscillate around the origin in a closed, non-decaying pattern.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The equilibrium point at the origin is **stable** and is classified as a **center**, resulting in oscillatory behavior around the origin without moving towards or away from it.
 
 :::
 :::
@@ -2245,11 +2296,51 @@ $$
 
 ### **Problem:**
 
+For the matrix $A$ with characteristic polynomial
+
+$$
+p(\lambda) = \lambda^2 - 10\lambda + 9,
+$$
+
+find the eigenvalues of $A$ and classify the stability of the origin as an equilibrium point of the system given by $\mathbf{x}' = A\mathbf{x}$.
+
 ### **Solution:**
+
+#### **Determine the Eigenvalues**
+
+The eigenvalues $\lambda$ are obtained by solving the characteristic equation:
+
+$$
+p(\lambda) = \lambda^2 - 10\lambda + 9 = 0.
+$$
+
+This is a quadratic equation, which can be factored as:
+
+$$
+(\lambda - 9)(\lambda - 1) = 0.
+$$
+
+Solving for $\lambda$:
+
+$$
+\lambda = 9 \quad \text{and} \quad \lambda = 1.
+$$
+
+The eigenvalues are $\lambda = 9$ and $\lambda = 1$, both of which are positive.
+
+#### **Classify the Stability of the Equilibrium Point**
+
+Using Table 3.1, when both eigenvalues are positive ($0 < \lambda_1 \leq \lambda_2$), the origin is classified as **unstable** and is called a **repelling node**. This indicates that trajectories move away from the origin as $t \to \infty$.
+
+### **Conclusion**
+
+The equilibrium point at the origin is **unstable** and is classified as a **repelling node**, meaning that solutions will diverge from the origin over time.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The origin is **unstable** and is classified as a **repelling node**.
 
 :::
 :::
@@ -2260,11 +2351,207 @@ $$
 
 ### **Problem:**
 
+Consider the system of differential equations $\mathbf{x}' = A \mathbf{x}$ with the given matrix
+
+$$
+A = \begin{bmatrix} 0 & -2 \\ 2 & 0 \end{bmatrix}
+$$
+
+**(a)** Determine the general solution to the system $\mathbf{x}' = A \mathbf{x}$.  
+**(b)** Classify the stability of the equilibrium solution at the origin.  
+**(c)** Determine how many straight-line solutions this system of equations has, and explain why.  
+**(d)** Sketch all straight-line solutions to the system and plot several trajectories in the phase plane.
+
 ### **Solution:**
+
+#### **Part (a): Determine the General Solution**
+
+**Find the Eigenvalues of $A$**
+
+To solve $\mathbf{x}' = A \mathbf{x}$, start by finding the eigenvalues $\lambda$ of matrix $A$:
+
+$$
+\det(A - \lambda I) = 0
+$$
+
+Compute $A - \lambda I$:
+
+$$
+A - \lambda I = \begin{bmatrix} -\lambda & -2 \\ 2 & -\lambda \end{bmatrix}
+$$
+
+Calculate the determinant:
+
+$$
+\det(A - \lambda I) = (-\lambda)(-\lambda) - (-2)(2) = \lambda^2 + 4 = 0
+$$
+
+Solve for $\lambda$:
+
+$$
+\lambda^2 = -4 \implies \lambda = \pm 2i
+$$
+
+**Eigenvalues:** $\lambda_1 = 2i$, $\lambda_2 = -2i$.
+
+**Find the Eigenvectors of $A$**
+
+**For $\lambda = 2i$:**
+
+Solve $(A - \lambda I)\mathbf{v} = \mathbf{0}$:
+
+$$
+\begin{bmatrix} -2i & -2 \\ 2 & -2i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+
+This equation implies $v_2 = -i v_1$, so choosing $v_1 = 1$, we get:
+
+$$
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ -i \end{bmatrix}
+$$
+
+**For $\lambda = -2i$:**
+
+Solve $(A + 2i I)\mathbf{v} = \mathbf{0}$:
+
+$$
+\begin{bmatrix} 2i & -2 \\ 2 & 2i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+
+This equation implies $v_2 = i v_1$, so choosing $v_1 = 1$, we get:
+
+$$
+\mathbf{v}_2 = \begin{bmatrix} 1 \\ i \end{bmatrix}
+$$
+
+**Construct the General Solution**
+
+The general solution using complex exponentials is:
+
+$$
+\mathbf{x}(t) = c_1 e^{2i t} \begin{bmatrix} 1 \\ -i \end{bmatrix} + c_2 e^{-2i t} \begin{bmatrix} 1 \\ i \end{bmatrix}
+$$
+
+Using Euler's formula $e^{i\theta} = \cos \theta + i \sin \theta$, rewrite the solution in real terms:
+
+$$
+\mathbf{x}(t) = c_1 \left(\cos(2t) + i \sin(2t)\right) \begin{bmatrix} 1 \\ -i \end{bmatrix} + c_2 \left(\cos(2t) - i \sin(2t)\right) \begin{bmatrix} 1 \\ i \end{bmatrix}
+$$
+
+Expanding and separating real and imaginary parts, the solution can be expressed as:
+
+$$
+\mathbf{x}(t) = c_1 \begin{bmatrix} \cos(2t) \\ \sin(2t) \end{bmatrix} + c_2 \begin{bmatrix} -\sin(2t) \\ \cos(2t) \end{bmatrix}
+$$
+
+The real general solution is:
+
+$$
+\mathbf{x}(t) = c_1 \begin{bmatrix} \cos(2t) \\ \sin(2t) \end{bmatrix} + c_2 \begin{bmatrix} -\sin(2t) \\ \cos(2t) \end{bmatrix}
+$$
+
+where $c_1$ and $c_2$ are constants determined by initial conditions.
+
+#### **Part (b): Classify the Stability of the Equilibrium Solution**
+
+The equilibrium solution is at $\mathbf{x} = \mathbf{0}$.
+
+**Eigenvalues:** $\lambda = \pm 2i$.
+
+Referring to **Table 3.1**:
+
+Since $a = 0$ (purely imaginary eigenvalues), the equilibrium at $\mathbf{x} = \mathbf{0}$ is classified as a **center**.
+
+**Conclusion:**
+
+- The equilibrium solution at the origin is **stable** and classified as a **center**.
+
+#### **Part (c): Determine the Number of Straight-Line Solutions**
+
+There are **no non-trivial straight-line solutions** because the eigenvalues are imaginary, leading to oscillatory solutions rather than motion along straight lines.
+
+#### **Part (d): Graph**
+
+#### Graph
+
+```{python}
+#| label: graph-3-5-15
+#| code-summary: "Show Code"
+
+# Define the system of ODEs using the matrix A
+def dx_dt(X, t):
+    x1, x2 = X
+    dx1 = -2 * x2
+    dx2 = 2 * x1
+    return [dx1, dx2]
+
+# Generate grid for direction field
+x1_vals = np.linspace(-10, 10, 40)
+x2_vals = np.linspace(-10, 10, 40)
+X1, X2 = np.meshgrid(x1_vals, x2_vals)
+
+# Calculate slopes for direction field
+U = -2 * X2
+V = 2 * X1
+
+# Normalize the direction field arrows
+speed = np.sqrt(U**2 + V**2)
+epsilon = 1e-10  # Small value to prevent division by zero
+U_norm = U / (speed + epsilon)
+V_norm = V / (speed + epsilon)
+
+# Plot the direction field
+plt.figure(figsize=(8, 8))
+plt.quiver(X1, X2, U_norm, V_norm, angles="xy", color="gray", scale=40, alpha=0.4, width=0.0035)
+
+# Plot the circular trajectories for different initial conditions
+initial_conditions = [
+    [1, 0],
+    [5, 0],
+    [9, 0],
+]
+
+t_forward = np.linspace(0, 10, 500)
+t_backward = np.linspace(0, -10, 500)
+
+colors = ['purple', 'cyan', 'orange']
+for idx, ic in enumerate(initial_conditions):
+    # Solve ODE forward in time
+    sol_forward = odeint(dx_dt, ic, t_forward)
+    plt.plot(sol_forward[:, 0], sol_forward[:, 1], color=colors[idx], linestyle='-', linewidth=2)
+
+    # Solve ODE backward in time
+    sol_backward = odeint(dx_dt, ic, t_backward)
+    plt.plot(sol_backward[:, 0], sol_backward[:, 1], color=colors[idx], linestyle='-', linewidth=2)
+
+# Set plot limits and labels
+plt.xlim(-10, 10)
+plt.ylim(-10, 10)
+plt.xlabel("$x_1$", fontsize=14)
+plt.ylabel("$x_2$", fontsize=14)
+plt.title(r"Direction Field and Trajectories for $\mathbf{x}' = A\mathbf{x}$", fontsize=16)
+
+# Add grid and display the plot
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+```
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+**(a)** The general solution to the system is:
+
+$$
+\mathbf{x}(t) = c_1 \begin{bmatrix} \cos(2t) \\ \sin(2t) \end{bmatrix} + c_2 \begin{bmatrix} -\sin(2t) \\ \cos(2t) \end{bmatrix}
+$$
+
+**(b)** The equilibrium solution at the origin is **stable** and classified as a **center**.
+
+**(c)** The system has **no non-trivial straight-line solutions** because the eigenvalues are purely imaginary, resulting in oscillatory behavior rather than straight-line motion.
+
+**(d)** The phase plane consists of circular trajectories centered at the origin, with counterclockwise motion.
 
 :::
 :::
@@ -2275,11 +2562,291 @@ $$
 
 ### **Problem:**
 
+Consider the system of differential equations $\mathbf{x}' = A \mathbf{x}$ with the given matrix
+
+$$
+A = \begin{bmatrix} -2 & 1 \\ 0 & -2 \end{bmatrix}
+$$
+
+**(a)** Determine the general solution to the system $\mathbf{x}' = A \mathbf{x}$.  
+**(b)** Classify the stability of the equilibrium solution at the origin.  
+**(c)** Determine how many straight-line solutions this system of equations has, and explain why.  
+**(d)** Sketch all straight-line solutions to the system and plot several trajectories in the phase plane.
+
 ### **Solution:**
+
+#### **Part (a): Determine the General Solution**
+
+**Find the Eigenvalues of $A$:**
+
+To solve the system $\mathbf{x}' = A \mathbf{x}$, start by finding the eigenvalues $\lambda$ of matrix $A$:
+
+$$
+\det(A - \lambda I) = 0
+$$
+
+Compute $A - \lambda I$:
+
+$$
+A - \lambda I = \begin{bmatrix} -2 - \lambda & 1 \\ 0 & -2 - \lambda \end{bmatrix}
+$$
+
+Calculate the determinant:
+
+$$
+\det(A - \lambda I) = (-2 - \lambda)(-2 - \lambda) - (1)(0) = (-2 - \lambda)^2
+$$
+
+Set the determinant to zero:
+
+$$
+(-2 - \lambda)^2 = 0 \implies -2 - \lambda = 0 \implies \lambda = -2
+$$
+
+**Eigenvalue:** $\lambda = -2$ (repeated eigenvalue of multiplicity 2).
+
+**Find the Eigenvector of $A$:**
+
+Solve $(A - \lambda I)\mathbf{v} = \mathbf{0}$:
+
+$$
+(A + 2I)\mathbf{v} = \mathbf{0}
+$$
+
+Compute $A + 2I$:
+
+$$
+A + 2I = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}
+$$
+
+Set up the equations:
+
+$$
+\begin{cases}
+0 \cdot v_1 + 1 \cdot v_2 = 0 \implies v_2 = 0 \\
+0 \cdot v_1 + 0 \cdot v_2 = 0
+\end{cases}
+$$
+
+Thus, the eigenvector corresponding to $\lambda = -2$ is:
+
+$$
+\mathbf{v} = \begin{bmatrix} v_1 \\ 0 \end{bmatrix} = v_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$
+
+**Apply Theorem 3.5.1:**
+
+According to **Theorem 3.5.1**, if $A$ has a repeated eigenvalue $\lambda$ and only one linearly independent eigenvector $\mathbf{v}$, the general solution to $\mathbf{x}' = A \mathbf{x}$ is:
+
+$$
+\mathbf{x}(t) = c_1 e^{\lambda t} \mathbf{v} + c_2 e^{\lambda t} (t \mathbf{v} + \mathbf{u})
+$$
+
+where $\mathbf{u}$ satisfies:
+
+$$
+(A - \lambda I) \mathbf{u} = \mathbf{v}
+$$
+
+**Find the Generalized Eigenvector $\mathbf{u}$:**
+
+Solve $(A - \lambda I) \mathbf{u} = \mathbf{v}$:
+
+Since $A - \lambda I = A + 2I$:
+
+$$
+(A + 2I) \mathbf{u} = \mathbf{v}
+$$
+
+Compute $A + 2I$ as before:
+
+$$
+A + 2I = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}
+$$
+
+Set up the equation:
+
+$$
+\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$
+
+From the first row:
+
+$$
+0 \cdot u_1 + 1 \cdot u_2 = 1 \implies u_2 = 1
+$$
+
+The second row gives:
+
+$$
+0 \cdot u_1 + 0 \cdot u_2 = 0 \implies 0 = 0
+$$
+
+Choose $u_1 = 0$ for simplicity. Thus, the generalized eigenvector is:
+
+$$
+\mathbf{u} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
+
+**Construct the General Solution:**
+
+Using **Theorem 3.5.1**, substitute $\lambda = -2$, $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$, and $\mathbf{u} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$:
+
+$$
+\mathbf{x}(t) = e^{-2t} \left( c_1 \mathbf{v} + c_2 (t \mathbf{v} + \mathbf{u}) \right)
+$$
+
+Simplify:
+
+$$
+\mathbf{x}(t) = c_1 e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-2t} \left( t \begin{bmatrix} 1 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right)
+$$
+
+The general solution is:
+
+$$
+\mathbf{x}(t) = c_1 e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-2t} \begin{bmatrix} t \\ 1 \end{bmatrix}
+$$
+
+where $c_1$ and $c_2$ are constants determined by initial conditions.
+
+#### **Part (b): Classify the Stability of the Equilibrium Solution**
+
+The equilibrium solution is at $\mathbf{x} = \mathbf{0}$.
+
+**Eigenvalues:** $\lambda = -2$ (real, negative, repeated).
+
+Since both eigenvalues have negative real parts, the equilibrium at the origin is:
+
+- **Asymptotically stable** (solutions approach the origin as $t \to \infty$).
+- Classified as a **stable attracting node**.
+
+#### **Part (c): Determine the Number of Straight-Line Solutions**
+
+Straight-line solutions correspond to eigenvectors.
+
+- There is **one** eigenvector $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$.
+- Therefore, there is **one** straight-line solution along the direction of $\mathbf{v}$.
+
+**Explanation:**
+
+- Since the matrix is defective (only one linearly independent eigenvector), there is only **one** straight-line solution.
+- Solutions not along $\mathbf{v}$ will not remain on a straight line but will curve towards the eigenvector direction as $t \to \infty$.
+
+#### **Part (d): Sketch All Straight-Line Solutions and Plot Several Trajectories**
+
+**Straight-Line Solution:**
+
+- The straight-line solution lies along the $x_1$-axis.
+- It is given by:
+
+  $$
+  \mathbf{x}(t) = c e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+  $$
+
+**Phase Plane Trajectories:**
+
+- Trajectories approach the origin along curves that become parallel to the $x_1$-axis as $t \to \infty$.
+- Solutions starting off the $x_1$-axis will curve towards it over time.
+
+**Graphical Representation:**
+
+Below is a Python code snippet that generates the direction field and trajectories for the system:
+
+```{python}
+#| label: graph-3-5-17
+#| code-summary: "Show Code"
+
+# Define the system of ODEs
+def dx_dt(X, t):
+    x1, x2 = X
+    dx1 = -2 * x1 + x2
+    dx2 = -2 * x2
+    return [dx1, dx2]
+
+# Generate grid for direction field
+x1_vals = np.linspace(-5, 5, 35)
+x2_vals = np.linspace(-5, 5, 35)
+X1, X2 = np.meshgrid(x1_vals, x2_vals)
+
+# Calculate slopes for direction field
+U = -2 * X1 + X2
+V = -2 * X2
+
+# Normalize the direction field arrows
+speed = np.sqrt(U**2 + V**2)
+epsilon = 1e-10  # Small value to prevent division by zero
+U_norm = U / (speed + epsilon)
+V_norm = V / (speed + epsilon)
+
+# Plot the direction field
+plt.figure(figsize=(8, 8))
+plt.quiver(X1, X2, U_norm, V_norm, angles="xy", color="black", scale=40, alpha=0.4, width=0.0035)
+
+# Plot the straight-line solution (eigenvector)
+x1_line = np.linspace(-5, 5, 200)
+x2_line = np.zeros_like(x1_line)
+plt.plot(x1_line, x2_line, 'r', linewidth=3, label='Straight-line solution')
+
+# Plot trajectories for different initial conditions
+initial_conditions = [
+    [2, 2],
+    [-2, -2],
+    [2, -2],
+    [-2, 2],
+]
+
+t_forward = np.linspace(0, 5, 500)
+t_backward = np.linspace(0, -5, 500)
+
+colors = ['green', 'purple', 'yellow', 'orange']
+for idx, ic in enumerate(initial_conditions):
+    # Solve ODE forward in time
+    sol_forward = odeint(dx_dt, ic, t_forward)
+    plt.plot(sol_forward[:, 0], sol_forward[:, 1], color=colors[idx % len(colors)], linestyle='-', linewidth=2)
+
+    # Solve ODE backward in time
+    sol_backward = odeint(dx_dt, ic, t_backward)
+    plt.plot(sol_backward[:, 0], sol_backward[:, 1], color=colors[idx % len(colors)], linestyle='-', linewidth=2)
+
+# Set plot limits and labels
+plt.xlim(-5, 5)
+plt.ylim(-5, 5)
+plt.xlabel("$x_1$", fontsize=14)
+plt.ylabel("$x_2$", fontsize=14)
+plt.title(r"Direction Field and Trajectories for $\mathbf{x'} = A\mathbf{x}$", fontsize=18)
+
+# Add grid and legend
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.legend(loc="best", fontsize=12, framealpha=1.0, frameon=True)
+
+# Display the plot
+plt.tight_layout()
+plt.show()
+
+```
+
+**Graph Interpretation:**
+
+- The straight red dashed line represents the straight-line solution along the $x_1$-axis.
+- Other trajectories curve towards the $x_1$-axis as $t \to \infty$.
+- All trajectories move towards the origin, confirming the asymptotic stability.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+**(a)** The general solution to the system is:
+
+$$
+\mathbf{x}(t) = e^{-2t} \begin{bmatrix} c_1 + c_2 t \\ c_2 \end{bmatrix}
+$$
+
+**(b)** The equilibrium solution at the origin is **asymptotically stable** and classified as a **stable attracting node**.
+
+**(c)** The system has **one** straight-line solution along the $x_1$-axis, corresponding to the eigenvector $\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$.
+
+**(d)** The phase plane shows trajectories approaching the origin, with all solutions eventually aligning with the straight-line solution along the $x_1$-axis. The single straight-line solution is along the $x_1$-axis, and other trajectories curve towards it over time.
 
 :::
 :::
