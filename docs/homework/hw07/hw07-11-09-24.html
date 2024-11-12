@@ -5288,7 +5288,7 @@ x_2 = 1 - \frac{2}{3} = \frac{1}{3}
 <h3 class="anchored" data-anchor-id="problem-3"><strong>Problem:</strong></h3>
 <p>Consider the system of differential equations:</p>
 <p><span class="math display">
-\mathbf{x}&#39; = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+\mathbf{x}&#39; = \begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
 </span></p>
 <p><strong>(a)</strong> Assume an appropriate form for the particular solution <span class="math inline">\mathbf{x}_p</span> and use this assumption to determine a particular solution to the given nonhomogeneous system.</p>
 <p><strong>(b)</strong> Determine the complementary solution <span class="math inline">\mathbf{x}_h</span> to the associated homogeneous system, <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p>
@@ -5298,14 +5298,13 @@ x_2 = 1 - \frac{2}{3} = \frac{1}{3}
 <h3 class="anchored" data-anchor-id="solution-3"><strong>Solution:</strong></h3>
 <section id="a-finding-a-particular-solution-mathbfx_p-2" class="level4">
 <h4 class="anchored" data-anchor-id="a-finding-a-particular-solution-mathbfx_p-2">(a) <strong>Finding a Particular Solution <span class="math inline">\mathbf{x}_p</span>:</strong></h4>
-<p>The nonhomogeneous term is the constant vector <span class="math inline">\mathbf{b} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}</span>. Since it is a constant vector, we can assume a constant particular solution.</p>
+<p>The nonhomogeneous term is the constant vector <span class="math inline">\mathbf{b} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}</span>. Since it is a constant vector, assume a constant particular solution.</p>
 <p><strong>Assume a particular solution of the form:</strong></p>
 <p><span class="math display">
 \mathbf{x}_p = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}
 </span></p>
-<p>where <span class="math inline">a</span> and <span class="math inline">b</span> are constants to be determined.</p>
+<p>where <span class="math inline">a_1</span> and <span class="math inline">a_2</span> are constants to be determined.</p>
 <p><strong>Compute the derivative of <span class="math inline">\mathbf{x}_p</span>:</strong></p>
-<p>Since <span class="math inline">\mathbf{x}_p</span> is constant, its derivative is zero:</p>
 <p><span class="math display">
 \mathbf{x}&#39;_p = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
@@ -5315,29 +5314,29 @@ x_2 = 1 - \frac{2}{3} = \frac{1}{3}
 </span></p>
 <p>Compute <span class="math inline">A \mathbf{x}_p</span>:</p>
 <p><span class="math display">
-A \mathbf{x}_p = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} a_2 \\ -a_1 \end{bmatrix}
+A \mathbf{x}_p = \begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -a_2 \\ a_1 \end{bmatrix}
 </span></p>
 <p>So the equation becomes:</p>
 <p><span class="math display">
-\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} a_2 \\ -a_1 \end{bmatrix} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} -a_2 \\ a_1 \end{bmatrix} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
 </span></p>
 <p><strong>Set up the system of equations:</strong></p>
 <ol type="1">
-<li><span class="math inline">a_2 + 3 = 0</span></li>
-<li><span class="math inline">-a_1 - 2 = 0</span></li>
+<li><span class="math inline">-a_2 + 3 = 0</span></li>
+<li><span class="math inline">a_1 - 2 = 0</span></li>
 </ol>
 <p><strong>Solve for <span class="math inline">a_1</span> and <span class="math inline">a_2</span>:</strong></p>
 <p>From equation 1:</p>
 <p><span class="math display">
-a_2 = -3
+a_2 = 3
 </span></p>
 <p>From equation 2:</p>
 <p><span class="math display">
--a_1 - 2 = 0 \quad \Rightarrow \quad a_1 = -2
+a_1 - 2 = 0 \quad \Rightarrow \quad a_1 = 2
 </span></p>
 <p><strong>A particular solution is:</strong></p>
 <p><span class="math display">
-\mathbf{x}_p = \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}_p = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 </span></p>
 </section>
 <section id="b-finding-the-complementary-solution-mathbfx_h-2" class="level4">
@@ -5366,62 +5365,50 @@ a_2 = -3
 </ul>
 <p>Solve <span class="math inline">(A - i I) \mathbf{v} = \mathbf{0}</span>:</p>
 <p><span class="math display">
-\left( \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} - i \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \right) \mathbf{v} = \mathbf{0} \quad \Rightarrow \quad \begin{bmatrix} -i &amp; 1 \\ -1 &amp; -i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\left( \begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix} - i \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \right) \mathbf{v} = \mathbf{0} \quad \Rightarrow \quad \begin{bmatrix} -i &amp; -1 \\ 1 &amp; -i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 </span></p>
 <p>This leads to the equations:</p>
 <ol type="1">
-<li><span class="math inline">-i v_1 + v_2 = 0</span></li>
-<li><span class="math inline">-v_1 - i v_2 = 0</span></li>
+<li><span class="math inline">-i v_1 - v_2 = 0</span></li>
+<li><span class="math inline">v_1 - i v_2 = 0</span></li>
 </ol>
 <p>From equation 1:</p>
 <p><span class="math display">
-v_2 = i v_1
+v_1 = i v_2
 </span></p>
-<p>Substitute <span class="math inline">v_2</span> into equation 2:</p>
+<p><strong>An eigenvector corresponding to <span class="math inline">\lambda = i</span> is:</strong></p>
 <p><span class="math display">
-- v_1 - i (i v_1) = 0 \quad \Rightarrow \quad - v_1 - i^2 v_1 = 0 \quad \Rightarrow \quad - v_1 - (-1) v_1 = 0 \quad \Rightarrow \quad - v_1 + v_1 = 0
-</span></p>
-<p>Which simplifies to <span class="math inline">0 = 0</span>, confirming consistency.</p>
-<p><strong>Thus, an eigenvector corresponding to <span class="math inline">\lambda = i</span> is:</strong></p>
-<p><span class="math display">
-\mathbf{v}_1 = \begin{bmatrix} 1 \\ i \end{bmatrix}
-</span></p>
-<ul>
-<li><strong>For <span class="math inline">\lambda = -i</span>:</strong></li>
-</ul>
-<p>Similarly, we find the eigenvector:</p>
-<p><span class="math display">
-\mathbf{v}_2 = \begin{bmatrix} 1 \\ -i \end{bmatrix}
+\mathbf{v}_1 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 </span></p>
 <p><strong>Express the solution in terms of real functions:</strong></p>
-<p>To obtain real solutions, we use Euler’s formula and consider the real and imaginary parts.</p>
+<p>To obtain real solutions, use Euler’s formula and consider the real and imaginary parts.</p>
 <p><strong>Compute <span class="math inline">e^{i t} \mathbf{v}_1</span>:</strong></p>
 <p><span class="math display">
-e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} = (\cos t + i \sin t) \begin{bmatrix} 1 \\ i \end{bmatrix} = \begin{bmatrix} \cos t + i \sin t \\ i \cos t - \sin t \end{bmatrix}
+e^{i t} \begin{bmatrix} i \\ 1 \end{bmatrix} = (\cos t + i \sin t) \begin{bmatrix} i \\ 1 \end{bmatrix} = \begin{bmatrix} i \cos t - \sin t \\  \cos t + i \sin t \end{bmatrix}
 </span></p>
 <p><strong>Extract the real and imaginary parts:</strong></p>
 <ul>
 <li><strong>Real part:</strong></li>
 </ul>
 <p><span class="math display">
-\operatorname{Re} \left( e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} \right) = \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix}
+\operatorname{Re} \left( e^{i t} \begin{bmatrix} i \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -\sin t \\ \cos t \end{bmatrix}
 </span></p>
 <ul>
 <li><strong>Imaginary part:</strong></li>
 </ul>
 <p><span class="math display">
-\operatorname{Im} \left( e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} \right) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+\operatorname{Im} \left( e^{i t} \begin{bmatrix} i \\ 1 \end{bmatrix} \right) = \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}
 </span></p>
-<p><strong>Thus, the general solution to the homogeneous system is:</strong></p>
+<p><strong>The complementary solution:</strong></p>
 <p><span class="math display">
-\mathbf{x}_h(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+\mathbf{x}_h(t) = c_1 \begin{bmatrix} -\sin t \\ \cos t \end{bmatrix} + c_2 \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}
 </span></p>
 </section>
 <section id="c-state-the-general-solution-2" class="level4">
 <h4 class="anchored" data-anchor-id="c-state-the-general-solution-2">(c) <strong>State the General Solution:</strong></h4>
 <p>The general solution is the sum of the complementary solution <span class="math inline">\mathbf{x}_h</span> and the particular solution <span class="math inline">\mathbf{x}_p</span>:</p>
 <p><span class="math display">
-\mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p = c_1 \begin{bmatrix} -\sin t \\ \cos t \end{bmatrix} + c_2 \begin{bmatrix} \cos t \\ \sin t \end{bmatrix} + \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 </span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -5435,7 +5422,7 @@ e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} = (\cos t + i \sin t) \begin{bmatri
 <div class="callout-body-container callout-body">
 <p><strong>(a)</strong> The particular solution is:</p>
 <p><span class="math display">
-\mathbf{x}_p = \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}_p = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 </span></p>
 <p><strong>(b)</strong> The complementary solution to the homogeneous system is:</p>
 <p><span class="math display">
@@ -5443,7 +5430,7 @@ e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} = (\cos t + i \sin t) \begin{bmatri
 </span></p>
 <p><strong>(c)</strong> The general solution to the system is:</p>
 <p><span class="math display">
-\mathbf{x}(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 </span></p>
 </div>
 </div>

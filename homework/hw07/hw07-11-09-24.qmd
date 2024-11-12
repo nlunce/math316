@@ -490,7 +490,7 @@ $$
 Consider the system of differential equations:
 
 $$
-\mathbf{x}' = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+\mathbf{x}' = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
 $$
 
 **(a)** Assume an appropriate form for the particular solution $\mathbf{x}_p$ and use this assumption to determine a particular solution to the given nonhomogeneous system.
@@ -503,7 +503,7 @@ $$
 
 #### (a) **Finding a Particular Solution $\mathbf{x}_p$:**
 
-The nonhomogeneous term is the constant vector $\mathbf{b} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$. Since it is a constant vector, we can assume a constant particular solution.
+The nonhomogeneous term is the constant vector $\mathbf{b} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$. Since it is a constant vector, assume a constant particular solution.
 
 **Assume a particular solution of the form:**
 
@@ -511,11 +511,9 @@ $$
 \mathbf{x}_p = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}
 $$
 
-where $a$ and $b$ are constants to be determined.
+where $a_1$ and $a_2$ are constants to be determined.
 
 **Compute the derivative of $\mathbf{x}_p$:**
-
-Since $\mathbf{x}_p$ is constant, its derivative is zero:
 
 $$
 \mathbf{x}'_p = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
@@ -530,38 +528,38 @@ $$
 Compute $A \mathbf{x}_p$:
 
 $$
-A \mathbf{x}_p = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} a_2 \\ -a_1 \end{bmatrix}
+A \mathbf{x}_p = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -a_2 \\ a_1 \end{bmatrix}
 $$
 
 So the equation becomes:
 
 $$
-\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} a_2 \\ -a_1 \end{bmatrix} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} -a_2 \\ a_1 \end{bmatrix} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
 $$
 
 **Set up the system of equations:**
 
-1. $a_2 + 3 = 0$
-2. $-a_1 - 2 = 0$
+1. $-a_2 + 3 = 0$
+2. $a_1 - 2 = 0$
 
 **Solve for $a_1$ and $a_2$:**
 
 From equation 1:
 
 $$
-a_2 = -3
+a_2 = 3
 $$
 
 From equation 2:
 
 $$
--a_1 - 2 = 0 \quad \Rightarrow \quad a_1 = -2
+a_1 - 2 = 0 \quad \Rightarrow \quad a_1 = 2
 $$
 
 **A particular solution is:**
 
 $$
-\mathbf{x}_p = \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}_p = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 $$
 
 #### (b) **Finding the Complementary Solution $\mathbf{x}_h$:**
@@ -598,50 +596,34 @@ $$
 Solve $(A - i I) \mathbf{v} = \mathbf{0}$:
 
 $$
-\left( \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} - i \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \right) \mathbf{v} = \mathbf{0} \quad \Rightarrow \quad \begin{bmatrix} -i & 1 \\ -1 & -i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\left( \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} - i \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \right) \mathbf{v} = \mathbf{0} \quad \Rightarrow \quad \begin{bmatrix} -i & -1 \\ 1 & -i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 $$
 
 This leads to the equations:
 
-1. $-i v_1 + v_2 = 0$
-2. $-v_1 - i v_2 = 0$
+1. $-i v_1 - v_2 = 0$
+2. $v_1 - i v_2 = 0$
 
 From equation 1:
 
 $$
-v_2 = i v_1
+v_1 = i v_2
 $$
 
-Substitute $v_2$ into equation 2:
+**An eigenvector corresponding to $\lambda = i$ is:**
 
 $$
-- v_1 - i (i v_1) = 0 \quad \Rightarrow \quad - v_1 - i^2 v_1 = 0 \quad \Rightarrow \quad - v_1 - (-1) v_1 = 0 \quad \Rightarrow \quad - v_1 + v_1 = 0
-$$
-
-Which simplifies to $0 = 0$, confirming consistency.
-
-**Thus, an eigenvector corresponding to $\lambda = i$ is:**
-
-$$
-\mathbf{v}_1 = \begin{bmatrix} 1 \\ i \end{bmatrix}
-$$
-
-- **For $\lambda = -i$:**
-
-Similarly, we find the eigenvector:
-
-$$
-\mathbf{v}_2 = \begin{bmatrix} 1 \\ -i \end{bmatrix}
+\mathbf{v}_1 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
 **Express the solution in terms of real functions:**
 
-To obtain real solutions, we use Euler's formula and consider the real and imaginary parts.
+To obtain real solutions, use Euler's formula and consider the real and imaginary parts.
 
 **Compute $e^{i t} \mathbf{v}_1$:**
 
 $$
-e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} = (\cos t + i \sin t) \begin{bmatrix} 1 \\ i \end{bmatrix} = \begin{bmatrix} \cos t + i \sin t \\ i \cos t - \sin t \end{bmatrix}
+e^{i t} \begin{bmatrix} i \\ 1 \end{bmatrix} = (\cos t + i \sin t) \begin{bmatrix} i \\ 1 \end{bmatrix} = \begin{bmatrix} i \cos t - \sin t \\  \cos t + i \sin t \end{bmatrix}
 $$
 
 **Extract the real and imaginary parts:**
@@ -649,19 +631,19 @@ $$
 - **Real part:**
 
 $$
-\operatorname{Re} \left( e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} \right) = \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix}
+\operatorname{Re} \left( e^{i t} \begin{bmatrix} i \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -\sin t \\ \cos t \end{bmatrix}
 $$
 
 - **Imaginary part:**
 
 $$
-\operatorname{Im} \left( e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} \right) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+\operatorname{Im} \left( e^{i t} \begin{bmatrix} i \\ 1 \end{bmatrix} \right) = \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}
 $$
 
-**Thus, the general solution to the homogeneous system is:**
+**The complementary solution:**
 
 $$
-\mathbf{x}_h(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+\mathbf{x}_h(t) = c_1 \begin{bmatrix} -\sin t \\ \cos t \end{bmatrix} + c_2 \begin{bmatrix} \cos t \\ \sin t \end{bmatrix}
 $$
 
 #### (c) **State the General Solution:**
@@ -669,7 +651,7 @@ $$
 The general solution is the sum of the complementary solution $\mathbf{x}_h$ and the particular solution $\mathbf{x}_p$:
 
 $$
-\mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p = c_1 \begin{bmatrix} -\sin t \\ \cos t \end{bmatrix} + c_2 \begin{bmatrix} \cos t \\ \sin t \end{bmatrix} + \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 $$
 
 ::: {.callout-tip icon=false}
@@ -679,7 +661,7 @@ $$
 **(a)** The particular solution is:
 
 $$
-\mathbf{x}_p = \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}_p = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 $$
 
 **(b)** The complementary solution to the homogeneous system is:
@@ -691,7 +673,7 @@ $$
 **(c)** The general solution to the system is:
 
 $$
-\mathbf{x}(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+\mathbf{x}(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} 2 \\ 3 \end{bmatrix}
 $$
 
 :::
