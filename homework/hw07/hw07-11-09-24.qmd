@@ -26,7 +26,7 @@ editor:
 
 ::: {.callout-tip}
 
-## **Assigned:** 9, 11, 17
+## **Assigned:** 2, 5, 11, 13
 
 :::
 
@@ -49,7 +49,7 @@ editor:
 
 ::: {.callout-tip}
 
-## **Assigned:** 9, 11, 17
+## **Assigned:** 1, 5, 7, 11
 
 :::
 
@@ -72,7 +72,7 @@ editor:
 
 ::: {.callout-tip}
 
-## **Assigned:** 9, 11, 17
+## **Assigned:** 4, 5, 7, 11
 
 :::
 
