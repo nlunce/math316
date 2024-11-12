@@ -5,7 +5,6 @@ project:
     - '*.qmd' # Render all .qmd files in the root directory
     - '!exams/'
     - '!book/'
-    - '!site_libs/'
 
 website:
   title: 'MATH316'
@@ -14,12 +13,14 @@ website:
       - icon: github
         href: https://github.com/nlunce/math316
     left:
-      - href: ./homework/index.qmd
+      - href: ./homework/index.html
         text: HOMEWORK
-      - href: ./exam-practice/index.qmd
+      - href: ./exam-practice/index.html
         text: EXAM PRACTICE
-      - href: ./notes/index.qmd
+      - href: ./notes/index.html
         text: NOTES
+      - href: ./index.html
+        text: SCHEDULE
 
 format:
   html:

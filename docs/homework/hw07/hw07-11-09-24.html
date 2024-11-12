@@ -4708,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4730,16 +4789,20 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../homework/index.html"> 
+    <a class="nav-link" href="../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../exam-practice/index.html"> 
+    <a class="nav-link" href="../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../notes/index.html"> 
+    <a class="nav-link" href="../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../.././index.html"> 
+<span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -4821,10 +4884,91 @@ vertical-align: -.125em;
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem" class="level3">
-<h3 class="anchored" data-anchor-id="problem"><strong>Problem:</strong></h3>
+<h3 class="anchored" data-anchor-id="problem">Problem:</h3>
+<p>Show by direct substitution that the given particular solution <span class="math inline">\mathbf{x}_p</span> is indeed a solution to the nonhomogeneous system of equations. Then determine the general solution.</p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} 1 &amp; -2 \\ -2 &amp; 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} e^{2t} \\ 0 \end{bmatrix}, \quad \mathbf{x}_p = e^{2t} \begin{bmatrix} -\frac{1}{3} \\ \frac{2}{3} \end{bmatrix}
+</span></p>
 </section>
 <section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution"><strong>Solution:</strong></h3>
+<h3 class="anchored" data-anchor-id="solution">Solution:</h3>
+<section id="calculate-mathbfx_p" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-mathbfx_p"><strong>Calculate <span class="math inline">\mathbf{x}_p&#39;</span>:</strong></h4>
+<p>Differentiate <span class="math inline">\mathbf{x}_p = e^{2t} \begin{bmatrix} -\frac{1}{3} \\ \frac{2}{3} \end{bmatrix}</span> with respect to <span class="math inline">t</span>:</p>
+<p><span class="math display">
+\mathbf{x}_p&#39; = \begin{bmatrix} -\frac{1}{3} \cdot 2 e^{2t} \\ \frac{2}{3} \cdot 2 e^{2t} \end{bmatrix} = \begin{bmatrix} -\frac{2}{3} e^{2t} \\ \frac{4}{3} e^{2t} \end{bmatrix}
+</span></p>
+</section>
+<section id="calculate-a-mathbfx_p" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-a-mathbfx_p"><strong>Calculate <span class="math inline">A \mathbf{x}_p</span>:</strong></h4>
+<p>Substitute <span class="math inline">\mathbf{x}_p</span> into <span class="math inline">A \mathbf{x}_p</span>:</p>
+<p><span class="math display">
+A \mathbf{x}_p = \begin{bmatrix} 1 &amp; -2 \\ -2 &amp; 1 \end{bmatrix} \begin{bmatrix} -\frac{1}{3} e^{2t} \\ \frac{2}{3} e^{2t} \end{bmatrix}
+</span></p>
+<p>Performing the matrix multiplication:</p>
+<p><span class="math display">
+A \mathbf{x}_p = \begin{bmatrix} -\frac{1}{3} e^{2t} - \frac{4}{3} e^{2t} \\ \frac{2}{3} e^{2t} + \frac{2}{3} e^{2t} \end{bmatrix} = \begin{bmatrix} -\frac{5}{3} e^{2t} \\ \frac{4}{3} e^{2t} \end{bmatrix}
+</span></p>
+</section>
+<section id="add-mathbfb-to-a-mathbfx_p" class="level4">
+<h4 class="anchored" data-anchor-id="add-mathbfb-to-a-mathbfx_p"><strong>Add <span class="math inline">\mathbf{b}</span> to <span class="math inline">A \mathbf{x}_p</span>:</strong></h4>
+<p><span class="math display">
+A \mathbf{x}_p + \mathbf{b} = \begin{bmatrix} -\frac{5}{3} e^{2t} \\ \frac{4}{3} e^{2t} \end{bmatrix} + \begin{bmatrix} e^{2t} \\ 0 \end{bmatrix} = \begin{bmatrix} -\frac{2}{3} e^{2t} \\ \frac{4}{3} e^{2t} \end{bmatrix}
+</span></p>
+</section>
+<section id="verify-that-mathbfx_p-a-mathbfx_p-mathbfb" class="level4">
+<h4 class="anchored" data-anchor-id="verify-that-mathbfx_p-a-mathbfx_p-mathbfb"><strong>Verify that <span class="math inline">\mathbf{x}_p&#39; = A \mathbf{x}_p + \mathbf{b}</span>:</strong></h4>
+<p>Since:</p>
+<p><span class="math display">
+\mathbf{x}_p&#39; = \begin{bmatrix} -\frac{2}{3} e^{2t} \\ \frac{4}{3} e^{2t} \end{bmatrix} = A \mathbf{x}_p + \mathbf{b},
+</span></p>
+<p><span class="math inline">\mathbf{x}_p</span> is indeed a particular solution.</p>
+</section>
+<section id="find-the-general-solution" class="level4">
+<h4 class="anchored" data-anchor-id="find-the-general-solution"><strong>Find the general solution:</strong></h4>
+<p>The general solution is given by <span class="math inline">\mathbf{x} = \mathbf{x}_h + \mathbf{x}_p</span>, where <span class="math inline">\mathbf{x}_h</span> solves the homogeneous system <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p>
+<ol type="1">
+<li><p><strong>Find the eigenvalues of <span class="math inline">A</span>:</strong></p>
+<p>The matrix <span class="math inline">A = \begin{bmatrix} 1 &amp; -2 \\ -2 &amp; 1 \end{bmatrix}</span> has eigenvalues <span class="math inline">\lambda_1 = 3</span> and <span class="math inline">\lambda_2 = -1</span>.</p></li>
+<li><p><strong>Find the eigenvectors corresponding to <span class="math inline">\lambda_1</span> and <span class="math inline">\lambda_2</span>:</strong></p>
+<ul>
+<li><p>For <span class="math inline">\lambda_1 = 3</span>: Solve <span class="math inline">(A - 3I) \mathbf{v} = 0</span>.</p>
+<p><span class="math display">
+(A - 3I) = \begin{bmatrix} -2 &amp; -2 \\ -2 &amp; -2 \end{bmatrix}
+</span></p>
+<p>Setting up the system:</p>
+<p><span class="math display">
+-2v_1 - 2v_2 = 0
+</span></p>
+<p>This simplifies to <span class="math inline">v_1 = -v_2</span>. So, one eigenvector for <span class="math inline">\lambda_1 = 3</span> is:</p>
+<p><span class="math display">
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+</span></p></li>
+<li><p>For <span class="math inline">\lambda_2 = -1</span>: Solve <span class="math inline">(A + I) \mathbf{v} = 0</span>.</p>
+<p><span class="math display">
+(A + I) = \begin{bmatrix} 2 &amp; -2 \\ -2 &amp; 2 \end{bmatrix}
+</span></p>
+<p>Setting up the system:</p>
+<p><span class="math display">
+2v_1 - 2v_2 = 0
+</span></p>
+<p>This simplifies to <span class="math inline">v_1 = v_2</span>. So, one eigenvector for <span class="math inline">\lambda_2 = -1</span> is:</p>
+<p><span class="math display">
+\mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+</span></p></li>
+</ul></li>
+<li><p><strong>Formulate the homogeneous solution:</strong></p>
+<p>The homogeneous solution is:</p>
+<p><span class="math display">
+\mathbf{x}_h = c_1 e^{3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+</span></p></li>
+</ol>
+</section>
+<section id="combine-to-get-the-general-solution" class="level4">
+<h4 class="anchored" data-anchor-id="combine-to-get-the-general-solution"><strong>Combine to get the general solution:</strong></h4>
+<p><span class="math display">
+\mathbf{x} = c_1 e^{3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + e^{2t} \begin{bmatrix} -\frac{1}{3} \\ \frac{2}{3} \end{bmatrix}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4835,9 +4979,12 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><span class="math display">
+\mathbf{x} = c_1 e^{3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + e^{2t} \begin{bmatrix} -\frac{1}{3} \\ \frac{2}{3} \end{bmatrix}
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4856,9 +5003,106 @@ vertical-align: -.125em;
 <div class="callout-body-container callout-body">
 <section id="problem-1" class="level3">
 <h3 class="anchored" data-anchor-id="problem-1"><strong>Problem:</strong></h3>
+<p>Consider the system of differential equations:</p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} -1 \\ -3 \end{bmatrix}
+</span></p>
+<p><strong>(a)</strong> Explain why it is reasonable to assume that <span class="math inline">\mathbf{x}_p</span> is a constant vector, and use this assumption to determine a particular solution to the given nonhomogeneous system.</p>
+<p><strong>(b)</strong> Determine the complementary solution <span class="math inline">\mathbf{x}_h</span> to the associated homogeneous system, <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p>
+<p><strong>(c)</strong> State the general solution to the system.</p>
+<p><strong>(d)</strong> Is there an equilibrium solution to this system? If so, is it stable? Explain.</p>
 </section>
 <section id="solution-1" class="level3">
 <h3 class="anchored" data-anchor-id="solution-1"><strong>Solution:</strong></h3>
+<section id="a-finding-a-particular-solution-mathbfx_p" class="level4">
+<h4 class="anchored" data-anchor-id="a-finding-a-particular-solution-mathbfx_p">(a) <strong>Finding a Particular Solution <span class="math inline">\mathbf{x}_p</span>:</strong></h4>
+<p>It is reasonable to assume that <span class="math inline">\mathbf{x}_p</span> is a constant vector because the nonhomogeneous term <span class="math inline">\begin{bmatrix} -1 \\ -3 \end{bmatrix}</span> is a constant vector. Therefore, if <span class="math inline">\mathbf{x}_p</span> is a constant solution, then <span class="math inline">\mathbf{x}_p&#39; = 0</span>. Substitute <span class="math inline">\mathbf{x}_p</span> into the differential equation:</p>
+<p><span class="math display">
+0 = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix} \mathbf{x}_p + \begin{bmatrix} -1 \\ -3 \end{bmatrix}
+</span></p>
+<p>Rearrange to solve for <span class="math inline">\mathbf{x}_p</span>:</p>
+<p><span class="math display">
+\begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix} \mathbf{x}_p = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+</span></p>
+<p>Let <span class="math inline">\mathbf{x}_p = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</span>. Then we have the system:</p>
+<p><span class="math display">
+\begin{cases} x_1 + x_2 = 1 \\ 4x_1 + x_2 = 3 \end{cases}
+</span></p>
+<p>Solving these equations:</p>
+<ol type="1">
+<li><p>From the first equation, <span class="math inline">x_2 = 1 - x_1</span>.</p></li>
+<li><p>Substitute <span class="math inline">x_2 = 1 - x_1</span> into the second equation:</p>
+<p><span class="math display">
+4x_1 + (1 - x_1) = 3
+</span></p>
+<p>Simplify:</p>
+<p><span class="math display">
+3x_1 = 2 \implies x_1 = \frac{2}{3}
+</span></p></li>
+<li><p>Substitute <span class="math inline">x_1 = \frac{2}{3}</span> into <span class="math inline">x_2 = 1 - x_1</span>:</p>
+<p><span class="math display">
+x_2 = 1 - \frac{2}{3} = \frac{1}{3}
+</span></p></li>
+</ol>
+<p>A particular solution is:</p>
+<p><span class="math display">
+\mathbf{x}_p = \begin{bmatrix} \frac{2}{3} \\ \frac{1}{3} \end{bmatrix}
+</span></p>
+</section>
+<section id="b-finding-the-complementary-solution-mathbfx_h" class="level4">
+<h4 class="anchored" data-anchor-id="b-finding-the-complementary-solution-mathbfx_h">(b) <strong>Finding the Complementary Solution <span class="math inline">\mathbf{x}_h</span>:</strong></h4>
+<p>To find the complementary solution, solve the associated homogeneous system:</p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix} \mathbf{x}
+</span></p>
+<ol type="1">
+<li><p><strong>Find the eigenvalues of <span class="math inline">A = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix}</span>:</strong></p>
+<p>The characteristic polynomial is:</p>
+<p><span class="math display">
+\det(A - \lambda I) = \begin{vmatrix} 1 - \lambda &amp; 1 \\ 4 &amp; 1 - \lambda \end{vmatrix} = (\lambda - 1)^2 - 4 = \lambda^2 - 2\lambda - 3 = 0
+</span></p>
+<p>Solving for <span class="math inline">\lambda</span>:</p>
+<p><span class="math display">
+\lambda^2 - 2\lambda - 3 = 0 \implies (\lambda - 3)(\lambda + 1) = 0
+</span></p>
+<p>So, the eigenvalues are <span class="math inline">\lambda_1 = 3</span> and <span class="math inline">\lambda_2 = -1</span>.</p></li>
+<li><p><strong>Find the eigenvectors for each eigenvalue:</strong></p>
+<ul>
+<li><p>For <span class="math inline">\lambda_1 = 3</span>:</p>
+<p>Solve <span class="math inline">(A - 3I) \mathbf{v} = 0</span>:</p>
+<p><span class="math display">
+\begin{bmatrix} -2 &amp; 1 \\ 4 &amp; -2 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0
+</span></p>
+<p>This simplifies to <span class="math inline">v_1 = \frac{1}{2} v_2</span>. An eigenvector corresponding to <span class="math inline">\lambda_1 = 3</span> is:</p>
+<p><span class="math display">
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+</span></p></li>
+<li><p>For <span class="math inline">\lambda_2 = -1</span>:</p>
+<p>Solve <span class="math inline">(A + I) \mathbf{v} = 0</span>:</p>
+<p><span class="math display">
+\begin{bmatrix} 2 &amp; 1 \\ 4 &amp; 2 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0
+</span></p>
+<p>This simplifies to <span class="math inline">v_1 = -\frac{1}{2} v_2</span>. An eigenvector corresponding to <span class="math inline">\lambda_2 = -1</span> is:</p>
+<p><span class="math display">
+\mathbf{v}_2 = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
+</span></p></li>
+</ul></li>
+<li><p><strong>Formulate the complementary solution:</strong></p>
+<p><span class="math display">
+\mathbf{x}_h = c_1 e^{3t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} -1 \\ 2 \end{bmatrix}
+</span></p></li>
+</ol>
+</section>
+<section id="c-state-the-general-solution" class="level4">
+<h4 class="anchored" data-anchor-id="c-state-the-general-solution">(c) <strong>State the General Solution:</strong></h4>
+<p><span class="math display">
+\mathbf{x} = \mathbf{x}_h + \mathbf{x}_p = c_1 e^{3t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} -1 \\ 2 \end{bmatrix} + \begin{bmatrix} \frac{2}{3} \\ \frac{1}{3} \end{bmatrix}
+</span></p>
+</section>
+<section id="d-equilibrium-solution-and-stability" class="level4">
+<h4 class="anchored" data-anchor-id="d-equilibrium-solution-and-stability">(d) <strong>Equilibrium Solution and Stability:</strong></h4>
+<p>An equilibrium solution <span class="math inline">\mathbf{x}_{\text{eq}}</span> occurs when <span class="math inline">\mathbf{x}&#39; = 0</span>. This is satisfied by the particular solution <span class="math inline">\mathbf{x}_p = \begin{bmatrix} \frac{2}{3} \\ \frac{1}{3} \end{bmatrix}</span>. Thus, <span class="math inline">\mathbf{x}_{\text{eq}} = \mathbf{x}_p</span>.</p>
+<p>To determine stability, look at the eigenvalues of <span class="math inline">A</span>. Since one eigenvalue (<span class="math inline">\lambda_1 = 3</span>) is positive and the other (<span class="math inline">\lambda_2 = -1</span>) is negative, the equilibrium point is a <strong>saddle point</strong> and is therefore <strong>unstable</strong>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4869,9 +5113,16 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><strong>(a)</strong> Particular solution: <span class="math inline">\mathbf{x}_p = \begin{bmatrix} \frac{2}{3} \\ \frac{1}{3} \end{bmatrix}</span></p>
+<p><strong>(b)</strong> Complementary solution: <span class="math inline">\mathbf{x}_h = c_1 e^{3t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} -1 \\ 2 \end{bmatrix}</span></p>
+<p><strong>(c)</strong> General solution:</p>
+<p><span class="math display">
+\mathbf{x} = c_1 e^{3t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} -1 \\ 2 \end{bmatrix} + \begin{bmatrix} \frac{2}{3} \\ \frac{1}{3} \end{bmatrix}
+</span></p>
+<p><strong>(d)</strong> Equilibrium solution: <span class="math inline">\mathbf{x}_{\text{eq}} = \begin{bmatrix} \frac{2}{3} \\ \frac{1}{3} \end{bmatrix}</span>, which is unstable (saddle point).</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4890,9 +5141,108 @@ vertical-align: -.125em;
 <div class="callout-body-container callout-body">
 <section id="problem-2" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2"><strong>Problem:</strong></h3>
+<p>Consider the system of differential equations:</p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} -1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3e^{-2t} \\ -4e^{-2t} \end{bmatrix}
+</span></p>
+<p><strong>(a)</strong> Assume an appropriate form for the particular solution <span class="math inline">\mathbf{x}_p</span> and use this assumption to determine a particular solution to the given nonhomogeneous system.</p>
+<p><strong>(b)</strong> Determine the complementary solution <span class="math inline">\mathbf{x}_h</span> to the associated homogeneous system, <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p>
+<p><strong>(c)</strong> State the general solution to the system.</p>
 </section>
 <section id="solution-2" class="level3">
 <h3 class="anchored" data-anchor-id="solution-2"><strong>Solution:</strong></h3>
+<section id="a-finding-a-particular-solution-mathbfx_p-1" class="level4">
+<h4 class="anchored" data-anchor-id="a-finding-a-particular-solution-mathbfx_p-1">(a) <strong>Finding a Particular Solution <span class="math inline">\mathbf{x}_p</span>:</strong></h4>
+<p>The nonhomogeneous term is <span class="math inline">\mathbf{b} = \begin{bmatrix} 3e^{-2t} \\ -4e^{-2t} \end{bmatrix}</span>. Since <span class="math inline">e^{-2t}</span> is not a solution to the homogeneous system (verified in part <strong>(b)</strong>), assume a particular solution of the form:</p>
+<p><span class="math display">
+\mathbf{x}_p(t) = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} e^{-2t}
+</span></p>
+<p>where <span class="math inline">a_1</span> and <span class="math inline">a_2</span> are constants to be determined.</p>
+<p><strong>Differentiate <span class="math inline">\mathbf{x}_p</span>:</strong></p>
+<p>If <span class="math inline">\mathbf{x}_p = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} e^{-2t}</span>, then:</p>
+<p><span class="math display">
+\mathbf{x}&#39;_p = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} (-2e^{-2t}) = \begin{bmatrix} -2a_1 \\ -2a_2 \end{bmatrix} e^{-2t}
+</span></p>
+<p><strong>Substitute <span class="math inline">\mathbf{x}_p</span> and <span class="math inline">\mathbf{x}&#39;_p</span> into the differential equation:</strong></p>
+<p>We substitute <span class="math inline">\mathbf{x}&#39;_p</span> and <span class="math inline">A\mathbf{x}_p + \mathbf{f}(t)</span> into the equation:</p>
+<p><span class="math display">
+\begin{bmatrix} -2a_1 \\ -2a_2 \end{bmatrix} e^{-2t} = \begin{bmatrix} -1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} e^{-2t} + \begin{bmatrix} 3 \\ -4 \end{bmatrix} e^{-2t}
+</span></p>
+<p>Expanding the matrix multiplication:</p>
+<p><span class="math display">
+\begin{bmatrix} -2a_1 \\ -2a_2 \end{bmatrix} e^{-2t} = \begin{bmatrix} -a_1 + a_2 \\ a_2 \end{bmatrix} e^{-2t} + \begin{bmatrix} 3 \\ -4 \end{bmatrix} e^{-2t}
+</span></p>
+<p><strong>Set up and solve the system of equations:</strong></p>
+<ol type="1">
+<li><span class="math inline">-2a_1 = -a_1 + a_2 + 3</span></li>
+<li><span class="math inline">-2a_2 = a_2 - 4</span></li>
+</ol>
+<ul>
+<li><p>From the second equation: <span class="math inline">-2a_2 = a_2 - 4 \Rightarrow -3a_2 = -4 \Rightarrow a_2 = \frac{4}{3}</span>.</p></li>
+<li><p>Substitute <span class="math inline">a_2 = \frac{4}{3}</span> into the first equation:</p>
+<p><span class="math display">
+-2a_1 = -a_1 + \frac{4}{3} + 3
+</span></p>
+<p>Simplifying:</p>
+<p><span class="math display">
+-a_1 = \frac{4}{3} + 3 \Rightarrow a_1 = -\frac{13}{3}
+</span></p></li>
+</ul>
+<p>A particular solution is:</p>
+<p><span class="math display">
+\mathbf{x}_p(t) = \begin{bmatrix} -\frac{13}{3} \\ \frac{4}{3} \end{bmatrix} e^{-2t}
+</span></p>
+</section>
+<section id="b-finding-the-complementary-solution-mathbfx_h-1" class="level4">
+<h4 class="anchored" data-anchor-id="b-finding-the-complementary-solution-mathbfx_h-1">(b) <strong>Finding the Complementary Solution <span class="math inline">\mathbf{x}_h</span>:</strong></h4>
+<p><strong>Solve the associated homogeneous system:</strong></p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} -1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix} \mathbf{x}
+</span></p>
+<p><strong>Find the eigenvalues of <span class="math inline">A = \begin{bmatrix} -1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix}</span>:</strong></p>
+<p><span class="math display">
+\det(A - \lambda I) = \det \begin{bmatrix} -1 - \lambda &amp; 1 \\ 0 &amp; 1 - \lambda \end{bmatrix} = (-1 - \lambda)(1 - \lambda)
+</span></p>
+<p><span class="math display">
+(-1 - \lambda)(1 - \lambda) = 0
+</span></p>
+<p>The eigenvalues are:</p>
+<ul>
+<li><span class="math inline">\lambda_1 = -1</span></li>
+<li><span class="math inline">\lambda_2 = 1</span></li>
+</ul>
+<p><strong>Find the eigenvectors for each eigenvalue:</strong></p>
+<ul>
+<li><p>For <span class="math inline">\lambda_1 = -1</span>:</p>
+<p>Solve <span class="math inline">(A + I)\mathbf{v} = 0</span>:</p>
+<p><span class="math display">
+\begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 2 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+</span></p>
+<p>This implies <span class="math inline">v_2 = 0</span>, so <span class="math inline">v_1</span> is arbitrary. Choose <span class="math inline">v_1 = 1</span>, giving:</p>
+<p><span class="math display">
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+</span></p></li>
+<li><p>For <span class="math inline">\lambda_2 = 1</span>:</p>
+<p>Solve <span class="math inline">(A - I)\mathbf{v} = 0</span>:</p>
+<p><span class="math display">
+\begin{bmatrix} -2 &amp; 1 \\ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+</span></p>
+<p>This implies <span class="math inline">v_1 = \frac{1}{2}v_2</span> and <span class="math inline">v_2</span> is arbitrary. Choosing <span class="math inline">v_2 = 2</span>:</p>
+<p><span class="math display">
+\mathbf{v}_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+</span></p></li>
+</ul>
+<p><strong>The complementary solution is:</strong></p>
+<p><span class="math display">
+\mathbf{x}_h(t) = c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{t} \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+</span></p>
+</section>
+<section id="c-state-the-general-solution-1" class="level4">
+<h4 class="anchored" data-anchor-id="c-state-the-general-solution-1">(c) <strong>State the General Solution:</strong></h4>
+<p>The general solution is the sum of the complementary solution <span class="math inline">\mathbf{x}_h</span> and the particular solution <span class="math inline">\mathbf{x}_p</span>:</p>
+<p><span class="math display">
+\mathbf{x}(t) = \mathbf{x}_h + \mathbf{x}_p = c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} -\frac{13}{3} \\ \frac{4}{3} \end{bmatrix} e^{-2t}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4903,9 +5253,21 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><strong>(a)</strong> The particular solution is:</p>
+<p><span class="math display">
+\mathbf{x}_p(t) = \begin{bmatrix} -\frac{13}{3} \\ \frac{4}{3} \end{bmatrix} e^{-2t}
+</span></p>
+<p><strong>(b)</strong> The complementary solution to the homogeneous system is:</p>
+<p><span class="math display">
+\mathbf{x}_h(t) = c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{t} \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+</span></p>
+<p><strong>(c)</strong> The general solution to the system is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} -\frac{13}{3} \\ \frac{4}{3} \end{bmatrix} e^{-2t}
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4924,9 +5286,143 @@ vertical-align: -.125em;
 <div class="callout-body-container callout-body">
 <section id="problem-3" class="level3">
 <h3 class="anchored" data-anchor-id="problem-3"><strong>Problem:</strong></h3>
+<p>Consider the system of differential equations:</p>
+<p><span class="math display">
+\mathbf{x}&#39; = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+</span></p>
+<p><strong>(a)</strong> Assume an appropriate form for the particular solution <span class="math inline">\mathbf{x}_p</span> and use this assumption to determine a particular solution to the given nonhomogeneous system.</p>
+<p><strong>(b)</strong> Determine the complementary solution <span class="math inline">\mathbf{x}_h</span> to the associated homogeneous system, <span class="math inline">\mathbf{x}&#39; = A \mathbf{x}</span>.</p>
+<p><strong>(c)</strong> State the general solution to the system.</p>
 </section>
 <section id="solution-3" class="level3">
 <h3 class="anchored" data-anchor-id="solution-3"><strong>Solution:</strong></h3>
+<section id="a-finding-a-particular-solution-mathbfx_p-2" class="level4">
+<h4 class="anchored" data-anchor-id="a-finding-a-particular-solution-mathbfx_p-2">(a) <strong>Finding a Particular Solution <span class="math inline">\mathbf{x}_p</span>:</strong></h4>
+<p>The nonhomogeneous term is the constant vector <span class="math inline">\mathbf{b} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}</span>. Since it is a constant vector, we can assume a constant particular solution.</p>
+<p><strong>Assume a particular solution of the form:</strong></p>
+<p><span class="math display">
+\mathbf{x}_p = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}
+</span></p>
+<p>where <span class="math inline">a</span> and <span class="math inline">b</span> are constants to be determined.</p>
+<p><strong>Compute the derivative of <span class="math inline">\mathbf{x}_p</span>:</strong></p>
+<p>Since <span class="math inline">\mathbf{x}_p</span> is constant, its derivative is zero:</p>
+<p><span class="math display">
+\mathbf{x}&#39;_p = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+</span></p>
+<p><strong>Substitute <span class="math inline">\mathbf{x}_p</span> and <span class="math inline">\mathbf{x}&#39;_p</span> into the differential equation:</strong></p>
+<p><span class="math display">
+\mathbf{0} = A \mathbf{x}_p + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+</span></p>
+<p>Compute <span class="math inline">A \mathbf{x}_p</span>:</p>
+<p><span class="math display">
+A \mathbf{x}_p = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} a_2 \\ -a_1 \end{bmatrix}
+</span></p>
+<p>So the equation becomes:</p>
+<p><span class="math display">
+\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} a_2 \\ -a_1 \end{bmatrix} + \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+</span></p>
+<p><strong>Set up the system of equations:</strong></p>
+<ol type="1">
+<li><span class="math inline">a_2 + 3 = 0</span></li>
+<li><span class="math inline">-a_1 - 2 = 0</span></li>
+</ol>
+<p><strong>Solve for <span class="math inline">a_1</span> and <span class="math inline">a_2</span>:</strong></p>
+<p>From equation 1:</p>
+<p><span class="math display">
+a_2 = -3
+</span></p>
+<p>From equation 2:</p>
+<p><span class="math display">
+-a_1 - 2 = 0 \quad \Rightarrow \quad a_1 = -2
+</span></p>
+<p><strong>A particular solution is:</strong></p>
+<p><span class="math display">
+\mathbf{x}_p = \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+</span></p>
+</section>
+<section id="b-finding-the-complementary-solution-mathbfx_h-2" class="level4">
+<h4 class="anchored" data-anchor-id="b-finding-the-complementary-solution-mathbfx_h-2">(b) <strong>Finding the Complementary Solution <span class="math inline">\mathbf{x}_h</span>:</strong></h4>
+<p><strong>Solve the associated homogeneous system:</strong></p>
+<p><span class="math display">
+\mathbf{x}&#39; = A \mathbf{x} = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \mathbf{x}
+</span></p>
+<p><strong>Find the eigenvalues of <span class="math inline">A</span>:</strong></p>
+<p>Compute the characteristic equation:</p>
+<p><span class="math display">
+\det(A - \lambda I) = \det \begin{bmatrix} -\lambda &amp; 1 \\ -1 &amp; -\lambda \end{bmatrix} = (-\lambda)(-\lambda) - (-1)(1) = \lambda^2 + 1
+</span></p>
+<p>Set the determinant to zero:</p>
+<p><span class="math display">
+\lambda^2 + 1 = 0 \quad \Rightarrow \quad \lambda^2 = -1 \quad \Rightarrow \quad \lambda = \pm i
+</span></p>
+<p><strong>Eigenvalues:</strong></p>
+<ul>
+<li><span class="math inline">\lambda_1 = i</span></li>
+<li><span class="math inline">\lambda_2 = -i</span></li>
+</ul>
+<p><strong>Find the eigenvectors for each eigenvalue:</strong></p>
+<ul>
+<li><strong>For <span class="math inline">\lambda = i</span>:</strong></li>
+</ul>
+<p>Solve <span class="math inline">(A - i I) \mathbf{v} = \mathbf{0}</span>:</p>
+<p><span class="math display">
+\left( \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} - i \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \right) \mathbf{v} = \mathbf{0} \quad \Rightarrow \quad \begin{bmatrix} -i &amp; 1 \\ -1 &amp; -i \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+</span></p>
+<p>This leads to the equations:</p>
+<ol type="1">
+<li><span class="math inline">-i v_1 + v_2 = 0</span></li>
+<li><span class="math inline">-v_1 - i v_2 = 0</span></li>
+</ol>
+<p>From equation 1:</p>
+<p><span class="math display">
+v_2 = i v_1
+</span></p>
+<p>Substitute <span class="math inline">v_2</span> into equation 2:</p>
+<p><span class="math display">
+- v_1 - i (i v_1) = 0 \quad \Rightarrow \quad - v_1 - i^2 v_1 = 0 \quad \Rightarrow \quad - v_1 - (-1) v_1 = 0 \quad \Rightarrow \quad - v_1 + v_1 = 0
+</span></p>
+<p>Which simplifies to <span class="math inline">0 = 0</span>, confirming consistency.</p>
+<p><strong>Thus, an eigenvector corresponding to <span class="math inline">\lambda = i</span> is:</strong></p>
+<p><span class="math display">
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ i \end{bmatrix}
+</span></p>
+<ul>
+<li><strong>For <span class="math inline">\lambda = -i</span>:</strong></li>
+</ul>
+<p>Similarly, we find the eigenvector:</p>
+<p><span class="math display">
+\mathbf{v}_2 = \begin{bmatrix} 1 \\ -i \end{bmatrix}
+</span></p>
+<p><strong>Express the solution in terms of real functions:</strong></p>
+<p>To obtain real solutions, we use Euler’s formula and consider the real and imaginary parts.</p>
+<p><strong>Compute <span class="math inline">e^{i t} \mathbf{v}_1</span>:</strong></p>
+<p><span class="math display">
+e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} = (\cos t + i \sin t) \begin{bmatrix} 1 \\ i \end{bmatrix} = \begin{bmatrix} \cos t + i \sin t \\ i \cos t - \sin t \end{bmatrix}
+</span></p>
+<p><strong>Extract the real and imaginary parts:</strong></p>
+<ul>
+<li><strong>Real part:</strong></li>
+</ul>
+<p><span class="math display">
+\operatorname{Re} \left( e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} \right) = \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix}
+</span></p>
+<ul>
+<li><strong>Imaginary part:</strong></li>
+</ul>
+<p><span class="math display">
+\operatorname{Im} \left( e^{i t} \begin{bmatrix} 1 \\ i \end{bmatrix} \right) = \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+</span></p>
+<p><strong>Thus, the general solution to the homogeneous system is:</strong></p>
+<p><span class="math display">
+\mathbf{x}_h(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+</span></p>
+</section>
+<section id="c-state-the-general-solution-2" class="level4">
+<h4 class="anchored" data-anchor-id="c-state-the-general-solution-2">(c) <strong>State the General Solution:</strong></h4>
+<p>The general solution is the sum of the complementary solution <span class="math inline">\mathbf{x}_h</span> and the particular solution <span class="math inline">\mathbf{x}_p</span>:</p>
+<p><span class="math display">
+\mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4937,9 +5433,21 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><strong>(a)</strong> The particular solution is:</p>
+<p><span class="math display">
+\mathbf{x}_p = \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+</span></p>
+<p><strong>(b)</strong> The complementary solution to the homogeneous system is:</p>
+<p><span class="math display">
+\mathbf{x}_h(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix}
+</span></p>
+<p><strong>(c)</strong> The general solution to the system is:</p>
+<p><span class="math display">
+\mathbf{x}(t) = c_1 \begin{bmatrix} \cos t \\ -\sin t \end{bmatrix} + c_2 \begin{bmatrix} \sin t \\ \cos t \end{bmatrix} + \begin{bmatrix} -2 \\ -3 \end{bmatrix}
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4966,7 +5474,7 @@ vertical-align: -.125em;
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-3.7.9
+3.7.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4977,6 +5485,108 @@ vertical-align: -.125em;
 </section>
 <section id="solution-4" class="level3">
 <h3 class="anchored" data-anchor-id="solution-4"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.7.5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-5" class="level3">
+<h3 class="anchored" data-anchor-id="solution-5"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.7.7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-6" class="level3">
+<h3 class="anchored" data-anchor-id="solution-6"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.7.11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-7" class="level3">
+<h3 class="anchored" data-anchor-id="solution-7"><strong>Solution:</strong></h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5011,22 +5621,124 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-3.8.9
+3.8.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="problem-5" class="level3">
-<h3 class="anchored" data-anchor-id="problem-5"><strong>Problem:</strong></h3>
+<section id="problem-8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-8"><strong>Problem:</strong></h3>
 </section>
-<section id="solution-5" class="level3">
-<h3 class="anchored" data-anchor-id="solution-5"><strong>Solution:</strong></h3>
+<section id="solution-8" class="level3">
+<h3 class="anchored" data-anchor-id="solution-8"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.8.5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-9" class="level3">
+<h3 class="anchored" data-anchor-id="problem-9"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-9" class="level3">
+<h3 class="anchored" data-anchor-id="solution-9"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.8.7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-10" class="level3">
+<h3 class="anchored" data-anchor-id="problem-10"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-10" class="level3">
+<h3 class="anchored" data-anchor-id="solution-10"><strong>Solution:</strong></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Final Answer:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+3.8.11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="problem-11" class="level3">
+<h3 class="anchored" data-anchor-id="problem-11"><strong>Problem:</strong></h3>
+</section>
+<section id="solution-11" class="level3">
+<h3 class="anchored" data-anchor-id="solution-11"><strong>Solution:</strong></h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
