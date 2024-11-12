@@ -32,7 +32,52 @@ editor:
 
 ::: {.callout-note icon=false collapse="true"}
 
-## 3.6.9
+## 3.6.2
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.6.5
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.6.11
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 3.6.13
 
 ### **Problem:**
 
