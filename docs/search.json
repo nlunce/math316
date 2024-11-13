@@ -418,5 +418,12 @@
     "title": "Nonhomogeneous Systems: Undetermined Coefficients",
     "section": "Summary",
     "text": "Summary\nThe method of undetermined coefficients provides a straightforward way to find a particular solution to nonhomogeneous systems when \\(\\mathbf{b}(t)\\) has certain forms. By using the table to make an educated guess for \\(\\mathbf{x}_p(t)\\) and solving for unknown coefficients, we can construct a particular solution to complete the system’s solution."
+  },
+  {
+    "objectID": "exam-practice/exam04/overview.html",
+    "href": "exam-practice/exam04/overview.html",
+    "title": "EXAM 04 OVERVIEW",
+    "section": "",
+    "text": "2x2 Matrices:\n\nDetermine the eigenvalues and eigenvectors for 2x2 matrices.\n\nTank Mixing Problem:\n\nSolve a problem involving the mixing of two connected tanks.\n\n3x3 Matrices:\n\nGiven a 3x3 matrix with eigenvalues, find the corresponding eigenvectors.\n\nGeneral Solution for \\(n \\times n\\) Matrix:\n\nFor an \\(n \\times n\\) matrix with known eigenvalues and eigenvectors, determine the solution for the homogeneous system \\(\\mathbf{x}_h\\).\n\nMatrix with Some Eigenvalues and Eigenvectors:\nGiven a matrix with certain eigenvalues and eigenvectors:\n\nWrite down the general solution for the system \\(\\mathbf{x}' = A \\mathbf{x}\\).\nSet up (but do not solve) the linear system to determine constants in the solution.\nAssume you would solve for the constants, though algebraic steps are not required.\n\nUndetermined Coefficients:\n\nFor a given differential equation, identify the simplest form of a linear combination of functions to begin applying the method of undetermined coefficients.\n\nStability of Equilibrium Solutions:\n\nDetermine the stability of an equilibrium solution. Classify it as stable or unstable, ensuring to use the correct terminology."
   }
 ]

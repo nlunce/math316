@@ -1,3 +1,35 @@
 ---
-title: "EXAM 04 OVERVIEW"
+title: 'EXAM 04 OVERVIEW'
 ---
+
+1. **2x2 Matrices**:
+
+   - Determine the eigenvalues and eigenvectors for 2x2 matrices.
+
+2. **Tank Mixing Problem**:
+
+   - Solve a problem involving the mixing of two connected tanks.
+
+3. **3x3 Matrices**:
+
+   - Given a 3x3 matrix with eigenvalues, find the corresponding eigenvectors.
+
+4. **General Solution for $n \times n$ Matrix**:
+
+   - For an $n \times n$ matrix with known eigenvalues and eigenvectors, determine the solution for the homogeneous system $\mathbf{x}_h$.
+
+5. **Matrix with Some Eigenvalues and Eigenvectors**:
+
+   Given a matrix with certain eigenvalues and eigenvectors:
+
+   - Write down the general solution for the system $\mathbf{x}' = A \mathbf{x}$.
+   - Set up (but do not solve) the linear system to determine constants in the solution.
+   - Assume you would solve for the constants, though algebraic steps are not required.
+
+6. **Undetermined Coefficients**:
+
+   - For a given differential equation, identify the simplest form of a linear combination of functions to begin applying the method of undetermined coefficients.
+
+7. **Stability of Equilibrium Solutions**:
+
+   - Determine the stability of an equilibrium solution. Classify it as stable or unstable, ensuring to use the correct terminology.
