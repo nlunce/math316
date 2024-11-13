@@ -693,11 +693,157 @@ $$
 
 ### **Problem:**
 
+Consider the system of differential equations:
+
+$$
+\mathbf{x}' = \begin{bmatrix} 3 & 2 \\ 2 & 3 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 5 \\ -1 \end{bmatrix}
+$$
+
+**(a)** Based on the form of $\mathbf{b}(t)$, make a guess and determine $\mathbf{x}_p$ by undetermined coefficients.
+
+**(b)** Use variation of parameters to determine $\mathbf{x}_p$.
+
 ### **Solution:**
+
+#### (a) **Finding a Particular Solution $\mathbf{x}_p$ using Undetermined Coefficients:**
+
+Since the non-homogeneous term $\begin{bmatrix} 5 \\ -1 \end{bmatrix}$ is constant, it is reasonable to assume that $\mathbf{x}_p$ is also a constant vector:
+
+$$
+\mathbf{x}_p = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}
+$$
+
+Substitute $\mathbf{x}_p$ into the differential equation:
+
+$$
+0 = \begin{bmatrix} 3 & 2 \\ 2 & 3 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} + \begin{bmatrix} 5 \\ -1 \end{bmatrix}
+$$
+
+Expanding this gives:
+
+$$
+\begin{bmatrix} 3a_1 + 2a_2 \\ 2a_1 + 3a_2 \end{bmatrix} + \begin{bmatrix} 5 \\ -1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+
+This leads to the system of equations:
+
+$$
+3a_1 + 2a_2 = -5
+$$
+
+$$
+2a_1 + 3a_2 = 1
+$$
+
+We can solve this system by elimination.
+
+1. **Eliminate $a_1$:**
+   Multiply the first equation by 3 and the second equation by 2:
+
+   $$
+   9a_1 + 6a_2 = -15
+   $$
+
+   $$
+   4a_1 + 6a_2 = 2
+   $$
+
+2. Subtract the second equation from the first:
+
+   $$
+   5a_1 = -17 \Rightarrow a_1 = -\frac{17}{5}
+   $$
+
+3. Substitute $a_1 = -\frac{17}{5}$ back into the first equation to find $a_2$:
+   $$
+   3\left(-\frac{17}{5}\right) + 2a_2 = -5
+   $$
+   $$
+   -\frac{51}{5} + 2a_2 = -5
+   $$
+   Multiply through by 5 to clear the fraction:
+   $$
+   -51 + 10a_2 = -25
+   $$
+   $$
+   10a_2 = 26 \Rightarrow a_2 = \frac{13}{5}
+   $$
+
+Thus, the particular solution is:
+
+$$
+\mathbf{x}_p = \begin{bmatrix} -\frac{17}{5} \\ \frac{13}{5} \end{bmatrix}
+$$
+
+#### (b) **Finding $\mathbf{x}_p$ using Variation of Parameters:**
+
+To apply variation of parameters, we start with the general formula:
+
+$$
+\mathbf{x}_p(t) = \Phi(t) \int \Phi^{-1}(t) \mathbf{b}(t) \, dt
+$$
+
+where $\mathbf{b}(t) = \begin{bmatrix} 5 \\ -1 \end{bmatrix}$ and $\Phi(t)$ is the fundamental matrix of the homogeneous system.
+
+1. **Find the Fundamental Matrix $\Phi(t)$:**
+
+   For the homogeneous system:
+
+   $$
+   \mathbf{x}' = \begin{bmatrix} 3 & 2 \\ 2 & 3 \end{bmatrix} \mathbf{x}
+   $$
+
+   Using eigenvalues and eigenvectors, the general solution is:
+
+   $$
+   \mathbf{x}_h = c_1 e^{t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{5t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+   $$
+
+   So, the fundamental matrix $\Phi(t)$ is:
+
+   $$
+   \Phi(t) = \begin{bmatrix} e^{t} & e^{5t} \\ -e^{t} & e^{5t} \end{bmatrix}
+   $$
+
+2. **Find $\Phi^{-1}(t)$:**
+
+   Compute the determinant of $\Phi(t)$:
+
+   $$
+   \det(\Phi(t)) = e^{t} \cdot e^{5t} - (-e^{t}) \cdot e^{5t} = 2e^{6t}
+   $$
+
+   The inverse is:
+
+   $$
+   \Phi^{-1}(t) = \frac{1}{2e^{6t}} \begin{bmatrix} e^{5t} & -e^{5t} \\ e^{t} & e^{t} \end{bmatrix} = \begin{bmatrix} \frac{e^{-t}}{2} & -\frac{e^{-t}}{2} \\ \frac{e^{-5t}}{2} & \frac{e^{-5t}}{2} \end{bmatrix}
+   $$
+
+3. **Compute $\Phi^{-1}(t) \mathbf{b}(t)$:**
+
+   $$
+   \Phi^{-1}(t) \mathbf{b}(t) = \begin{bmatrix} \frac{e^{-t}}{2} & -\frac{e^{-t}}{2} \\ \frac{e^{-5t}}{2} & \frac{e^{-5t}}{2} \end{bmatrix} \begin{bmatrix} 5 \\ -1 \end{bmatrix} = \begin{bmatrix} 3e^{-t} \\ 2e^{-5t} \end{bmatrix}
+   $$
+
+4. **Integrate $\Phi^{-1}(t) \mathbf{b}(t)$:**
+
+   $$
+   \int \Phi^{-1}(t) \mathbf{b}(t) \, dt = \int \begin{bmatrix} 3e^{-t} \\ 2e^{-5t} \end{bmatrix} \, dt = \begin{bmatrix} -3e^{-t} \\ -\frac{2}{5} e^{-5t} \end{bmatrix}
+   $$
+
+5. **Multiply by $\Phi(t)$ to find $\mathbf{x}_p(t)$:**
+
+   $$
+   \mathbf{x}_p(t) = \Phi(t) \begin{bmatrix} -3e^{-t} \\ -\frac{2}{5} e^{-5t} \end{bmatrix} = \begin{bmatrix} -\frac{17}{5} \\ \frac{13}{5} \end{bmatrix}
+   $$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+$$
+\mathbf{x}(t) = c_1 e^{t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{5t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + \begin{bmatrix} -\frac{17}{5} \\ \frac{13}{5} \end{bmatrix}
+$$
 
 :::
 :::
@@ -708,11 +854,129 @@ $$
 
 ### **Problem:**
 
+Determine the general solution to the given system by finding $\mathbf{x}_p$ using variation of parameters:
+
+$$
+\mathbf{x}' = \begin{bmatrix} 1 & 0 \\ -1 & 3 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 2e^{-t} \\ 1 \end{bmatrix}
+$$
+
+$\Phi(t)$ is given as:
+
+$$
+\Phi(t) = \begin{bmatrix} 2e^t & 0 \\ e^t & e^{3t} \end{bmatrix}
+$$
+
 ### **Solution:**
+
+To find the particular solution $\mathbf{x}_p(t)$ using variation of parameters, use the formula:
+
+$$
+\mathbf{x}_p(t) = \Phi(t) \int \Phi^{-1}(t) \mathbf{b}(t) \, dt
+$$
+
+where $\mathbf{b}(t) = \begin{bmatrix} 2e^{-t} \\ 1 \end{bmatrix}$.
+
+#### **Find $\Phi^{-1}(t)$**
+
+$$
+\det(\Phi(t)) = (2e^t)(e^{3t}) - (0)(e^t) = 2e^{4t}
+$$
+
+Thus,
+
+$$
+\Phi^{-1}(t) = \frac{1}{2e^{4t}} \begin{bmatrix} e^{3t} & 0 \\ -e^t & 2e^t \end{bmatrix} = \begin{bmatrix} \frac{e^{-t}}{2} & 0 \\ -\frac{e^{-3t}}{2} & e^{-3t} \end{bmatrix}
+$$
+
+#### **Compute $\Phi^{-1}(t) \mathbf{b}(t)$**
+
+$$
+\Phi^{-1}(t) \mathbf{b}(t) = \begin{bmatrix} \frac{e^{-t}}{2} & 0 \\ -\frac{e^{-3t}}{2} & e^{-3t} \end{bmatrix} \begin{bmatrix} 2e^{-t} \\ 1 \end{bmatrix}
+$$
+
+Calculating each component:
+
+1. First row:
+
+   $$
+   \frac{e^{-t}}{2} \cdot 2e^{-t} + 0 \cdot 1 = e^{-2t}
+   $$
+
+2. Second row:
+   $$
+   -\frac{e^{-3t}}{2} \cdot 2e^{-t} + e^{-3t} \cdot 1 = -e^{-4t} + e^{-3t}
+   $$
+
+So,
+
+$$
+\Phi^{-1}(t) \mathbf{b}(t) = \begin{bmatrix} e^{-2t} \\ -e^{-4t} + e^{-3t} \end{bmatrix}
+$$
+
+#### **Integrate $\Phi^{-1}(t) \mathbf{b}(t)$**
+
+$$
+\int \Phi^{-1}(t) \mathbf{b}(t) \, dt = \int \begin{bmatrix} e^{-2t} \\ -e^{-4t} + e^{-3t} \end{bmatrix} \, dt
+$$
+
+1. First component:
+
+   $$
+   \int e^{-2t} \, dt = -\frac{e^{-2t}}{2}
+   $$
+
+2. Second component:
+   $$
+   \int (-e^{-4t} + e^{-3t}) \, dt = \frac{e^{-4t}}{4} - \frac{e^{-3t}}{3}
+   $$
+
+Thus,
+
+$$
+\int \Phi^{-1}(t) \mathbf{b}(t) \, dt = \begin{bmatrix} -\frac{e^{-2t}}{2} \\ \frac{e^{-4t}}{4} - \frac{e^{-3t}}{3} \end{bmatrix}
+$$
+
+#### **Multiply by $\Phi(t)$ to find $\mathbf{x}_p(t)$**
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} 2e^t & 0 \\ e^t & e^{3t} \end{bmatrix} \begin{bmatrix} -\frac{e^{-2t}}{2} \\ \frac{e^{-4t}}{4} - \frac{e^{-3t}}{3} \end{bmatrix}
+$$
+
+Calculating each component:
+
+1. First row:
+
+   $$
+   2e^t \cdot -\frac{e^{-2t}}{2} + 0 \cdot \left(\frac{e^{-4t}}{4} - \frac{e^{-3t}}{3}\right) = -e^{-t}
+   $$
+
+2. Second row:
+
+   $$
+   e^t \cdot -\frac{e^{-2t}}{2} + e^{3t} \cdot \left(\frac{e^{-4t}}{4} - \frac{e^{-3t}}{3}\right) = -\frac{e^{-t}}{2} + \frac{e^{-t}}{4} - \frac{1}{3} = -\frac{e^{-t}}{4} - \frac{1}{3}
+   $$
+
+The particular solution $\mathbf{x}_p(t)$ is:
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} -e^{-t} \\ -\frac{e^{-t}}{4} - \frac{1}{3} \end{bmatrix}
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The particular solution is:
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} -e^{-t} \\ -\frac{e^{-t}}{4} - \frac{1}{3} \end{bmatrix}
+$$
+
+The general solution to the system is:
+
+$$
+\mathbf{x}(t) = c_1 \begin{bmatrix} 2e^t \\ e^t \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ e^{3t} \end{bmatrix} + \begin{bmatrix} -e^{-t} \\ -\frac{e^{-t}}{4} - \frac{1}{3} \end{bmatrix}
+$$
 
 :::
 :::
@@ -723,11 +987,106 @@ $$
 
 ### **Problem:**
 
+Determine the general solution to the given system by finding $\mathbf{x}_p$ using variation of parameters:
+
+$$
+\mathbf{x}' = \begin{bmatrix} 1 & 0 \\ -1 & 3 \end{bmatrix} \mathbf{x} + \begin{bmatrix} \cos 2t \\ 2 \sin 2t \end{bmatrix}
+$$
+
+$\Phi(t)$ is given as:
+
+$$
+\Phi(t) = \begin{bmatrix} 2e^t & 0 \\ e^t & e^{3t} \end{bmatrix}
+$$
+
 ### **Solution:**
+
+To find the particular solution $\mathbf{x}_p(t)$ using variation of parameters, use the formula:
+
+$$
+\mathbf{x}_p(t) = \Phi(t) \int \Phi^{-1}(t) \mathbf{b}(t) \, dt
+$$
+
+where $\mathbf{b}(t) = \begin{bmatrix} \cos 2t \\ 2 \sin 2t \end{bmatrix}$.
+
+#### **Find $\Phi^{-1}(t)$**
+
+$$
+\det(\Phi(t)) = (2e^t)(e^{3t}) - (0)(e^t) = 2e^{4t}
+$$
+
+Thus,
+
+$$
+\Phi^{-1}(t) = \frac{1}{2e^{4t}} \begin{bmatrix} e^{3t} & 0 \\ -e^t & 2e^t \end{bmatrix} = \begin{bmatrix} \frac{e^{-t}}{2} & 0 \\ -\frac{e^{-3t}}{2} & e^{-3t} \end{bmatrix}
+$$
+
+#### **Compute $\Phi^{-1}(t) \mathbf{b}(t)$**
+
+$$
+\Phi^{-1}(t) \mathbf{b}(t) = \begin{bmatrix} \frac{e^{-t}}{2} & 0 \\ -\frac{e^{-3t}}{2} & e^{-3t} \end{bmatrix} \begin{bmatrix} \cos 2t \\ 2 \sin 2t \end{bmatrix}
+$$
+
+Calculating each component:
+
+1. First row:
+
+   $$
+   \frac{e^{-t}}{2} \cdot \cos 2t + 0 \cdot (2 \sin 2t) = \frac{e^{-t}}{2} \cos 2t
+   $$
+
+2. Second row:
+   $$
+   -\frac{e^{-3t}}{2} \cdot \cos 2t + e^{-3t} \cdot 2 \sin 2t = -\frac{e^{-3t}}{2} \cos 2t + 2e^{-3t} \sin 2t
+   $$
+
+So,
+
+$$
+\Phi^{-1}(t) \mathbf{b}(t) = \begin{bmatrix} \frac{e^{-t}}{2} \cos 2t \\ -\frac{e^{-3t}}{2} \cos 2t + 2e^{-3t} \sin 2t \end{bmatrix}
+$$
+
+#### **Integrate $\Phi^{-1}(t) \mathbf{b}(t)$**
+
+$$
+\int \Phi^{-1}(t) \mathbf{b}(t) \, dt = \int \begin{bmatrix} \frac{e^{-t}}{2} \cos 2t \\ -\frac{e^{-3t}}{2} \cos 2t + 2e^{-3t} \sin 2t \end{bmatrix} \, dt
+$$
+
+1. **First component**:
+
+   $$
+   \int \frac{e^{-t}}{2} \cos 2t \, dt = -\frac{1}{5} e^{-t} \cos 2t + \frac{2}{5} e^{-t} \sin 2t
+   $$
+
+2. **Second component**:
+
+   $$
+   \int \left(-\frac{e^{-3t}}{2} \cos 2t + 2e^{-3t} \sin 2t\right) \, dt = -\frac{19}{65} e^{-3t} \cos 2t - \frac{22}{65} e^{-3t} \sin 2t
+   $$
+
+#### **Form the Particular Solution $\mathbf{x}_p(t)$**
+
+Multiply by $\Phi(t)$ to find $\mathbf{x}_p(t)$:
+
+$$
+\mathbf{x}_p(t) = \Phi(t) \begin{bmatrix} -\frac{1}{5} \cos 2t + \frac{2}{5} \sin 2t \\ -\frac{19}{65} \cos 2t - \frac{22}{65} \sin 2t \end{bmatrix} = \begin{bmatrix} -\frac{1}{5} \cos 2t + \frac{2}{5} \sin 2t \\ -\frac{19}{65} \cos 2t - \frac{22}{65} \sin 2t \end{bmatrix}
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The particular solution is:
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} -\frac{1}{5} \cos 2t + \frac{2}{5} \sin 2t \\ -\frac{19}{65} \cos 2t - \frac{22}{65} \sin 2t \end{bmatrix}
+$$
+
+The general solution to the system is:
+
+$$
+\mathbf{x}(t) = c_1 \begin{bmatrix} 2e^t \\ e^t \end{bmatrix} + c_2 \begin{bmatrix} 0 \\ e^{3t} \end{bmatrix} + \begin{bmatrix} -\frac{1}{5} \cos 2t + \frac{2}{5} \sin 2t \\ -\frac{19}{65} \cos 2t - \frac{22}{65} \sin 2t \end{bmatrix}
+$$
 
 :::
 :::
@@ -738,11 +1097,115 @@ $$
 
 ### **Problem:**
 
+Determine the general solution to the given system by finding $\mathbf{x}_p$ using variation of parameters:
+
+$$
+\mathbf{x}' = \begin{bmatrix} 1 & 1 \\ -1 & 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 2t + 2 \\ 0 \end{bmatrix}
+$$
+
+$\Phi(t)$ is given as:
+
+$$
+\Phi(t) = \begin{bmatrix} e^t \cos t & e^t \sin t \\ -e^t \sin t & e^t \cos t \end{bmatrix}
+$$
+
 ### **Solution:**
+
+To find the particular solution **x_p(t)** using variation of parameters, use the formula:
+
+$$
+\mathbf{x}_p(t) = \Phi(t) \int \Phi^{-1}(t) \mathbf{b}(t) \, dt
+$$
+
+where
+
+$$
+\mathbf{b}(t) = \begin{bmatrix} 2t + 2 \\ 0 \end{bmatrix}
+$$
+
+#### **Find $\Phi^{-1}(t)$**
+
+The determinant of $\Phi(t)$ is:
+
+$$
+\det(\Phi(t)) = e^{2t}
+$$
+
+Thus,
+
+$$
+\Phi^{-1}(t) = \frac{1}{e^{2t}} \begin{bmatrix} e^t \cos t & -e^t \sin t \\ e^t \sin t & e^t \cos t \end{bmatrix} = \begin{bmatrix} e^{-t} \cos t & -e^{-t} \sin t \\ e^{-t} \sin t & e^{-t} \cos t \end{bmatrix}
+$$
+
+#### **Compute $\Phi^{-1}(t) \mathbf{b}(t)$**
+
+Calculating each component:
+
+1. First row:
+
+   $$
+   e^{-t} \cos t \cdot (2t + 2) + 0 = e^{-t} \cos t \cdot (2t + 2)
+   $$
+
+2. Second row:
+   $$
+   e^{-t} \sin t \cdot (2t + 2) + 0 = e^{-t} \sin t \cdot (2t + 2)
+   $$
+
+So,
+
+$$
+\Phi^{-1}(t) \mathbf{b}(t) = \begin{bmatrix} (2t + 2) e^{-t} \cos t \\ (2t + 2) e^{-t} \sin t \end{bmatrix}
+$$
+
+#### **Integrate $\Phi^{-1}(t) \mathbf{b}(t)$**
+
+The integrals for the components are:
+
+1. First component:
+
+   $$
+   \int (2t + 2)e^{-t} \cos t \, dt = -\frac{(2 + t) \cos t + (1 + t) \sin t}{e^t}
+   $$
+
+2. Second component:
+   $$
+   \int (2t + 2)e^{-t} \sin t \, dt = \frac{(2 + t) \sin t - (1 + t) \cos t}{e^t}
+   $$
+
+$$
+\int \Phi^{-1}(t) \mathbf{b}(t) \, dt = \begin{bmatrix} -\frac{(2 + t) \cos t + (1 + t) \sin t}{e^t} \\ \frac{(2 + t) \sin t - (1 + t) \cos t}{e^t} \end{bmatrix}
+$$
+
+#### **Form the Particular Solution $\mathbf{x}_p(t)$**
+
+Multiply by $\Phi(t)$ to find $\mathbf{x}_p(t)$:
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} e^t \cos t & e^t \sin t \\ -e^t \sin t & e^t \cos t \end{bmatrix} \begin{bmatrix} -\frac{(2 + t) \cos t + (1 + t) \sin t}{e^t} \\ \frac{(2 + t) \sin t - (1 + t) \cos t}{e^t} \end{bmatrix}
+$$
+
+After simplifying:
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} -t - 2 \\ -t - 1 \end{bmatrix}
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The particular solution is:
+
+$$
+\mathbf{x}_p(t) = \begin{bmatrix} -t - 1 \\ -t - 2 \end{bmatrix}
+$$
+
+The general solution to the system is:
+
+$$
+\mathbf{x}(t) = c_1 \begin{bmatrix} e^t \cos t \\ -e^t \sin t \end{bmatrix} + c_2 \begin{bmatrix} e^t \sin t \\ e^t \cos t \end{bmatrix} + \begin{bmatrix} -t - 1 \\ -t - 2 \end{bmatrix}
+$$
 
 :::
 :::

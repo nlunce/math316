@@ -8,7 +8,7 @@ format:
     toc: true
     toc-depth: 2
     toc-location: right
-    number-SECTIONs: false
+    number-sections: false
     html-math-method: katex
     code-fold: true
     code-summary: 'Show the code'
