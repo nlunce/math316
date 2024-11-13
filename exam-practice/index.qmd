@@ -1,40 +1,101 @@
 ---
-title: "EXAM PRACTICE"
-format:
-  html:
-    self-contained: true
-    page-layout: full
-    toc: true
-    toc-depth: 2
-    toc-location: right
-    number-sections: false
-    html-math-method: katex
-    code-fold: true
-    code-summary: "Show the code"
-    code-overflow: wrap
-    code-copy: hover
-    code-tools:
-      source: false
-      toggle: true
-      caption: See code
+title: 'EXAM PRACTICE'
+format: html
+editor:
+  render-on-save: true
 ---
 
-## EXAM 01
+<style>
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+    }
+    .exam-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .exam-item {
+        padding: 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .exam-link {
+        font-size: 0.85rem;
+        font-weight: normal;
+        text-transform: none;
+        margin-left: 10px;
+        color: inherit;
+        transition: color 0.3s;
+    }
 
-- [Overview](./exam01/overview.html)
-- [Practice](./exam01/practice.html)
+    /* Light mode styling */
+    body.quarto-light h1 {
+        color: #2c3e50;
+    }
+    body.quarto-light .exam-item {
+        background-color: #f2f2f2;
+        color: #2c3e50;
+    }
+    body.quarto-light .exam-item:hover {
+        background-color: #e0e0e0;
+    }
+    body.quarto-light .exam-link {
+        color: #2c3e50;
+    }
+    body.quarto-light .exam-link:hover {
+        color: #2980b9;
+    }
 
-## EXAM 02
+    /* Dark mode styling */
+    body.quarto-dark h1 {
+        color: #d1d5db;
+    }
+    body.quarto-dark .exam-item {
+        background-color: #2d2d2d;
+        color: #d1d5db;
+    }
+    body.quarto-dark .exam-item:hover {
+        background-color: #3a3a3a;
+    }
+    body.quarto-dark .exam-link {
+        color: #d1d5db;
+    }
+    body.quarto-dark .exam-link:hover {
+        color: #4dabf7;
+    }
+</style>
 
-- [Overview](./exam02/overview.html)
-- [Practice](./exam02/practice.html)
-
-## EXAM 03
-
-- [Overview](./exam03/overview.html)
-- [Practice](./exam03/practice.html)
-
-## EXAM 04
-
-- [Overview](./exam04/overview.html)
-- [Practice](./exam04/practice.html)
+<ul class="exam-list">
+    <li class="exam-item">
+        <strong>EXAM 01</strong>
+        <a href="./exam01/overview.html" class="exam-link">Overview</a> 
+        <a href="./exam01/practice.html" class="exam-link">Practice</a>
+    </li>
+    <li class="exam-item">
+        <strong>EXAM 02</strong>
+        <a href="./exam02/overview.html" class="exam-link">Overview</a> 
+        <a href="./exam02/practice.html" class="exam-link">Practice</a>
+    </li>
+    <li class="exam-item">
+        <strong>EXAM 03</strong>
+        <a href="./exam03/overview.html" class="exam-link">Overview</a> 
+        <a href="./exam03/practice.html" class="exam-link">Practice</a>
+    </li>
+    <li class="exam-item">
+        <strong>EXAM 04</strong>
+        <a href="./exam04/overview.html" class="exam-link">Overview</a> 
+        <a href="./exam04/practice.html" class="exam-link">Practice</a>
+    </li>
+</ul>

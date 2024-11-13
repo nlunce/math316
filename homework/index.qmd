@@ -1,11 +1,112 @@
 ---
 title: 'HOMEWORK'
+format: html
+editor:
+  render-on-save: true
 ---
 
-- [HOMEWORK 01](#)
-- [HOMEWORK 02 (1.6 - 1.12)](./hw02/hw02-10-03-24.html)
-- [HOMEWORK 03 (2.2 - 2.4)](./hw03/hw03-10-12-24.html)
-- [HOMEWORK 04 (2.5 - 2.7)](./hw04/hw04-10-19-24.html)
-- [HOMEWORK 05 (4.2 - 4.5)](./hw05/hw05-10-26-24.html)
-- [HOMEWORK 06 (3.2 - 3.5)](./hw06/hw06-11-05-24.html)
-- [HOMEWORK 07 (3.6 - 3.8)](./hw07/hw07-11-09-24.html)
+<style>
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+    }
+    .homework-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .homework-item {
+        padding: 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .homework-section {
+        font-size: 0.85rem;
+        margin-top: 5px;
+        font-weight: normal;
+    }
+    
+    /* Light mode styling */
+    body.quarto-light h1 {
+        color: #2c3e50;
+    }
+    body.quarto-light .homework-item {
+        background-color: #f2f2f2;
+        color: #2c3e50;
+    }
+    body.quarto-light .homework-item:hover {
+        background-color: #e0e0e0;
+    }
+    body.quarto-light .homework-item a {
+        color: #2c3e50;
+    }
+    body.quarto-light .homework-item a:hover {
+        color: #2980b9;
+    }
+    body.quarto-light .homework-section {
+        color: #7f8c8d;
+    }
+
+    /* Dark mode styling */
+    body.quarto-dark h1 {
+        color: #d1d5db;
+    }
+    body.quarto-dark .homework-item {
+        background-color: #2d2d2d;
+        color: #d1d5db;
+    }
+    body.quarto-dark .homework-item:hover {
+        background-color: #3a3a3a;
+    }
+    body.quarto-dark .homework-item a {
+        color: #d1d5db;
+    }
+    body.quarto-dark .homework-item a:hover {
+        color: #4dabf7;
+    }
+    body.quarto-dark .homework-section {
+        color: #a0aec0;
+    }
+</style>
+
+<ul class="homework-list">
+    <li class="homework-item">
+        <a href="#">HOMEWORK 01</a>
+        <div class="homework-section">Sections: None specified</div>
+    </li>
+    <li class="homework-item">
+        <a href="./hw02/hw02-10-03-24.html">HOMEWORK 02</a>
+        <div class="homework-section">Sections: 1.6 - 1.12</div>
+    </li>
+    <li class="homework-item">
+        <a href="./hw03/hw03-10-12-24.html">HOMEWORK 03</a>
+        <div class="homework-section">Sections: 2.2 - 2.4</div>
+    </li>
+    <li class="homework-item">
+        <a href="./hw04/hw04-10-19-24.html">HOMEWORK 04</a>
+        <div class="homework-section">Sections: 2.5 - 2.7</div>
+    </li>
+    <li class="homework-item">
+        <a href="./hw05/hw05-10-26-24.html">HOMEWORK 05</a>
+        <div class="homework-section">Sections: 4.2 - 4.5</div>
+    </li>
+    <li class="homework-item">
+        <a href="./hw06/hw06-11-05-24.html">HOMEWORK 06</a>
+        <div class="homework-section">Sections: 3.2 - 3.5</div>
+    </li>
+    <li class="homework-item">
+        <a href="./hw07/hw07-11-09-24.html">HOMEWORK 07</a>
+        <div class="homework-section">Sections: 3.6 - 3.8</div>
+    </li>
+</ul>
