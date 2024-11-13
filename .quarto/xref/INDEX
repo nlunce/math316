@@ -64,5 +64,17 @@
   },
   "homework/hw07/hw07-11-09-24.qmd": {
     "hw07-11-09-24.html": "c53726f2"
+  },
+  "notes/w08/nonhomogeneous-systems-variation-of-parameters.qmd": {
+    "nonhomogeneous-systems-variation-of-parameters.html": "d9c873fc"
+  },
+  "notes/w07/generalized-eigenvectors-DE.qmd": {
+    "generalized-eigenvectors-DE.html": "8fbde7fe"
+  },
+  "notes/w07/stability-of-origin-2x2.qmd": {
+    "stability-of-origin-2x2.html": "dbb02cf4"
+  },
+  "notes/w08/nonhomogeneous-systems-undetermined-coefficients.qmd": {
+    "nonhomogeneous-systems-undetermined-coefficients.html": "51860c54"
   }
 }

@@ -18,7 +18,10 @@ editor:
 
 ## WEEK 07
 
+- [Generalized Eigenvectors in Differential Equations](./w07/generalized-eigenvectors-DE.html)
+- [Stability of the Origin in 2x2 Systems of Differential Equations](./w07/stability-of-origin-2x2.html)
+
 ## WEEK 08
 
-- [Generalized Eigenvectors in Differential Equations](./w08/generalized-eigenvectors-DE.html)
-- [Stability of the Origin in 2x2 Systems of Differential Equations](./w08/stability-of-origin-2x2.html)
+- [Nonhomogeneous Systems: Undetermined Coefficients](./w08/nonhomogeneous-systems-undetermined-coefficients.qmd)
+- [Nonhomogeneous Systems: Variation of Parameters](./w08/nonhomogeneous-systems-variation-of-parameters.html)
