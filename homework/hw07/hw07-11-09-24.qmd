@@ -1239,11 +1239,357 @@ $$
 
 ### **Problem:**
 
+In a system of three tanks of saltwater, the following information is given:
+
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px;">Tank</th>
+      <th style="border: 1px solid black; padding: 8px;">Tank A</th>
+      <th style="border: 1px solid black; padding: 8px;">Tank B</th>
+      <th style="border: 1px solid black; padding: 8px;">Tank C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><strong>Tank volume</strong></td>
+      <td style="border: 1px solid black; padding: 8px;">400 liters</td>
+      <td style="border: 1px solid black; padding: 8px;">200 liters</td>
+      <td style="border: 1px solid black; padding: 8px;">300 liters</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><strong>Rate of inflow</strong></td>
+      <td style="border: 1px solid black; padding: 8px;">7 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">0 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">0 liters/min</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><strong>Concentration in inflow</strong></td>
+      <td style="border: 1px solid black; padding: 8px;">10 g/liter</td>
+      <td style="border: 1px solid black; padding: 8px;">n/a</td>
+      <td style="border: 1px solid black; padding: 8px;">n/a</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><strong>Rate of drain outflow</strong></td>
+      <td style="border: 1px solid black; padding: 8px;">0 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">0 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">7 liters/min</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><strong>Rates of outflows to other tanks</strong></td>
+      <td style="border: 1px solid black; padding: 8px;">to B: 7 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">to C: 7 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">to A: 0 liters/min</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><strong>Rates of outflows to other tanks</strong></td>
+      <td style="border: 1px solid black; padding: 8px;">to C: 0 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">to A: 0 liters/min</td>
+      <td style="border: 1px solid black; padding: 8px;">to B: 0 liters/min</td>
+    </tr>
+  </tbody>
+</table>
+
+Each tank is full; Tank A contains a solution whose initial concentration is 20 g/liter. Tank B contains a solution whose initial concentration is 50 g/liter. Tank C contains pure water.
+
+Without setting up a system of differential equations, first use your intuition to describe what you think will be the behavior of the functions $x_1(t)$, $x_2(t)$, and $x_3(t)$ that measure the amount of salt in each of the three respective tanks at time $t$.
+
+Then, set up and solve an initial-value problem whose solution will tell you the amount of salt in each tank at time $t$. Discuss the graphical behavior of each component of the solution $\mathbf{x}(t)$ and compare it to your intuitive expectations. Is there an equilibrium solution to the system? If so, what is it?
+
 ### **Solution:**
+
+#### **Intuition**
+
+##### **Tank A ($x_1(t)$):**
+
+- Tank A starts with a concentration of 20 g/L, corresponding to 8000 g of salt. Brine enters Tank A at a lower concentration of 10 g/L at a rate of 7 L/min.
+- At the same time, Tank A transfers salt to Tank B at a rate proportional to its current concentration.
+- Since the inflow concentration is lower than the initial concentration, Tank A will lose salt over time and its salt amount will decrease.
+- Eventually, Tank A will stabilize at the same concentration as the inflow (10 g/L), which corresponds to 4000 g of salt.
+
+##### **Tank B ($x_2(t)$):**
+
+- Tank B starts with a higher concentration of 50 g/L, corresponding to 10,000 g of salt. It receives salt from Tank A and transfers salt to Tank C.
+- The inflow concentration from Tank A is lower than Tank B’s initial concentration, so Tank B will lose salt over time.
+- Eventually, Tank B will stabilize at the same concentration as the inflow from Tank A, which corresponds to 2000 g of salt.
+
+##### **Tank C ($x_3(t)$):**
+
+- Tank C starts with pure water (0 g of salt). It only receives salt from Tank B and drains at the same rate.
+- Over time, Tank C will gain salt as it receives brine from Tank B. Its salt amount will increase.
+- Eventually, Tank C will stabilize at the same concentration as Tank B, which corresponds to 3000 g of salt.
+
+#### **Problem Setup**
+
+$$
+\frac{dx}{dt} = \text{Rate of salt in} - \text{Rate of salt out}
+$$
+
+##### **Tank A:**
+
+- Salt enters Tank A from the inflow: $7 \, \text{L/min} \times 10 \, \text{g/L} = 70 \, \text{g/min}$.
+- Salt leaves Tank A to Tank B: $7 \, \text{L/min} \times \frac{x_1}{400} = \frac{7x_1}{400}\, \text{g/min}$.
+
+Thus:
+
+$$
+\frac{dx_1}{dt} = 70 - \frac{7x_1}{400}
+$$
+
+##### **Tank B:**
+
+- Salt enters Tank B from Tank A: $7 \, \text{L/min} \times \frac{x_1}{400} = \frac{7x_1}{400} \, \text{g/min}$.
+- Salt leaves Tank B to Tank C: $7 \, \text{L/min} \times \frac{x_2}{200} = \frac{7x_2}{200} \, \text{g/min}$.
+
+Thus:
+
+$$
+\frac{dx_2}{dt} = \frac{7x_1}{400} - \frac{7x_2}{200}
+$$
+
+##### **Tank C:**
+
+- Salt enters Tank C from Tank B: $7 \, \text{L/min} \times \frac{x_2}{200} = \frac{7x_2}{200} \, \text{g/min}$.
+- Salt leaves Tank C through the drain: $7 \, \text{L/min} \times \frac{x_3}{300} = \frac{7x_3}{300} \, \text{g/min}$.
+
+Thus:
+
+$$
+\frac{dx_3}{dt} = \frac{7x_2}{200} - \frac{7x_3}{300}
+$$
+
+##### **Initial Conditions:**
+
+- Tank A: $x_1(0) = 400 \, \text{L} \times 20 \, \text{g/L} = 8000 \, \text{g}$.
+- Tank B: $x_2(0) = 200 \, \text{L} \times 50 \, \text{g/L} = 10,000 \, \text{g}$.
+- Tank C: $x_3(0) = 300 \, \text{L} \times 0 \, \text{g/L} = 0 \, \text{g}$.
+
+#### **Write the System in Matrix Form**
+
+$$
+\mathbf{x}' = A\mathbf{x} + \mathbf{b}
+$$
+
+where:
+
+$$
+A =
+\begin{bmatrix}
+-\frac{7}{400} & 0 & 0 \\
+\frac{7}{400} & -\frac{7}{200} & 0 \\
+0 & \frac{7}{200} & -\frac{7}{300}
+\end{bmatrix}, \quad
+\mathbf{b} =
+\begin{bmatrix}
+70 \\ 0 \\ 0
+\end{bmatrix}, \quad
+\mathbf{x}(0) =
+\begin{bmatrix}
+8000 \\ 10,000 \\ 0
+\end{bmatrix}
+$$
+
+#### **Solve the Homogeneous System**
+
+The homogeneous system is:
+
+$$
+\mathbf{x}' = A\mathbf{x}
+$$
+
+##### **Eigenvalues:**
+
+The eigenvalues of $A$ are:
+
+$$
+\lambda_1 = -\frac{7}{300}, \quad \lambda_2 = -\frac{7}{200}, \quad \lambda_3 = -\frac{7}{400}
+$$
+
+##### **Eigenvectors:**
+
+The corresponding eigenvectors are:
+
+$$
+\mathbf{v}_1 =
+\begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix}, \quad
+\mathbf{v}_2 =
+\begin{bmatrix}
+0 \\ -\frac{1}{3} \\ 1
+\end{bmatrix}, \quad
+\mathbf{v}_3 =
+\begin{bmatrix}
+\frac{1}{6} \\ \frac{1}{6} \\ 1
+\end{bmatrix}
+$$
+
+##### **Homogeneous Solution:**
+
+$$
+\mathbf{x}_h(t) =
+c_1 e^{-\frac{7}{300}t}
+\begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix}
++ c_2 e^{-\frac{7}{200}t}
+\begin{bmatrix}
+0 \\ -\frac{1}{3} \\ 1
+\end{bmatrix}
++ c_3 e^{-\frac{7}{400}t}
+\begin{bmatrix}
+\frac{1}{6} \\ \frac{1}{6} \\ 1
+\end{bmatrix}
+$$
+
+#### **Solve the Nonhomogeneous System**
+
+Assume a constant particular solution:
+
+$$
+\mathbf{x}_p =
+\begin{bmatrix}
+K_1 \\ K_2 \\ K_3
+\end{bmatrix}
+$$
+
+Substitute $\mathbf{x}_p$ into $\mathbf{x}' = A\mathbf{x} + \mathbf{b}$:
+
+$$
+A\mathbf{x}_p + \mathbf{b} = 0
+$$
+
+Expand:
+
+$$
+\begin{bmatrix}
+-\frac{7}{400}K_1 \\ \frac{7}{400}K_1 - \frac{7}{200}K_2 \\ \frac{7}{200}K_2 - \frac{7}{300}K_3
+\end{bmatrix}
++
+\begin{bmatrix}
+70 \\ 0 \\ 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix}
+$$
+
+##### Solve for $K_1$, $K_2$, and $K_3$:
+
+1. From the first row:
+
+   $$
+   -\frac{7}{400}K_1 + 70 = 0 \implies K_1 = 4000
+   $$
+
+2. From the second row:
+
+   $$
+   \frac{7}{400}K_1 - \frac{7}{200}K_2 = 0 \implies 70 - \frac{7}{200}K_2 = 0 \implies K_2 = 2000
+   $$
+
+3. From the third row:
+   $$
+   \frac{7}{200}K_2 - \frac{7}{300}K_3 = 0 \implies 70 - \frac{7}{300}K_3 = 0 \implies K_3 = 3000
+   $$
+
+Thus:
+
+$$
+\mathbf{x}_p =
+\begin{bmatrix}
+4000 \\ 2000 \\ 3000
+\end{bmatrix}
+$$
+
+#### **General Solution**
+
+The general solution is:
+
+$$
+\mathbf{x}(t) =
+c_1 e^{-\frac{7}{300}t}
+\begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix}
++ c_2 e^{-\frac{7}{200}t}
+\begin{bmatrix}
+0 \\ -\frac{1}{3} \\ 1
+\end{bmatrix}
++ c_3 e^{-\frac{7}{400}t}
+\begin{bmatrix}
+\frac{1}{6} \\ \frac{1}{6} \\ 1
+\end{bmatrix}
++
+\begin{bmatrix}
+4000 \\ 2000 \\ 3000
+\end{bmatrix}
+$$
+
+#### **Apply Initial Conditions**
+
+At $t = 0$, $\mathbf{x}(0) = \begin{bmatrix} 8000 \\ 10,000 \\ 0 \end{bmatrix}$:
+
+$$
+\begin{bmatrix}8000 \\ 10,000 \\ 0\end{bmatrix}=c_1\begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}+ c_2\begin{bmatrix}0 \\ -\frac{1}{3} \\ 1\end{bmatrix}+ c_3\begin{bmatrix} \frac{1}{6} \\ \frac{1}{6} \\ 1\end{bmatrix}+\begin{bmatrix}4000\\2000 \\ 3000\end{bmatrix}
+$$
+
+##### First Row:
+
+$$
+8000 = \frac{1}{6}c_3 + 4000 \implies c_3 = 24000
+$$
+
+##### Second Row:
+
+$$
+10,000 = -\frac{1}{3}c_2 + \frac{1}{6}c_3 + 2000
+$$
+
+Substitute $c_3 = 24000$:
+
+$$
+10,000 = -\frac{1}{3}c_2 + 4000 + 2000 \implies c_2 = -12,000
+$$
+
+##### Third Row:
+
+$$
+0 = c_1 + c_2 + c_3 + 3000
+$$
+
+Substitute $c_2 = -12,000$, $c_3 = 24,000$:
+
+$$
+0 = c_1 - 12,000 + 24,000 + 3000 \implies c_1 = -15,000
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+$$
+\mathbf{x}(t) =
+-15,000 e^{-\frac{7}{300}t}
+\begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix}
+- 12,000 e^{-\frac{7}{200}t}
+\begin{bmatrix}
+0 \\ -\frac{1}{3} \\ 1
+\end{bmatrix}
++ 24,000 e^{-\frac{7}{400}t}
+\begin{bmatrix}
+\frac{1}{6} \\ \frac{1}{6} \\ 1
+\end{bmatrix}
++
+\begin{bmatrix}
+4000 \\ 2000 \\ 3000
+\end{bmatrix}
+$$
+
+From the solution, we can see that our intuition is confirmed: with just one inflow adding salt at 10 g/L into the system, the concentrations in all tanks eventually stabilize at a uniform concentration of 10 percent by volume. This reflects the balance achieved as salt flows between the tanks. The constants $c_1 = -15,000$, $c_2 = -12,000$, and $c_3 = 24,000$ were determined by applying the initial conditions to the system.
 
 :::
 :::
