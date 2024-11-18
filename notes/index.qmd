@@ -4,18 +4,6 @@ editor:
   render-on-save: true
 ---
 
-## WEEK 01
-
-## WEEK 02
-
-## WEEK 03
-
-## WEEK 04
-
-## WEEK 05
-
-## WEEK 06
-
 ## WEEK 07
 
 - [Generalized Eigenvectors in Differential Equations](./w07/generalized-eigenvectors-DE.html)
@@ -23,5 +11,9 @@ editor:
 
 ## WEEK 08
 
-- [Nonhomogeneous Systems: Undetermined Coefficients](./w08/nonhomogeneous-systems-undetermined-coefficients.qmd)
+- [Nonhomogeneous Systems: Undetermined Coefficients](./w08/nonhomogeneous-systems-undetermined-coefficients.html)
 - [Nonhomogeneous Systems: Variation of Parameters](./w08/nonhomogeneous-systems-variation-of-parameters.html)
+
+## WEEK 09
+
+- [Exponential Order: Definition and Examples](./w09/exponential-order.html)

@@ -109,4 +109,8 @@ editor:
         <a href="./hw07/hw07-11-09-24.html">HOMEWORK 07</a>
         <div class="homework-section">Sections: 3.6 - 3.8</div>
     </li>
+    <li class="homework-item">
+        <a href="./hw08/hw08-11-19-24.html">HOMEWORK 08</a>
+        <div class="homework-section">Sections: None specified</div>
+    </li>
 </ul>

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>HOMEWORK – MATH316</title>
+<title>Exponential Order: Definition and Examples – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,8 +70,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -80,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -91,19 +121,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -119,21 +149,58 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a>
+  <ul class="collapse">
+  <li><a href="#key-components" id="toc-key-components" class="nav-link" data-scroll-target="#key-components">Key Components:</a></li>
+  </ul></li>
+  <li><a href="#understanding-too-fast-growth" id="toc-understanding-too-fast-growth" class="nav-link" data-scroll-target="#understanding-too-fast-growth">Understanding “Too Fast” Growth</a>
+  <ul class="collapse">
+  <li><a href="#intuition" id="toc-intuition" class="nav-link" data-scroll-target="#intuition">Intuition:</a></li>
+  <li><a href="#example-comparing-et2-and-ealpha-t" id="toc-example-comparing-et2-and-ealpha-t" class="nav-link" data-scroll-target="#example-comparing-et2-and-ealpha-t">Example: Comparing <span class="math inline">\(e^{t^2}\)</span> and <span class="math inline">\(e^{\alpha t}\)</span></a></li>
+  </ul></li>
+  <li><a href="#example-1-polynomial-function-ft-t2" id="toc-example-1-polynomial-function-ft-t2" class="nav-link" data-scroll-target="#example-1-polynomial-function-ft-t2">Example 1: Polynomial Function <span class="math inline">\(f(t) = t^2\)</span></a>
+  <ul class="collapse">
+  <li><a href="#step-1-analyze-the-growth-of-ft" id="toc-step-1-analyze-the-growth-of-ft" class="nav-link" data-scroll-target="#step-1-analyze-the-growth-of-ft">Step 1: Analyze the Growth of <span class="math inline">\(f(t)\)</span></a></li>
+  <li><a href="#step-2-choose-alpha-and-m" id="toc-step-2-choose-alpha-and-m" class="nav-link" data-scroll-target="#step-2-choose-alpha-and-m">Step 2: Choose <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(M\)</span></a></li>
+  <li><a href="#step-3-verify-the-bound" id="toc-step-3-verify-the-bound" class="nav-link" data-scroll-target="#step-3-verify-the-bound">Step 3: Verify the Bound</a></li>
+  </ul></li>
+  <li><a href="#example-2-exponential-function-ft-et2" id="toc-example-2-exponential-function-ft-et2" class="nav-link" data-scroll-target="#example-2-exponential-function-ft-et2">Example 2: Exponential Function <span class="math inline">\(f(t) = e^{t^2}\)</span></a>
+  <ul class="collapse">
+  <li><a href="#step-1-analyze-the-growth-of-ft-1" id="toc-step-1-analyze-the-growth-of-ft-1" class="nav-link" data-scroll-target="#step-1-analyze-the-growth-of-ft-1">Step 1: Analyze the Growth of <span class="math inline">\(f(t)\)</span></a></li>
+  <li><a href="#step-2-attempt-to-establish-the-bound" id="toc-step-2-attempt-to-establish-the-bound" class="nav-link" data-scroll-target="#step-2-attempt-to-establish-the-bound">Step 2: Attempt to Establish the Bound</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  <li><a href="#why-use-exponential-bounds" id="toc-why-use-exponential-bounds" class="nav-link" data-scroll-target="#why-use-exponential-bounds">Why Use Exponential Bounds?</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary:</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HOMEWORK</h1>
+<h1 class="title">Exponential Order: Definition and Examples</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -144,132 +211,136 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-    /* General styles */
-    body {
-        font-family: Arial, sans-serif;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        letter-spacing: 1px;
-    }
-    .homework-list {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .homework-item {
-        padding: 1rem;
-        border-radius: 5px;
-        font-weight: bold;
-        font-family: Arial, sans-serif;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .homework-section {
-        font-size: 0.85rem;
-        margin-top: 5px;
-        font-weight: normal;
-    }
-    
-    /* Light mode styling */
-    body.quarto-light h1 {
-        color: #2c3e50;
-    }
-    body.quarto-light .homework-item {
-        background-color: #f2f2f2;
-        color: #2c3e50;
-    }
-    body.quarto-light .homework-item:hover {
-        background-color: #e0e0e0;
-    }
-    body.quarto-light .homework-item a {
-        color: #2c3e50;
-    }
-    body.quarto-light .homework-item a:hover {
-        color: #2980b9;
-    }
-    body.quarto-light .homework-section {
-        color: #7f8c8d;
-    }
-
-    /* Dark mode styling */
-    body.quarto-dark h1 {
-        color: #d1d5db;
-    }
-    body.quarto-dark .homework-item {
-        background-color: #2d2d2d;
-        color: #d1d5db;
-    }
-    body.quarto-dark .homework-item:hover {
-        background-color: #3a3a3a;
-    }
-    body.quarto-dark .homework-item a {
-        color: #d1d5db;
-    }
-    body.quarto-dark .homework-item a:hover {
-        color: #4dabf7;
-    }
-    body.quarto-dark .homework-section {
-        color: #a0aec0;
-    }
-</style>
-<ul class="homework-list">
-<li class="homework-item">
-<a href="#">HOMEWORK 01</a>
-<div class="homework-section">
-Sections: None specified
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw02/hw02-10-03-24.html">HOMEWORK 02</a>
-<div class="homework-section">
-Sections: 1.6 - 1.12
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw03/hw03-10-12-24.html">HOMEWORK 03</a>
-<div class="homework-section">
-Sections: 2.2 - 2.4
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw04/hw04-10-19-24.html">HOMEWORK 04</a>
-<div class="homework-section">
-Sections: 2.5 - 2.7
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw05/hw05-10-26-24.html">HOMEWORK 05</a>
-<div class="homework-section">
-Sections: 4.2 - 4.5
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw06/hw06-11-05-24.html">HOMEWORK 06</a>
-<div class="homework-section">
-Sections: 3.2 - 3.5
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw07/hw07-11-09-24.html">HOMEWORK 07</a>
-<div class="homework-section">
-Sections: 3.6 - 3.8
-</div>
-</li>
-<li class="homework-item">
-<a href="./hw08/hw08-11-19-24.html">HOMEWORK 08</a>
-<div class="homework-section">
-Sections: None specified
-</div>
-</li>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>A function <span class="math inline">\(f(t)\)</span> is said to be of <strong>exponential order</strong> if its growth is controlled by an exponential function <span class="math inline">\(e^{\alpha t}\)</span> as <span class="math inline">\(t\)</span> becomes large. This concept is crucial for ensuring the applicability of certain mathematical operations, such as the Laplace Transform, and for understanding the long-term behavior of functions.</p>
+<p>In simpler terms:</p>
+<ul>
+<li><strong>Exponential Order</strong>: <span class="math inline">\(f(t)\)</span> does not grow too quickly.</li>
+<li><strong>“Too Fast”</strong>: The growth of <span class="math inline">\(f(t)\)</span> is slower than or comparable to <span class="math inline">\(e^{\alpha t}\)</span> for some fixed <span class="math inline">\(\alpha\)</span>.</li>
 </ul>
+</section>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>Formally, a function <span class="math inline">\(f(t)\)</span> is of <strong>exponential order</strong> <span class="math inline">\(\alpha\)</span> if there exist constants <span class="math inline">\(M &gt; 0\)</span> and <span class="math inline">\(t_0 \geq 0\)</span> such that:</p>
+<p><span class="math display">\[
+|f(t)| \leq M e^{\alpha t}, \quad \text{for all } t \geq t_0.
+\]</span></p>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components:</h3>
+<ol type="1">
+<li><strong>Bounded Growth</strong>: For <span class="math inline">\(t \geq t_0\)</span>, the magnitude of <span class="math inline">\(f(t)\)</span> does not exceed <span class="math inline">\(M e^{\alpha t}\)</span>.</li>
+<li><strong>Constants</strong>:
+<ul>
+<li><span class="math inline">\(M\)</span>: A positive constant that bounds <span class="math inline">\(f(t)\)</span>.</li>
+<li><span class="math inline">\(\alpha\)</span>: The exponential growth rate that controls the bound.</li>
+<li><span class="math inline">\(t_0\)</span>: The threshold after which the bound holds.</li>
+</ul></li>
+</ol>
+<p>This definition ensures that <span class="math inline">\(f(t)\)</span> does not grow faster than <span class="math inline">\(e^{\alpha t}\)</span> for sufficiently large <span class="math inline">\(t\)</span>.</p>
+</section>
+</section>
+<section id="understanding-too-fast-growth" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-too-fast-growth">Understanding “Too Fast” Growth</h2>
+<p>When we describe a function as growing “too fast” to be of exponential order, we mean that it <strong>outpaces</strong> the growth of any exponential function <span class="math inline">\(e^{\alpha t}\)</span>, regardless of how large <span class="math inline">\(\alpha\)</span> is chosen. For instance, functions like <span class="math inline">\(e^{t^2}\)</span> grow so rapidly that no exponential bound <span class="math inline">\(e^{\alpha t}\)</span> can contain them for all large <span class="math inline">\(t\)</span>.</p>
+<section id="intuition" class="level3">
+<h3 class="anchored" data-anchor-id="intuition">Intuition:</h3>
+<ol type="1">
+<li><strong>Exponential Functions</strong>: <span class="math inline">\(e^{\alpha t}\)</span> grow rapidly, but many functions (e.g., polynomials) grow slower or at a similar rate for large <span class="math inline">\(t\)</span>.</li>
+<li><strong>Super-Exponential Functions</strong>: Functions like <span class="math inline">\(e^{t^2}\)</span> grow faster than any <span class="math inline">\(e^{\alpha t}\)</span> because the exponent itself grows faster (e.g., <span class="math inline">\(t^2\)</span> vs.&nbsp;<span class="math inline">\(\alpha t\)</span>).</li>
+</ol>
+<p>If a function grows faster than <span class="math inline">\(e^{\alpha t}\)</span>, it cannot be bounded by any exponential function, and thus, it is <strong>not</strong> of exponential order.</p>
+</section>
+<section id="example-comparing-et2-and-ealpha-t" class="level3">
+<h3 class="anchored" data-anchor-id="example-comparing-et2-and-ealpha-t">Example: Comparing <span class="math inline">\(e^{t^2}\)</span> and <span class="math inline">\(e^{\alpha t}\)</span></h3>
+<p>Consider <span class="math inline">\(f(t) = e^{t^2}\)</span> and <span class="math inline">\(g(t) = e^{\alpha t}\)</span> with <span class="math inline">\(\alpha = 2\)</span>.</p>
+<ol type="1">
+<li><p><strong>At <span class="math inline">\(t = 1\)</span></strong>:</p>
+<p><span class="math display">\[
+e^{t^2} = e^1 \approx 2.718, \quad e^{\alpha t} = e^2 \approx 7.389.
+\]</span></p>
+<p>Here, <span class="math inline">\(e^{t^2} &lt; e^{\alpha t}\)</span>.</p></li>
+<li><p><strong>At <span class="math inline">\(t = 2\)</span></strong>:</p>
+<p><span class="math display">\[
+e^{t^2} = e^4 \approx 54.598, \quad e^{\alpha t} = e^4 \approx 54.598.
+\]</span></p>
+<p>Now, <span class="math inline">\(e^{t^2} = e^{\alpha t}\)</span>.</p></li>
+<li><p><strong>At <span class="math inline">\(t = 3\)</span></strong>: <span class="math display">\[
+e^{t^2} = e^9 \approx 8103, \quad e^{\alpha t} = e^6 \approx 403.
+\]</span> Here, <span class="math inline">\(e^{t^2} &gt; e^{\alpha t}\)</span>.</p></li>
+</ol>
+<p>As <span class="math inline">\(t \to \infty\)</span>, <span class="math inline">\(e^{t^2}\)</span> grows much faster than <span class="math inline">\(e^{\alpha t}\)</span>, no matter how large <span class="math inline">\(\alpha\)</span> is. This demonstrates that <span class="math inline">\(f(t) = e^{t^2}\)</span> is <strong>not</strong> of exponential order.</p>
+</section>
+</section>
+<section id="example-1-polynomial-function-ft-t2" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-polynomial-function-ft-t2">Example 1: Polynomial Function <span class="math inline">\(f(t) = t^2\)</span></h2>
+<p>Let’s determine if <span class="math inline">\(f(t) = t^2\)</span> is of exponential order.</p>
+<section id="step-1-analyze-the-growth-of-ft" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-analyze-the-growth-of-ft">Step 1: Analyze the Growth of <span class="math inline">\(f(t)\)</span></h3>
+<p>The function <span class="math inline">\(f(t) = t^2\)</span> grows quadratically as <span class="math inline">\(t \to \infty\)</span>. In contrast, an exponential function like <span class="math inline">\(e^{\alpha t}\)</span> grows much faster for large <span class="math inline">\(t\)</span>. This suggests that <span class="math inline">\(t^2\)</span> might be bounded by <span class="math inline">\(e^{\alpha t}\)</span> for some <span class="math inline">\(\alpha &gt; 0\)</span>.</p>
+</section>
+<section id="step-2-choose-alpha-and-m" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-choose-alpha-and-m">Step 2: Choose <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(M\)</span></h3>
+<ul>
+<li><strong>Select <span class="math inline">\(\alpha = 1\)</span></strong>: A reasonable starting point for the exponential growth rate.</li>
+<li><strong>Determine <span class="math inline">\(M\)</span></strong>: We aim to find <span class="math inline">\(M\)</span> such that <span class="math inline">\(t^2 \leq M e^t\)</span> for all <span class="math inline">\(t \geq t_0\)</span>.</li>
+</ul>
+</section>
+<section id="step-3-verify-the-bound" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-verify-the-bound">Step 3: Verify the Bound</h3>
+<ul>
+<li><p><strong>At <span class="math inline">\(t = 3\)</span></strong>:</p>
+<p><span class="math display">\[
+t^2 = 9, \quad e^t \approx 20.09.
+\]</span></p>
+<p>Clearly, <span class="math inline">\(t^2 \leq e^t\)</span>.</p></li>
+<li><p><strong>As <span class="math inline">\(t\)</span> increases</strong>: <span class="math inline">\(e^t\)</span> grows significantly faster than <span class="math inline">\(t^2\)</span>, ensuring that <span class="math inline">\(t^2 \leq M e^t\)</span> for some <span class="math inline">\(M &gt; 0\)</span>.</p></li>
+</ul>
+<p><strong>Conclusion</strong>: For <span class="math inline">\(t \geq t_0 = 3\)</span>, we can choose <span class="math inline">\(M = 1\)</span> and <span class="math inline">\(\alpha = 1\)</span> to satisfy:</p>
+<p><span class="math display">\[
+|f(t)| \leq M e^{\alpha t}.
+\]</span></p>
+<p>Therefore, <span class="math inline">\(f(t) = t^2\)</span> is of exponential order with <span class="math inline">\(\alpha = 1\)</span>.</p>
+</section>
+</section>
+<section id="example-2-exponential-function-ft-et2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-exponential-function-ft-et2">Example 2: Exponential Function <span class="math inline">\(f(t) = e^{t^2}\)</span></h2>
+<p>Now, let’s examine whether <span class="math inline">\(f(t) = e^{t^2}\)</span> is of exponential order.</p>
+<section id="step-1-analyze-the-growth-of-ft-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-analyze-the-growth-of-ft-1">Step 1: Analyze the Growth of <span class="math inline">\(f(t)\)</span></h3>
+<p>The function <span class="math inline">\(f(t) = e^{t^2}\)</span> grows much faster than any exponential function <span class="math inline">\(e^{\alpha t}\)</span> as <span class="math inline">\(t \to \infty\)</span>.</p>
+</section>
+<section id="step-2-attempt-to-establish-the-bound" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-attempt-to-establish-the-bound">Step 2: Attempt to Establish the Bound</h3>
+<p>Assume, for contradiction, that <span class="math inline">\(e^{t^2} \leq M e^{\alpha t}\)</span>. Taking the natural logarithm of both sides:</p>
+<p><span class="math display">\[
+t^2 \leq \ln(M) + \alpha t.
+\]</span></p>
+<p>For large <span class="math inline">\(t\)</span>, the left side (<span class="math inline">\(t^2\)</span>) grows faster than the right side (<span class="math inline">\(\ln(M) + \alpha t\)</span>), making the inequality impossible to satisfy.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>No constants <span class="math inline">\(M &gt; 0\)</span> and <span class="math inline">\(\alpha &gt; 0\)</span> can ensure <span class="math inline">\(|f(t)| \leq M e^{\alpha t}\)</span> for all sufficiently large <span class="math inline">\(t\)</span>. Therefore, <span class="math inline">\(f(t) = e^{t^2}\)</span> is <strong>not</strong> of exponential order.</p>
+</section>
+</section>
+<section id="why-use-exponential-bounds" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-exponential-bounds">Why Use Exponential Bounds?</h2>
+<p>Exponential functions <span class="math inline">\(e^{\alpha t}\)</span> serve as a benchmark for measuring the <strong>rate of growth</strong> of other functions:</p>
+<ul>
+<li><strong>Controlled Growth</strong>: If a function grows slower than or at the same rate as <span class="math inline">\(e^{\alpha t}\)</span>, its growth is considered manageable, making it suitable for operations like the Laplace Transform.</li>
+<li><strong>Uncontrolled Growth</strong>: If a function grows faster than <span class="math inline">\(e^{\alpha t}\)</span>, its growth becomes unmanageable, rendering it unsuitable for certain mathematical techniques.</li>
+</ul>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary:</h3>
+<ul>
+<li><strong>Functions Growing “Too Fast”</strong>: These <strong>outpace</strong> exponential functions <span class="math inline">\(e^{\alpha t}\)</span> and are <strong>not</strong> of exponential order.</li>
+<li><strong>Functions of Exponential Order</strong>: These grow <strong>slower than or similarly to</strong> <span class="math inline">\(e^{\alpha t}\)</span>, ensuring their growth is under control.</li>
+</ul>
+<p>Understanding whether a function is of exponential order is essential for determining the applicability of various mathematical tools and for analyzing the function’s long-term behavior.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
