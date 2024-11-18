@@ -18,6 +18,7 @@ format:
       source: false
       toggle: true
       caption: See code
+jupyter: python3
 ---
 
 # SECTION 4.2
