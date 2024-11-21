@@ -4825,6 +4825,7 @@ window.Quarto = {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
   <li><a href="#leibnizs-rule" id="toc-leibnizs-rule" class="nav-link" data-scroll-target="#leibnizs-rule"><strong>Leibniz’s Rule</strong></a></li>
   <li><a href="#proof" id="toc-proof" class="nav-link" data-scroll-target="#proof"><strong>Proof</strong></a></li>
+  <li><a href="#corollary-laplace-transform-of-tn-ft" id="toc-corollary-laplace-transform-of-tn-ft" class="nav-link" data-scroll-target="#corollary-laplace-transform-of-tn-ft"><strong>Corollary: Laplace Transform of <span class="math inline">t^n f(t)</span></strong></a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
   </ul>
 </nav>
@@ -4924,9 +4925,46 @@ F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
 </span></p>
 </section>
 </section>
+<section id="corollary-laplace-transform-of-tn-ft" class="level2">
+<h2 class="anchored" data-anchor-id="corollary-laplace-transform-of-tn-ft"><strong>Corollary: Laplace Transform of <span class="math inline">t^n f(t)</span></strong></h2>
+<p>Building on Theorem 5.3.2, the Laplace transform of <span class="math inline">t^n f(t)</span> can be expressed as:</p>
+<p><span class="math display">
+\mathcal{L}[t^n f(t)] = (-1)^n F^{(n)}(s)
+</span></p>
+<p>where <span class="math inline">F^{(n)}(s)</span> is the <span class="math inline">n</span>-th derivative of <span class="math inline">F(s)</span>. This property generalizes the Multiplication by <span class="math inline">t</span> Property to higher powers of <span class="math inline">t</span>.</p>
+<section id="demonstration" class="level3">
+<h3 class="anchored" data-anchor-id="demonstration">Demonstration</h3>
+<p>To demonstrate the corollary for <span class="math inline">n = 2</span>, consider <span class="math inline">t^2 f(t)</span>:</p>
+<ol type="1">
+<li><p>Apply Theorem 5.3.2 for <span class="math inline">tf(t)</span>:</p>
+<p><span class="math display">
+\mathcal{L}[tf(t)] = -\frac{d}{ds}F(s)
+</span></p></li>
+<li><p>Apply Theorem 5.3.2 again for <span class="math inline">t^2 f(t) = t \cdot (tf(t))</span>:</p>
+<p><span class="math display">
+\mathcal{L}[t^2 f(t)] = -\frac{d}{ds} \big( \mathcal{L}[tf(t)] \big) = -\frac{d}{ds} \big( -\frac{d}{ds} F(s) \big)
+</span></p></li>
+<li><p>Simplify the expression:</p>
+<p><span class="math display">
+\mathcal{L}[t^2 f(t)] = \frac{d^2}{ds^2} F(s) = F^{(2)}(s)
+</span></p></li>
+<li><p>Incorporate the factor <span class="math inline">(-1)^2</span> for consistency with the corollary:</p>
+<p><span class="math display">
+\mathcal{L}[t^2 f(t)] = F^{(2)}(s) = (-1)^2 F^{(2)}(s)
+</span></p></li>
+</ol>
+</section>
+<section id="general-case" class="level3">
+<h3 class="anchored" data-anchor-id="general-case">General Case</h3>
+<p>The process can be repeated for any positive integer <span class="math inline">n</span> to show that:</p>
+<p><span class="math display">
+\mathcal{L}[t^n f(t)] = (-1)^n F^{(n)}(s)
+</span></p>
+</section>
+</section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
-<p>The <strong>Multiplication by <span class="math inline">t</span> Property</strong> establishes that the Laplace transform of <span class="math inline">tf(t)</span> corresponds to the negative derivative of the Laplace transform of <span class="math inline">f(t)</span> with respect to <span class="math inline">s</span>. This result is particularly valuable when analyzing time-domain functions involving scaling by <span class="math inline">t</span>.</p>
+<p>The <strong>Multiplication by <span class="math inline">t</span> Property</strong> provides a foundation for analyzing functions scaled by <span class="math inline">t</span> or higher powers of <span class="math inline">t</span>. The corollary extends the result to <span class="math inline">t^n f(t)</span>, relating it to the <span class="math inline">n</span>-th derivative of the Laplace transform of <span class="math inline">f(t)</span>. This result is critical in applications requiring repeated differentiation in the <span class="math inline">s</span>-domain.</p>
 
 
 </section>

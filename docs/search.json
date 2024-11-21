@@ -424,28 +424,28 @@
     "href": "notes/w09/laplace-transform-properties/first-derivative-property.html",
     "title": "Laplace Transform - First Derivative Property",
     "section": "",
-    "text": "The First Derivative Property of the Laplace Transform relates the Laplace transform of a derivative y'(t) to the transform of y(t) and its initial value. The property states:\n\n\\mathcal{L}[y'(t)] = s\\mathcal{L}[y(t)] - y(0)\n\nThis theorem is widely used in solving differential equations with given initial conditions."
+    "text": "The First Derivative Property of the Laplace Transform relates the Laplace transform of a derivative f'(t) to the transform of f(t) and its initial value. The property states:\n\n\\mathcal{L}[f'(t)] = s\\mathcal{L}[f(t)] - f(0)\n\nThis theorem is widely used in solving differential equations with given initial conditions."
   },
   {
     "objectID": "notes/w09/laplace-transform-properties/first-derivative-property.html#overview",
     "href": "notes/w09/laplace-transform-properties/first-derivative-property.html#overview",
     "title": "Laplace Transform - First Derivative Property",
     "section": "",
-    "text": "The First Derivative Property of the Laplace Transform relates the Laplace transform of a derivative y'(t) to the transform of y(t) and its initial value. The property states:\n\n\\mathcal{L}[y'(t)] = s\\mathcal{L}[y(t)] - y(0)\n\nThis theorem is widely used in solving differential equations with given initial conditions."
+    "text": "The First Derivative Property of the Laplace Transform relates the Laplace transform of a derivative f'(t) to the transform of f(t) and its initial value. The property states:\n\n\\mathcal{L}[f'(t)] = s\\mathcal{L}[f(t)] - f(0)\n\nThis theorem is widely used in solving differential equations with given initial conditions."
   },
   {
     "objectID": "notes/w09/laplace-transform-properties/first-derivative-property.html#proof",
     "href": "notes/w09/laplace-transform-properties/first-derivative-property.html#proof",
     "title": "Laplace Transform - First Derivative Property",
     "section": "Proof",
-    "text": "Proof\n\nWrite the Laplace Transform of the Derivative\nBy definition, the Laplace transform of y'(t) is:\n\n\\mathcal{L}[y'(t)] = \\int_0^\\infty y'(t) e^{-st} \\, dt\n\n\n\nApply Integration by Parts\nThe integration by parts formula is given by:\n\n\\int u \\, dv = uv - \\int v \\, du\n\nLet:\n\nu = e^{-st} and dv = y'(t) dt,\nThen du = -s e^{-st} dt and v = y(t).\n\nUsing this formula:\n\n\\int_0^\\infty y'(t) e^{-st} \\, dt = \\left[ y(t) e^{-st} \\right]_0^\\infty - \\int_0^\\infty y(t)(-s e^{-st}) \\, dt\n\n\n\nEvaluate the Boundary Terms\n\nAt t = \\infty, y(t) e^{-st} \\to 0, assuming y(t) grows no faster than an exponential function.\nAt t = 0, y(t) e^{-s(0)} = y(0).\n\nThus, the boundary term becomes:\n\n\\left[ y(t) e^{-st} \\right]_0^\\infty = -y(0)\n\n\n\nSimplify the Remaining Integral\nThe remaining integral is:\n\n\\int_0^\\infty s y(t) e^{-st} \\, dt = s \\int_0^\\infty y(t) e^{-st} \\, dt\n\nBy definition, this is:\n\ns \\mathcal{L}[y(t)]\n\n\n\nCombine Results\nSubstituting the results back into the equation:\n\n\\mathcal{L}[y'(t)] = -y(0) + s \\mathcal{L}[y(t)]\n\nRearranging:\n\n\\mathcal{L}[y'(t)] = s\\mathcal{L}[y(t)] - y(0)\n\n\n\nConclusion\nThe proof demonstrates that:\n\n\\mathcal{L}[y'(t)] = s\\mathcal{L}[y(t)] - y(0)"
+    "text": "Proof\n\nWrite the Laplace Transform of the Derivative\nBy definition, the Laplace transform of f'(t) is:\n\n\\mathcal{L}[f'(t)] = \\int_0^\\infty f'(t) e^{-st} \\, dt\n\n\n\nApply Integration by Parts\nThe integration by parts formula is given by:\n\n\\int u \\, dv = uv - \\int v \\, du\n\nLet:\n\nu = e^{-st} and dv = f'(t) dt,\nThen du = -s e^{-st} dt and v = f(t).\n\nUsing this formula:\n\n\\int_0^\\infty f'(t) e^{-st} \\, dt = \\left[ f(t) e^{-st} \\right]_0^\\infty - \\int_0^\\infty f(t)(-s e^{-st}) \\, dt\n\n\n\nEvaluate the Boundary Terms\n\nAt t = \\infty, f(t) e^{-st} \\to 0, assuming f(t) grows no faster than an exponential function.\nAt t = 0, f(t) e^{-s(0)} = f(0).\n\nThus, the boundary term becomes:\n\n\\left[ f(t) e^{-st} \\right]_0^\\infty = -f(0)\n\n\n\nSimplify the Remaining Integral\nThe remaining integral is:\n\n\\int_0^\\infty s f(t) e^{-st} \\, dt = s \\int_0^\\infty f(t) e^{-st} \\, dt\n\nBy definition, this is:\n\ns \\mathcal{L}[f(t)]\n\n\n\nCombine Results\nSubstituting the results back into the equation:\n\n\\mathcal{L}[f'(t)] = -f(0) + s \\mathcal{L}[f(t)]\n\nRearranging:\n\n\\mathcal{L}[f'(t)] = s\\mathcal{L}[f(t)] - f(0)\n\n\n\nConclusion\nThe proof demonstrates that:\n\n\\mathcal{L}[f'(t)] = s\\mathcal{L}[f(t)] - f(0)"
   },
   {
     "objectID": "notes/w09/laplace-transform-properties/first-derivative-property.html#summary",
     "href": "notes/w09/laplace-transform-properties/first-derivative-property.html#summary",
     "title": "Laplace Transform - First Derivative Property",
     "section": "Summary",
-    "text": "Summary\nThe First Derivative Property establishes a relationship between the Laplace transform of a derivative and the transform of the original function, with an additional term involving the initial value of the function. This property is crucial for solving differential equations with initial conditions."
+    "text": "Summary\nThe First Derivative Property establishes a relationship between the Laplace transform of f'(t) and the transform of f(t). The corollary extends this result to include the second derivative, f''(t) = g'(t), where g(t) = f'(t). These properties are essential for solving second-order differential equations with specified initial conditions."
   },
   {
     "objectID": "notes/w09/laplace-transform-properties/multiplication-by-t-property.html",
@@ -480,7 +480,7 @@
     "href": "notes/w09/laplace-transform-properties/multiplication-by-t-property.html#summary",
     "title": "Laplace Transform - Multiplication by t Property",
     "section": "Summary",
-    "text": "Summary\nThe Multiplication by t Property establishes that the Laplace transform of tf(t) corresponds to the negative derivative of the Laplace transform of f(t) with respect to s. This result is particularly valuable when analyzing time-domain functions involving scaling by t."
+    "text": "Summary\nThe Multiplication by t Property provides a foundation for analyzing functions scaled by t or higher powers of t. The corollary extends the result to t^n f(t), relating it to the n-th derivative of the Laplace transform of f(t). This result is critical in applications requiring repeated differentiation in the s-domain."
   },
   {
     "objectID": "homework/hw03/hw03-10-12-24.html",
@@ -523,5 +523,26 @@
     "title": "Stability of the Origin in 2x2 Systems of Differential Equations",
     "section": "Summary",
     "text": "Summary\nThe stability of the origin in a 2 \\times 2 system of differential equations depends on the real and imaginary parts of the eigenvalues of matrix A:\n\nReal positive eigenvalues lead to a repelling node (unstable).\nMixed positive and negative real eigenvalues create a saddle point (unstable).\nReal negative eigenvalues result in an attracting node (stable).\nComplex eigenvalues with a positive real part indicate a spiral source (unstable).\nPurely imaginary eigenvalues create a center (neutral stability).\nComplex eigenvalues with a negative real part lead to a spiral sink (stable).\n\nBy determining the eigenvalues, we can classify the type of stability at the origin and predict the behavior of trajectories in the phase plane."
+  },
+  {
+    "objectID": "notes/w09/laplace-transform-properties/multiplication-by-t-property.html#corollary-laplace-transform-of-tn-ft",
+    "href": "notes/w09/laplace-transform-properties/multiplication-by-t-property.html#corollary-laplace-transform-of-tn-ft",
+    "title": "Laplace Transform - Multiplication by t Property",
+    "section": "Corollary: Laplace Transform of t^n f(t)",
+    "text": "Corollary: Laplace Transform of t^n f(t)\nBuilding on Theorem 5.3.2, the Laplace transform of t^n f(t) can be expressed as:\n\n\\mathcal{L}[t^n f(t)] = (-1)^n F^{(n)}(s)\n\nwhere F^{(n)}(s) is the n-th derivative of F(s). This property generalizes the Multiplication by t Property to higher powers of t.\n\nDemonstration\nTo demonstrate the corollary for n = 2, consider t^2 f(t):\n\nApply Theorem 5.3.2 for tf(t):\n\n\\mathcal{L}[tf(t)] = -\\frac{d}{ds}F(s)\n\nApply Theorem 5.3.2 again for t^2 f(t) = t \\cdot (tf(t)):\n\n\\mathcal{L}[t^2 f(t)] = -\\frac{d}{ds} \\big( \\mathcal{L}[tf(t)] \\big) = -\\frac{d}{ds} \\big( -\\frac{d}{ds} F(s) \\big)\n\nSimplify the expression:\n\n\\mathcal{L}[t^2 f(t)] = \\frac{d^2}{ds^2} F(s) = F^{(2)}(s)\n\nIncorporate the factor (-1)^2 for consistency with the corollary:\n\n\\mathcal{L}[t^2 f(t)] = F^{(2)}(s) = (-1)^2 F^{(2)}(s)\n\n\n\n\nGeneral Case\nThe process can be repeated for any positive integer n to show that:\n\n\\mathcal{L}[t^n f(t)] = (-1)^n F^{(n)}(s)"
+  },
+  {
+    "objectID": "notes/w09/laplace-transform-properties/first-derivative-property.html#corollary-laplace-transform-of-yt",
+    "href": "notes/w09/laplace-transform-properties/first-derivative-property.html#corollary-laplace-transform-of-yt",
+    "title": "Laplace Transform - First Derivative Property",
+    "section": "Corollary: Laplace Transform of y''(t)",
+    "text": "Corollary: Laplace Transform of y''(t)\nThe Laplace transform of the second derivative y''(t) extends the First Derivative Property. For y(t), y'(t), and y''(t) being continuous and acceptable, the property is:\n\n\\mathcal{L}[y''(t)] = s^2 \\mathcal{L}[y(t)] - sy(0) - y'(0)\n\n\nDerivation\n\nStart with the First Derivative Property:\n\n\\mathcal{L}[y'(t)] = s \\mathcal{L}[y(t)] - y(0)\n\nApply the Laplace transform to y''(t), treating it as the derivative of y'(t):\n\n\\mathcal{L}[y''(t)] = s \\mathcal{L}[y'(t)] - y'(0)\n\nSubstitute \\mathcal{L}[y'(t)] = s \\mathcal{L}[y(t)] - y(0) into the equation:\n\n\\mathcal{L}[y''(t)] = s \\big( s \\mathcal{L}[y(t)] - y(0) \\big) - y'(0)\n\nSimplify the expression:\n\n\\mathcal{L}[y''(t)] = s^2 \\mathcal{L}[y(t)] - sy(0) - y'(0)\n\n\n\n\nExample Application\nFor y(t) = e^t, with y'(t) = e^t, y''(t) = e^t, and y(0) = 1, y'(0) = 1:\n\nCompute \\mathcal{L}[y(t)] = \\frac{1}{s-1}.\nUsing the corollary:\n\n\\mathcal{L}[y''(t)] = s^2 \\cdot \\frac{1}{s-1} - s \\cdot 1 - 1\n\nSimplify:\n\n\\mathcal{L}[y''(t)] = \\frac{s^2}{s-1} - s - 1"
+  },
+  {
+    "objectID": "notes/w09/laplace-transform-properties/first-derivative-property.html#corollary-laplace-transform-of-gt-ft",
+    "href": "notes/w09/laplace-transform-properties/first-derivative-property.html#corollary-laplace-transform-of-gt-ft",
+    "title": "Laplace Transform - First Derivative Property",
+    "section": "Corollary: Laplace Transform of g'(t) = f''(t)",
+    "text": "Corollary: Laplace Transform of g'(t) = f''(t)\nTo extend the property to g'(t) = f''(t):\n\nDefine g(t) = f'(t). Then the Laplace transform of g'(t) = f''(t) is:\n\n\\mathcal{L}[f''(t)] = \\mathcal{L}[g'(t)]\n\nUsing the First Derivative Property for g(t):\n\n\\mathcal{L}[g'(t)] = s\\mathcal{L}[g(t)] - g(0)\n\nSubstituting g(t) = f'(t) and g(0) = f'(0):\n\n\\mathcal{L}[f''(t)] = s\\mathcal{L}[f'(t)] - f'(0)\n\nSubstitute the First Derivative Property for f'(t):\n\n\\mathcal{L}[f'(t)] = s\\mathcal{L}[f(t)] - f(0)\n\nSubstituting into the equation:\n\n\\mathcal{L}[f''(t)] = s \\big(s\\mathcal{L}[f(t)] - f(0)\\big) - f'(0)\n\nSimplify the expression:\n\n\\mathcal{L}[f''(t)] = s^2\\mathcal{L}[f(t)] - sf(0) - f'(0)\n\n\n\nExample Application\nFor f(t) = t^2, with f'(t) = 2t, f''(t) = 2, and f(0) = 0, f'(0) = 0:\n\nCompute \\mathcal{L}[f(t)] = \\frac{2}{s^3}.\nUsing the corollary:\n\n\\mathcal{L}[f''(t)] = s^2 \\cdot \\frac{2}{s^3} - s \\cdot 0 - 0\n\nSimplify:\n\n\\mathcal{L}[f''(t)] = \\frac{2s^2}{s^3} = \\frac{2}{s}"
   }
 ]
