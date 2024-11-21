@@ -59,7 +59,7 @@ Although $r$ grows indefinitely, the exponential decay $e^{-sr}$ dominates the g
 To analyze the behavior more rigorously, rewrite $g(r)$ as:
 
 $$
-g(r) = \frac{r}{e^{sr}}.
+g(r) = \frac{r}{e^{sr}}
 $$
 
 Here, the numerator $r$ grows polynomially, while the denominator $e^{sr}$ grows exponentially faster. This imbalance ensures that the fraction $\frac{r}{e^{sr}}$ approaches $0$ as $r \to \infty$.
@@ -69,19 +69,19 @@ Here, the numerator $r$ grows polynomially, while the denominator $e^{sr}$ grows
 Since both the numerator and denominator approach $\infty$ as $r \to \infty$, apply L’Hôpital’s Rule:
 
 $$
-\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{\frac{d}{dr}[r]}{\frac{d}{dr}[e^{sr}]}.
+\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{\frac{d}{dr}[r]}{\frac{d}{dr}[e^{sr}]}
 $$
 
 Differentiate the numerator and denominator:
 
 $$
-\frac{d}{dr}[r] = 1, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}.
+\frac{d}{dr}[r] = 1, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}
 $$
 
 Thus, the limit becomes:
 
 $$
-\lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{1}{s e^{sr}}.
+\lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{1}{s e^{sr}}
 $$
 
 #### **Evaluate the Limit**
@@ -89,7 +89,7 @@ $$
 As $r \to \infty$, $e^{sr} \to \infty$, so:
 
 $$
-\frac{1}{s e^{sr}} \to 0.
+\frac{1}{s e^{sr}} \to 0
 $$
 
 This confirms that $g(r) \to 0$ as $r \to \infty$.
@@ -101,7 +101,7 @@ This confirms that $g(r) \to 0$ as $r \to \infty$.
 The limit of $g(r) = r e^{-sr}$ is:
 
 $$
-\lim_{r \to \infty} g(r) = 0.
+\lim_{r \to \infty} g(r) = 0
 $$
 
 The exponential decay term $e^{-sr}$ grows much faster than the polynomial term $r$, forcing the function $g(r)$ to approach $0$ as $r \to \infty$.
@@ -133,7 +133,7 @@ The exponential decay term $e^{-sr}$ dominates the polynomial growth $r^n$, caus
 Rewriting $g(r)$ as:
 
 $$
-g(r) = \frac{r^n}{e^{sr}},
+g(r) = \frac{r^n}{e^{sr}}
 $$
 
 it becomes clear that the numerator $r^n$ grows polynomially, while the denominator $e^{sr}$ grows exponentially. The exponential growth of the denominator outpaces the polynomial growth of the numerator, driving the fraction to $0$.
@@ -143,7 +143,7 @@ it becomes clear that the numerator $r^n$ grows polynomially, while the denomina
 Since both the numerator and denominator approach $\infty$ as $r \to \infty$, apply L’Hôpital’s Rule $n$ times to compute the limit:
 
 $$
-\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r^n}{e^{sr}}.
+\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r^n}{e^{sr}}
 $$
 
 Differentiate the numerator and denominator $n$ times:
@@ -151,25 +151,25 @@ Differentiate the numerator and denominator $n$ times:
 1. After the first differentiation:
 
    $$
-   \frac{d}{dr}[r^n] = n r^{n-1}, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}.
+   \frac{d}{dr}[r^n] = n r^{n-1}, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}
    $$
 
    This simplifies to:
 
    $$
-   \lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n r^{n-1}}{s e^{sr}}.
+   \lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n r^{n-1}}{s e^{sr}}
    $$
 
 2. After the second differentiation:
    $$
-   \frac{d}{dr}[r^{n-1}] = (n-1) r^{n-2}.
+   \frac{d}{dr}[r^{n-1}] = (n-1) r^{n-2}
    $$
    Repeating this process $n$ times, the numerator eventually becomes a constant $n!$, while the denominator remains $s^n e^{sr}$.
 
 After $n$ differentiations:
 
 $$
-\lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n!}{s^n e^{sr}}.
+\lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n!}{s^n e^{sr}}
 $$
 
 #### **Evaluate the Final Limit**
@@ -177,7 +177,7 @@ $$
 As $r \to \infty$, the term $e^{sr} \to \infty$, making:
 
 $$
-\frac{n!}{s^n e^{sr}} \to 0.
+\frac{n!}{s^n e^{sr}} \to 0
 $$
 
 Thus, $g(r) \to 0$ as $r \to \infty$.
@@ -189,7 +189,7 @@ Thus, $g(r) \to 0$ as $r \to \infty$.
 The limit of $g(r) = r^n e^{-sr}$ is:
 
 $$
-\lim_{r \to \infty} g(r) = 0.
+\lim_{r \to \infty} g(r) = 0
 $$
 
 The exponential decay term $e^{-sr}$ grows much faster than the polynomial term $r^n$, forcing the function $g(r)$ to approach $0$ as $r \to \infty$.
@@ -212,13 +212,13 @@ Use the definition of the Laplace transform to compute $\mathcal{L}\{f(t)\} = F(
 The Laplace transform of $f(t)$ is given by:
 
 $$
-\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt
 $$
 
 For $f(t) = 2t$, this becomes:
 
 $$
-F(s) = \int_0^\infty e^{-st} \cdot 2t \, dt.
+F(s) = \int_0^\infty e^{-st} \cdot 2t \, dt
 $$
 
 #### **Setup the Integral**
@@ -226,7 +226,7 @@ $$
 The Laplace transform is:
 
 $$
-F(s) = 2 \int_0^\infty t e^{-st} \, dt.
+F(s) = 2 \int_0^\infty t e^{-st} \, dt
 $$
 
 #### **Solve the Integral**
@@ -239,13 +239,13 @@ To evaluate $\int_0^\infty t e^{-st} \, dt$, use integration by parts:
 Using the integration by parts formula:
 
 $$
-\int u \, dv = uv - \int v \, du,
+\int u \, dv = uv - \int v \, du
 $$
 
 we have:
 
 $$
-\int_0^\infty t e^{-st} \, dt = \left[ -\frac{t e^{-st}}{s} \right]_0^\infty + \int_0^\infty \frac{e^{-st}}{s} \, dt.
+\int_0^\infty t e^{-st} \, dt = \left[ -\frac{t e^{-st}}{s} \right]_0^\infty + \int_0^\infty \frac{e^{-st}}{s} \, dt
 $$
 
 1. Evaluate $\left[ -\frac{t e^{-st}}{s} \right]_0^\infty$:
@@ -258,31 +258,31 @@ $$
 2. Evaluate $\int_0^\infty \frac{e^{-st}}{s} \, dt$:
 
    $$
-   \int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s} \int_0^\infty e^{-st} \, dt.
+   \int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s} \int_0^\infty e^{-st} \, dt
    $$
 
    The integral $\int_0^\infty e^{-st} \, dt$ is:
 
    $$
-   \int_0^\infty e^{-st} \, dt = \left[ \frac{-e^{-st}}{s} \right]_0^\infty = \frac{1}{s}.
+   \int_0^\infty e^{-st} \, dt = \left[ \frac{-e^{-st}}{s} \right]_0^\infty = \frac{1}{s}
    $$
 
    Thus:
 
    $$
-   \int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s^2}.
+   \int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s^2}
    $$
 
 Combining these results:
 
 $$
-\int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}.
+\int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}
 $$
 
 Therefore:
 
 $$
-F(s) = 2 \cdot \frac{1}{s^2} = \frac{2}{s^2}.
+F(s) = 2 \cdot \frac{1}{s^2} = \frac{2}{s^2}
 $$
 
 #### **Domain of $s$-Values**
@@ -296,7 +296,7 @@ The Laplace transform $F(s)$ is defined for $s > 0$, because the integral conver
 The Laplace transform of $f(t) = 2t$ is:
 
 $$
-\mathcal{L}\{f(t)\} = F(s) = \frac{2}{s^2}, \quad s > 0.
+\mathcal{L}\{f(t)\} = F(s) = \frac{2}{s^2}, \quad s > 0
 $$
 
 The domain of $s$-values is $s > 0$.
@@ -319,13 +319,13 @@ Use the definition of the Laplace transform to compute $\mathcal{L}\{f(t)\} = F(
 The Laplace transform of $f(t)$ is given by:
 
 $$
-\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt
 $$
 
 For $f(t) = 2 - t$, this becomes:
 
 $$
-F(s) = \int_0^\infty e^{-st} (2 - t) \, dt.
+F(s) = \int_0^\infty e^{-st} (2 - t) \, dt
 $$
 
 #### **Separate the Integral**
@@ -333,7 +333,7 @@ $$
 Split the integral into two parts:
 
 $$
-F(s) = \int_0^\infty 2 e^{-st} \, dt - \int_0^\infty t e^{-st} \, dt.
+F(s) = \int_0^\infty 2 e^{-st} \, dt - \int_0^\infty t e^{-st} \, dt
 $$
 
 #### **Evaluate Each Integral**
@@ -342,7 +342,7 @@ $$
    Factor out the constant $2$:
 
    $$
-   \int_0^\infty 2 e^{-st} \, dt = 2 \int_0^\infty e^{-st} \, dt.
+   \int_0^\infty 2 e^{-st} \, dt = 2 \int_0^\infty e^{-st} \, dt
    $$
 
    The integral of $e^{-st}$ is:
@@ -354,19 +354,19 @@ $$
    So:
 
    $$
-   \int_0^\infty 2 e^{-st} \, dt = \frac{2}{s}.
+   \int_0^\infty 2 e^{-st} \, dt = \frac{2}{s}
    $$
 
 2. **Second Term: $\int_0^\infty t e^{-st} \, dt$**  
    This is a standard integral that we know (or compute using integration by parts):
    $$
-   \int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}, \quad s > 0.
+   \int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}, \quad s > 0
    $$
 
 Substitute these results back into $F(s)$:
 
 $$
-F(s) = \frac{2}{s} - \frac{1}{s^2}.
+F(s) = \frac{2}{s} - \frac{1}{s^2}
 $$
 
 #### **Simplify the Result**
@@ -374,7 +374,7 @@ $$
 Combine the terms:
 
 $$
-F(s) = \frac{2s - 1}{s^2}.
+F(s) = \frac{2s - 1}{s^2}
 $$
 
 #### **Domain of $s$-Values**
@@ -388,7 +388,7 @@ The Laplace transform $F(s)$ is defined for $s > 0$, as both integrals converge 
 The Laplace transform of $f(t) = 2 - t$ is:
 
 $$
-\mathcal{L}\{f(t)\} = F(s) = \frac{2s - 1}{s^2}, \quad s > 0.
+\mathcal{L}\{f(t)\} = F(s) = \frac{2s - 1}{s^2}, \quad s > 0
 $$
 
 The domain of $s$-values is $s > 0$.
@@ -410,13 +410,13 @@ Use the definition of the Laplace transform to compute $\mathcal{L}\{f(t)\} = F(
 The given function $f(t) = e^{3t + 5}$ can be rewritten as:
 
 $$
-f(t) = e^{3t} \cdot e^5.
+f(t) = e^{3t} \cdot e^5
 $$
 
 Since $e^5$ is a constant, we factor it out:
 
 $$
-f(t) = e^5 \cdot e^{3t}.
+f(t) = e^5 \cdot e^{3t}
 $$
 
 #### **Definition of the Laplace Transform**
@@ -424,19 +424,19 @@ $$
 The Laplace transform of $f(t)$ is given by:
 
 $$
-\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt
 $$
 
 Substituting $f(t) = e^5 \cdot e^{3t}$:
 
 $$
-F(s) = \int_0^\infty e^{-st} \cdot e^5 \cdot e^{3t} \, dt.
+F(s) = \int_0^\infty e^{-st} \cdot e^5 \cdot e^{3t} \, dt
 $$
 
 Factor out the constant $e^5$:
 
 $$
-F(s) = e^5 \int_0^\infty e^{(3 - s)t} \, dt.
+F(s) = e^5 \int_0^\infty e^{(3 - s)t} \, dt
 $$
 
 #### **Evaluate the Integral**
@@ -444,19 +444,19 @@ $$
 The integral $\int_0^\infty e^{(3 - s)t} \, dt$ converges if $s > 3$. Using the formula for the integral of an exponential function:
 
 $$
-\int_0^\infty e^{(3 - s)t} \, dt = \frac{1}{s - 3}, \quad \text{for } s > 3.
+\int_0^\infty e^{(3 - s)t} \, dt = \frac{1}{s - 3}, \quad \text{for } s > 3
 $$
 
 Substitute this result back into $F(s)$:
 
 $$
-F(s) = e^5 \cdot \frac{1}{s - 3}.
+F(s) = e^5 \cdot \frac{1}{s - 3}
 $$
 
 Simplify:
 
 $$
-F(s) = \frac{e^5}{s - 3}.
+F(s) = \frac{e^5}{s - 3}
 $$
 
 #### **Domain of $s$-Values**
@@ -470,10 +470,176 @@ The Laplace transform $F(s)$ is defined for $s > 3$, as the integral converges o
 The Laplace transform of $f(t) = e^{3t + 5}$ is:
 
 $$
-\mathcal{L}\{f(t)\} = F(s) = \frac{e^5}{s - 3}, \quad s > 3.
+\mathcal{L}\{f(t)\} = F(s) = \frac{e^5}{s - 3}, \quad s > 3
 $$
 
 The domain of $s$-values is $s > 3$.
+
+:::
+:::
+
+# SECTION 5.3
+
+::: {.callout-tip}
+
+## **Assigned:** 3, 6, 9, 13, 23
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.3.3
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.3.6
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.3.9
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.3.13
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.3.23
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+# SECTION 5.4
+
+::: {.callout-tip}
+
+## **Assigned:** 3, 6, 9, 13, 23
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.4.
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.4.
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.4.
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.4.
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 5.4.
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
 
 :::
 :::
