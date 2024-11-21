@@ -16,4 +16,5 @@ editor:
 
 ## WEEK 09
 
-- [Exponential Order: Definition and Examples](./w09/exponential-order.html)
+- [Exponential Order](./w09/exponential-order.html)
+- [Laplace Transforms](./w09/laplace-transforms.html)

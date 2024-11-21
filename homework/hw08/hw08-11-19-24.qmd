@@ -39,13 +39,72 @@ preview:
 
 ## 5.2.1
 
-### Problem:
+### **Problem:**
 
-### Solution:
+Explain why the limit of the function $g(r) = r e^{-sr}$ is $0$ as $r \to \infty$, assuming $s > 0$.
+
+### **Solution:**
+
+#### **Analyze the Behavior of $g(r)$**
+
+The function $g(r) = r e^{-sr}$ consists of:
+
+1. A polynomial term $r$, which grows without bound as $r \to \infty$.
+2. An exponential decay term $e^{-sr}$, which approaches $0$ very rapidly as $r \to \infty$, because $s > 0$.
+
+Although $r$ grows indefinitely, the exponential decay $e^{-sr}$ dominates the growth of $r$, causing the product $g(r)$ to decrease to $0$.
+
+#### **Rewrite $g(r)$ for Analysis**
+
+To analyze the behavior more rigorously, rewrite $g(r)$ as:
+
+$$
+g(r) = \frac{r}{e^{sr}}.
+$$
+
+Here, the numerator $r$ grows polynomially, while the denominator $e^{sr}$ grows exponentially faster. This imbalance ensures that the fraction $\frac{r}{e^{sr}}$ approaches $0$ as $r \to \infty$.
+
+#### **Apply L’Hôpital’s Rule**
+
+Since both the numerator and denominator approach $\infty$ as $r \to \infty$, apply L’Hôpital’s Rule:
+
+$$
+\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{\frac{d}{dr}[r]}{\frac{d}{dr}[e^{sr}]}.
+$$
+
+Differentiate the numerator and denominator:
+
+$$
+\frac{d}{dr}[r] = 1, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}.
+$$
+
+Thus, the limit becomes:
+
+$$
+\lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{1}{s e^{sr}}.
+$$
+
+#### **Evaluate the Limit**
+
+As $r \to \infty$, $e^{sr} \to \infty$, so:
+
+$$
+\frac{1}{s e^{sr}} \to 0.
+$$
+
+This confirms that $g(r) \to 0$ as $r \to \infty$.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The limit of $g(r) = r e^{-sr}$ is:
+
+$$
+\lim_{r \to \infty} g(r) = 0.
+$$
+
+The exponential decay term $e^{-sr}$ grows much faster than the polynomial term $r$, forcing the function $g(r)$ to approach $0$ as $r \to \infty$.
 
 :::
 :::
@@ -54,13 +113,86 @@ preview:
 
 ## 5.2.3
 
-### Problem:
+### **Problem:**
 
-### Solution:
+Explain why the limit of the function $g(r) = r^n e^{-sr}$ is $0$ as $r \to \infty$.
+
+### **Solution:**
+
+#### **Analyze the Behavior of $g(r)$**
+
+The function $g(r) = r^n e^{-sr}$ is a product of:
+
+1. A polynomial term $r^n$, which grows as $r \to \infty$.
+2. An exponential decay term $e^{-sr}$, which decreases very rapidly to $0$ as $r \to \infty$, because $s > 0$.
+
+The exponential decay term $e^{-sr}$ dominates the polynomial growth $r^n$, causing the product $g(r)$ to approach $0$ as $r \to \infty$.
+
+#### **Rewrite $g(r)$ for Analysis**
+
+Rewriting $g(r)$ as:
+
+$$
+g(r) = \frac{r^n}{e^{sr}},
+$$
+
+it becomes clear that the numerator $r^n$ grows polynomially, while the denominator $e^{sr}$ grows exponentially. The exponential growth of the denominator outpaces the polynomial growth of the numerator, driving the fraction to $0$.
+
+#### **Apply L’Hôpital’s Rule Repeatedly**
+
+Since both the numerator and denominator approach $\infty$ as $r \to \infty$, apply L’Hôpital’s Rule $n$ times to compute the limit:
+
+$$
+\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r^n}{e^{sr}}.
+$$
+
+Differentiate the numerator and denominator $n$ times:
+
+1. After the first differentiation:
+
+   $$
+   \frac{d}{dr}[r^n] = n r^{n-1}, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}.
+   $$
+
+   This simplifies to:
+
+   $$
+   \lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n r^{n-1}}{s e^{sr}}.
+   $$
+
+2. After the second differentiation:
+   $$
+   \frac{d}{dr}[r^{n-1}] = (n-1) r^{n-2}.
+   $$
+   Repeating this process $n$ times, the numerator eventually becomes a constant $n!$, while the denominator remains $s^n e^{sr}$.
+
+After $n$ differentiations:
+
+$$
+\lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n!}{s^n e^{sr}}.
+$$
+
+#### **Evaluate the Final Limit**
+
+As $r \to \infty$, the term $e^{sr} \to \infty$, making:
+
+$$
+\frac{n!}{s^n e^{sr}} \to 0.
+$$
+
+Thus, $g(r) \to 0$ as $r \to \infty$.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The limit of $g(r) = r^n e^{-sr}$ is:
+
+$$
+\lim_{r \to \infty} g(r) = 0.
+$$
+
+The exponential decay term $e^{-sr}$ grows much faster than the polynomial term $r^n$, forcing the function $g(r)$ to approach $0$ as $r \to \infty$.
 
 :::
 :::
@@ -69,13 +201,105 @@ preview:
 
 ## 5.2.5
 
-### Problem:
+### **Problem:**
 
-### Solution:
+Use the definition of the Laplace transform to compute $\mathcal{L}\{f(t)\} = F(s)$ for $f(t) = 2t$. Also, state the domain of $s$-values for which $F(s)$ is defined.
+
+### **Solution:**
+
+#### **Definition of the Laplace Transform**
+
+The Laplace transform of $f(t)$ is given by:
+
+$$
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+$$
+
+For $f(t) = 2t$, this becomes:
+
+$$
+F(s) = \int_0^\infty e^{-st} \cdot 2t \, dt.
+$$
+
+#### **Setup the Integral**
+
+The Laplace transform is:
+
+$$
+F(s) = 2 \int_0^\infty t e^{-st} \, dt.
+$$
+
+#### **Solve the Integral**
+
+To evaluate $\int_0^\infty t e^{-st} \, dt$, use integration by parts:
+
+- Let $u = t$ and $dv = e^{-st} \, dt$.
+- Then, $du = 1 \, dt$ and $v = \frac{e^{-st}}{-s} = -\frac{e^{-st}}{s}$.
+
+Using the integration by parts formula:
+
+$$
+\int u \, dv = uv - \int v \, du,
+$$
+
+we have:
+
+$$
+\int_0^\infty t e^{-st} \, dt = \left[ -\frac{t e^{-st}}{s} \right]_0^\infty + \int_0^\infty \frac{e^{-st}}{s} \, dt.
+$$
+
+1. Evaluate $\left[ -\frac{t e^{-st}}{s} \right]_0^\infty$:
+
+   - As $t \to \infty$, $t e^{-st} \to 0$ (since $e^{-st}$ decays faster than $t$ grows for $s > 0$).
+   - At $t = 0$, $-\frac{t e^{-st}}{s} = 0$.
+
+   So, this term evaluates to $0$.
+
+2. Evaluate $\int_0^\infty \frac{e^{-st}}{s} \, dt$:
+
+   $$
+   \int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s} \int_0^\infty e^{-st} \, dt.
+   $$
+
+   The integral $\int_0^\infty e^{-st} \, dt$ is:
+
+   $$
+   \int_0^\infty e^{-st} \, dt = \left[ \frac{-e^{-st}}{s} \right]_0^\infty = \frac{1}{s}.
+   $$
+
+   Thus:
+
+   $$
+   \int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s^2}.
+   $$
+
+Combining these results:
+
+$$
+\int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}.
+$$
+
+Therefore:
+
+$$
+F(s) = 2 \cdot \frac{1}{s^2} = \frac{2}{s^2}.
+$$
+
+#### **Domain of $s$-Values**
+
+The Laplace transform $F(s)$ is defined for $s > 0$, because the integral converges only when $s > 0$.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The Laplace transform of $f(t) = 2t$ is:
+
+$$
+\mathcal{L}\{f(t)\} = F(s) = \frac{2}{s^2}, \quad s > 0.
+$$
+
+The domain of $s$-values is $s > 0$.
 
 :::
 :::
@@ -84,14 +308,90 @@ preview:
 
 ## 5.2.7
 
-### Problem:
+### **Problem:**
 
-### Solution:
+Use the definition of the Laplace transform to compute $\mathcal{L}\{f(t)\} = F(s)$ for $f(t) = 2 - t$. Also, state the domain of $s$-values for which $F(s)$ is defined.
+
+### **Solution:**
+
+#### **Definition of the Laplace Transform**
+
+The Laplace transform of $f(t)$ is given by:
+
+$$
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+$$
+
+For $f(t) = 2 - t$, this becomes:
+
+$$
+F(s) = \int_0^\infty e^{-st} (2 - t) \, dt.
+$$
+
+#### **Separate the Integral**
+
+Split the integral into two parts:
+
+$$
+F(s) = \int_0^\infty 2 e^{-st} \, dt - \int_0^\infty t e^{-st} \, dt.
+$$
+
+#### **Evaluate Each Integral**
+
+1. **First Term: $\int_0^\infty 2 e^{-st} \, dt$**  
+   Factor out the constant $2$:
+
+   $$
+   \int_0^\infty 2 e^{-st} \, dt = 2 \int_0^\infty e^{-st} \, dt.
+   $$
+
+   The integral of $e^{-st}$ is:
+
+   $$
+   \int_0^\infty e^{-st} \, dt = \frac{1}{s}, \quad s > 0.
+   $$
+
+   So:
+
+   $$
+   \int_0^\infty 2 e^{-st} \, dt = \frac{2}{s}.
+   $$
+
+2. **Second Term: $\int_0^\infty t e^{-st} \, dt$**  
+   This is a standard integral that we know (or compute using integration by parts):
+   $$
+   \int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}, \quad s > 0.
+   $$
+
+Substitute these results back into $F(s)$:
+
+$$
+F(s) = \frac{2}{s} - \frac{1}{s^2}.
+$$
+
+#### **Simplify the Result**
+
+Combine the terms:
+
+$$
+F(s) = \frac{2s - 1}{s^2}.
+$$
+
+#### **Domain of $s$-Values**
+
+The Laplace transform $F(s)$ is defined for $s > 0$, as both integrals converge only when $s > 0$.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
 
+The Laplace transform of $f(t) = 2 - t$ is:
+
+$$
+\mathcal{L}\{f(t)\} = F(s) = \frac{2s - 1}{s^2}, \quad s > 0.
+$$
+
+The domain of $s$-values is $s > 0$.
 :::
 :::
 
@@ -99,13 +399,81 @@ preview:
 
 ## 5.2.13
 
-### Problem:
+### **Problem:**
 
-### Solution:
+Use the definition of the Laplace transform to compute $\mathcal{L}\{f(t)\} = F(s)$ for $f(t) = e^{3t + 5}$. Also, state the domain of $s$-values for which $F(s)$ is defined.
+
+### **Solution:**
+
+#### **Rewrite the Function**
+
+The given function $f(t) = e^{3t + 5}$ can be rewritten as:
+
+$$
+f(t) = e^{3t} \cdot e^5.
+$$
+
+Since $e^5$ is a constant, we factor it out:
+
+$$
+f(t) = e^5 \cdot e^{3t}.
+$$
+
+#### **Definition of the Laplace Transform**
+
+The Laplace transform of $f(t)$ is given by:
+
+$$
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+$$
+
+Substituting $f(t) = e^5 \cdot e^{3t}$:
+
+$$
+F(s) = \int_0^\infty e^{-st} \cdot e^5 \cdot e^{3t} \, dt.
+$$
+
+Factor out the constant $e^5$:
+
+$$
+F(s) = e^5 \int_0^\infty e^{(3 - s)t} \, dt.
+$$
+
+#### **Evaluate the Integral**
+
+The integral $\int_0^\infty e^{(3 - s)t} \, dt$ converges if $s > 3$. Using the formula for the integral of an exponential function:
+
+$$
+\int_0^\infty e^{(3 - s)t} \, dt = \frac{1}{s - 3}, \quad \text{for } s > 3.
+$$
+
+Substitute this result back into $F(s)$:
+
+$$
+F(s) = e^5 \cdot \frac{1}{s - 3}.
+$$
+
+Simplify:
+
+$$
+F(s) = \frac{e^5}{s - 3}.
+$$
+
+#### **Domain of $s$-Values**
+
+The Laplace transform $F(s)$ is defined for $s > 3$, as the integral converges only when $s > 3$.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The Laplace transform of $f(t) = e^{3t + 5}$ is:
+
+$$
+\mathcal{L}\{f(t)\} = F(s) = \frac{e^5}{s - 3}, \quad s > 3.
+$$
+
+The domain of $s$-values is $s > 3$.
 
 :::
 :::

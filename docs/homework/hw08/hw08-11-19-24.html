@@ -4708,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4823,10 +4882,50 @@ vertical-align: -.125em;
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem" class="level3">
-<h3 class="anchored" data-anchor-id="problem">Problem:</h3>
+<h3 class="anchored" data-anchor-id="problem"><strong>Problem:</strong></h3>
+<p>Explain why the limit of the function <span class="math inline">g(r) = r e^{-sr}</span> is <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>, assuming <span class="math inline">s &gt; 0</span>.</p>
 </section>
 <section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution"><strong>Solution:</strong></h3>
+<section id="analyze-the-behavior-of-gr" class="level4">
+<h4 class="anchored" data-anchor-id="analyze-the-behavior-of-gr"><strong>Analyze the Behavior of <span class="math inline">g(r)</span></strong></h4>
+<p>The function <span class="math inline">g(r) = r e^{-sr}</span> consists of:</p>
+<ol type="1">
+<li>A polynomial term <span class="math inline">r</span>, which grows without bound as <span class="math inline">r \to \infty</span>.</li>
+<li>An exponential decay term <span class="math inline">e^{-sr}</span>, which approaches <span class="math inline">0</span> very rapidly as <span class="math inline">r \to \infty</span>, because <span class="math inline">s &gt; 0</span>.</li>
+</ol>
+<p>Although <span class="math inline">r</span> grows indefinitely, the exponential decay <span class="math inline">e^{-sr}</span> dominates the growth of <span class="math inline">r</span>, causing the product <span class="math inline">g(r)</span> to decrease to <span class="math inline">0</span>.</p>
+</section>
+<section id="rewrite-gr-for-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="rewrite-gr-for-analysis"><strong>Rewrite <span class="math inline">g(r)</span> for Analysis</strong></h4>
+<p>To analyze the behavior more rigorously, rewrite <span class="math inline">g(r)</span> as:</p>
+<p><span class="math display">
+g(r) = \frac{r}{e^{sr}}.
+</span></p>
+<p>Here, the numerator <span class="math inline">r</span> grows polynomially, while the denominator <span class="math inline">e^{sr}</span> grows exponentially faster. This imbalance ensures that the fraction <span class="math inline">\frac{r}{e^{sr}}</span> approaches <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>.</p>
+</section>
+<section id="apply-lhôpitals-rule" class="level4">
+<h4 class="anchored" data-anchor-id="apply-lhôpitals-rule"><strong>Apply L’Hôpital’s Rule</strong></h4>
+<p>Since both the numerator and denominator approach <span class="math inline">\infty</span> as <span class="math inline">r \to \infty</span>, apply L’Hôpital’s Rule:</p>
+<p><span class="math display">
+\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{\frac{d}{dr}[r]}{\frac{d}{dr}[e^{sr}]}.
+</span></p>
+<p>Differentiate the numerator and denominator:</p>
+<p><span class="math display">
+\frac{d}{dr}[r] = 1, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}.
+</span></p>
+<p>Thus, the limit becomes:</p>
+<p><span class="math display">
+\lim_{r \to \infty} \frac{r}{e^{sr}} = \lim_{r \to \infty} \frac{1}{s e^{sr}}.
+</span></p>
+</section>
+<section id="evaluate-the-limit" class="level4">
+<h4 class="anchored" data-anchor-id="evaluate-the-limit"><strong>Evaluate the Limit</strong></h4>
+<p>As <span class="math inline">r \to \infty</span>, <span class="math inline">e^{sr} \to \infty</span>, so:</p>
+<p><span class="math display">
+\frac{1}{s e^{sr}} \to 0.
+</span></p>
+<p>This confirms that <span class="math inline">g(r) \to 0</span> as <span class="math inline">r \to \infty</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4837,9 +4936,14 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The limit of <span class="math inline">g(r) = r e^{-sr}</span> is:</p>
+<p><span class="math display">
+\lim_{r \to \infty} g(r) = 0.
+</span></p>
+<p>The exponential decay term <span class="math inline">e^{-sr}</span> grows much faster than the polynomial term <span class="math inline">r</span>, forcing the function <span class="math inline">g(r)</span> to approach <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>.</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4857,10 +4961,60 @@ vertical-align: -.125em;
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-1" class="level3">
-<h3 class="anchored" data-anchor-id="problem-1">Problem:</h3>
+<h3 class="anchored" data-anchor-id="problem-1"><strong>Problem:</strong></h3>
+<p>Explain why the limit of the function <span class="math inline">g(r) = r^n e^{-sr}</span> is <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>.</p>
 </section>
 <section id="solution-1" class="level3">
-<h3 class="anchored" data-anchor-id="solution-1">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution-1"><strong>Solution:</strong></h3>
+<section id="analyze-the-behavior-of-gr-1" class="level4">
+<h4 class="anchored" data-anchor-id="analyze-the-behavior-of-gr-1"><strong>Analyze the Behavior of <span class="math inline">g(r)</span></strong></h4>
+<p>The function <span class="math inline">g(r) = r^n e^{-sr}</span> is a product of:</p>
+<ol type="1">
+<li>A polynomial term <span class="math inline">r^n</span>, which grows as <span class="math inline">r \to \infty</span>.</li>
+<li>An exponential decay term <span class="math inline">e^{-sr}</span>, which decreases very rapidly to <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>, because <span class="math inline">s &gt; 0</span>.</li>
+</ol>
+<p>The exponential decay term <span class="math inline">e^{-sr}</span> dominates the polynomial growth <span class="math inline">r^n</span>, causing the product <span class="math inline">g(r)</span> to approach <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>.</p>
+</section>
+<section id="rewrite-gr-for-analysis-1" class="level4">
+<h4 class="anchored" data-anchor-id="rewrite-gr-for-analysis-1"><strong>Rewrite <span class="math inline">g(r)</span> for Analysis</strong></h4>
+<p>Rewriting <span class="math inline">g(r)</span> as:</p>
+<p><span class="math display">
+g(r) = \frac{r^n}{e^{sr}},
+</span></p>
+<p>it becomes clear that the numerator <span class="math inline">r^n</span> grows polynomially, while the denominator <span class="math inline">e^{sr}</span> grows exponentially. The exponential growth of the denominator outpaces the polynomial growth of the numerator, driving the fraction to <span class="math inline">0</span>.</p>
+</section>
+<section id="apply-lhôpitals-rule-repeatedly" class="level4">
+<h4 class="anchored" data-anchor-id="apply-lhôpitals-rule-repeatedly"><strong>Apply L’Hôpital’s Rule Repeatedly</strong></h4>
+<p>Since both the numerator and denominator approach <span class="math inline">\infty</span> as <span class="math inline">r \to \infty</span>, apply L’Hôpital’s Rule <span class="math inline">n</span> times to compute the limit:</p>
+<p><span class="math display">
+\lim_{r \to \infty} g(r) = \lim_{r \to \infty} \frac{r^n}{e^{sr}}.
+</span></p>
+<p>Differentiate the numerator and denominator <span class="math inline">n</span> times:</p>
+<ol type="1">
+<li><p>After the first differentiation:</p>
+<p><span class="math display">
+\frac{d}{dr}[r^n] = n r^{n-1}, \quad \frac{d}{dr}[e^{sr}] = s e^{sr}.
+</span></p>
+<p>This simplifies to:</p>
+<p><span class="math display">
+\lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n r^{n-1}}{s e^{sr}}.
+</span></p></li>
+<li><p>After the second differentiation: <span class="math display">
+\frac{d}{dr}[r^{n-1}] = (n-1) r^{n-2}.
+</span> Repeating this process <span class="math inline">n</span> times, the numerator eventually becomes a constant <span class="math inline">n!</span>, while the denominator remains <span class="math inline">s^n e^{sr}</span>.</p></li>
+</ol>
+<p>After <span class="math inline">n</span> differentiations:</p>
+<p><span class="math display">
+\lim_{r \to \infty} \frac{r^n}{e^{sr}} = \lim_{r \to \infty} \frac{n!}{s^n e^{sr}}.
+</span></p>
+</section>
+<section id="evaluate-the-final-limit" class="level4">
+<h4 class="anchored" data-anchor-id="evaluate-the-final-limit"><strong>Evaluate the Final Limit</strong></h4>
+<p>As <span class="math inline">r \to \infty</span>, the term <span class="math inline">e^{sr} \to \infty</span>, making:</p>
+<p><span class="math display">
+\frac{n!}{s^n e^{sr}} \to 0.
+</span></p>
+<p>Thus, <span class="math inline">g(r) \to 0</span> as <span class="math inline">r \to \infty</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4871,9 +5025,14 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The limit of <span class="math inline">g(r) = r^n e^{-sr}</span> is:</p>
+<p><span class="math display">
+\lim_{r \to \infty} g(r) = 0.
+</span></p>
+<p>The exponential decay term <span class="math inline">e^{-sr}</span> grows much faster than the polynomial term <span class="math inline">r^n</span>, forcing the function <span class="math inline">g(r)</span> to approach <span class="math inline">0</span> as <span class="math inline">r \to \infty</span>.</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4891,10 +5050,76 @@ vertical-align: -.125em;
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-2" class="level3">
-<h3 class="anchored" data-anchor-id="problem-2">Problem:</h3>
+<h3 class="anchored" data-anchor-id="problem-2"><strong>Problem:</strong></h3>
+<p>Use the definition of the Laplace transform to compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = 2t</span>. Also, state the domain of <span class="math inline">s</span>-values for which <span class="math inline">F(s)</span> is defined.</p>
 </section>
 <section id="solution-2" class="level3">
-<h3 class="anchored" data-anchor-id="solution-2">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution-2"><strong>Solution:</strong></h3>
+<section id="definition-of-the-laplace-transform" class="level4">
+<h4 class="anchored" data-anchor-id="definition-of-the-laplace-transform"><strong>Definition of the Laplace Transform</strong></h4>
+<p>The Laplace transform of <span class="math inline">f(t)</span> is given by:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+</span></p>
+<p>For <span class="math inline">f(t) = 2t</span>, this becomes:</p>
+<p><span class="math display">
+F(s) = \int_0^\infty e^{-st} \cdot 2t \, dt.
+</span></p>
+</section>
+<section id="setup-the-integral" class="level4">
+<h4 class="anchored" data-anchor-id="setup-the-integral"><strong>Setup the Integral</strong></h4>
+<p>The Laplace transform is:</p>
+<p><span class="math display">
+F(s) = 2 \int_0^\infty t e^{-st} \, dt.
+</span></p>
+</section>
+<section id="solve-the-integral" class="level4">
+<h4 class="anchored" data-anchor-id="solve-the-integral"><strong>Solve the Integral</strong></h4>
+<p>To evaluate <span class="math inline">\int_0^\infty t e^{-st} \, dt</span>, use integration by parts:</p>
+<ul>
+<li>Let <span class="math inline">u = t</span> and <span class="math inline">dv = e^{-st} \, dt</span>.</li>
+<li>Then, <span class="math inline">du = 1 \, dt</span> and <span class="math inline">v = \frac{e^{-st}}{-s} = -\frac{e^{-st}}{s}</span>.</li>
+</ul>
+<p>Using the integration by parts formula:</p>
+<p><span class="math display">
+\int u \, dv = uv - \int v \, du,
+</span></p>
+<p>we have:</p>
+<p><span class="math display">
+\int_0^\infty t e^{-st} \, dt = \left[ -\frac{t e^{-st}}{s} \right]_0^\infty + \int_0^\infty \frac{e^{-st}}{s} \, dt.
+</span></p>
+<ol type="1">
+<li><p>Evaluate <span class="math inline">\left[ -\frac{t e^{-st}}{s} \right]_0^\infty</span>:</p>
+<ul>
+<li>As <span class="math inline">t \to \infty</span>, <span class="math inline">t e^{-st} \to 0</span> (since <span class="math inline">e^{-st}</span> decays faster than <span class="math inline">t</span> grows for <span class="math inline">s &gt; 0</span>).</li>
+<li>At <span class="math inline">t = 0</span>, <span class="math inline">-\frac{t e^{-st}}{s} = 0</span>.</li>
+</ul>
+<p>So, this term evaluates to <span class="math inline">0</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\int_0^\infty \frac{e^{-st}}{s} \, dt</span>:</p>
+<p><span class="math display">
+\int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s} \int_0^\infty e^{-st} \, dt.
+</span></p>
+<p>The integral <span class="math inline">\int_0^\infty e^{-st} \, dt</span> is:</p>
+<p><span class="math display">
+\int_0^\infty e^{-st} \, dt = \left[ \frac{-e^{-st}}{s} \right]_0^\infty = \frac{1}{s}.
+</span></p>
+<p>Thus:</p>
+<p><span class="math display">
+\int_0^\infty \frac{e^{-st}}{s} \, dt = \frac{1}{s^2}.
+</span></p></li>
+</ol>
+<p>Combining these results:</p>
+<p><span class="math display">
+\int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}.
+</span></p>
+<p>Therefore:</p>
+<p><span class="math display">
+F(s) = 2 \cdot \frac{1}{s^2} = \frac{2}{s^2}.
+</span></p>
+</section>
+<section id="domain-of-s-values" class="level4">
+<h4 class="anchored" data-anchor-id="domain-of-s-values"><strong>Domain of <span class="math inline">s</span>-Values</strong></h4>
+<p>The Laplace transform <span class="math inline">F(s)</span> is defined for <span class="math inline">s &gt; 0</span>, because the integral converges only when <span class="math inline">s &gt; 0</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4905,9 +5130,14 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The Laplace transform of <span class="math inline">f(t) = 2t</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = F(s) = \frac{2}{s^2}, \quad s &gt; 0.
+</span></p>
+<p>The domain of <span class="math inline">s</span>-values is <span class="math inline">s &gt; 0</span>.</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4925,10 +5155,65 @@ vertical-align: -.125em;
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-3" class="level3">
-<h3 class="anchored" data-anchor-id="problem-3">Problem:</h3>
+<h3 class="anchored" data-anchor-id="problem-3"><strong>Problem:</strong></h3>
+<p>Use the definition of the Laplace transform to compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = 2 - t</span>. Also, state the domain of <span class="math inline">s</span>-values for which <span class="math inline">F(s)</span> is defined.</p>
 </section>
 <section id="solution-3" class="level3">
-<h3 class="anchored" data-anchor-id="solution-3">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution-3"><strong>Solution:</strong></h3>
+<section id="definition-of-the-laplace-transform-1" class="level4">
+<h4 class="anchored" data-anchor-id="definition-of-the-laplace-transform-1"><strong>Definition of the Laplace Transform</strong></h4>
+<p>The Laplace transform of <span class="math inline">f(t)</span> is given by:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+</span></p>
+<p>For <span class="math inline">f(t) = 2 - t</span>, this becomes:</p>
+<p><span class="math display">
+F(s) = \int_0^\infty e^{-st} (2 - t) \, dt.
+</span></p>
+</section>
+<section id="separate-the-integral" class="level4">
+<h4 class="anchored" data-anchor-id="separate-the-integral"><strong>Separate the Integral</strong></h4>
+<p>Split the integral into two parts:</p>
+<p><span class="math display">
+F(s) = \int_0^\infty 2 e^{-st} \, dt - \int_0^\infty t e^{-st} \, dt.
+</span></p>
+</section>
+<section id="evaluate-each-integral" class="level4">
+<h4 class="anchored" data-anchor-id="evaluate-each-integral"><strong>Evaluate Each Integral</strong></h4>
+<ol type="1">
+<li><p><strong>First Term: <span class="math inline">\int_0^\infty 2 e^{-st} \, dt</span></strong><br>
+Factor out the constant <span class="math inline">2</span>:</p>
+<p><span class="math display">
+\int_0^\infty 2 e^{-st} \, dt = 2 \int_0^\infty e^{-st} \, dt.
+</span></p>
+<p>The integral of <span class="math inline">e^{-st}</span> is:</p>
+<p><span class="math display">
+\int_0^\infty e^{-st} \, dt = \frac{1}{s}, \quad s &gt; 0.
+</span></p>
+<p>So:</p>
+<p><span class="math display">
+\int_0^\infty 2 e^{-st} \, dt = \frac{2}{s}.
+</span></p></li>
+<li><p><strong>Second Term: <span class="math inline">\int_0^\infty t e^{-st} \, dt</span></strong><br>
+This is a standard integral that we know (or compute using integration by parts): <span class="math display">
+\int_0^\infty t e^{-st} \, dt = \frac{1}{s^2}, \quad s &gt; 0.
+</span></p></li>
+</ol>
+<p>Substitute these results back into <span class="math inline">F(s)</span>:</p>
+<p><span class="math display">
+F(s) = \frac{2}{s} - \frac{1}{s^2}.
+</span></p>
+</section>
+<section id="simplify-the-result" class="level4">
+<h4 class="anchored" data-anchor-id="simplify-the-result"><strong>Simplify the Result</strong></h4>
+<p>Combine the terms:</p>
+<p><span class="math display">
+F(s) = \frac{2s - 1}{s^2}.
+</span></p>
+</section>
+<section id="domain-of-s-values-1" class="level4">
+<h4 class="anchored" data-anchor-id="domain-of-s-values-1"><strong>Domain of <span class="math inline">s</span>-Values</strong></h4>
+<p>The Laplace transform <span class="math inline">F(s)</span> is defined for <span class="math inline">s &gt; 0</span>, as both integrals converge only when <span class="math inline">s &gt; 0</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4939,9 +5224,14 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The Laplace transform of <span class="math inline">f(t) = 2 - t</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = F(s) = \frac{2s - 1}{s^2}, \quad s &gt; 0.
+</span></p>
+<p>The domain of <span class="math inline">s</span>-values is <span class="math inline">s &gt; 0</span>.</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -4959,10 +5249,55 @@ vertical-align: -.125em;
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-4" class="level3">
-<h3 class="anchored" data-anchor-id="problem-4">Problem:</h3>
+<h3 class="anchored" data-anchor-id="problem-4"><strong>Problem:</strong></h3>
+<p>Use the definition of the Laplace transform to compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = e^{3t + 5}</span>. Also, state the domain of <span class="math inline">s</span>-values for which <span class="math inline">F(s)</span> is defined.</p>
 </section>
 <section id="solution-4" class="level3">
-<h3 class="anchored" data-anchor-id="solution-4">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution-4"><strong>Solution:</strong></h3>
+<section id="rewrite-the-function" class="level4">
+<h4 class="anchored" data-anchor-id="rewrite-the-function"><strong>Rewrite the Function</strong></h4>
+<p>The given function <span class="math inline">f(t) = e^{3t + 5}</span> can be rewritten as:</p>
+<p><span class="math display">
+f(t) = e^{3t} \cdot e^5.
+</span></p>
+<p>Since <span class="math inline">e^5</span> is a constant, we factor it out:</p>
+<p><span class="math display">
+f(t) = e^5 \cdot e^{3t}.
+</span></p>
+</section>
+<section id="definition-of-the-laplace-transform-2" class="level4">
+<h4 class="anchored" data-anchor-id="definition-of-the-laplace-transform-2"><strong>Definition of the Laplace Transform</strong></h4>
+<p>The Laplace transform of <span class="math inline">f(t)</span> is given by:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st} f(t) \, dt.
+</span></p>
+<p>Substituting <span class="math inline">f(t) = e^5 \cdot e^{3t}</span>:</p>
+<p><span class="math display">
+F(s) = \int_0^\infty e^{-st} \cdot e^5 \cdot e^{3t} \, dt.
+</span></p>
+<p>Factor out the constant <span class="math inline">e^5</span>:</p>
+<p><span class="math display">
+F(s) = e^5 \int_0^\infty e^{(3 - s)t} \, dt.
+</span></p>
+</section>
+<section id="evaluate-the-integral" class="level4">
+<h4 class="anchored" data-anchor-id="evaluate-the-integral"><strong>Evaluate the Integral</strong></h4>
+<p>The integral <span class="math inline">\int_0^\infty e^{(3 - s)t} \, dt</span> converges if <span class="math inline">s &gt; 3</span>. Using the formula for the integral of an exponential function:</p>
+<p><span class="math display">
+\int_0^\infty e^{(3 - s)t} \, dt = \frac{1}{s - 3}, \quad \text{for } s &gt; 3.
+</span></p>
+<p>Substitute this result back into <span class="math inline">F(s)</span>:</p>
+<p><span class="math display">
+F(s) = e^5 \cdot \frac{1}{s - 3}.
+</span></p>
+<p>Simplify:</p>
+<p><span class="math display">
+F(s) = \frac{e^5}{s - 3}.
+</span></p>
+</section>
+<section id="domain-of-s-values-2" class="level4">
+<h4 class="anchored" data-anchor-id="domain-of-s-values-2"><strong>Domain of <span class="math inline">s</span>-Values</strong></h4>
+<p>The Laplace transform <span class="math inline">F(s)</span> is defined for <span class="math inline">s &gt; 3</span>, as the integral converges only when <span class="math inline">s &gt; 3</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4973,9 +5308,14 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The Laplace transform of <span class="math inline">f(t) = e^{3t + 5}</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = F(s) = \frac{e^5}{s - 3}, \quad s &gt; 3.
+</span></p>
+<p>The domain of <span class="math inline">s</span>-values is <span class="math inline">s &gt; 3</span>.</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>

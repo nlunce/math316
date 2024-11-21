@@ -35,7 +35,7 @@ editor:
 
 ## 3.6.2
 
-### Problem:
+### **Problem:**
 
 Show by direct substitution that the given particular solution $\mathbf{x}_p$ is indeed a solution to the nonhomogeneous system of equations. Then determine the general solution.
 
@@ -43,7 +43,7 @@ $$
 \mathbf{x}' = \begin{bmatrix} 1 & -2 \\ -2 & 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} e^{2t} \\ 0 \end{bmatrix}, \quad \mathbf{x}_p = e^{2t} \begin{bmatrix} -\frac{1}{3} \\ \frac{2}{3} \end{bmatrix}
 $$
 
-### Solution:
+### **Solution:**
 
 #### **Calculate $\mathbf{x}_p'$:**
 
