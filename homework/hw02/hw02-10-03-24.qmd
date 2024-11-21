@@ -6,10 +6,11 @@ format:
     self-contained: true
     page-layout: full
     toc: true
-    toc-depth: 2
+    toc-depth: 1
     toc-location: right
     number-sections: false
     html-math-method: katex
+    embed-resources: true
     code-fold: true
     code-summary: 'Show the code'
     code-overflow: wrap
@@ -18,12 +19,15 @@ format:
       source: false
       toggle: true
       caption: See code
-jupyter: python3
+engine: jupyter
+preview:
+  port: 3000
+  browser: true
+  watch-inputs: true
+  navigate: true
 ---
 
 # SECTION 1.7
-
----
 
 ::: {.callout-tip}
 
@@ -117,8 +121,6 @@ $$AB = BA$$
 :::
 
 # SECTION 1.8
-
----
 
 ::: {.callout-tip}
 
@@ -323,8 +325,6 @@ process.
 
 # SECTION 1.9
 
----
-
 ::: {.callout-tip}
 
 ## **Assigned:** 1, 5, 17
@@ -477,8 +477,6 @@ If $A^2$ is not invertible, then $A$ is also not invertible.
 :::
 
 # SECTION 1.10
-
----
 
 ::: {.callout-tip}
 
@@ -1196,8 +1194,6 @@ linearly independent and span $\mathbb{R}^3$.
 
 # SECTION 1.11
 
----
-
 ::: {.callout-tip}
 
 ## **Assigned:** 3, 17, 29
@@ -1531,8 +1527,6 @@ scalar multiplication and do not include the zero function.
 :::
 
 # SECTION 1.12
-
----
 
 ::: {.callout-tip}
 

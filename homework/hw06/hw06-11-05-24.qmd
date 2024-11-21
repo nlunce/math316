@@ -6,10 +6,11 @@ format:
     self-contained: true
     page-layout: full
     toc: true
-    toc-depth: 2
+    toc-depth: 1
     toc-location: right
     number-sections: false
     html-math-method: katex
+    embed-resources: true
     code-fold: true
     code-summary: 'Show the code'
     code-overflow: wrap
@@ -18,8 +19,12 @@ format:
       source: false
       toggle: true
       caption: See code
-editor:
-  render-on-save: true
+engine: jupyter
+preview:
+  port: 3000
+  browser: true
+  watch-inputs: true
+  navigate: true
 ---
 
 # SECTION 3.2
@@ -1159,7 +1164,7 @@ V = 3 * X1 - 2 * X2
 
 # Normalize the direction field arrows
 speed = np.sqrt(U**2 + V**2)
-epsilon = 1e-10  # Small value to prevent division by zero
+epsilon = 1e-10
 U_norm = U / (speed + epsilon)
 V_norm = V / (speed + epsilon)
 
