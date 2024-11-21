@@ -1,0 +1,119 @@
+---
+title: 'Laplace Transform - First Derivative Property'
+subtitle: 'Theorem 5.3.4'
+author: 'Nathan Lunceford'
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    number-sections: false
+    html-math-method: katex
+    embed-resources: true
+    code-fold: true
+    code-summary: 'Show the code'
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+      source: false
+      toggle: true
+      caption: See code
+engine: jupyter
+preview:
+  port: 3000
+  browser: true
+  watch-inputs: true
+  navigate: true
+---
+
+## **Overview**
+
+The **First Derivative Property of the Laplace Transform** relates the Laplace transform of a derivative $y'(t)$ to the transform of $y(t)$ and its initial value. The property states:
+
+$$
+\mathcal{L}[y'(t)] = s\mathcal{L}[y(t)] - y(0)
+$$
+
+This theorem is widely used in solving differential equations with given initial conditions.
+
+## **Proof**
+
+### Write the Laplace Transform of the Derivative
+
+By definition, the Laplace transform of $y'(t)$ is:
+
+$$
+\mathcal{L}[y'(t)] = \int_0^\infty y'(t) e^{-st} \, dt
+$$
+
+### Apply Integration by Parts
+
+The integration by parts formula is given by:
+
+$$
+\int u \, dv = uv - \int v \, du
+$$
+
+Let:
+
+- $u = e^{-st}$ and $dv = y'(t) dt$,
+- Then $du = -s e^{-st} dt$ and $v = y(t)$.
+
+Using this formula:
+
+$$
+\int_0^\infty y'(t) e^{-st} \, dt = \left[ y(t) e^{-st} \right]_0^\infty - \int_0^\infty y(t)(-s e^{-st}) \, dt
+$$
+
+### Evaluate the Boundary Terms
+
+1. At $t = \infty$, $y(t) e^{-st} \to 0$, assuming $y(t)$ grows no faster than an exponential function.
+2. At $t = 0$, $y(t) e^{-s(0)} = y(0)$.
+
+Thus, the boundary term becomes:
+
+$$
+\left[ y(t) e^{-st} \right]_0^\infty = -y(0)
+$$
+
+### Simplify the Remaining Integral
+
+The remaining integral is:
+
+$$
+\int_0^\infty s y(t) e^{-st} \, dt = s \int_0^\infty y(t) e^{-st} \, dt
+$$
+
+By definition, this is:
+
+$$
+s \mathcal{L}[y(t)]
+$$
+
+### Combine Results
+
+Substituting the results back into the equation:
+
+$$
+\mathcal{L}[y'(t)] = -y(0) + s \mathcal{L}[y(t)]
+$$
+
+Rearranging:
+
+$$
+\mathcal{L}[y'(t)] = s\mathcal{L}[y(t)] - y(0)
+$$
+
+### Conclusion
+
+The proof demonstrates that:
+
+$$
+\mathcal{L}[y'(t)] = s\mathcal{L}[y(t)] - y(0)
+$$
+
+## **Summary**
+
+The **First Derivative Property** establishes a relationship between the Laplace transform of a derivative and the transform of the original function, with an additional term involving the initial value of the function. This property is crucial for solving differential equations with initial conditions.

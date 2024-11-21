@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>NOTES – MATH316</title>
+<title>Laplace Transform - Multiplication by t Property – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1668,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
+<meta name="quarto:offset" content="../../../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4707,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4718,7 +4778,7 @@ vertical-align: -.125em;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -4729,19 +4789,19 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -4762,9 +4822,10 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#week-07" id="toc-week-07" class="nav-link active" data-scroll-target="#week-07">WEEK 07</a></li>
-  <li><a href="#week-08" id="toc-week-08" class="nav-link" data-scroll-target="#week-08">WEEK 08</a></li>
-  <li><a href="#week-09" id="toc-week-09" class="nav-link" data-scroll-target="#week-09">WEEK 09</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
+  <li><a href="#leibnizs-rule" id="toc-leibnizs-rule" class="nav-link" data-scroll-target="#leibnizs-rule"><strong>Leibniz’s Rule</strong></a></li>
+  <li><a href="#proof" id="toc-proof" class="nav-link" data-scroll-target="#proof"><strong>Proof</strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -4773,13 +4834,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTES</h1>
+<h1 class="title">Laplace Transform - Multiplication by <span class="math inline">t</span> Property</h1>
+<p class="subtitle lead">Theorem 5.3.2</p>
 </div>
 
 
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -4790,28 +4858,75 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="week-07" class="level2">
-<h2 class="anchored" data-anchor-id="week-07">WEEK 07</h2>
-<ul>
-<li><a href="./w07/generalized-eigenvectors-DE.html">Generalized Eigenvectors in Differential Equations</a></li>
-<li><a href="./w07/stability-of-origin-2x2.html">Stability of the Origin in 2x2 Systems of Differential Equations</a></li>
-</ul>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h2>
+<p>The <strong>Multiplication by <span class="math inline">t</span> Property of the Laplace Transform</strong> relates the Laplace transform of <span class="math inline">tf(t)</span> to the derivative of the transform <span class="math inline">F(s) = \mathcal{L}[f(t)]</span>. The property states:</p>
+<p><span class="math display">
+\mathcal{L}[tf(t)] = -\frac{d}{ds}F(s)
+</span></p>
+<p>This property is useful for analyzing systems in the Laplace domain that involve multiplication by <span class="math inline">t</span>.</p>
 </section>
-<section id="week-08" class="level2">
-<h2 class="anchored" data-anchor-id="week-08">WEEK 08</h2>
-<ul>
-<li><a href="./w08/nonhomogeneous-systems-undetermined-coefficients.html">Nonhomogeneous Systems: Undetermined Coefficients</a></li>
-<li><a href="./w08/nonhomogeneous-systems-variation-of-parameters.html">Nonhomogeneous Systems: Variation of Parameters</a></li>
-</ul>
+<section id="leibnizs-rule" class="level2">
+<h2 class="anchored" data-anchor-id="leibnizs-rule"><strong>Leibniz’s Rule</strong></h2>
+<p>Leibniz’s rule allows differentiation under the integral sign. For a function <span class="math inline">K(s, t)</span>, under reasonable hypotheses, Leibniz’s rule states:</p>
+<p><span class="math display">
+\frac{d}{ds} \int_{t=a}^{t=b} K(s, t) \, dt = \int_{t=a}^{t=b} \frac{\partial}{\partial s} [K(s, t)] \, dt
+</span></p>
+<p>Leibniz’s rule is essential for justifying the steps in the proof.</p>
 </section>
-<section id="week-09" class="level2">
-<h2 class="anchored" data-anchor-id="week-09">WEEK 09</h2>
-<ul>
-<li><a href="./w09/exponential-order.html">Exponential Order</a></li>
-<li><a href="./w09/laplace-transforms.html">Laplace Transforms</a></li>
-<li><a href="./w09/laplace-transforms.html">General Properties of the Laplace Transform</a></li>
-<li><a href="./w09/laplace-transform-properties/index.html">Properties of the Laplace Transform</a></li>
-</ul>
+<section id="proof" class="level2">
+<h2 class="anchored" data-anchor-id="proof"><strong>Proof</strong></h2>
+<section id="write-the-laplace-transform" class="level3">
+<h3 class="anchored" data-anchor-id="write-the-laplace-transform">Write the Laplace Transform</h3>
+<p>The Laplace transform of <span class="math inline">f(t)</span> is defined as:</p>
+<p><span class="math display">
+F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
+</span></p>
+<p>The goal is to compute <span class="math inline">\mathcal{L}[tf(t)]</span>, given by:</p>
+<p><span class="math display">
+\mathcal{L}[tf(t)] = \int_0^\infty t f(t) e^{-st} \, dt
+</span></p>
+</section>
+<section id="apply-leibnizs-rule" class="level3">
+<h3 class="anchored" data-anchor-id="apply-leibnizs-rule">Apply Leibniz’s Rule</h3>
+<p>Let <span class="math inline">K(s, t) = f(t) e^{-st}</span>. Using Leibniz’s rule, the derivative of <span class="math inline">F(s)</span> with respect to <span class="math inline">s</span> is:</p>
+<p><span class="math display">
+\frac{d}{ds} F(s) = \frac{d}{ds} \int_0^\infty f(t) e^{-st} \, dt = \int_0^\infty \frac{\partial}{\partial s} \big[f(t) e^{-st}\big] \, dt
+</span></p>
+</section>
+<section id="differentiate-inside-the-integral" class="level3">
+<h3 class="anchored" data-anchor-id="differentiate-inside-the-integral">Differentiate Inside the Integral</h3>
+<p>The partial derivative of <span class="math inline">f(t) e^{-st}</span> with respect to <span class="math inline">s</span> is:</p>
+<p><span class="math display">
+\frac{\partial}{\partial s} \big[f(t) e^{-st}\big] = -t f(t) e^{-st}
+</span></p>
+<p>Substituting this into the integral gives:</p>
+<p><span class="math display">
+\frac{d}{ds} F(s) = \int_0^\infty -t f(t) e^{-st} \, dt
+</span></p>
+</section>
+<section id="recognize-the-laplace-transform" class="level3">
+<h3 class="anchored" data-anchor-id="recognize-the-laplace-transform">Recognize the Laplace Transform</h3>
+<p>The integral on the right-hand side is the definition of <span class="math inline">\mathcal{L}[tf(t)]</span>. Therefore:</p>
+<p><span class="math display">
+\frac{d}{ds} F(s) = -\mathcal{L}[tf(t)]
+</span></p>
+<p>Rearranging:</p>
+<p><span class="math display">
+\mathcal{L}[tf(t)] = -\frac{d}{ds} F(s)
+</span></p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>The proof demonstrates that:</p>
+<p><span class="math display">
+\mathcal{L}[tf(t)] = -\frac{d}{ds} \mathcal{L}[f(t)]
+</span></p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
+<p>The <strong>Multiplication by <span class="math inline">t</span> Property</strong> establishes that the Laplace transform of <span class="math inline">tf(t)</span> corresponds to the negative derivative of the Laplace transform of <span class="math inline">f(t)</span> with respect to <span class="math inline">s</span>. This result is particularly valuable when analyzing time-domain functions involving scaling by <span class="math inline">t</span>.</p>
 
 
 </section>

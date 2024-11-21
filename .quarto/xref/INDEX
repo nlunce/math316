@@ -88,5 +88,20 @@
   },
   "notes/w09/laplace-transform-properties.qmd": {
     "laplace-transform-properties.html": "3687aedf"
+  },
+  "notes/w09/derivative-property-laplace-transform-proof.qmd": {
+    "derivative-property-laplace-transform-proof.html": "696efeaf"
+  },
+  "notes/w09/multiplication-by-t-property-laplace-transform-proof.qmd": {
+    "multiplication-by-t-property-laplace-transform-proof.html": "fe5857d4"
+  },
+  "notes/w09/laplace-transform-properties/index.qmd": {
+    "index.html": "032b5595"
+  },
+  "notes/w09/laplace-transform-properties/multiplication-by-t-property.qmd": {
+    "multiplication-by-t-property.html": "d37310fb"
+  },
+  "notes/w09/laplace-transform-properties/first-derivative-property.qmd": {
+    "first-derivative-property.html": "2678eb24"
   }
 }

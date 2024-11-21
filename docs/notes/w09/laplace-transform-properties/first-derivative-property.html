@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>NOTES – MATH316</title>
+<title>Laplace Transform - First Derivative Property – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1668,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
+<meta name="quarto:offset" content="../../../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4707,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4718,7 +4778,7 @@ vertical-align: -.125em;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -4729,19 +4789,19 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -4762,9 +4822,9 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#week-07" id="toc-week-07" class="nav-link active" data-scroll-target="#week-07">WEEK 07</a></li>
-  <li><a href="#week-08" id="toc-week-08" class="nav-link" data-scroll-target="#week-08">WEEK 08</a></li>
-  <li><a href="#week-09" id="toc-week-09" class="nav-link" data-scroll-target="#week-09">WEEK 09</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
+  <li><a href="#proof" id="toc-proof" class="nav-link" data-scroll-target="#proof"><strong>Proof</strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -4773,13 +4833,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTES</h1>
+<h1 class="title">Laplace Transform - First Derivative Property</h1>
+<p class="subtitle lead">Theorem 5.3.4</p>
 </div>
 
 
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -4790,28 +4857,83 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="week-07" class="level2">
-<h2 class="anchored" data-anchor-id="week-07">WEEK 07</h2>
-<ul>
-<li><a href="./w07/generalized-eigenvectors-DE.html">Generalized Eigenvectors in Differential Equations</a></li>
-<li><a href="./w07/stability-of-origin-2x2.html">Stability of the Origin in 2x2 Systems of Differential Equations</a></li>
-</ul>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h2>
+<p>The <strong>First Derivative Property of the Laplace Transform</strong> relates the Laplace transform of a derivative <span class="math inline">y&#39;(t)</span> to the transform of <span class="math inline">y(t)</span> and its initial value. The property states:</p>
+<p><span class="math display">
+\mathcal{L}[y&#39;(t)] = s\mathcal{L}[y(t)] - y(0)
+</span></p>
+<p>This theorem is widely used in solving differential equations with given initial conditions.</p>
 </section>
-<section id="week-08" class="level2">
-<h2 class="anchored" data-anchor-id="week-08">WEEK 08</h2>
-<ul>
-<li><a href="./w08/nonhomogeneous-systems-undetermined-coefficients.html">Nonhomogeneous Systems: Undetermined Coefficients</a></li>
-<li><a href="./w08/nonhomogeneous-systems-variation-of-parameters.html">Nonhomogeneous Systems: Variation of Parameters</a></li>
-</ul>
+<section id="proof" class="level2">
+<h2 class="anchored" data-anchor-id="proof"><strong>Proof</strong></h2>
+<section id="write-the-laplace-transform-of-the-derivative" class="level3">
+<h3 class="anchored" data-anchor-id="write-the-laplace-transform-of-the-derivative">Write the Laplace Transform of the Derivative</h3>
+<p>By definition, the Laplace transform of <span class="math inline">y&#39;(t)</span> is:</p>
+<p><span class="math display">
+\mathcal{L}[y&#39;(t)] = \int_0^\infty y&#39;(t) e^{-st} \, dt
+</span></p>
 </section>
-<section id="week-09" class="level2">
-<h2 class="anchored" data-anchor-id="week-09">WEEK 09</h2>
+<section id="apply-integration-by-parts" class="level3">
+<h3 class="anchored" data-anchor-id="apply-integration-by-parts">Apply Integration by Parts</h3>
+<p>The integration by parts formula is given by:</p>
+<p><span class="math display">
+\int u \, dv = uv - \int v \, du
+</span></p>
+<p>Let:</p>
 <ul>
-<li><a href="./w09/exponential-order.html">Exponential Order</a></li>
-<li><a href="./w09/laplace-transforms.html">Laplace Transforms</a></li>
-<li><a href="./w09/laplace-transforms.html">General Properties of the Laplace Transform</a></li>
-<li><a href="./w09/laplace-transform-properties/index.html">Properties of the Laplace Transform</a></li>
+<li><span class="math inline">u = e^{-st}</span> and <span class="math inline">dv = y&#39;(t) dt</span>,</li>
+<li>Then <span class="math inline">du = -s e^{-st} dt</span> and <span class="math inline">v = y(t)</span>.</li>
 </ul>
+<p>Using this formula:</p>
+<p><span class="math display">
+\int_0^\infty y&#39;(t) e^{-st} \, dt = \left[ y(t) e^{-st} \right]_0^\infty - \int_0^\infty y(t)(-s e^{-st}) \, dt
+</span></p>
+</section>
+<section id="evaluate-the-boundary-terms" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate-the-boundary-terms">Evaluate the Boundary Terms</h3>
+<ol type="1">
+<li>At <span class="math inline">t = \infty</span>, <span class="math inline">y(t) e^{-st} \to 0</span>, assuming <span class="math inline">y(t)</span> grows no faster than an exponential function.</li>
+<li>At <span class="math inline">t = 0</span>, <span class="math inline">y(t) e^{-s(0)} = y(0)</span>.</li>
+</ol>
+<p>Thus, the boundary term becomes:</p>
+<p><span class="math display">
+\left[ y(t) e^{-st} \right]_0^\infty = -y(0)
+</span></p>
+</section>
+<section id="simplify-the-remaining-integral" class="level3">
+<h3 class="anchored" data-anchor-id="simplify-the-remaining-integral">Simplify the Remaining Integral</h3>
+<p>The remaining integral is:</p>
+<p><span class="math display">
+\int_0^\infty s y(t) e^{-st} \, dt = s \int_0^\infty y(t) e^{-st} \, dt
+</span></p>
+<p>By definition, this is:</p>
+<p><span class="math display">
+s \mathcal{L}[y(t)]
+</span></p>
+</section>
+<section id="combine-results" class="level3">
+<h3 class="anchored" data-anchor-id="combine-results">Combine Results</h3>
+<p>Substituting the results back into the equation:</p>
+<p><span class="math display">
+\mathcal{L}[y&#39;(t)] = -y(0) + s \mathcal{L}[y(t)]
+</span></p>
+<p>Rearranging:</p>
+<p><span class="math display">
+\mathcal{L}[y&#39;(t)] = s\mathcal{L}[y(t)] - y(0)
+</span></p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>The proof demonstrates that:</p>
+<p><span class="math display">
+\mathcal{L}[y&#39;(t)] = s\mathcal{L}[y(t)] - y(0)
+</span></p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
+<p>The <strong>First Derivative Property</strong> establishes a relationship between the Laplace transform of a derivative and the transform of the original function, with an additional term involving the initial value of the function. This property is crucial for solving differential equations with initial conditions.</p>
 
 
 </section>
