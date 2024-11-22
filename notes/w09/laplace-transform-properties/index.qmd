@@ -28,3 +28,4 @@ preview:
 
 - [Multiplication by $t$ Property (Theorem 5.3.2)](./multiplication-by-t-property.html)
 - [First Derivative Property (Theorem 5.3.4)](./first-derivative-property.html)
+- [First Shifting Property (Theorem 5.3.6)](./first-shifting-property.html)

@@ -103,5 +103,8 @@
   },
   "notes/w09/laplace-transform-properties/first-derivative-property.qmd": {
     "first-derivative-property.html": "2678eb24"
+  },
+  "notes/w09/laplace-transform-properties/first-shifting-property.qmd": {
+    "first-shifting-property.html": "6eea37da"
   }
 }

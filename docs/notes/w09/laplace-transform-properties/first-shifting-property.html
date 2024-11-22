@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>PROPERTIES OF THE LAPLACE TRANSFORM – MATH316</title>
+<title>Laplace Transform - First Shifting Property – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4816,21 +4817,38 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
+  <li><a href="#statement-of-the-theorem" id="toc-statement-of-the-theorem" class="nav-link" data-scroll-target="#statement-of-the-theorem"><strong>Statement of the Theorem</strong></a></li>
+  <li><a href="#proof" id="toc-proof" class="nav-link" data-scroll-target="#proof"><strong>Proof</strong></a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><strong>Example</strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PROPERTIES OF THE LAPLACE TRANSFORM</h1>
+<h1 class="title">Laplace Transform - First Shifting Property</h1>
+<p class="subtitle lead">Theorem 5.3.6</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -4841,13 +4859,79 @@ window.Quarto = {
 </header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h2>
+<p>The <strong>First Shifting Property</strong> of the Laplace Transform relates the Laplace transform of the product <span class="math inline">e^{at} f(t)</span> to the transform of <span class="math inline">f(t)</span>. The property states:</p>
+<p><span class="math display">
+\mathcal{L}[e^{at} f(t)] = F(s - a)
+</span></p>
+<p>where <span class="math inline">F(s) = \mathcal{L}[f(t)]</span> and <span class="math inline">a</span> is any real number. This property is useful for analyzing systems involving exponential growth or decay.</p>
+</section>
+<section id="statement-of-the-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="statement-of-the-theorem"><strong>Statement of the Theorem</strong></h2>
+<p>Let <span class="math inline">f(t)</span> be an acceptable function such that <span class="math inline">\mathcal{L}[f(t)] = F(s)</span>. Then for any real value <span class="math inline">a</span>:</p>
+<p><span class="math display">
+\mathcal{L}[e^{at} f(t)] = F(s - a)
+</span></p>
+</section>
+<section id="proof" class="level2">
+<h2 class="anchored" data-anchor-id="proof"><strong>Proof</strong></h2>
+<section id="write-the-laplace-transform-of-eat-ft" class="level3">
+<h3 class="anchored" data-anchor-id="write-the-laplace-transform-of-eat-ft">Write the Laplace Transform of <span class="math inline">e^{at} f(t)</span></h3>
+<p>By definition of the Laplace transform:</p>
+<p><span class="math display">
+\mathcal{L}[e^{at} f(t)] = \int_0^\infty e^{at} f(t) e^{-st} \, dt
+</span></p>
+</section>
+<section id="combine-exponentials" class="level3">
+<h3 class="anchored" data-anchor-id="combine-exponentials">Combine Exponentials</h3>
+<p>Combine the exponential terms <span class="math inline">e^{at}</span> and <span class="math inline">e^{-st}</span>:</p>
+<p><span class="math display">
+e^{at} e^{-st} = e^{-(s - a)t}
+</span></p>
+<p>Substituting into the integral:</p>
+<p><span class="math display">
+\mathcal{L}[e^{at} f(t)] = \int_0^\infty f(t) e^{-(s - a)t} \, dt
+</span></p>
+</section>
+<section id="recognize-the-laplace-transform" class="level3">
+<h3 class="anchored" data-anchor-id="recognize-the-laplace-transform">Recognize the Laplace Transform</h3>
+<p>The integral <span class="math inline">\int_0^\infty f(t) e^{-(s - a)t} \, dt</span> is the definition of the Laplace transform of <span class="math inline">f(t)</span>, evaluated at <span class="math inline">s - a</span>. Therefore:</p>
+<p><span class="math display">
+\mathcal{L}[e^{at} f(t)] = F(s - a)
+</span></p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>This demonstrates that:</p>
+<p><span class="math display">
+\mathcal{L}[e^{at} f(t)] = F(s - a)
+</span></p>
+</section>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example"><strong>Example</strong></h2>
+<p>To illustrate, let <span class="math inline">f(t) = t</span>, for which <span class="math inline">\mathcal{L}[f(t)] = \frac{1}{s^2}</span>. Using the First Shifting Property:</p>
+<ol type="1">
+<li><p>Compute <span class="math inline">\mathcal{L}[e^{3t} t]</span>:</p>
 <ul>
-<li><a href="./multiplication-by-t-property.html">Multiplication by <span class="math inline">t</span> Property (Theorem 5.3.2)</a></li>
-<li><a href="./first-derivative-property.html">First Derivative Property (Theorem 5.3.4)</a></li>
-<li><a href="./first-shifting-property.html">First Shifting Property (Theorem 5.3.6)</a></li>
+<li>Substitute <span class="math inline">a = 3</span> and <span class="math inline">F(s) = \frac{1}{s^2}</span>.</li>
 </ul>
+<p><span class="math display">
+\mathcal{L}[e^{3t} t] = F(s - 3) = \frac{1}{(s - 3)^2}
+</span></p></li>
+<li><p>Result:</p>
+<ul>
+<li>The Laplace transform of <span class="math inline">e^{3t} t</span> is <span class="math inline">\frac{1}{(s - 3)^2}</span>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
+<p>The <strong>First Shifting Property</strong> of the Laplace Transform provides a direct relationship between the transform of <span class="math inline">e^{at} f(t)</span> and the transform of <span class="math inline">f(t)</span>. By shifting <span class="math inline">s</span> in <span class="math inline">F(s)</span> by <span class="math inline">a</span>, this property simplifies the analysis of functions involving exponential factors.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
