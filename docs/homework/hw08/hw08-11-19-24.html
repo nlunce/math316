@@ -5352,9 +5352,46 @@ F(s) = \frac{e^5}{s - 3}
 <div class="callout-body-container callout-body">
 <section id="problem-5" class="level3">
 <h3 class="anchored" data-anchor-id="problem-5"><strong>Problem:</strong></h3>
+<p>Use the <strong>linearity property</strong> and known Laplace transforms to compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = 3e^{2t} - 3\sin(2t)</span>.</p>
 </section>
 <section id="solution-5" class="level3">
 <h3 class="anchored" data-anchor-id="solution-5"><strong>Solution:</strong></h3>
+<section id="linearity-of-the-laplace-transform" class="level4">
+<h4 class="anchored" data-anchor-id="linearity-of-the-laplace-transform"><strong>Linearity of the Laplace Transform</strong></h4>
+<p>The Laplace transform of <span class="math inline">f(t)</span> is given by the <strong>linearity property</strong>:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = \mathcal{L}\{3e^{2t}\} - \mathcal{L}\{3\sin(2t)\}
+</span></p>
+</section>
+<section id="laplace-transform-of-each-term" class="level4">
+<h4 class="anchored" data-anchor-id="laplace-transform-of-each-term"><strong>Laplace Transform of Each Term</strong></h4>
+<ol type="1">
+<li><p><strong>For <span class="math inline">\mathcal{L}\{3e^{2t}\}</span>:</strong></p>
+<p>The Laplace transform of <span class="math inline">e^{at}</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{e^{at}\} = \frac{1}{s - a}, \quad \text{for } s &gt; a
+</span></p>
+<p>Substituting <span class="math inline">a = 2</span>, the Laplace transform of <span class="math inline">3e^{2t}</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{3e^{2t}\} = 3 \cdot \frac{1}{s - 2} = \frac{3}{s - 2}, \quad s &gt; 2
+</span></p></li>
+<li><p><strong>For <span class="math inline">\mathcal{L}\{3\sin(2t)\}</span>:</strong></p>
+<p>The Laplace transform of <span class="math inline">\sin(bt)</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{\sin(bt)\} = \frac{b}{s^2 + b^2}, \quad \text{for } s &gt; 0
+</span></p>
+<p>Substituting <span class="math inline">b = 2</span>, the Laplace transform of <span class="math inline">3\sin(2t)</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{3\sin(2t)\} = 3 \cdot \frac{2}{s^2 + 4} = \frac{6}{s^2 + 4}, \quad s &gt; 0
+</span></p></li>
+</ol>
+</section>
+<section id="combine-results" class="level4">
+<h4 class="anchored" data-anchor-id="combine-results"><strong>Combine Results</strong></h4>
+<p>Using linearity, the Laplace transform of <span class="math inline">f(t) = 3e^{2t} - 3\sin(2t)</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = \frac{3}{s - 2} - \frac{6}{s^2 + 4}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5365,9 +5402,12 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = \frac{3}{s - 2} - \frac{6}{s^2 + 4}, \quad s &gt; 2
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -5386,9 +5426,46 @@ F(s) = \frac{e^5}{s - 3}
 <div class="callout-body-container callout-body">
 <section id="problem-6" class="level3">
 <h3 class="anchored" data-anchor-id="problem-6"><strong>Problem:</strong></h3>
+<p>Compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = 3t e^{3t}</span> using <strong>Theorem 5.3.2</strong>.</p>
 </section>
 <section id="solution-6" class="level3">
 <h3 class="anchored" data-anchor-id="solution-6"><strong>Solution:</strong></h3>
+<section id="use-theorem-5.3.2" class="level4">
+<h4 class="anchored" data-anchor-id="use-theorem-5.3.2"><strong>Use Theorem 5.3.2</strong></h4>
+<p>The Laplace transform of <span class="math inline">t f(t)</span> is given by:</p>
+<p><span class="math display">
+\mathcal{L}\{t f(t)\} = -\frac{d}{ds} \mathcal{L}\{f(t)\}
+</span></p>
+</section>
+<section id="identify-ft-e3t" class="level4">
+<h4 class="anchored" data-anchor-id="identify-ft-e3t"><strong>Identify <span class="math inline">f(t) = e^{3t}</span></strong></h4>
+<p>The Laplace transform of <span class="math inline">e^{at}</span> is:</p>
+<p><span class="math display">
+\mathcal{L}\{e^{at}\} = \frac{1}{s - a}, \quad s &gt; a
+</span></p>
+<p>For <span class="math inline">f(t) = e^{3t}</span>, the Laplace transform is:</p>
+<p><span class="math display">
+\mathcal{L}\{e^{3t}\} = \frac{1}{s - 3}, \quad s &gt; 3
+</span></p>
+<p>Thus, <span class="math inline">\mathcal{L}\{f(t)\} = \frac{1}{s - 3}</span>.</p>
+</section>
+<section id="apply-theorem-5.3.2" class="level4">
+<h4 class="anchored" data-anchor-id="apply-theorem-5.3.2"><strong>Apply Theorem 5.3.2</strong></h4>
+<p>Using <span class="math inline">\mathcal{L}\{t e^{3t}\} = -\frac{d}{ds} \mathcal{L}\{e^{3t}\}</span>, compute the derivative of <span class="math inline">\frac{1}{s - 3}</span>:</p>
+<ol type="1">
+<li><p>Differentiate <span class="math inline">\frac{1}{s - 3}</span>:</p>
+<p><span class="math display">
+\frac{d}{ds} \left(\frac{1}{s - 3}\right) = \frac{-1}{(s - 3)^2}
+</span></p></li>
+<li><p>Substitute into the formula:</p>
+<p><span class="math display">
+\mathcal{L}\{t e^{3t}\} = -\left(\frac{-1}{(s - 3)^2}\right) = \frac{1}{(s - 3)^2}
+</span></p></li>
+<li><p>Multiply by the constant <span class="math inline">3</span> (from <span class="math inline">f(t) = 3t e^{3t}</span>):</p>
+<p><span class="math display">
+\mathcal{L}\{3t e^{3t}\} = 3 \cdot \frac{1}{(s - 3)^2}
+</span></p></li>
+</ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5399,9 +5476,12 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><span class="math display">
+\mathcal{L}\{f(t)\} = \frac{3}{(s - 3)^2}, \quad s &gt; 3
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -5420,9 +5500,135 @@ F(s) = \frac{e^5}{s - 3}
 <div class="callout-body-container callout-body">
 <section id="problem-7" class="level3">
 <h3 class="anchored" data-anchor-id="problem-7"><strong>Problem:</strong></h3>
+<p>Compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = t^3 \sin(t)</span> using Corollary 5.3.3.</p>
 </section>
 <section id="solution-7" class="level3">
 <h3 class="anchored" data-anchor-id="solution-7"><strong>Solution:</strong></h3>
+<section id="use-corollary-5.3.3" class="level4">
+<h4 class="anchored" data-anchor-id="use-corollary-5.3.3"><strong>Use Corollary 5.3.3</strong></h4>
+<p>Corollary 5.3.3 states that the Laplace transform of <span class="math inline">t^n f(t)</span> is</p>
+<p><span class="math display">
+\mathcal{L}\{t^n f(t)\} = (-1)^n F^{(n)}(s)
+</span></p>
+<p>where <span class="math inline">F(s) = \mathcal{L}\{f(t)\}</span> and <span class="math inline">F^{(n)}(s)</span> represents the <span class="math inline">n</span>-th derivative of <span class="math inline">F(s)</span>.</p>
+</section>
+<section id="identify-ft-sint" class="level4">
+<h4 class="anchored" data-anchor-id="identify-ft-sint"><strong>Identify <span class="math inline">f(t) = \sin(t)</span></strong></h4>
+<p>The Laplace transform of <span class="math inline">\sin(t)</span> is</p>
+<p><span class="math display">
+\mathcal{L}\{\sin(t)\} = \frac{1}{s^2 + 1}
+</span></p>
+<p>Thus <span class="math inline">F(s) = \frac{1}{s^2 + 1}</span></p>
+</section>
+<section id="compute-the-third-derivative-of-fs" class="level4">
+<h4 class="anchored" data-anchor-id="compute-the-third-derivative-of-fs"><strong>Compute the Third Derivative of <span class="math inline">F(s)</span></strong></h4>
+<p>The function <span class="math inline">F(s) = \frac{1}{s^2 + 1}</span> is differentiated three times using the quotient rule</p>
+<section id="first-derivative" class="level5">
+<h5 class="anchored" data-anchor-id="first-derivative"><strong>First Derivative</strong></h5>
+<p>The quotient rule states:</p>
+<p><span class="math display">
+\frac{d}{ds} \left(\frac{u}{v}\right) = \frac{v \cdot u&#39; - u \cdot v&#39;}{v^2}
+</span></p>
+<p>Here:</p>
+<ul>
+<li><span class="math inline">u = 1</span></li>
+<li><span class="math inline">v = s^2 + 1</span></li>
+<li><span class="math inline">u&#39; = 0</span></li>
+<li><span class="math inline">v&#39; = 2s</span></li>
+</ul>
+<p>Substituting into the formula gives:</p>
+<p><span class="math display">
+F&#39;(s) = \frac{(s^2 + 1)(0) - (1)(2s)}{(s^2 + 1)^2} = \frac{-2s}{(s^2 + 1)^2}
+</span></p>
+</section>
+<section id="second-derivative" class="level5">
+<h5 class="anchored" data-anchor-id="second-derivative"><strong>Second Derivative</strong></h5>
+<p>Differentiate <span class="math inline">F&#39;(s) = \frac{-2s}{(s^2 + 1)^2}</span> using the quotient rule.</p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">u = -2s</span></li>
+<li><span class="math inline">v = (s^2 + 1)^2</span></li>
+<li><span class="math inline">u&#39; = -2</span></li>
+<li><span class="math inline">v&#39; = 2(s^2 + 1)(2s) = 4s(s^2 + 1)</span></li>
+</ul>
+<p>Substituting these into the quotient rule gives:</p>
+<p><span class="math display">
+F&#39;&#39;(s) = \frac{(s^2 + 1)^2 \cdot (-2) - (-2s) \cdot 4s(s^2 + 1)}{(s^2 + 1)^4}
+</span></p>
+<p>Simplify the numerator</p>
+<p><span class="math display">
+F&#39;&#39;(s) = \frac{-2(s^2 + 1)^2 + 8s^2(s^2 + 1)}{(s^2 + 1)^3}
+</span></p>
+<p>Factorize</p>
+<p><span class="math display">
+F&#39;&#39;(s) = \frac{-2(s^2 + 1) + 8s^2}{(s^2 + 1)^3}
+</span></p>
+</section>
+<section id="third-derivative" class="level5">
+<h5 class="anchored" data-anchor-id="third-derivative"><strong>Third Derivative</strong></h5>
+<p>Differentiate <span class="math inline">F&#39;&#39;(s) = \frac{-2(s^2 + 1) + 8s^2}{(s^2 + 1)^3}</span>.</p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">u = -2(s^2 + 1) + 8s^2</span></li>
+<li><span class="math inline">v = (s^2 + 1)^3</span></li>
+<li><span class="math inline">u&#39; = -2(2s) + 16s = -4s + 16s = 12s</span></li>
+<li><span class="math inline">v&#39; = 3(s^2 + 1)^2(2s) = 6s(s^2 + 1)^2</span></li>
+</ul>
+<p>Substituting into the quotient rule gives:</p>
+<p><span class="math display">
+F&#39;&#39;&#39;(s) = \frac{(s^2 + 1)^3 \cdot 12s - \big(-2(s^2 + 1) + 8s^2\big) \cdot 6s(s^2 + 1)^2}{(s^2 + 1)^6}
+</span></p>
+<p>Simplify the numerator</p>
+<ol type="1">
+<li><p>First term:</p>
+<p><span class="math display">
+(s^2 + 1)^3 \cdot 12s = 12s(s^2 + 1)^3
+</span></p></li>
+<li><p>Second term: Expand <span class="math inline">-2(s^2 + 1) + 8s^2</span> as <span class="math inline">-2s^2 - 2 + 8s^2 = 6s^2 - 2</span>, then multiply by <span class="math inline">6s(s^2 + 1)^2</span>:</p>
+<p><span class="math display">
+(6s^2 - 2) \cdot 6s(s^2 + 1)^2 = (36s^3 - 12s)(s^2 + 1)^2
+</span></p></li>
+</ol>
+<p>Combine terms:</p>
+<p><span class="math display">
+F&#39;&#39;&#39;(s) = \frac{12s(s^2 + 1)^3 - (36s^3 - 12s)(s^2 + 1)^2}{(s^2 + 1)^6}
+</span></p>
+<p>Factorize the numerator:</p>
+<p><span class="math display">
+F&#39;&#39;&#39;(s) = \frac{s(s^2 + 1)^2 \big[12(s^2 + 1) - (36s^2 - 12)\big]}{(s^2 + 1)^6}
+</span></p>
+<p>Simplify the inner term:</p>
+<p><span class="math display">
+12(s^2 + 1) - (36s^2 - 12) = 12s^2 + 12 - 36s^2 + 12 = -24s^2 + 24
+</span></p>
+<p>Factorize further:</p>
+<p><span class="math display">
+-24s^2 + 24 = -24(s^2 - 1)
+</span></p>
+<p>Thus:</p>
+<p><span class="math display">
+F&#39;&#39;&#39;(s) = \frac{s(s^2 + 1)^2 \cdot -24(s^2 - 1)}{(s^2 + 1)^6}
+</span></p>
+<p>Simplify:</p>
+<p><span class="math display">
+F&#39;&#39;&#39;(s) = \frac{-24s(s^2 - 1)}{(s^2 + 1)^4}
+</span></p>
+</section>
+</section>
+<section id="apply-corollary-5.3.3" class="level4">
+<h4 class="anchored" data-anchor-id="apply-corollary-5.3.3"><strong>Apply Corollary 5.3.3</strong></h4>
+<p>Using Corollary 5.3.3 for <span class="math inline">n = 3</span>, the Laplace transform is</p>
+<p><span class="math display">
+\mathcal{L}\{t^3 \sin(t)\} = (-1)^3 F^{(3)}(s) = -F^{(3)}(s)
+</span></p>
+<p>Substitute <span class="math inline">F^{(3)}(s)</span>:</p>
+<p><span class="math display">
+\mathcal{L}\{t^3 \sin(t)\} = -\left(\frac{-24s(s^2 - 1)}{(s^2 + 1)^4}\right)
+</span></p>
+<p>Simplify:</p>
+<p><span class="math display">
+\mathcal{L}\{t^3 \sin(t)\} = \frac{24s(s^2 - 1)}{(s^2 + 1)^4}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5433,9 +5639,12 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><span class="math display">
+\mathcal{L}\{t^3 \sin(t)\} = \frac{24s(s^2 - 1)}{(s^2 + 1)^4}
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -5454,9 +5663,31 @@ F(s) = \frac{e^5}{s - 3}
 <div class="callout-body-container callout-body">
 <section id="problem-8" class="level3">
 <h3 class="anchored" data-anchor-id="problem-8"><strong>Problem:</strong></h3>
+<p>Compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = t^2 e^{-t}</span> using the First Shifting Property.</p>
 </section>
 <section id="solution-8" class="level3">
 <h3 class="anchored" data-anchor-id="solution-8"><strong>Solution:</strong></h3>
+<section id="use-the-first-shifting-property" class="level4">
+<h4 class="anchored" data-anchor-id="use-the-first-shifting-property"><strong>Use the First Shifting Property</strong></h4>
+<p>The First Shifting Property states:</p>
+<p><span class="math display">
+\mathcal{L}\{e^{at} f(t)\} = F(s - a)
+</span></p>
+<p>where <span class="math inline">F(s) = \mathcal{L}\{f(t)\}</span> is the Laplace transform of <span class="math inline">f(t)</span>. In this problem, <span class="math inline">f(t) = t^2</span>, and we know:</p>
+<p><span class="math display">
+\mathcal{L}\{t^2\} = \frac{2}{s^3}
+</span></p>
+</section>
+<section id="identify-a" class="level4">
+<h4 class="anchored" data-anchor-id="identify-a"><strong>Identify <span class="math inline">a</span></strong></h4>
+<p>In <span class="math inline">t^2 e^{-t}</span>, we have <span class="math inline">a = -1</span>, so by the First Shifting Property, replace <span class="math inline">s</span> with <span class="math inline">s - (-1) = s + 1</span>.</p>
+</section>
+<section id="substitute-into-the-first-shifting-property" class="level4">
+<h4 class="anchored" data-anchor-id="substitute-into-the-first-shifting-property"><strong>Substitute into the First Shifting Property</strong></h4>
+<p>Using <span class="math inline">\mathcal{L}\{t^2\} = \frac{2}{s^3}</span>, we shift <span class="math inline">s</span> to <span class="math inline">s + 1</span>:</p>
+<p><span class="math display">
+\mathcal{L}\{t^2 e^{-t}\} = \frac{2}{(s + 1)^3}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5467,15 +5698,18 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><span class="math display">
+\mathcal{L}\{t^2 e^{-t}\} = \frac{2}{(s + 1)^3}, \quad s &gt; -1
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5484,13 +5718,39 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-9" class="level3">
 <h3 class="anchored" data-anchor-id="problem-9"><strong>Problem:</strong></h3>
+<p>Compute <span class="math inline">\mathcal{L}\{f(t)\} = F(s)</span> for <span class="math inline">f(t) = t e^{-t} \sin(2t)</span></p>
 </section>
 <section id="solution-9" class="level3">
 <h3 class="anchored" data-anchor-id="solution-9"><strong>Solution:</strong></h3>
+<section id="use-the-first-shifting-property-1" class="level4">
+<h4 class="anchored" data-anchor-id="use-the-first-shifting-property-1"><strong>Use the First Shifting Property</strong></h4>
+<p>The First Shifting Property states</p>
+<p><span class="math display">
+\mathcal{L}\{e^{at} f(t)\} = F(s - a)
+</span></p>
+<p>where <span class="math inline">F(s) = \mathcal{L}\{f(t)\}</span> is the Laplace transform of <span class="math inline">f(t)</span> Here, <span class="math inline">f(t) = t \sin(2t)</span>, and we know from properties of Laplace transforms that</p>
+<p><span class="math display">
+\mathcal{L}\{t \sin(bt)\} = \frac{2b s}{(s^2 + b^2)^2}
+</span></p>
+</section>
+<section id="identify-a-1" class="level4">
+<h4 class="anchored" data-anchor-id="identify-a-1">Identify <span class="math inline">a</span></h4>
+<p>In <span class="math inline">t e^{-t} \sin(2t)</span>, we have <span class="math inline">a = -1</span> By the First Shifting Property, replace <span class="math inline">s</span> with <span class="math inline">s - (-1) = s + 1</span></p>
+</section>
+<section id="apply-the-first-shifting-property" class="level4">
+<h4 class="anchored" data-anchor-id="apply-the-first-shifting-property"><strong>Apply the First Shifting Property</strong></h4>
+<p>For <span class="math inline">f(t) = t \sin(2t)</span>, the Laplace transform without the exponential term is</p>
+<p><span class="math display">
+\mathcal{L}\{t \sin(2t)\} = \frac{2 \cdot 2 \cdot s}{(s^2 + 4)^2} = \frac{4s}{(s^2 + 4)^2}
+</span></p>
+<p>Using the First Shifting Property, replace <span class="math inline">s</span> with <span class="math inline">s + 1</span></p>
+<p><span class="math display">
+\mathcal{L}\{t e^{-t} \sin(2t)\} = \frac{4(s + 1)}{((s + 1)^2 + 4)^2}
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5501,9 +5761,25 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><span class="math display">
+\mathcal{L}\{t e^{-t} \sin(2t)\} = \frac{4(s + 1)}{((s + 1)^2 + 4)^2}
+</span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Book’s Answer</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The solution provided in the book for this problem is incorrect.</p>
+</div>
+</div>
+</section>
 </section>
 </div>
 </div>
@@ -5525,7 +5801,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5534,7 +5810,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-10" class="level3">
 <h3 class="anchored" data-anchor-id="problem-10"><strong>Problem:</strong></h3>
@@ -5559,7 +5835,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5568,7 +5844,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-11" class="level3">
 <h3 class="anchored" data-anchor-id="problem-11"><strong>Problem:</strong></h3>
@@ -5593,7 +5869,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5602,7 +5878,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-12" class="level3">
 <h3 class="anchored" data-anchor-id="problem-12"><strong>Problem:</strong></h3>
@@ -5627,7 +5903,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5636,7 +5912,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-13" class="level3">
 <h3 class="anchored" data-anchor-id="problem-13"><strong>Problem:</strong></h3>
@@ -5661,7 +5937,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5670,7 +5946,7 @@ F(s) = \frac{e^5}{s - 3}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="problem-14" class="level3">
 <h3 class="anchored" data-anchor-id="problem-14"><strong>Problem:</strong></h3>
