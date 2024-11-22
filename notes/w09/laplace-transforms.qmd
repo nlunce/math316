@@ -55,47 +55,6 @@ where:
 1. $f(t)$ must be **piecewise continuous** on $[0, \infty)$.
 2. $f(t)$ must be of **exponential order** (i.e., $|f(t)| \leq M e^{\alpha t}$ for some $M, \alpha > 0$).
 
-## Properties of the Laplace Transform
-
-The Laplace Transform has several useful properties that make it ideal for solving differential equations:
-
-1. **Linearity**:
-
-   $$
-   \mathcal{L}\{a f(t) + b g(t)\} = a \mathcal{L}\{f(t)\} + b \mathcal{L}\{g(t)\},
-   $$
-
-   where $a, b$ are constants.
-
-2. **Differentiation**:
-
-   $$
-   \mathcal{L}\{f'(t)\} = s \mathcal{L}\{f(t)\} - f(0),
-   $$
-
-   $$
-   \mathcal{L}\{f''(t)\} = s^2 \mathcal{L}\{f(t)\} - s f(0) - f'(0).
-   $$
-
-3. **Integration**:
-
-   $$
-   \mathcal{L}\left\{\int_0^t f(\tau) \, d\tau\right\} = \frac{\mathcal{L}\{f(t)\}}{s}.
-   $$
-
-4. **Time Shifting**:
-
-   $$
-   \mathcal{L}\{f(t - t_0) u(t - t_0)\} = e^{-st_0} \mathcal{L}\{f(t)\},
-   $$
-
-   where $u(t)$ is the unit step function.
-
-5. **Frequency Shifting**:
-   $$
-   \mathcal{L}\{e^{at} f(t)\} = F(s - a).
-   $$
-
 ## Example 1: Transform of $f(t) = 1$
 
 The Laplace Transform of the constant function $f(t) = 1$ is:

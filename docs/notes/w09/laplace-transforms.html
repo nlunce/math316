@@ -4827,7 +4827,6 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#key-requirements" id="toc-key-requirements" class="nav-link" data-scroll-target="#key-requirements">Key Requirements:</a></li>
   </ul></li>
-  <li><a href="#properties-of-the-laplace-transform" id="toc-properties-of-the-laplace-transform" class="nav-link" data-scroll-target="#properties-of-the-laplace-transform">Properties of the Laplace Transform</a></li>
   <li><a href="#example-1-transform-of-ft-1" id="toc-example-1-transform-of-ft-1" class="nav-link" data-scroll-target="#example-1-transform-of-ft-1">Example 1: Transform of <span class="math inline">f(t) = 1</span></a>
   <ul class="collapse">
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution:</a></li>
@@ -4900,36 +4899,6 @@ window.Quarto = {
 <li><span class="math inline">f(t)</span> must be of <strong>exponential order</strong> (i.e., <span class="math inline">|f(t)| \leq M e^{\alpha t}</span> for some <span class="math inline">M, \alpha &gt; 0</span>).</li>
 </ol>
 </section>
-</section>
-<section id="properties-of-the-laplace-transform" class="level2">
-<h2 class="anchored" data-anchor-id="properties-of-the-laplace-transform">Properties of the Laplace Transform</h2>
-<p>The Laplace Transform has several useful properties that make it ideal for solving differential equations:</p>
-<ol type="1">
-<li><p><strong>Linearity</strong>:</p>
-<p><span class="math display">
-\mathcal{L}\{a f(t) + b g(t)\} = a \mathcal{L}\{f(t)\} + b \mathcal{L}\{g(t)\},
-</span></p>
-<p>where <span class="math inline">a, b</span> are constants.</p></li>
-<li><p><strong>Differentiation</strong>:</p>
-<p><span class="math display">
-\mathcal{L}\{f&#39;(t)\} = s \mathcal{L}\{f(t)\} - f(0),
-</span></p>
-<p><span class="math display">
-\mathcal{L}\{f&#39;&#39;(t)\} = s^2 \mathcal{L}\{f(t)\} - s f(0) - f&#39;(0).
-</span></p></li>
-<li><p><strong>Integration</strong>:</p>
-<p><span class="math display">
-\mathcal{L}\left\{\int_0^t f(\tau) \, d\tau\right\} = \frac{\mathcal{L}\{f(t)\}}{s}.
-</span></p></li>
-<li><p><strong>Time Shifting</strong>:</p>
-<p><span class="math display">
-\mathcal{L}\{f(t - t_0) u(t - t_0)\} = e^{-st_0} \mathcal{L}\{f(t)\},
-</span></p>
-<p>where <span class="math inline">u(t)</span> is the unit step function.</p></li>
-<li><p><strong>Frequency Shifting</strong>: <span class="math display">
-\mathcal{L}\{e^{at} f(t)\} = F(s - a).
-</span></p></li>
-</ol>
 </section>
 <section id="example-1-transform-of-ft-1" class="level2">
 <h2 class="anchored" data-anchor-id="example-1-transform-of-ft-1">Example 1: Transform of <span class="math inline">f(t) = 1</span></h2>
