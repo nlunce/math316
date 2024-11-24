@@ -27,11 +27,11 @@ preview:
   navigate: true
 ---
 
-## Overview
+## **Overview**
 
 When solving nonhomogeneous systems of differential equations, one common method to find a particular solution is **undetermined coefficients**. This approach works well when the nonhomogeneous term is of a specific form, such as polynomials, exponentials, sines, or cosines.
 
-## Method of Undetermined Coefficients
+## **Method of Undetermined Coefficients**
 
 Consider a system of differential equations given by:
 
@@ -43,7 +43,7 @@ where $A$ is an $n \times n$ matrix with constant entries, and $\mathbf{b}(t)$ i
 
 The method involves **guessing a form for the particular solution** $\mathbf{x}_p(t)$ based on the form of $\mathbf{b}(t)$ and then determining the coefficients by substituting $\mathbf{x}_p(t)$ back into the differential equation.
 
-## Steps for Applying Undetermined Coefficients
+## **Steps for Applying Undetermined Coefficients**
 
 1. **Identify the Form of $\mathbf{b}(t)$**: Determine the type of functions in the nonhomogeneous term $\mathbf{b}(t)$. Typical forms include:
 
@@ -139,7 +139,7 @@ The method involves **guessing a form for the particular solution** $\mathbf{x}_
 
 1. **Substitute and Solve for Coefficients**: Substitute $\mathbf{x}_p(t)$ into the differential equation and solve for the unknown coefficients to ensure that the equation is satisfied.
 
-## Example
+## **Example**
 
 For a system:
 
@@ -155,6 +155,6 @@ $$
 
 If this guess overlaps with the homogeneous solution, we would use $\mathbf{x}_p(t) = t e^{rt} \mathbf{a}$ instead. Substituting $\mathbf{x}_p(t)$ into the system, we determine $\mathbf{a}$ by equating terms.
 
-## Summary
+## **Summary**
 
 The method of undetermined coefficients provides a straightforward way to find a particular solution to nonhomogeneous systems when $\mathbf{b}(t)$ has certain forms. By using the table to make an educated guess for $\mathbf{x}_p(t)$ and solving for unknown coefficients, we can construct a particular solution to complete the system’s solution.

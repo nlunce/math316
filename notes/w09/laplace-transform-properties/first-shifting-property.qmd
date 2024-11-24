@@ -48,7 +48,7 @@ $$
 
 ## **Proof**
 
-### Write the Laplace Transform of $e^{at} f(t)$
+### **Write the Laplace Transform of $e^{at} f(t)$**
 
 By definition of the Laplace transform:
 
@@ -56,7 +56,7 @@ $$
 \mathcal{L}[e^{at} f(t)] = \int_0^\infty e^{at} f(t) e^{-st} \, dt
 $$
 
-### Combine Exponentials
+### **Combine Exponentials**
 
 Combine the exponential terms $e^{at}$ and $e^{-st}$:
 
@@ -70,7 +70,7 @@ $$
 \mathcal{L}[e^{at} f(t)] = \int_0^\infty f(t) e^{-(s - a)t} \, dt
 $$
 
-### Recognize the Laplace Transform
+### **Recognize the Laplace Transform**
 
 The integral $\int_0^\infty f(t) e^{-(s - a)t} \, dt$ is the definition of the Laplace transform of $f(t)$, evaluated at $s - a$. Therefore:
 
@@ -78,7 +78,7 @@ $$
 \mathcal{L}[e^{at} f(t)] = F(s - a)
 $$
 
-### Conclusion
+### **Conclusion**
 
 This demonstrates that:
 

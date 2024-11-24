@@ -695,7 +695,7 @@ $$
 Using $\ln 20 \approx 2.9957$ and $\ln 2 \approx 0.6931$:
 
 $$
-t = \frac{30 \times 2.9957}{0.6931} \approx \frac{89.871}{0.6931} \approx 129.6 \, \text{minutes}.
+t = \frac{30 \times 2.9957}{0.6931} \approx \frac{89.871}{0.6931} \approx 129.6 \, \text{minutes}
 $$
 
 ::: {.callout-tip icon=false}
@@ -871,7 +871,7 @@ The solution is valid as long as the volume in the tank does not exceed 25
 m$^3$, meaning:
 
 $$
-5 + 0.25t \leq 25 \quad \Rightarrow \quad t \leq 80 \, \text{min}.
+5 + 0.25t \leq 25 \quad \Rightarrow \quad t \leq 80 \, \text{min}
 $$
 
 #### (c) At exactly what time will the least amount of salt be present in the tank? How much salt will there be at that time?
@@ -1021,19 +1021,19 @@ At 2 am (4 hours after the furnace failure), the indoor temperature is
 $60^\circ \text{F}$. Substituting into the formula:
 
 $$
-60 = 4 + (68 - 4) e^{-4k}.
+60 = 4 + (68 - 4) e^{-4k}
 $$
 
 Simplify:
 
 $$
-60 = 4 + 64 e^{-4k} \quad \Rightarrow \quad 56 = 64 e^{-4k}.
+60 = 4 + 64 e^{-4k} \quad \Rightarrow \quad 56 = 64 e^{-4k}
 $$
 
 Solve for $e^{-4k}$:
 
 $$
-e^{-4k} = \frac{56}{64} = \frac{7}{8}.
+e^{-4k} = \frac{56}{64} = \frac{7}{8}
 $$
 
 Take the natural logarithm of both sides:
@@ -1052,13 +1052,13 @@ We want to find the time $t$ when the indoor temperature reaches
 $32^\circ \text{F}$. Substituting into the formula:
 
 $$
-32 = 4 + 64 e^{\frac{\ln(8) - \ln(7)}{4} \cdot (-t)}.
+32 = 4 + 64 e^{\frac{\ln(8) - \ln(7)}{4} \cdot (-t)}
 $$
 
 Subtract 4 from both sides:
 
 $$
-28 = 64 e^{\frac{\ln(7) - \ln(8)}{4} \cdot t}.
+28 = 64 e^{\frac{\ln(7) - \ln(8)}{4} \cdot t}
 $$
 
 Divide both sides by 64:
@@ -1109,13 +1109,13 @@ The furnace failed at **10 pm**, so the temperature will drop to
 $32^\circ \text{F}$ approximately:
 
 $$
-10 \, \text{pm} + 24.76 \, \text{hours}.
+10 \, \text{pm} + 24.76 \, \text{hours}
 $$
 
 Convert $0.76$ hours to minutes:
 
 $$
-0.76 \times 60 = 45.6 \, \text{minutes}.
+0.76 \times 60 = 45.6 \, \text{minutes}
 $$
 
 The indoor temperature will reach $32^\circ \text{F}$ at approximately **10:45

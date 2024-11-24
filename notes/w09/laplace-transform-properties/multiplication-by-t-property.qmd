@@ -50,7 +50,7 @@ Leibniz's rule is essential for justifying the steps in the proof.
 
 ## **Proof**
 
-### Write the Laplace Transform
+### **Write the Laplace Transform**
 
 The Laplace transform of $f(t)$ is defined as:
 
@@ -64,7 +64,7 @@ $$
 \mathcal{L}[tf(t)] = \int_0^\infty t f(t) e^{-st} \, dt
 $$
 
-### Apply Leibniz's Rule
+### **Apply Leibniz's Rule**
 
 Let $K(s, t) = f(t) e^{-st}$. Using Leibniz's rule, the derivative of $F(s)$ with respect to $s$ is:
 
@@ -72,7 +72,7 @@ $$
 \frac{d}{ds} F(s) = \frac{d}{ds} \int_0^\infty f(t) e^{-st} \, dt = \int_0^\infty \frac{\partial}{\partial s} \big[f(t) e^{-st}\big] \, dt
 $$
 
-### Differentiate Inside the Integral
+### **Differentiate Inside the Integral**
 
 The partial derivative of $f(t) e^{-st}$ with respect to $s$ is:
 
@@ -86,7 +86,7 @@ $$
 \frac{d}{ds} F(s) = \int_0^\infty -t f(t) e^{-st} \, dt
 $$
 
-### Recognize the Laplace Transform
+### **Recognize the Laplace Transform**
 
 The integral on the right-hand side is the definition of $\mathcal{L}[tf(t)]$. Therefore:
 
@@ -100,7 +100,7 @@ $$
 \mathcal{L}[tf(t)] = -\frac{d}{ds} F(s)
 $$
 
-### Conclusion
+### **Conclusion**
 
 The proof demonstrates that:
 
@@ -118,7 +118,7 @@ $$
 
 where $F^{(n)}(s)$ is the $n$-th derivative of $F(s)$. This property generalizes the Multiplication by $t$ Property to higher powers of $t$.
 
-### Demonstration
+### **Demonstration**
 
 To demonstrate the corollary for $n = 2$, consider $t^2 f(t)$:
 
@@ -146,7 +146,7 @@ To demonstrate the corollary for $n = 2$, consider $t^2 f(t)$:
    \mathcal{L}[t^2 f(t)] = F^{(2)}(s) = (-1)^2 F^{(2)}(s)
    $$
 
-### General Case
+### **General Case**
 
 The process can be repeated for any positive integer $n$ to show that:
 

@@ -27,14 +27,14 @@ preview:
   navigate: true
 ---
 
-## Overview
+## **Overview**
 
 When solving systems of differential equations, we use **eigenvectors** to
 understand how the system evolves over time. Sometimes, however, we encounter a
 repeated eigenvalue but don't have enough unique eigenvectors to fully describe
 the solution. This is where **generalized eigenvectors** come into play.
 
-## Why Generalized Eigenvectors Are Needed
+## **Why Generalized Eigenvectors Are Needed**
 
 1. **Eigenvectors and Eigenvalues Recap**:
 
@@ -61,7 +61,7 @@ the solution. This is where **generalized eigenvectors** come into play.
    - This additional term allows the solution to "expand" over time, rather than
      being confined to a single line along $\mathbf{v}$.
 
-## How Generalized Eigenvectors Affect the Solution
+## **How Generalized Eigenvectors Affect the Solution**
 
 With a regular eigenvector $\mathbf{v}$ and generalized eigenvector
 $\mathbf{v}_g$:
@@ -79,7 +79,7 @@ $\mathbf{v}_g$:
     broadens the path, allowing the solution to explore the full space over
     time.
 
-## Visual Intuition
+## **Visual Intuition**
 
 1. **Eigenvector Only**:
 
@@ -94,7 +94,7 @@ $\mathbf{v}_g$:
      richer motion, often creating a "shearing" or "sweeping" effect in the
      plane.
 
-## Summary
+## **Summary**
 
 Generalized eigenvectors allow us to fully capture the behavior of systems with
 repeated eigenvalues. They provide additional directions for the solution to

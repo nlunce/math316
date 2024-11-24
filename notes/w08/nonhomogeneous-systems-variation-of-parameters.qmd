@@ -27,11 +27,11 @@ preview:
   navigate: true
 ---
 
-## Overview
+## **Overview**
 
 When solving nonhomogeneous systems of differential equations, we use **variation of parameters** to find a particular solution to the system. This approach is especially useful when dealing with systems where a simple guess for the particular solution is not possible due to the nature of the nonhomogeneous term.
 
-## Variation of Parameters
+## **Variation of Parameters**
 
 Given a matrix $A$ of size $n \times n$ with constant entries, let $\Phi(t)$ be the **fundamental solution matrix** of the homogeneous system:
 
@@ -53,13 +53,13 @@ $$
 
 This result is an application of the **method of variation of parameters** for nonhomogeneous systems of differential equations.
 
-## Explanation
+## **Explanation**
 
 1. **Fundamental Solution Matrix** $\Phi(t)$: A matrix whose columns are linearly independent solutions to the homogeneous system $\mathbf{x}' = A \mathbf{x}$.
 2. **Nonhomogeneous Term** $\mathbf{b}(t)$: This is the vector function that adds a nonhomogeneous component to the system.
 3. **Particular Solution** $\mathbf{x}_p(t)$: This is the specific solution to the nonhomogeneous system, calculated using the formula above.
 
-## Formula Components
+## **Formula Components**
 
 - $\Phi(t)$: Fundamental solution matrix of the homogeneous system.
 - $\Phi^{-1}(t)$: Inverse of the fundamental solution matrix.
@@ -68,6 +68,6 @@ This result is an application of the **method of variation of parameters** for n
 
 This approach allows us to find a particular solution $\mathbf{x}_p(t)$ by integrating the transformed nonhomogeneous term. The total solution to the system is the sum of the general solution to the homogeneous system and this particular solution.
 
-## Summary
+## **Summary**
 
 The method of variation of parameters provides a systematic way to find a particular solution to nonhomogeneous systems of differential equations. By incorporating the fundamental solution matrix $\Phi(t)$, it enables us to account for the effects of the nonhomogeneous term $\mathbf{b}(t)$ and obtain a complete solution to the system.

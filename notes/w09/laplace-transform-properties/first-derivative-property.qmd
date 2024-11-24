@@ -40,7 +40,7 @@ This theorem is widely used in solving differential equations with given initial
 
 ## **Proof**
 
-### Write the Laplace Transform of the Derivative
+### **Write the Laplace Transform of the Derivative**
 
 By definition, the Laplace transform of $f'(t)$ is:
 
@@ -48,7 +48,7 @@ $$
 \mathcal{L}[f'(t)] = \int_0^\infty f'(t) e^{-st} \, dt
 $$
 
-### Apply Integration by Parts
+### **Apply Integration by Parts**
 
 The integration by parts formula is given by:
 
@@ -67,7 +67,7 @@ $$
 \int_0^\infty f'(t) e^{-st} \, dt = \left[ f(t) e^{-st} \right]_0^\infty - \int_0^\infty f(t)(-s e^{-st}) \, dt
 $$
 
-### Evaluate the Boundary Terms
+### **Evaluate the Boundary Terms**
 
 1. At $t = \infty$, $f(t) e^{-st} \to 0$, assuming $f(t)$ grows no faster than an exponential function.
 2. At $t = 0$, $f(t) e^{-s(0)} = f(0)$.
@@ -78,7 +78,7 @@ $$
 \left[ f(t) e^{-st} \right]_0^\infty = -f(0)
 $$
 
-### Simplify the Remaining Integral
+### **Simplify the Remaining Integral**
 
 The remaining integral is:
 
@@ -92,7 +92,7 @@ $$
 s \mathcal{L}[f(t)]
 $$
 
-### Combine Results
+### **Combine Results**
 
 Substituting the results back into the equation:
 
@@ -106,7 +106,7 @@ $$
 \mathcal{L}[f'(t)] = s\mathcal{L}[f(t)] - f(0)
 $$
 
-### Conclusion
+### **Conclusion**
 
 The proof demonstrates that:
 
@@ -154,7 +154,7 @@ To extend the property to $g'(t) = f''(t)$:
    \mathcal{L}[f''(t)] = s^2\mathcal{L}[f(t)] - sf(0) - f'(0)
    $$
 
-### Example Application
+### **Example Application**
 
 For $f(t) = t^2$, with $f'(t) = 2t$, $f''(t) = 2$, and $f(0) = 0$, $f'(0) = 0$:
 
