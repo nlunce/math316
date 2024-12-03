@@ -4869,14 +4869,14 @@ window.Quarto = {
 <section id="proof" class="level2">
 <h2 class="anchored" data-anchor-id="proof"><strong>Proof</strong></h2>
 <section id="write-the-laplace-transform-of-the-derivative" class="level3">
-<h3 class="anchored" data-anchor-id="write-the-laplace-transform-of-the-derivative">Write the Laplace Transform of the Derivative</h3>
+<h3 class="anchored" data-anchor-id="write-the-laplace-transform-of-the-derivative"><strong>Write the Laplace Transform of the Derivative</strong></h3>
 <p>By definition, the Laplace transform of <span class="math inline">f&#39;(t)</span> is:</p>
 <p><span class="math display">
 \mathcal{L}[f&#39;(t)] = \int_0^\infty f&#39;(t) e^{-st} \, dt
 </span></p>
 </section>
 <section id="apply-integration-by-parts" class="level3">
-<h3 class="anchored" data-anchor-id="apply-integration-by-parts">Apply Integration by Parts</h3>
+<h3 class="anchored" data-anchor-id="apply-integration-by-parts"><strong>Apply Integration by Parts</strong></h3>
 <p>The integration by parts formula is given by:</p>
 <p><span class="math display">
 \int u \, dv = uv - \int v \, du
@@ -4892,7 +4892,7 @@ window.Quarto = {
 </span></p>
 </section>
 <section id="evaluate-the-boundary-terms" class="level3">
-<h3 class="anchored" data-anchor-id="evaluate-the-boundary-terms">Evaluate the Boundary Terms</h3>
+<h3 class="anchored" data-anchor-id="evaluate-the-boundary-terms"><strong>Evaluate the Boundary Terms</strong></h3>
 <ol type="1">
 <li>At <span class="math inline">t = \infty</span>, <span class="math inline">f(t) e^{-st} \to 0</span>, assuming <span class="math inline">f(t)</span> grows no faster than an exponential function.</li>
 <li>At <span class="math inline">t = 0</span>, <span class="math inline">f(t) e^{-s(0)} = f(0)</span>.</li>
@@ -4903,7 +4903,7 @@ window.Quarto = {
 </span></p>
 </section>
 <section id="simplify-the-remaining-integral" class="level3">
-<h3 class="anchored" data-anchor-id="simplify-the-remaining-integral">Simplify the Remaining Integral</h3>
+<h3 class="anchored" data-anchor-id="simplify-the-remaining-integral"><strong>Simplify the Remaining Integral</strong></h3>
 <p>The remaining integral is:</p>
 <p><span class="math display">
 \int_0^\infty s f(t) e^{-st} \, dt = s \int_0^\infty f(t) e^{-st} \, dt
@@ -4914,7 +4914,7 @@ s \mathcal{L}[f(t)]
 </span></p>
 </section>
 <section id="combine-results" class="level3">
-<h3 class="anchored" data-anchor-id="combine-results">Combine Results</h3>
+<h3 class="anchored" data-anchor-id="combine-results"><strong>Combine Results</strong></h3>
 <p>Substituting the results back into the equation:</p>
 <p><span class="math display">
 \mathcal{L}[f&#39;(t)] = -f(0) + s \mathcal{L}[f(t)]
@@ -4925,7 +4925,7 @@ s \mathcal{L}[f(t)]
 </span></p>
 </section>
 <section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<h3 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h3>
 <p>The proof demonstrates that:</p>
 <p><span class="math display">
 \mathcal{L}[f&#39;(t)] = s\mathcal{L}[f(t)] - f(0)
@@ -4962,7 +4962,7 @@ s \mathcal{L}[f(t)]
 </span></p></li>
 </ol>
 <section id="example-application" class="level3">
-<h3 class="anchored" data-anchor-id="example-application">Example Application</h3>
+<h3 class="anchored" data-anchor-id="example-application"><strong>Example Application</strong></h3>
 <p>For <span class="math inline">f(t) = t^2</span>, with <span class="math inline">f&#39;(t) = 2t</span>, <span class="math inline">f&#39;&#39;(t) = 2</span>, and <span class="math inline">f(0) = 0</span>, <span class="math inline">f&#39;(0) = 0</span>:</p>
 <ol type="1">
 <li><p>Compute <span class="math inline">\mathcal{L}[f(t)] = \frac{2}{s^3}</span>.</p></li>

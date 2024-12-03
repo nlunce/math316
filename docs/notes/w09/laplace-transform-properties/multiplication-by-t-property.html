@@ -4878,7 +4878,7 @@ window.Quarto = {
 <section id="proof" class="level2">
 <h2 class="anchored" data-anchor-id="proof"><strong>Proof</strong></h2>
 <section id="write-the-laplace-transform" class="level3">
-<h3 class="anchored" data-anchor-id="write-the-laplace-transform">Write the Laplace Transform</h3>
+<h3 class="anchored" data-anchor-id="write-the-laplace-transform"><strong>Write the Laplace Transform</strong></h3>
 <p>The Laplace transform of <span class="math inline">f(t)</span> is defined as:</p>
 <p><span class="math display">
 F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
@@ -4889,14 +4889,14 @@ F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
 </span></p>
 </section>
 <section id="apply-leibnizs-rule" class="level3">
-<h3 class="anchored" data-anchor-id="apply-leibnizs-rule">Apply Leibniz’s Rule</h3>
+<h3 class="anchored" data-anchor-id="apply-leibnizs-rule"><strong>Apply Leibniz’s Rule</strong></h3>
 <p>Let <span class="math inline">K(s, t) = f(t) e^{-st}</span>. Using Leibniz’s rule, the derivative of <span class="math inline">F(s)</span> with respect to <span class="math inline">s</span> is:</p>
 <p><span class="math display">
 \frac{d}{ds} F(s) = \frac{d}{ds} \int_0^\infty f(t) e^{-st} \, dt = \int_0^\infty \frac{\partial}{\partial s} \big[f(t) e^{-st}\big] \, dt
 </span></p>
 </section>
 <section id="differentiate-inside-the-integral" class="level3">
-<h3 class="anchored" data-anchor-id="differentiate-inside-the-integral">Differentiate Inside the Integral</h3>
+<h3 class="anchored" data-anchor-id="differentiate-inside-the-integral"><strong>Differentiate Inside the Integral</strong></h3>
 <p>The partial derivative of <span class="math inline">f(t) e^{-st}</span> with respect to <span class="math inline">s</span> is:</p>
 <p><span class="math display">
 \frac{\partial}{\partial s} \big[f(t) e^{-st}\big] = -t f(t) e^{-st}
@@ -4907,7 +4907,7 @@ F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
 </span></p>
 </section>
 <section id="recognize-the-laplace-transform" class="level3">
-<h3 class="anchored" data-anchor-id="recognize-the-laplace-transform">Recognize the Laplace Transform</h3>
+<h3 class="anchored" data-anchor-id="recognize-the-laplace-transform"><strong>Recognize the Laplace Transform</strong></h3>
 <p>The integral on the right-hand side is the definition of <span class="math inline">\mathcal{L}[tf(t)]</span>. Therefore:</p>
 <p><span class="math display">
 \frac{d}{ds} F(s) = -\mathcal{L}[tf(t)]
@@ -4918,7 +4918,7 @@ F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
 </span></p>
 </section>
 <section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<h3 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h3>
 <p>The proof demonstrates that:</p>
 <p><span class="math display">
 \mathcal{L}[tf(t)] = -\frac{d}{ds} \mathcal{L}[f(t)]
@@ -4933,7 +4933,7 @@ F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
 </span></p>
 <p>where <span class="math inline">F^{(n)}(s)</span> is the <span class="math inline">n</span>-th derivative of <span class="math inline">F(s)</span>. This property generalizes the Multiplication by <span class="math inline">t</span> Property to higher powers of <span class="math inline">t</span>.</p>
 <section id="demonstration" class="level3">
-<h3 class="anchored" data-anchor-id="demonstration">Demonstration</h3>
+<h3 class="anchored" data-anchor-id="demonstration"><strong>Demonstration</strong></h3>
 <p>To demonstrate the corollary for <span class="math inline">n = 2</span>, consider <span class="math inline">t^2 f(t)</span>:</p>
 <ol type="1">
 <li><p>Apply Theorem 5.3.2 for <span class="math inline">tf(t)</span>:</p>
@@ -4955,7 +4955,7 @@ F(s) = \mathcal{L}[f(t)] = \int_0^\infty f(t) e^{-st} \, dt
 </ol>
 </section>
 <section id="general-case" class="level3">
-<h3 class="anchored" data-anchor-id="general-case">General Case</h3>
+<h3 class="anchored" data-anchor-id="general-case"><strong>General Case</strong></h3>
 <p>The process can be repeated for any positive integer <span class="math inline">n</span> to show that:</p>
 <p><span class="math display">
 \mathcal{L}[t^n f(t)] = (-1)^n F^{(n)}(s)

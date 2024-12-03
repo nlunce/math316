@@ -4822,23 +4822,23 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><strong>Definition</strong></a>
   <ul class="collapse">
-  <li><a href="#key-requirements" id="toc-key-requirements" class="nav-link" data-scroll-target="#key-requirements">Key Requirements:</a></li>
+  <li><a href="#key-requirements" id="toc-key-requirements" class="nav-link" data-scroll-target="#key-requirements"><strong>Key Requirements:</strong></a></li>
   </ul></li>
-  <li><a href="#example-1-transform-of-ft-1" id="toc-example-1-transform-of-ft-1" class="nav-link" data-scroll-target="#example-1-transform-of-ft-1">Example 1: Transform of <span class="math inline">f(t) = 1</span></a>
+  <li><a href="#example-1-transform-of-ft-1" id="toc-example-1-transform-of-ft-1" class="nav-link" data-scroll-target="#example-1-transform-of-ft-1"><strong>Example 1: Transform of <span class="math inline">f(t) = 1</span></strong></a>
   <ul class="collapse">
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution:</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><strong>Solution:</strong></a></li>
   </ul></li>
-  <li><a href="#example-2-transform-of-ft-eat" id="toc-example-2-transform-of-ft-eat" class="nav-link" data-scroll-target="#example-2-transform-of-ft-eat">Example 2: Transform of <span class="math inline">f(t) = e^{at}</span></a>
+  <li><a href="#example-2-transform-of-ft-eat" id="toc-example-2-transform-of-ft-eat" class="nav-link" data-scroll-target="#example-2-transform-of-ft-eat"><strong>Example 2: Transform of <span class="math inline">f(t) = e^{at}</span></strong></a>
   <ul class="collapse">
-  <li><a href="#solution-1" id="toc-solution-1" class="nav-link" data-scroll-target="#solution-1">Solution:</a></li>
+  <li><a href="#solution-1" id="toc-solution-1" class="nav-link" data-scroll-target="#solution-1"><strong>Solution:</strong></a></li>
   </ul></li>
-  <li><a href="#applications-of-the-laplace-transform" id="toc-applications-of-the-laplace-transform" class="nav-link" data-scroll-target="#applications-of-the-laplace-transform">Applications of the Laplace Transform</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <li><a href="#applications-of-the-laplace-transform" id="toc-applications-of-the-laplace-transform" class="nav-link" data-scroll-target="#applications-of-the-laplace-transform"><strong>Applications of the Laplace Transform</strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a>
   <ul class="collapse">
-  <li><a href="#common-transforms-recap" id="toc-common-transforms-recap" class="nav-link" data-scroll-target="#common-transforms-recap">Common Transforms Recap:</a></li>
+  <li><a href="#common-transforms-recap" id="toc-common-transforms-recap" class="nav-link" data-scroll-target="#common-transforms-recap"><strong>Common Transforms Recap:</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -4872,7 +4872,7 @@ window.Quarto = {
 
 
 <section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<h2 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h2>
 <p>The <strong>Laplace Transform</strong> is a powerful mathematical tool used to simplify problems involving differential equations, especially in engineering and physics. It converts a function of time <span class="math inline">f(t)</span> (defined for <span class="math inline">t \geq 0</span>) into a function of a complex variable <span class="math inline">s</span>. This transformation makes it easier to analyze systems in the frequency domain and solve problems involving linear differential equations.</p>
 <p>In simple terms:</p>
 <ul>
@@ -4881,10 +4881,10 @@ window.Quarto = {
 </ul>
 </section>
 <section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<h2 class="anchored" data-anchor-id="definition"><strong>Definition</strong></h2>
 <p>The Laplace Transform of a function <span class="math inline">f(t)</span> is defined as:</p>
 <p><span class="math display">
-\mathcal{L}\{f(t)\}(s) = F(s) = \int_0^\infty e^{-st} f(t) \, dt,
+\mathcal{L}\{f(t)\}(s) = F(s) = \int_0^\infty e^{-st} f(t) \, dt
 </span></p>
 <p>where:</p>
 <ul>
@@ -4893,7 +4893,7 @@ window.Quarto = {
 <li><span class="math inline">e^{-st}</span>: Exponential decay term.</li>
 </ul>
 <section id="key-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="key-requirements">Key Requirements:</h3>
+<h3 class="anchored" data-anchor-id="key-requirements"><strong>Key Requirements:</strong></h3>
 <ol type="1">
 <li><span class="math inline">f(t)</span> must be <strong>piecewise continuous</strong> on <span class="math inline">[0, \infty)</span>.</li>
 <li><span class="math inline">f(t)</span> must be of <strong>exponential order</strong> (i.e., <span class="math inline">|f(t)| \leq M e^{\alpha t}</span> for some <span class="math inline">M, \alpha &gt; 0</span>).</li>
@@ -4901,42 +4901,42 @@ window.Quarto = {
 </section>
 </section>
 <section id="example-1-transform-of-ft-1" class="level2">
-<h2 class="anchored" data-anchor-id="example-1-transform-of-ft-1">Example 1: Transform of <span class="math inline">f(t) = 1</span></h2>
+<h2 class="anchored" data-anchor-id="example-1-transform-of-ft-1"><strong>Example 1: Transform of <span class="math inline">f(t) = 1</span></strong></h2>
 <p>The Laplace Transform of the constant function <span class="math inline">f(t) = 1</span> is:</p>
 <p><span class="math display">
-\mathcal{L}\{1\}(s) = \int_0^\infty e^{-st} \cdot 1 \, dt.
+\mathcal{L}\{1\}(s) = \int_0^\infty e^{-st} \cdot 1 \, dt
 </span></p>
 <section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution"><strong>Solution:</strong></h3>
 <p><span class="math display">
-\mathcal{L}\{1\}(s) = \int_0^\infty e^{-st} \, dt = \left[ \frac{-1}{s} e^{-st} \right]_0^\infty.
+\mathcal{L}\{1\}(s) = \int_0^\infty e^{-st} \, dt = \left[ \frac{-1}{s} e^{-st} \right]_0^\infty
 </span></p>
 <p>At <span class="math inline">t = \infty</span>, <span class="math inline">e^{-st} \to 0</span> (for <span class="math inline">s &gt; 0</span>), and at <span class="math inline">t = 0</span>, <span class="math inline">e^{-st} = 1</span>. Therefore:</p>
 <p><span class="math display">
-\mathcal{L}\{1\}(s) = \frac{1}{s}, \quad s &gt; 0.
+\mathcal{L}\{1\}(s) = \frac{1}{s}, \quad s &gt; 0
 </span></p>
 </section>
 </section>
 <section id="example-2-transform-of-ft-eat" class="level2">
-<h2 class="anchored" data-anchor-id="example-2-transform-of-ft-eat">Example 2: Transform of <span class="math inline">f(t) = e^{at}</span></h2>
+<h2 class="anchored" data-anchor-id="example-2-transform-of-ft-eat"><strong>Example 2: Transform of <span class="math inline">f(t) = e^{at}</span></strong></h2>
 <p>The Laplace Transform of <span class="math inline">f(t) = e^{at}</span> is:</p>
 <p><span class="math display">
-\mathcal{L}\{e^{at}\}(s) = \int_0^\infty e^{-st} e^{at} \, dt = \int_0^\infty e^{-(s-a)t} \, dt.
+\mathcal{L}\{e^{at}\}(s) = \int_0^\infty e^{-st} e^{at} \, dt = \int_0^\infty e^{-(s-a)t} \, dt
 </span></p>
 <section id="solution-1" class="level3">
-<h3 class="anchored" data-anchor-id="solution-1">Solution:</h3>
+<h3 class="anchored" data-anchor-id="solution-1"><strong>Solution:</strong></h3>
 <p>Using the same steps as before:</p>
 <p><span class="math display">
 \mathcal{L}\{e^{at}\}(s) = \left[ \frac{-1}{s-a} e^{-(s-a)t} \right]_0^\infty.
 </span></p>
-<p>At <span class="math inline">t = \infty</span>, <span class="math inline">e^{-(s-a)t} \to 0</span> if <span class="math inline">s &gt; a</span>, and at <span class="math inline">t = 0</span>, <span class="math inline">e^{-(s-a)t} = 1</span>. Therefore:</p>
+<p>At <span class="math inline">t = \infty, e^{-(s-a)t} \to 0</span> if <span class="math inline">s &gt; a</span>, and at <span class="math inline">t = 0</span>, <span class="math inline">e^{-(s-a)t} = 1</span>. Therefore:</p>
 <p><span class="math display">
-\mathcal{L}\{e^{at}\}(s) = \frac{1}{s - a}, \quad s &gt; a.
+\mathcal{L}\{e^{at}\}(s) = \frac{1}{s - a}, \quad s &gt; a
 </span></p>
 </section>
 </section>
 <section id="applications-of-the-laplace-transform" class="level2">
-<h2 class="anchored" data-anchor-id="applications-of-the-laplace-transform">Applications of the Laplace Transform</h2>
+<h2 class="anchored" data-anchor-id="applications-of-the-laplace-transform"><strong>Applications of the Laplace Transform</strong></h2>
 <ol type="1">
 <li><p><strong>Solving Differential Equations</strong>: The Laplace Transform converts differential equations into algebraic equations, which are easier to solve. Once solved, the inverse Laplace Transform is used to return to the time domain.</p></li>
 <li><p><strong>Control Systems</strong>: It is widely used in engineering to analyze the stability and performance of systems in the frequency domain.</p></li>
@@ -4945,7 +4945,7 @@ window.Quarto = {
 </ol>
 </section>
 <section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
 <p>The Laplace Transform is a fundamental tool for solving problems in engineering and physics, particularly those involving differential equations. Its key features are:</p>
 <ol type="1">
 <li>Transforming functions from the time domain to the <span class="math inline">s</span>-domain.</li>
@@ -4953,7 +4953,7 @@ window.Quarto = {
 <li>Making it possible to analyze systems in the frequency domain.</li>
 </ol>
 <section id="common-transforms-recap" class="level3">
-<h3 class="anchored" data-anchor-id="common-transforms-recap">Common Transforms Recap:</h3>
+<h3 class="anchored" data-anchor-id="common-transforms-recap"><strong>Common Transforms Recap:</strong></h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
