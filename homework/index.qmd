@@ -134,4 +134,8 @@ preview:
         <a href="./hw08/hw08-11-19-24.html">HOMEWORK 08</a>
         <div class="homework-section">Sections: None specified</div>
     </li>
+    <li class="homework-item">
+        <a href="./hw09/hw09-12-07-24.html">HOMEWORK 09</a>
+        <div class="homework-section">Sections: 5.5 - 5.6, 8.2 - 8.3</div>
+    </li>
 </ul>
