@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>NOTES – MATH316</title>
+<title>Quick Reference: Important Power Series Expansions – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1668,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
+<meta name="quarto:offset" content="../../../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4707,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4718,7 +4778,7 @@ vertical-align: -.125em;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -4729,19 +4789,19 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -4762,10 +4822,17 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#week-07" id="toc-week-07" class="nav-link active" data-scroll-target="#week-07">WEEK 07</a></li>
-  <li><a href="#week-08" id="toc-week-08" class="nav-link" data-scroll-target="#week-08">WEEK 08</a></li>
-  <li><a href="#week-09" id="toc-week-09" class="nav-link" data-scroll-target="#week-09">WEEK 09</a></li>
-  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">WEEK 10</a></li>
+  <li><a href="#quick-reference-important-power-series-expansions" id="toc-quick-reference-important-power-series-expansions" class="nav-link active" data-scroll-target="#quick-reference-important-power-series-expansions"><strong>Quick Reference: Important Power Series Expansions</strong></a>
+  <ul class="collapse">
+  <li><a href="#exponential-function-ex" id="toc-exponential-function-ex" class="nav-link" data-scroll-target="#exponential-function-ex"><strong>1. Exponential Function <span class="math inline">e^x</span></strong></a></li>
+  <li><a href="#sine-function-sinx" id="toc-sine-function-sinx" class="nav-link" data-scroll-target="#sine-function-sinx"><strong>2. Sine Function <span class="math inline">\sin(x)</span></strong></a></li>
+  <li><a href="#cosine-function-cosx" id="toc-cosine-function-cosx" class="nav-link" data-scroll-target="#cosine-function-cosx"><strong>3. Cosine Function <span class="math inline">\cos(x)</span></strong></a></li>
+  <li><a href="#geometric-series-frac11-x" id="toc-geometric-series-frac11-x" class="nav-link" data-scroll-target="#geometric-series-frac11-x"><strong>4. Geometric Series <span class="math inline">\frac{1}{1-x}</span></strong></a></li>
+  <li><a href="#natural-logarithm-ln1x" id="toc-natural-logarithm-ln1x" class="nav-link" data-scroll-target="#natural-logarithm-ln1x"><strong>5. Natural Logarithm <span class="math inline">\ln(1+x)</span></strong></a></li>
+  <li><a href="#arctangent-function-arctanx" id="toc-arctangent-function-arctanx" class="nav-link" data-scroll-target="#arctangent-function-arctanx"><strong>6. Arctangent Function <span class="math inline">\arctan(x)</span></strong></a></li>
+  <li><a href="#binomial-series-1xk" id="toc-binomial-series-1xk" class="nav-link" data-scroll-target="#binomial-series-1xk"><strong>7. Binomial Series <span class="math inline">(1+x)^k</span></strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -4774,13 +4841,19 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTES</h1>
+<h1 class="title">Quick Reference: Important Power Series Expansions</h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -4791,36 +4864,108 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="week-07" class="level2">
-<h2 class="anchored" data-anchor-id="week-07">WEEK 07</h2>
-<ul>
-<li><a href="./w07/generalized-eigenvectors-DE.html">Generalized Eigenvectors in Differential Equations</a></li>
-<li><a href="./w07/stability-of-origin-2x2.html">Stability of the Origin in 2x2 Systems of Differential Equations</a></li>
-</ul>
+<section id="quick-reference-important-power-series-expansions" class="level1">
+<h1><strong>Quick Reference: Important Power Series Expansions</strong></h1>
+<p>This reference provides the most common and important power series expansions for rapid access. These series are fundamental in mathematics and appear in calculus, physics, and engineering applications.</p>
+<section id="exponential-function-ex" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-function-ex"><strong>1. Exponential Function <span class="math inline">e^x</span></strong></h2>
+<p><span class="math display">
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+e^x \approx 1 + x + \frac{x^2}{2} + \frac{x^3}{6}
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for all <span class="math inline">x</span>.</p>
 </section>
-<section id="week-08" class="level2">
-<h2 class="anchored" data-anchor-id="week-08">WEEK 08</h2>
-<ul>
-<li><a href="./w08/nonhomogeneous-systems-undetermined-coefficients.html">Nonhomogeneous Systems: Undetermined Coefficients</a></li>
-<li><a href="./w08/nonhomogeneous-systems-variation-of-parameters.html">Nonhomogeneous Systems: Variation of Parameters</a></li>
-</ul>
+<section id="sine-function-sinx" class="level2">
+<h2 class="anchored" data-anchor-id="sine-function-sinx"><strong>2. Sine Function <span class="math inline">\sin(x)</span></strong></h2>
+<p><span class="math display">
+\sin(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} x^{2n+1}
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+\sin(x) \approx x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{5040}
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for all <span class="math inline">x</span>.</p>
 </section>
-<section id="week-09" class="level2">
-<h2 class="anchored" data-anchor-id="week-09">WEEK 09</h2>
-<ul>
-<li><a href="./w09/exponential-order.html">Exponential Order</a></li>
-<li><a href="./w09/laplace-transforms.html">Laplace Transforms</a></li>
-<li><a href="./w09/laplace-transform-properties/index.html">Properties of the Laplace Transform</a></li>
-</ul>
+<section id="cosine-function-cosx" class="level2">
+<h2 class="anchored" data-anchor-id="cosine-function-cosx"><strong>3. Cosine Function <span class="math inline">\cos(x)</span></strong></h2>
+<p><span class="math display">
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} x^{2n}
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+\cos(x) \approx 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for all <span class="math inline">x</span>.</p>
 </section>
-<section id="week-10" class="level2">
-<h2 class="anchored" data-anchor-id="week-10">WEEK 10</h2>
+<section id="geometric-series-frac11-x" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-series-frac11-x"><strong>4. Geometric Series <span class="math inline">\frac{1}{1-x}</span></strong></h2>
+<p><span class="math display">
+\frac{1}{1-x} = \sum_{n=0}^\infty x^n, \quad |x| &lt; 1
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+\frac{1}{1-x} \approx 1 + x + x^2 + x^3
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for <span class="math inline">|x| &lt; 1</span>.</p>
+</section>
+<section id="natural-logarithm-ln1x" class="level2">
+<h2 class="anchored" data-anchor-id="natural-logarithm-ln1x"><strong>5. Natural Logarithm <span class="math inline">\ln(1+x)</span></strong></h2>
+<p><span class="math display">
+\ln(1+x) = \sum_{n=1}^\infty (-1)^{n+1} \frac{x^n}{n}, \quad |x| &lt; 1
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+\ln(1+x) \approx x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4}
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for <span class="math inline">|x| &lt; 1</span>.</p>
+</section>
+<section id="arctangent-function-arctanx" class="level2">
+<h2 class="anchored" data-anchor-id="arctangent-function-arctanx"><strong>6. Arctangent Function <span class="math inline">\arctan(x)</span></strong></h2>
+<p><span class="math display">
+\arctan(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{2n+1}, \quad |x| \leq 1
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+\arctan(x) \approx x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7}
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for <span class="math inline">|x| \leq 1</span>.</p>
+</section>
+<section id="binomial-series-1xk" class="level2">
+<h2 class="anchored" data-anchor-id="binomial-series-1xk"><strong>7. Binomial Series <span class="math inline">(1+x)^k</span></strong></h2>
+<p><span class="math display">
+(1+x)^k = \sum_{n=0}^\infty \binom{k}{n} x^n, \quad |x| &lt; 1
+</span></p>
+<p>Where:</p>
+<p><span class="math display">
+\binom{k}{n} = \frac{k(k-1)(k-2)\cdots(k-n+1)}{n!}
+</span></p>
+<p><strong>First Four Terms:</strong></p>
+<p><span class="math display">
+(1+x)^k \approx 1 + kx + \frac{k(k-1)}{2}x^2 + \frac{k(k-1)(k-2)}{6}x^3
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p>Converges for <span class="math inline">|x| &lt; 1</span> unless <span class="math inline">k</span> is a non-negative integer, in which case it converges for all <span class="math inline">x</span>.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
+<p>This collection of power series expansions provides a quick reference for commonly used functions:</p>
 <ul>
-<li><a href="./w10/tests-for-series.html">Summary of Tests for Series</a></li>
-<li><a href="./w10/power-series/index.html">Power Series</a></li>
+<li><strong>Universal:</strong> <span class="math inline">e^x, \sin(x), \cos(x)</span> converge for all <span class="math inline">x</span>.</li>
+<li><strong>Restricted Radius:</strong> <span class="math inline">\frac{1}{1-x}, \ln(1+x), \arctan(x), (1+x)^k</span> converge only for <span class="math inline">|x| &lt; 1</span> or specific conditions.</li>
 </ul>
+<p>These expansions are critical tools in analysis, numerical computation, and approximations.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

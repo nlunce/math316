@@ -41,3 +41,8 @@ preview:
 - [Exponential Order](./w09/exponential-order.html)
 - [Laplace Transforms](./w09/laplace-transforms.html)
 - [Properties of the Laplace Transform](./w09/laplace-transform-properties/index.html)
+
+## WEEK 10
+
+- [Summary of Tests for Series](./w10/tests-for-series.html)
+- [Power Series](./w10/power-series/index.html)

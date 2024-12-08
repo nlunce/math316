@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>NOTES – MATH316</title>
+<title>Power Series Expansion for Cosine Function – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1668,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
+<meta name="quarto:offset" content="../../../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4707,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4718,7 +4778,7 @@ vertical-align: -.125em;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -4729,19 +4789,19 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -4762,10 +4822,11 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#week-07" id="toc-week-07" class="nav-link active" data-scroll-target="#week-07">WEEK 07</a></li>
-  <li><a href="#week-08" id="toc-week-08" class="nav-link" data-scroll-target="#week-08">WEEK 08</a></li>
-  <li><a href="#week-09" id="toc-week-09" class="nav-link" data-scroll-target="#week-09">WEEK 09</a></li>
-  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">WEEK 10</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
+  <li><a href="#power-series-for-cosine" id="toc-power-series-for-cosine" class="nav-link" data-scroll-target="#power-series-for-cosine"><strong>Power Series for Cosine</strong></a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation"><strong>Explanation</strong></a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><strong>Examples</strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -4774,13 +4835,19 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTES</h1>
+<h1 class="title">Power Series Expansion for Cosine Function</h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -4791,34 +4858,80 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="week-07" class="level2">
-<h2 class="anchored" data-anchor-id="week-07">WEEK 07</h2>
-<ul>
-<li><a href="./w07/generalized-eigenvectors-DE.html">Generalized Eigenvectors in Differential Equations</a></li>
-<li><a href="./w07/stability-of-origin-2x2.html">Stability of the Origin in 2x2 Systems of Differential Equations</a></li>
-</ul>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h2>
+<p>The <strong>power series expansion</strong> is a fundamental tool for representing functions as infinite sums. For the cosine function, this expansion provides an exact representation and a practical way to approximate <span class="math inline">\cos(x)</span> for any real value of <span class="math inline">x</span>. The series is derived using the Taylor series centered at <span class="math inline">x = 0</span>.</p>
 </section>
-<section id="week-08" class="level2">
-<h2 class="anchored" data-anchor-id="week-08">WEEK 08</h2>
-<ul>
-<li><a href="./w08/nonhomogeneous-systems-undetermined-coefficients.html">Nonhomogeneous Systems: Undetermined Coefficients</a></li>
-<li><a href="./w08/nonhomogeneous-systems-variation-of-parameters.html">Nonhomogeneous Systems: Variation of Parameters</a></li>
-</ul>
+<section id="power-series-for-cosine" class="level2">
+<h2 class="anchored" data-anchor-id="power-series-for-cosine"><strong>Power Series for Cosine</strong></h2>
+<p>The cosine function can be expressed as:</p>
+<p><span class="math display">
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} x^{2n}
+</span></p>
+<p>This series converges to the true value of <span class="math inline">\cos(x)</span> for all <span class="math inline">x</span>. The first four terms of the series are:</p>
+<p><span class="math display">
+\cos(x) \approx 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!}
+</span></p>
+<p>which simplifies to:</p>
+<p><span class="math display">
+\cos(x) \approx 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}
+</span></p>
 </section>
-<section id="week-09" class="level2">
-<h2 class="anchored" data-anchor-id="week-09">WEEK 09</h2>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation"><strong>Explanation</strong></h2>
+<section id="taylor-series" class="level3">
+<h3 class="anchored" data-anchor-id="taylor-series"><strong>1. Taylor Series</strong></h3>
+<p>The power series for <span class="math inline">\cos(x)</span> is a special case of the Taylor series expansion about <span class="math inline">x = 0</span>:</p>
+<p><span class="math display">
+f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 + \frac{f^{(3)}(0)}{3!}x^3 + \cdots
+</span></p>
+<p>For <span class="math inline">\cos(x)</span>, the derivatives follow a cyclic pattern:</p>
 <ul>
-<li><a href="./w09/exponential-order.html">Exponential Order</a></li>
-<li><a href="./w09/laplace-transforms.html">Laplace Transforms</a></li>
-<li><a href="./w09/laplace-transform-properties/index.html">Properties of the Laplace Transform</a></li>
+<li><span class="math inline">\cos(x)</span></li>
+<li><span class="math inline">-\sin(x)</span></li>
+<li><span class="math inline">-\cos(x)</span></li>
+<li><span class="math inline">\sin(x)</span></li>
 </ul>
+<p>Evaluating these derivatives at <span class="math inline">x = 0</span>:</p>
+<ul>
+<li><span class="math inline">\cos(0) = 1</span></li>
+<li><span class="math inline">-\sin(0) = 0</span></li>
+<li><span class="math inline">-\cos(0) = -1</span></li>
+<li><span class="math inline">\sin(0) = 0</span></li>
+</ul>
+<p>Only the even derivatives contribute to the series.</p>
 </section>
-<section id="week-10" class="level2">
-<h2 class="anchored" data-anchor-id="week-10">WEEK 10</h2>
+<section id="general-term" class="level3">
+<h3 class="anchored" data-anchor-id="general-term"><strong>2. General Term</strong></h3>
+<p>The general term of the series is:</p>
+<p><span class="math display">
+\frac{(-1)^n}{(2n)!} x^{2n}
+</span></p>
+<p>where <span class="math inline">n</span> is a non-negative integer. This results in a series with only even powers of <span class="math inline">x</span>, alternating in sign.</p>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples"><strong>Examples</strong></h2>
+<ol type="1">
+<li><p><strong>Small <span class="math inline">x</span>:</strong><br>
+For <span class="math inline">x = 0.1</span>, using the first four terms:</p>
+<p><span class="math display">
+\cos(0.1) \approx 1 - \frac{(0.1)^2}{2} + \frac{(0.1)^4}{24} - \frac{(0.1)^6}{720}
+</span></p>
+<p>This gives a close approximation to the true value of <span class="math inline">\cos(0.1)</span>.</p></li>
+<li><p><strong>Error Reduction:</strong><br>
+Adding more terms improves the approximation by reducing the truncation error.</p></li>
+</ol>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
+<p>The power series expansion for <span class="math inline">\cos(x)</span> is an essential concept in calculus:</p>
 <ul>
-<li><a href="./w10/tests-for-series.html">Summary of Tests for Series</a></li>
-<li><a href="./w10/power-series/index.html">Power Series</a></li>
+<li><strong>Exact Representation:</strong> The series converges to <span class="math inline">\cos(x)</span> for all real <span class="math inline">x</span>.</li>
+<li><strong>Approximation:</strong> Truncated series provide practical approximations.</li>
+<li><strong>Applications:</strong> Used in numerical analysis, signal processing, and physics.</li>
 </ul>
+<p>The first four terms, <span class="math inline">1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}</span>, often provide sufficient accuracy for small <span class="math inline">x</span>. This compact yet precise representation highlights the elegance and utility of the power series.</p>
 
 
 </section>

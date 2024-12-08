@@ -369,3 +369,331 @@ $$
 
 :::
 :::
+
+# SECTION 8.2
+
+::: {.callout-tip}
+
+## **Assigned:** 1, 3, 5, 7, 18, 19
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.2.1
+
+### **Problem:**
+
+Determine the radius of convergence and interval of convergence for the power series:
+
+$$
+\sum_{n=1}^\infty \frac{t^n}{n}
+$$
+
+### **Solution:**
+
+#### **Apply the Ratio Test**
+
+The general term of the series is:
+
+$$
+a_n = \frac{t^n}{n}
+$$
+
+The Ratio Test involves evaluating the limit:
+
+$$
+L = \lim_{n \to \infty} \bigg| \frac{a_{n+1}}{a_n} \bigg|
+$$
+
+Substitute $a_n = \frac{t^n}{n}$ and $a_{n+1} = \frac{t^{n+1}}{n+1}$:
+
+$$
+\frac{a_{n+1}}{a_n} = \frac{\frac{t^{n+1}}{n+1}}{\frac{t^n}{n}} = \frac{t^{n+1}}{n+1} \cdot \frac{n}{t^n} = \frac{t \cdot n}{n+1}
+$$
+
+Take the limit as $n \to \infty$:
+
+$$
+L = \lim_{n \to \infty} \frac{t \cdot n}{n+1}
+$$
+
+Factor $n$ in the denominator:
+
+$$
+L = \lim_{n \to \infty} \frac{t}{1 + \frac{1}{n}}
+$$
+
+As $n \to \infty$, $\frac{1}{n} \to 0$, so:
+
+$$
+L = |t|
+$$
+
+#### **Convergence Criterion**
+
+The Ratio Test states that the series converges absolutely when:
+
+$$
+L < 1 \quad \longrightarrow \quad |t| < 1
+$$
+
+The series diverges when:
+
+$$
+L > 1 \quad \longrightarrow \quad |t| > 1
+$$
+
+Therefore, the radius of convergence is:
+
+$$
+R = 1
+$$
+
+#### **Endpoint Analysis**
+
+Test the behavior of the series at the endpoints $t = -1$ and $t = 1$.
+
+- **Case $t = 1$:**  
+  Substituting $t = 1$, the series becomes:
+
+  $$
+  \sum_{n=1}^\infty \frac{1}{n}
+  $$
+
+  which is the harmonic series. The harmonic series **diverges**.
+
+- **Case $t = -1$:**  
+  Substituting $t = -1$, the series becomes:
+
+  $$
+  \sum_{n=1}^\infty \frac{(-1)^n}{n}
+  $$
+
+  By the Alternating Series Test, this series **converges conditionally**.
+
+#### **Interval of Convergence**
+
+$$
+-1 \leq t < 1
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+**Radius of Convergence:**
+
+$$
+R = 1
+$$
+
+**Interval of Convergence:**
+
+$$
+-1 \leq t < 1
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.2.3
+
+### **Problem:**
+
+Determine the radius of convergence and interval of convergence for the power series:
+
+$$
+\sum_{n=1}^\infty \frac{n^2 (t - 2)^n}{5^n}
+$$
+
+### **Solution:**
+
+#### **Apply the Ratio Test**
+
+The general term of the series is:
+
+$$
+a_n = \frac{n^2 (t - 2)^n}{5^n}
+$$
+
+The Ratio Test involves evaluating the limit:
+
+$$
+L = \lim_{n \to \infty} \bigg| \frac{a_{n+1}}{a_n} \bigg|
+$$
+
+Substitute $a_n = \frac{n^2 (t - 2)^n}{5^n}$ and $a_{n+1} = \frac{(n+1)^2 (t - 2)^{n+1}}{5^{n+1}}$:
+
+$$
+\frac{\frac{(n+1)^2 (t - 2)^{n+1}}{5^{n+1}}}{\frac{n^2 (t - 2)^n}{5^n}} = \frac{(n+1)^2 (t - 2)^{n+1} \cdot 5^n}{n^2 (t - 2)^n \cdot 5^{n+1}}
+$$
+
+$$
+= \frac{(n+1)^2}{n^2} \cdot \frac{|t - 2|}{5}
+$$
+
+#### **Simplify the Limit**
+
+$$
+L = \lim_{n \to \infty} \frac{(n+1)^2}{n^2} \cdot \frac{|t - 2|}{5}
+$$
+
+Expand $(n+1)^2$ and divide by $n^2$:
+
+$$
+\frac{(n+1)^2}{n^2} = \frac{n^2 + 2n + 1}{n^2} = 1 + \frac{2}{n} + \frac{1}{n^2}
+$$
+
+As $n \to \infty$, $\frac{2}{n} \to 0$ and $\frac{1}{n^2} \to 0$, so:
+
+$$
+\lim_{n \to \infty} \frac{(n+1)^2}{n^2} = 1
+$$
+
+Therefore:
+
+$$
+L = \frac{|t - 2|}{5}
+$$
+
+#### **Convergence Criterion**
+
+The Ratio Test states that the series converges absolutely when:
+
+$$
+L < 1 \quad \longrightarrow \quad \frac{|t - 2|}{5} < 1
+$$
+
+Multiply through by $5$:
+
+$$
+|t - 2| < 5
+$$
+
+This inequality gives:
+
+$$
+-5 < t - 2 < 5
+$$
+
+Add $2$ to all sides:
+
+$$
+-3 < t < 7
+$$
+
+Thus, the radius of convergence is:
+
+$$
+R = 5
+$$
+
+#### **Endpoint Analysis**
+
+We now test the behavior of the series at the endpoints $t = -3$ and $t = 7$.
+
+- **Case $t = -3$:**  
+  Substituting $t = -3$, the series becomes:
+
+  $$
+  \sum_{n=1}^\infty \frac{n^2 (-1)^n}{1}
+  $$
+
+  This series does not converge because the terms $\frac{n^2 (-1)^n}{1}$ do not approach $0$ as $n \to \infty$.
+
+- **Case $t = 7$:**  
+  Substituting $t = 7$, the series becomes:
+  $$
+  \sum_{n=1}^\infty n^2
+  $$
+  This series diverges because $n^2$ grows without bound as $n \to \infty$.
+
+#### **Interval of Convergence**
+
+Since the series diverges at both endpoints, the interval of convergence is:
+
+$$
+-3 < t < 7
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+**Radius of Convergence:**
+
+$$
+R = 5
+$$
+
+**Interval of Convergence:**
+
+$$
+-3 < t < 7
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.2.5
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.2.7
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.2.18
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.2.19
+
+### **Problem:**
+
+### **Solution:**
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+:::
+:::

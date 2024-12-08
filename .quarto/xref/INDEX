@@ -112,5 +112,29 @@
   },
   "homework/hw09/hw09-12-07-24.qmd": {
     "hw09-12-07-24.html": "f2a890d1"
+  },
+  "notes/w10/dsf.qmd": {
+    "dsf.html": "f8d80a6e"
+  },
+  "notes/w10/tests-for-series.qmd": {
+    "tests-for-series.html": "341e0995"
+  },
+  "notes/w10/power-series/important-power-series-expansions.qmd": {
+    "important-power-series-expansions.html": "d684101f"
+  },
+  "notes/w10/power-series/index.qmd": {
+    "index.html": "9d81ad22"
+  },
+  "notes/w10/power-series/power-series-1-over-1-minus-x.qmd": {
+    "power-series-1-over-1-minus-x.html": "393b3b64"
+  },
+  "notes/w10/power-series/power-series-cosine-function.qmd": {
+    "power-series-cosine-function.html": "f4c11091"
+  },
+  "notes/w10/power-series/power-series-exponential-function.qmd": {
+    "power-series-exponential-function.html": "a38db7c5"
+  },
+  "notes/w10/power-series/power-series-sine-function.qmd": {
+    "power-series-sine-function.html": "13109122"
   }
 }

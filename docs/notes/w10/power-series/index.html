@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NOTES – MATH316</title>
+<title>POWER SERIES – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1667,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
+<meta name="quarto:offset" content="../../../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4707,6 +4707,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4718,7 +4777,7 @@ vertical-align: -.125em;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -4729,19 +4788,19 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -4757,29 +4816,20 @@ vertical-align: -.125em;
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#week-07" id="toc-week-07" class="nav-link active" data-scroll-target="#week-07">WEEK 07</a></li>
-  <li><a href="#week-08" id="toc-week-08" class="nav-link" data-scroll-target="#week-08">WEEK 08</a></li>
-  <li><a href="#week-09" id="toc-week-09" class="nav-link" data-scroll-target="#week-09">WEEK 09</a></li>
-  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">WEEK 10</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTES</h1>
+<h1 class="title">POWER SERIES</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -4791,37 +4841,15 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="week-07" class="level2">
-<h2 class="anchored" data-anchor-id="week-07">WEEK 07</h2>
 <ul>
-<li><a href="./w07/generalized-eigenvectors-DE.html">Generalized Eigenvectors in Differential Equations</a></li>
-<li><a href="./w07/stability-of-origin-2x2.html">Stability of the Origin in 2x2 Systems of Differential Equations</a></li>
-</ul>
-</section>
-<section id="week-08" class="level2">
-<h2 class="anchored" data-anchor-id="week-08">WEEK 08</h2>
-<ul>
-<li><a href="./w08/nonhomogeneous-systems-undetermined-coefficients.html">Nonhomogeneous Systems: Undetermined Coefficients</a></li>
-<li><a href="./w08/nonhomogeneous-systems-variation-of-parameters.html">Nonhomogeneous Systems: Variation of Parameters</a></li>
-</ul>
-</section>
-<section id="week-09" class="level2">
-<h2 class="anchored" data-anchor-id="week-09">WEEK 09</h2>
-<ul>
-<li><a href="./w09/exponential-order.html">Exponential Order</a></li>
-<li><a href="./w09/laplace-transforms.html">Laplace Transforms</a></li>
-<li><a href="./w09/laplace-transform-properties/index.html">Properties of the Laplace Transform</a></li>
-</ul>
-</section>
-<section id="week-10" class="level2">
-<h2 class="anchored" data-anchor-id="week-10">WEEK 10</h2>
-<ul>
-<li><a href="./w10/tests-for-series.html">Summary of Tests for Series</a></li>
-<li><a href="./w10/power-series/index.html">Power Series</a></li>
+<li><a href="./important-power-series-expansions.html">Quick Reference: Important Power Series Expansions</a></li>
+<li><a href="./power-series-cosine-function.html">Power Series Expansion for Cosine Function</a></li>
+<li><a href="./power-series-sine-function.html">Power Series Expansion for Sine Function</a></li>
+<li><a href="./power-series-exponential-function.html">Power Series Expansion for <span class="math inline">e^x</span></a></li>
+<li><a href="./power-series-1-over-1-minus-x.html">Power Series Expansion for <span class="math inline">\frac{1}{1-x}</span></a></li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

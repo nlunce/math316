@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nathan Lunceford">
 
-<title>NOTES – MATH316</title>
+<title>Summary of Tests for Series – MATH316</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1667,7 +1668,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
   return results;
 }
 </script>
-<meta name="quarto:offset" content="../">
+<meta name="quarto:offset" content="../../">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4707,6 +4708,65 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <style type="text/css"></style>
 </head>
@@ -4718,7 +4778,7 @@ vertical-align: -.125em;
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MATH316</span>
     </a>
   </div>
@@ -4729,19 +4789,19 @@ vertical-align: -.125em;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href=".././homework/index.html"> 
+    <a class="nav-link" href="../.././homework/index.html"> 
 <span class="menu-text">HOMEWORK</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././exam-practice/index.html"> 
+    <a class="nav-link" href="../.././exam-practice/index.html"> 
 <span class="menu-text">EXAM PRACTICE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././notes/index.html"> 
+    <a class="nav-link" href="../.././notes/index.html"> 
 <span class="menu-text">NOTES</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././index.html"> 
+    <a class="nav-link" href="../.././index.html"> 
 <span class="menu-text">SCHEDULE</span></a>
   </li>  
 </ul>
@@ -4757,30 +4817,27 @@ vertical-align: -.125em;
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#week-07" id="toc-week-07" class="nav-link active" data-scroll-target="#week-07">WEEK 07</a></li>
-  <li><a href="#week-08" id="toc-week-08" class="nav-link" data-scroll-target="#week-08">WEEK 08</a></li>
-  <li><a href="#week-09" id="toc-week-09" class="nav-link" data-scroll-target="#week-09">WEEK 09</a></li>
-  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">WEEK 10</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTES</h1>
+<h1 class="title">Summary of Tests for Series</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nathan Lunceford </p>
+          </div>
+  </div>
     
   
     
@@ -4791,37 +4848,215 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="week-07" class="level2">
-<h2 class="anchored" data-anchor-id="week-07">WEEK 07</h2>
-<ul>
-<li><a href="./w07/generalized-eigenvectors-DE.html">Generalized Eigenvectors in Differential Equations</a></li>
-<li><a href="./w07/stability-of-origin-2x2.html">Stability of the Origin in 2x2 Systems of Differential Equations</a></li>
-</ul>
-</section>
-<section id="week-08" class="level2">
-<h2 class="anchored" data-anchor-id="week-08">WEEK 08</h2>
-<ul>
-<li><a href="./w08/nonhomogeneous-systems-undetermined-coefficients.html">Nonhomogeneous Systems: Undetermined Coefficients</a></li>
-<li><a href="./w08/nonhomogeneous-systems-variation-of-parameters.html">Nonhomogeneous Systems: Variation of Parameters</a></li>
-</ul>
-</section>
-<section id="week-09" class="level2">
-<h2 class="anchored" data-anchor-id="week-09">WEEK 09</h2>
-<ul>
-<li><a href="./w09/exponential-order.html">Exponential Order</a></li>
-<li><a href="./w09/laplace-transforms.html">Laplace Transforms</a></li>
-<li><a href="./w09/laplace-transform-properties/index.html">Properties of the Laplace Transform</a></li>
-</ul>
-</section>
-<section id="week-10" class="level2">
-<h2 class="anchored" data-anchor-id="week-10">WEEK 10</h2>
-<ul>
-<li><a href="./w10/tests-for-series.html">Summary of Tests for Series</a></li>
-<li><a href="./w10/power-series/index.html">Power Series</a></li>
-</ul>
+<style>
+table {
+width: 100%;
+border-collapse: collapse;
+}
+th, td {
+border: 1px solid #ddd;
+text-align: center;
+vertical-align: top;
+font-family: Arial, sans-serif;
+position: relative;
+padding: 5px;
+}
+th {
+background-color: #f4f4f4;
+}
+td {
+height: 100px;
+}
+</style>
+<table>
+<thead>
+<tr>
+<th>
+Test
+</th>
+<th>
+Series
+</th>
+<th>
+Converges
+</th>
+<th>
+Diverges
+</th>
+<th>
+Comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="math inline">n</span>th-Term
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} a_n</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} a_n \neq 0</span>
+</td>
+<td>
+This test cannot be used to show convergence.
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Geometric Series
+</td>
+<td>
+<span class="math display">\sum_{n=0}^{\infty} ar^n</span>
+</td>
+<td>
+<span class="math display">r &lt; 1</span>
+</td>
+<td>
+<span class="math display">r \geq 1</span>
+</td>
+<td>
+Sum: <span class="math display">S = \frac{a}{1 - r}</span>
+</td>
+</tr>
+<tr>
+<td>
+Telescoping Series
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} (b_n - b_{n+1})</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} b_n = L</span>
+</td>
+<td>
+Sum: <span class="math display">S = b_1 - L</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+p-Series
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} \frac{1}{n^p}</span>
+</td>
+<td>
+<span class="math display">p &gt; 1</span>
+</td>
+<td>
+<span class="math display">p \leq 1</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Alternating Series
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} (-1)^{n-1}a_n</span>
+</td>
+<td>
+<span class="math display">0 &lt; a_{n+1} \leq a_n</span> and <span class="math display">\lim_{n\to\infty} a_n = 0</span>
+</td>
+<td>
+Remainder: <span class="math display">R_N \leq a_{N+1}</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Integral
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} a_n, \quad a_n = f(n) \geq 0</span>
+</td>
+<td>
+<span class="math display">\int f(x) \, dx</span> converges
+</td>
+<td>
+<span class="math display">\int f(x) \, dx</span> diverges
+</td>
+<td>
+Remainder: <span class="math display">0 &lt; R_N &lt; \int_{N}^{\infty} f(x) \, dx</span>
+</td>
+</tr>
+<tr>
+<td>
+Root
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} a_n</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} \sqrt[n]{a_n} &lt; 1</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} \sqrt[n]{a_n} &gt; 1</span>
+</td>
+<td>
+Test is inconclusive if <span class="math display">\lim_{n\to\infty} \sqrt[n]{a_n} = 1</span>
+</td>
+</tr>
+<tr>
+<td>
+Ratio
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} a_n</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} \frac{a_{n+1}}{a_n} &lt; 1</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} \frac{a_{n+1}}{a_n} \geq 1</span>
+</td>
+<td>
+Test is inconclusive if <span class="math display">\lim_{n\to\infty} \frac{a_{n+1}}{a_n} = 1</span>
+</td>
+</tr>
+<tr>
+<td>
+Direct Comparison <br> <span class="math display">(a_n, b_n &gt; 0)</span>
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} a_n</span>
+</td>
+<td>
+<span class="math display">0 &lt; a_n \leq b_n</span> and <span class="math display">\sum_{n=1}^{\infty} b_n</span> converges
+</td>
+<td>
+<span class="math display">0 &lt; b_n \leq a_n</span> and <span class="math display">\sum_{n=1}^{\infty} b_n</span> diverges
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Limit Comparison <br> <span class="math display">(a_n, b_n &gt; 0)</span>
+</td>
+<td>
+<span class="math display">\sum_{n=1}^{\infty} a_n</span>
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} \frac{a_n}{b_n} = L &gt; 0</span> and <span class="math display">\sum_{n=1}^{\infty} b_n</span> converges
+</td>
+<td>
+<span class="math display">\lim_{n\to\infty} \frac{a_n}{b_n} = L &gt; 0</span> and <span class="math display">\sum_{n=1}^{\infty} b_n</span> diverges
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
