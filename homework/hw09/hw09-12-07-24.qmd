@@ -644,11 +644,133 @@ $$
 
 ### **Problem:**
 
+Find the first four nonzero coefficients of the Taylor series expansion for the function
+
+$$
+f(t) = \sqrt{1 + t}
+$$
+
+about $a = 0$. In addition, state the radius of convergence of the series expansion.
+
 ### **Solution:**
+
+#### **Rewrite the Function**
+
+The function is expressed as:
+
+$$
+f(t) = \sqrt{t + 1}
+$$
+
+This can be rewritten as:
+
+$$
+f(t) = (1 + t)^{1/2}
+$$
+
+The known power series expansion for $(1 + x)^k$ for $|x| < 1$ is used:
+
+$$
+(1 + x)^k = \sum_{n=0}^\infty \frac{\prod_{j=0}^{n-1} (k - j)}{n!} x^n
+$$
+
+Here, $k = \frac{1}{2}$ and $x = t$.
+
+#### **General Formula for Coefficients**
+
+The general term for the Taylor series expansion is given by:
+
+$$
+a_n = \frac{\prod_{j=0}^{n-1} \left(\frac{1}{2} - j\right)}{n!}
+$$
+
+#### **Compute the First Four Nonzero Coefficients**
+
+1. **For $n = 0$:**
+
+$$
+a_0 = \frac{\prod_{j=0}^{-1} \left(\frac{1}{2} - j\right)}{0!} = 1
+$$
+
+The first term is:
+
+$$
+a_0 t^0 = 1
+$$
+
+2. **For $n = 1$:**
+
+$$
+a_1 = \frac{\prod_{j=0}^{0} \left(\frac{1}{2} - j\right)}{1!} = \frac{\frac{1}{2}}{1!} = \frac{1}{2}
+$$
+
+The second term is:
+
+$$
+a_1 t^1 = \frac{1}{2}t
+$$
+
+3. **For $n = 2$:**
+
+$$
+a_2 = \frac{\prod_{j=0}^{1} \left(\frac{1}{2} - j\right)}{2!} = \frac{\left(\frac{1}{2}\right)\left(\frac{1}{2} - 1\right)}{2!} = \frac{\frac{1}{2} \cdot -\frac{1}{2}}{2} = -\frac{1}{8}
+$$
+
+The third term is:
+
+$$
+a_2 t^2 = -\frac{1}{8}t^2
+$$
+
+4. **For $n = 3$:**
+
+$$
+a_3 = \frac{\prod_{j=0}^{2} \left(\frac{1}{2} - j\right)}{3!} = \frac{\left(\frac{1}{2}\right)\left(\frac{1}{2} - 1\right)\left(\frac{1}{2} - 2\right)}{3!}
+$$
+
+Simplify:
+
+$$
+a_3 = \frac{\left(\frac{1}{2}\right)\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)}{6} = \frac{\frac{3}{8}}{6} = \frac{1}{16}
+$$
+
+The fourth term is:
+
+$$
+a_3 t^3 = \frac{1}{16}t^3
+$$
+
+#### **The Taylor Series**
+
+The first four nonzero terms of the Taylor series expansion are:
+
+$$
+f(t) = 1 + \frac{1}{2}t - \frac{1}{8}t^2 + \frac{1}{16}t^3 + \cdots
+$$
+
+#### **Radius of Convergence**
+
+The power series for $(1 + x)^k$ converges for $|x| < 1$. Substituting $x = t$, the series converges for $|t| < 1$. The radius of convergence is therefore:
+
+$$
+R = 1
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+**First Four Nonzero Terms:**
+
+$$
+f(t) = 1 + \frac{1}{2}t - \frac{1}{8}t^2 + \frac{1}{16}t^3
+$$
+
+**Radius of Convergence:**
+
+$$
+R = 1
+$$
 
 :::
 :::
@@ -659,11 +781,137 @@ $$
 
 ### **Problem:**
 
+Find the first four nonzero coefficients of the Taylor series expansion for the function
+
+$$
+f(t) = \frac{1}{1 + t^4}
+$$
+
+about $a = 0$. In addition, state the radius of convergence of the series expansion.
+
 ### **Solution:**
+
+#### **Rewrite the Function**
+
+The function is expressed as:
+
+$$
+f(t) = \frac{1}{1 + t^4}
+$$
+
+This can be rewritten in a form suitable for a geometric series expansion:
+
+$$
+f(t) = \frac{1}{1 - (-t^4)}
+$$
+
+The known power series expansion for $\frac{1}{1 - x}$ is:
+
+$$
+\frac{1}{1 - x} = \sum_{n=0}^\infty x^n, \quad \text{for } |x| < 1
+$$
+
+Substituting $x = -t^4$, the series becomes:
+
+$$
+f(t) = \sum_{n=0}^\infty (-t^4)^n
+$$
+
+#### **General Formula for the Terms**
+
+The general term of the series is:
+
+$$
+a_n = (-1)^n t^{4n}
+$$
+
+#### **Compute the First Four Nonzero Terms**
+
+1. **For $n = 0$:**
+
+$$
+a_0 = (-1)^0 t^{4 \cdot 0} = 1
+$$
+
+The first term is:
+
+$$
+a_0 = 1
+$$
+
+2. **For $n = 1$:**
+
+$$
+a_1 = (-1)^1 t^{4 \cdot 1} = -t^4
+$$
+
+The second term is:
+
+$$
+a_1 = -t^4
+$$
+
+3. **For $n = 2$:**
+
+$$
+a_2 = (-1)^2 t^{4 \cdot 2} = t^8
+$$
+
+The third term is:
+
+$$
+a_2 = t^8
+$$
+
+4. **For $n = 3$:**
+
+$$
+a_3 = (-1)^3 t^{4 \cdot 3} = -t^{12}
+$$
+
+The fourth term is:
+
+$$
+a_3 = -t^{12}
+$$
+
+#### **The Taylor Series**
+
+The first four nonzero terms of the Taylor series expansion are:
+
+$$
+f(t) = 1 - t^4 + t^8 - t^{12} + \cdots
+$$
+
+#### **Radius of Convergence**
+
+The geometric series $\frac{1}{1 - x}$ converges for $|x| < 1$. Substituting $x = -t^4$, the series converges for:
+
+$$
+|-t^4| < 1 \quad \implies \quad |t^4| < 1 \quad \implies \quad |t| < 1
+$$
+
+Thus, the radius of convergence is:
+
+$$
+R = 1
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+**First Four Nonzero Terms:**
+
+$$
+f(t) = 1 - t^4 + t^8 - t^{12}
+$$
+
+**Radius of Convergence:**
+
+$$
+R = 1
+$$
 
 :::
 :::
@@ -674,11 +922,87 @@ $$
 
 ### **Problem:**
 
+Find the first four nonzero coefficients of the Taylor series expansion for the integral:
+
+$$
+\int_0^t \frac{1}{1 + s^4} \, ds
+$$
+
+by first expanding the integrand into its Taylor series and then integrating term by term.
+
 ### **Solution:**
+
+#### **Expand the Integrand**
+
+The given integrand is:
+
+$$
+\frac{1}{1 + s^4}
+$$
+
+Using the result from the previous problem, the Taylor series expansion for $\frac{1}{1 + s^4}$ is:
+
+$$
+\frac{1}{1 + s^4} = \sum_{n=0}^\infty (-1)^n s^{4n}
+$$
+
+The first several terms of this series are:
+
+$$
+\frac{1}{1 + s^4} = 1 - s^4 + s^8 - s^{12} + \cdots
+$$
+
+#### **Integrate Term by Term**
+
+The integral is:
+
+$$
+\int_0^t \frac{1}{1 + s^4} \, ds = \int_0^t \left(1 - s^4 + s^8 - s^{12} + \cdots \right) \, ds
+$$
+
+Integrating each term of the series:
+
+1. **First term:**
+
+$$
+\int_0^t 1 \, ds = t
+$$
+
+2. **Second term:**
+
+$$
+\int_0^t -s^4 \, ds = -\frac{s^5}{5} \bigg|_0^t = -\frac{t^5}{5}
+$$
+
+3. **Third term:**
+
+$$
+\int_0^t s^8 \, ds = \frac{s^9}{9} \bigg|_0^t = \frac{t^9}{9}
+$$
+
+4. **Fourth term:**
+
+$$
+\int_0^t -s^{12} \, ds = -\frac{s^{13}}{13} \bigg|_0^t = -\frac{t^{13}}{13}
+$$
+
+#### **Combine the Results**
+
+The first four nonzero terms of the Taylor series expansion for the integral are:
+
+$$
+\int_0^t \frac{1}{1 + s^4} \, ds = t - \frac{t^5}{5} + \frac{t^9}{9} - \frac{t^{13}}{13} + \cdots
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The Taylor series expansion for the integral is:
+
+$$
+\int_0^t \frac{1}{1 + s^4} \, ds = t - \frac{t^5}{5} + \frac{t^9}{9} - \frac{t^{13}}{13} + \cdots
+$$
 
 :::
 :::
@@ -689,11 +1013,93 @@ $$
 
 ### **Problem:**
 
+Find the first four nonzero coefficients of the Taylor series expansion for the integral:
+
+$$
+\int_0^t e^{-s^2} \, ds
+$$
+
+by first expanding the integrand into its Taylor series and then integrating term by term.
+
 ### **Solution:**
+
+#### **Expand the Integrand**
+
+The given integrand is:
+
+$$
+e^{-s^2}
+$$
+
+The Taylor series expansion for $e^x$ is:
+
+$$
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}
+$$
+
+Substituting $x = -s^2$, the expansion becomes:
+
+$$
+e^{-s^2} = \sum_{n=0}^\infty \frac{(-1)^n s^{2n}}{n!}
+$$
+
+The first few terms are:
+
+$$
+e^{-s^2} = 1 - s^2 + \frac{s^4}{2!} - \frac{s^6}{3!} + \cdots
+$$
+
+#### **Integrate Term by Term**
+
+The integral is:
+
+$$
+\int_0^t e^{-s^2} \, ds = \int_0^t \left(1 - s^2 + \frac{s^4}{2} - \frac{s^6}{6} + \cdots \right) \, ds
+$$
+
+Integrating each term of the series:
+
+1. **First term:**
+
+$$
+\int_0^t 1 \, ds = t
+$$
+
+2. **Second term:**
+
+$$
+\int_0^t -s^2 \, ds = -\frac{s^3}{3} \bigg|_0^t = -\frac{t^3}{3}
+$$
+
+3. **Third term:**
+
+$$
+\int_0^t \frac{s^4}{2} \, ds = \frac{1}{2} \cdot \frac{s^5}{5} \bigg|_0^t = \frac{t^5}{10}
+$$
+
+4. **Fourth term:**
+
+$$
+\int_0^t -\frac{s^6}{6} \, ds = -\frac{1}{6} \cdot \frac{s^7}{7} \bigg|_0^t = -\frac{t^7}{42}
+$$
+
+#### **Combine the Results**
+
+The first four nonzero terms of the Taylor series expansion for the integral are:
+
+$$
+\int_0^t e^{-s^2} \, ds = t - \frac{t^3}{3} + \frac{t^5}{10} - \frac{t^7}{42} + \cdots
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+The Taylor series expansion for the integral is:
+
+$$
+\int_0^t e^{-s^2} \, ds = t - \frac{t^3}{3} + \frac{t^5}{10} - \frac{t^7}{42} + \cdots
+$$
 
 :::
 :::

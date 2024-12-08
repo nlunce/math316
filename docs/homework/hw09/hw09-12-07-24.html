@@ -5612,9 +5612,97 @@ R = 5
 <div class="callout-body-container callout-body">
 <section id="problem-9" class="level3">
 <h3 class="anchored" data-anchor-id="problem-9"><strong>Problem:</strong></h3>
+<p>Find the first four nonzero coefficients of the Taylor series expansion for the function</p>
+<p><span class="math display">
+f(t) = \sqrt{1 + t}
+</span></p>
+<p>about <span class="math inline">a = 0</span>. In addition, state the radius of convergence of the series expansion.</p>
 </section>
 <section id="solution-9" class="level3">
 <h3 class="anchored" data-anchor-id="solution-9"><strong>Solution:</strong></h3>
+<section id="rewrite-the-function" class="level4">
+<h4 class="anchored" data-anchor-id="rewrite-the-function"><strong>Rewrite the Function</strong></h4>
+<p>The function is expressed as:</p>
+<p><span class="math display">
+f(t) = \sqrt{t + 1}
+</span></p>
+<p>This can be rewritten as:</p>
+<p><span class="math display">
+f(t) = (1 + t)^{1/2}
+</span></p>
+<p>The known power series expansion for <span class="math inline">(1 + x)^k</span> for <span class="math inline">|x| &lt; 1</span> is used:</p>
+<p><span class="math display">
+(1 + x)^k = \sum_{n=0}^\infty \frac{\prod_{j=0}^{n-1} (k - j)}{n!} x^n
+</span></p>
+<p>Here, <span class="math inline">k = \frac{1}{2}</span> and <span class="math inline">x = t</span>.</p>
+</section>
+<section id="general-formula-for-coefficients" class="level4">
+<h4 class="anchored" data-anchor-id="general-formula-for-coefficients"><strong>General Formula for Coefficients</strong></h4>
+<p>The general term for the Taylor series expansion is given by:</p>
+<p><span class="math display">
+a_n = \frac{\prod_{j=0}^{n-1} \left(\frac{1}{2} - j\right)}{n!}
+</span></p>
+</section>
+<section id="compute-the-first-four-nonzero-coefficients" class="level4">
+<h4 class="anchored" data-anchor-id="compute-the-first-four-nonzero-coefficients"><strong>Compute the First Four Nonzero Coefficients</strong></h4>
+<ol type="1">
+<li><strong>For <span class="math inline">n = 0</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_0 = \frac{\prod_{j=0}^{-1} \left(\frac{1}{2} - j\right)}{0!} = 1
+</span></p>
+<p>The first term is:</p>
+<p><span class="math display">
+a_0 t^0 = 1
+</span></p>
+<ol start="2" type="1">
+<li><strong>For <span class="math inline">n = 1</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_1 = \frac{\prod_{j=0}^{0} \left(\frac{1}{2} - j\right)}{1!} = \frac{\frac{1}{2}}{1!} = \frac{1}{2}
+</span></p>
+<p>The second term is:</p>
+<p><span class="math display">
+a_1 t^1 = \frac{1}{2}t
+</span></p>
+<ol start="3" type="1">
+<li><strong>For <span class="math inline">n = 2</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_2 = \frac{\prod_{j=0}^{1} \left(\frac{1}{2} - j\right)}{2!} = \frac{\left(\frac{1}{2}\right)\left(\frac{1}{2} - 1\right)}{2!} = \frac{\frac{1}{2} \cdot -\frac{1}{2}}{2} = -\frac{1}{8}
+</span></p>
+<p>The third term is:</p>
+<p><span class="math display">
+a_2 t^2 = -\frac{1}{8}t^2
+</span></p>
+<ol start="4" type="1">
+<li><strong>For <span class="math inline">n = 3</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_3 = \frac{\prod_{j=0}^{2} \left(\frac{1}{2} - j\right)}{3!} = \frac{\left(\frac{1}{2}\right)\left(\frac{1}{2} - 1\right)\left(\frac{1}{2} - 2\right)}{3!}
+</span></p>
+<p>Simplify:</p>
+<p><span class="math display">
+a_3 = \frac{\left(\frac{1}{2}\right)\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)}{6} = \frac{\frac{3}{8}}{6} = \frac{1}{16}
+</span></p>
+<p>The fourth term is:</p>
+<p><span class="math display">
+a_3 t^3 = \frac{1}{16}t^3
+</span></p>
+</section>
+<section id="the-taylor-series" class="level4">
+<h4 class="anchored" data-anchor-id="the-taylor-series"><strong>The Taylor Series</strong></h4>
+<p>The first four nonzero terms of the Taylor series expansion are:</p>
+<p><span class="math display">
+f(t) = 1 + \frac{1}{2}t - \frac{1}{8}t^2 + \frac{1}{16}t^3 + \cdots
+</span></p>
+</section>
+<section id="radius-of-convergence" class="level4">
+<h4 class="anchored" data-anchor-id="radius-of-convergence"><strong>Radius of Convergence</strong></h4>
+<p>The power series for <span class="math inline">(1 + x)^k</span> converges for <span class="math inline">|x| &lt; 1</span>. Substituting <span class="math inline">x = t</span>, the series converges for <span class="math inline">|t| &lt; 1</span>. The radius of convergence is therefore:</p>
+<p><span class="math display">
+R = 1
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5625,9 +5713,17 @@ R = 5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><strong>First Four Nonzero Terms:</strong></p>
+<p><span class="math display">
+f(t) = 1 + \frac{1}{2}t - \frac{1}{8}t^2 + \frac{1}{16}t^3
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p><span class="math display">
+R = 1
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -5646,9 +5742,100 @@ R = 5
 <div class="callout-body-container callout-body">
 <section id="problem-10" class="level3">
 <h3 class="anchored" data-anchor-id="problem-10"><strong>Problem:</strong></h3>
+<p>Find the first four nonzero coefficients of the Taylor series expansion for the function</p>
+<p><span class="math display">
+f(t) = \frac{1}{1 + t^4}
+</span></p>
+<p>about <span class="math inline">a = 0</span>. In addition, state the radius of convergence of the series expansion.</p>
 </section>
 <section id="solution-10" class="level3">
 <h3 class="anchored" data-anchor-id="solution-10"><strong>Solution:</strong></h3>
+<section id="rewrite-the-function-1" class="level4">
+<h4 class="anchored" data-anchor-id="rewrite-the-function-1"><strong>Rewrite the Function</strong></h4>
+<p>The function is expressed as:</p>
+<p><span class="math display">
+f(t) = \frac{1}{1 + t^4}
+</span></p>
+<p>This can be rewritten in a form suitable for a geometric series expansion:</p>
+<p><span class="math display">
+f(t) = \frac{1}{1 - (-t^4)}
+</span></p>
+<p>The known power series expansion for <span class="math inline">\frac{1}{1 - x}</span> is:</p>
+<p><span class="math display">
+\frac{1}{1 - x} = \sum_{n=0}^\infty x^n, \quad \text{for } |x| &lt; 1
+</span></p>
+<p>Substituting <span class="math inline">x = -t^4</span>, the series becomes:</p>
+<p><span class="math display">
+f(t) = \sum_{n=0}^\infty (-t^4)^n
+</span></p>
+</section>
+<section id="general-formula-for-the-terms" class="level4">
+<h4 class="anchored" data-anchor-id="general-formula-for-the-terms"><strong>General Formula for the Terms</strong></h4>
+<p>The general term of the series is:</p>
+<p><span class="math display">
+a_n = (-1)^n t^{4n}
+</span></p>
+</section>
+<section id="compute-the-first-four-nonzero-terms" class="level4">
+<h4 class="anchored" data-anchor-id="compute-the-first-four-nonzero-terms"><strong>Compute the First Four Nonzero Terms</strong></h4>
+<ol type="1">
+<li><strong>For <span class="math inline">n = 0</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_0 = (-1)^0 t^{4 \cdot 0} = 1
+</span></p>
+<p>The first term is:</p>
+<p><span class="math display">
+a_0 = 1
+</span></p>
+<ol start="2" type="1">
+<li><strong>For <span class="math inline">n = 1</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_1 = (-1)^1 t^{4 \cdot 1} = -t^4
+</span></p>
+<p>The second term is:</p>
+<p><span class="math display">
+a_1 = -t^4
+</span></p>
+<ol start="3" type="1">
+<li><strong>For <span class="math inline">n = 2</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_2 = (-1)^2 t^{4 \cdot 2} = t^8
+</span></p>
+<p>The third term is:</p>
+<p><span class="math display">
+a_2 = t^8
+</span></p>
+<ol start="4" type="1">
+<li><strong>For <span class="math inline">n = 3</span>:</strong></li>
+</ol>
+<p><span class="math display">
+a_3 = (-1)^3 t^{4 \cdot 3} = -t^{12}
+</span></p>
+<p>The fourth term is:</p>
+<p><span class="math display">
+a_3 = -t^{12}
+</span></p>
+</section>
+<section id="the-taylor-series-1" class="level4">
+<h4 class="anchored" data-anchor-id="the-taylor-series-1"><strong>The Taylor Series</strong></h4>
+<p>The first four nonzero terms of the Taylor series expansion are:</p>
+<p><span class="math display">
+f(t) = 1 - t^4 + t^8 - t^{12} + \cdots
+</span></p>
+</section>
+<section id="radius-of-convergence-1" class="level4">
+<h4 class="anchored" data-anchor-id="radius-of-convergence-1"><strong>Radius of Convergence</strong></h4>
+<p>The geometric series <span class="math inline">\frac{1}{1 - x}</span> converges for <span class="math inline">|x| &lt; 1</span>. Substituting <span class="math inline">x = -t^4</span>, the series converges for:</p>
+<p><span class="math display">
+|-t^4| &lt; 1 \quad \implies \quad |t^4| &lt; 1 \quad \implies \quad |t| &lt; 1
+</span></p>
+<p>Thus, the radius of convergence is:</p>
+<p><span class="math display">
+R = 1
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5659,9 +5846,17 @@ R = 5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><strong>First Four Nonzero Terms:</strong></p>
+<p><span class="math display">
+f(t) = 1 - t^4 + t^8 - t^{12}
+</span></p>
+<p><strong>Radius of Convergence:</strong></p>
+<p><span class="math display">
+R = 1
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -5680,9 +5875,67 @@ R = 5
 <div class="callout-body-container callout-body">
 <section id="problem-11" class="level3">
 <h3 class="anchored" data-anchor-id="problem-11"><strong>Problem:</strong></h3>
+<p>Find the first four nonzero coefficients of the Taylor series expansion for the integral:</p>
+<p><span class="math display">
+\int_0^t \frac{1}{1 + s^4} \, ds
+</span></p>
+<p>by first expanding the integrand into its Taylor series and then integrating term by term.</p>
 </section>
 <section id="solution-11" class="level3">
 <h3 class="anchored" data-anchor-id="solution-11"><strong>Solution:</strong></h3>
+<section id="expand-the-integrand" class="level4">
+<h4 class="anchored" data-anchor-id="expand-the-integrand"><strong>Expand the Integrand</strong></h4>
+<p>The given integrand is:</p>
+<p><span class="math display">
+\frac{1}{1 + s^4}
+</span></p>
+<p>Using the result from the previous problem, the Taylor series expansion for <span class="math inline">\frac{1}{1 + s^4}</span> is:</p>
+<p><span class="math display">
+\frac{1}{1 + s^4} = \sum_{n=0}^\infty (-1)^n s^{4n}
+</span></p>
+<p>The first several terms of this series are:</p>
+<p><span class="math display">
+\frac{1}{1 + s^4} = 1 - s^4 + s^8 - s^{12} + \cdots
+</span></p>
+</section>
+<section id="integrate-term-by-term" class="level4">
+<h4 class="anchored" data-anchor-id="integrate-term-by-term"><strong>Integrate Term by Term</strong></h4>
+<p>The integral is:</p>
+<p><span class="math display">
+\int_0^t \frac{1}{1 + s^4} \, ds = \int_0^t \left(1 - s^4 + s^8 - s^{12} + \cdots \right) \, ds
+</span></p>
+<p>Integrating each term of the series:</p>
+<ol type="1">
+<li><strong>First term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t 1 \, ds = t
+</span></p>
+<ol start="2" type="1">
+<li><strong>Second term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t -s^4 \, ds = -\frac{s^5}{5} \bigg|_0^t = -\frac{t^5}{5}
+</span></p>
+<ol start="3" type="1">
+<li><strong>Third term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t s^8 \, ds = \frac{s^9}{9} \bigg|_0^t = \frac{t^9}{9}
+</span></p>
+<ol start="4" type="1">
+<li><strong>Fourth term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t -s^{12} \, ds = -\frac{s^{13}}{13} \bigg|_0^t = -\frac{t^{13}}{13}
+</span></p>
+</section>
+<section id="combine-the-results" class="level4">
+<h4 class="anchored" data-anchor-id="combine-the-results"><strong>Combine the Results</strong></h4>
+<p>The first four nonzero terms of the Taylor series expansion for the integral are:</p>
+<p><span class="math display">
+\int_0^t \frac{1}{1 + s^4} \, ds = t - \frac{t^5}{5} + \frac{t^9}{9} - \frac{t^{13}}{13} + \cdots
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5693,9 +5946,13 @@ R = 5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The Taylor series expansion for the integral is:</p>
+<p><span class="math display">
+\int_0^t \frac{1}{1 + s^4} \, ds = t - \frac{t^5}{5} + \frac{t^9}{9} - \frac{t^{13}}{13} + \cdots
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
@@ -5714,9 +5971,71 @@ R = 5
 <div class="callout-body-container callout-body">
 <section id="problem-12" class="level3">
 <h3 class="anchored" data-anchor-id="problem-12"><strong>Problem:</strong></h3>
+<p>Find the first four nonzero coefficients of the Taylor series expansion for the integral:</p>
+<p><span class="math display">
+\int_0^t e^{-s^2} \, ds
+</span></p>
+<p>by first expanding the integrand into its Taylor series and then integrating term by term.</p>
 </section>
 <section id="solution-12" class="level3">
 <h3 class="anchored" data-anchor-id="solution-12"><strong>Solution:</strong></h3>
+<section id="expand-the-integrand-1" class="level4">
+<h4 class="anchored" data-anchor-id="expand-the-integrand-1"><strong>Expand the Integrand</strong></h4>
+<p>The given integrand is:</p>
+<p><span class="math display">
+e^{-s^2}
+</span></p>
+<p>The Taylor series expansion for <span class="math inline">e^x</span> is:</p>
+<p><span class="math display">
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}
+</span></p>
+<p>Substituting <span class="math inline">x = -s^2</span>, the expansion becomes:</p>
+<p><span class="math display">
+e^{-s^2} = \sum_{n=0}^\infty \frac{(-1)^n s^{2n}}{n!}
+</span></p>
+<p>The first few terms are:</p>
+<p><span class="math display">
+e^{-s^2} = 1 - s^2 + \frac{s^4}{2!} - \frac{s^6}{3!} + \cdots
+</span></p>
+</section>
+<section id="integrate-term-by-term-1" class="level4">
+<h4 class="anchored" data-anchor-id="integrate-term-by-term-1"><strong>Integrate Term by Term</strong></h4>
+<p>The integral is:</p>
+<p><span class="math display">
+\int_0^t e^{-s^2} \, ds = \int_0^t \left(1 - s^2 + \frac{s^4}{2} - \frac{s^6}{6} + \cdots \right) \, ds
+</span></p>
+<p>Integrating each term of the series:</p>
+<ol type="1">
+<li><strong>First term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t 1 \, ds = t
+</span></p>
+<ol start="2" type="1">
+<li><strong>Second term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t -s^2 \, ds = -\frac{s^3}{3} \bigg|_0^t = -\frac{t^3}{3}
+</span></p>
+<ol start="3" type="1">
+<li><strong>Third term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t \frac{s^4}{2} \, ds = \frac{1}{2} \cdot \frac{s^5}{5} \bigg|_0^t = \frac{t^5}{10}
+</span></p>
+<ol start="4" type="1">
+<li><strong>Fourth term:</strong></li>
+</ol>
+<p><span class="math display">
+\int_0^t -\frac{s^6}{6} \, ds = -\frac{1}{6} \cdot \frac{s^7}{7} \bigg|_0^t = -\frac{t^7}{42}
+</span></p>
+</section>
+<section id="combine-the-results-1" class="level4">
+<h4 class="anchored" data-anchor-id="combine-the-results-1"><strong>Combine the Results</strong></h4>
+<p>The first four nonzero terms of the Taylor series expansion for the integral are:</p>
+<p><span class="math display">
+\int_0^t e^{-s^2} \, ds = t - \frac{t^3}{3} + \frac{t^5}{10} - \frac{t^7}{42} + \cdots
+</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5727,9 +6046,13 @@ R = 5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>The Taylor series expansion for the integral is:</p>
+<p><span class="math display">
+\int_0^t e^{-s^2} \, ds = t - \frac{t^3}{3} + \frac{t^5}{10} - \frac{t^7}{42} + \cdots
+</span></p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </div>
