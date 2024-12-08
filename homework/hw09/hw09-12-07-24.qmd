@@ -1103,3 +1103,1270 @@ $$
 
 :::
 :::
+
+# SECTION 8.3
+
+::: {.callout-tip}
+
+## **Assigned:** 1, 2, 3, 9, 15, 16, 17
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.1
+
+### **Problem:**
+
+Find the first four terms in the Taylor series representation of the general solution for the following DE:
+
+$$
+y'' + t y' = 0
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivatives are:
+
+1. **First derivative**:
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second derivative**:
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+#### **Substitute Into the Differential Equation**
+
+Substitute $y(t)$, $y'(t)$, and $y''(t)$ into the equation $y'' + t y' = 0$:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} + t \sum_{n=1}^\infty n a_n t^{n-1} = 0
+$$
+
+#### **Simplify each term:**
+
+1. **First term:**
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+   To match powers of $t$, substitute $m = n-2$, so $n = m+2$, and $t^{n-2} \to t^m$:
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2} = \sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m
+   $$
+
+2. **Second term:**
+   $$
+   t \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+   Multiplying $t$ by $t^{n-1}$ raises the power to $t^n$:
+   $$
+   t \sum_{n=1}^\infty n a_n t^{n-1} = \sum_{n=1}^\infty n a_n t^n
+   $$
+
+#### **Combine the Two Terms**
+
+The equation now becomes:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m + \sum_{n=1}^\infty n a_n t^n = 0
+$$
+
+Separate the $m = 0$ term from the first summation:
+
+1. **For $m = 0$:**
+
+   $$
+   (m+2)(m+1)a_{m+2} = 2 \cdot 1 \cdot a_2 = 2a_2
+   $$
+
+2. **For $m \geq 1$:**
+   $$
+   (m+2)(m+1)a_{m+2} + m a_m = 0
+   $$
+
+Thus, the equation splits into:
+
+1. **Constant term:**
+
+   $$
+   2a_2 = 0 \quad \implies \quad a_2 = 0
+   $$
+
+2. **Recursive relation:**
+   $$
+   a_{m+2} = -\frac{m a_m}{(m+2)(m+1)}
+   $$
+
+#### **Solve for the Coefficients**
+
+Start with $a_0$ and $a_1$ as arbitrary constants:
+
+$$
+a_0 = C_0, \quad a_1 = C_1
+$$
+
+Use the recurrence relation to find the higher coefficients:
+
+1. **For $m = 0$:**
+
+   $$
+   a_2 = 0
+   $$
+
+2. **For $m = 1$:**
+
+   $$
+   a_3 = -\frac{1 \cdot a_1}{(1+2)(1+1)} = -\frac{a_1}{6}
+   $$
+
+3. **For $m = 2$:**
+
+   $$
+   a_4 = 0 \quad \text{(since $a_2 = 0$)}
+   $$
+
+4. **For $m = 3$:**
+   $$
+   a_5 = -\frac{3 \cdot a_3}{(3+2)(3+1)} = -\frac{3 \cdot \left(-\frac{a_1}{6}\right)}{20} = \frac{a_1}{40}
+   $$
+
+#### **Write the Taylor Series Solution**
+
+Substitute the coefficients into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + a_5 t^5 + \cdots
+$$
+
+Using the computed values:
+
+$$
+y(t) = C_0 + C_1 t - \frac{C_1}{6} t^3 + \frac{C_1}{40} t^5 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = C_0 + C_1 t - \frac{C_1}{6} t^3 + \frac{C_1}{40} t^5
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.2
+
+### **Problem:**
+
+Find the first four terms in the Taylor series representation of the general solution for the following DE:
+
+$$
+y'' + 4y' = 0
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivatives are:
+
+1. **First derivative**:
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second derivative**:
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+#### **Substitute Into the Differential Equation**
+
+Substitute $y(t)$, $y'(t)$, and $y''(t)$ into the equation $y'' + 4y' = 0$:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} + 4 \sum_{n=1}^\infty n a_n t^{n-1} = 0
+$$
+
+#### **Simplify each term:**
+
+1. **First term** ($y''(t)$):
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+   Use the substitution $m = n-2$, so $n = m+2$, and $t^{n-2} \to t^m$:
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2} = \sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m
+   $$
+
+2. **Second term** ($4y'(t)$):
+   $$
+   4 \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+   Multiplying by $t$ raises the power to $t^m$:
+   $$
+   4 \sum_{n=1}^\infty n a_n t^{n-1} = 4 \sum_{m=0}^\infty (m+1) a_{m+1} t^m
+   $$
+
+#### **Combine the Two Terms**
+
+The equation becomes:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m + 4 \sum_{m=0}^\infty (m+1)a_{m+1} t^m = 0
+$$
+
+Combine terms with the same powers of $t$:
+
+$$
+\sum_{m=0}^\infty \left[(m+2)(m+1)a_{m+2} + 4(m+1)a_{m+1}\right] t^m = 0
+$$
+
+Since this must hold for all $t^m$, the coefficients of $t^m$ must satisfy:
+
+$$
+(m+2)(m+1)a_{m+2} + 4(m+1)a_{m+1} = 0
+$$
+
+Factor out $(m+1)$:
+
+$$
+(m+1)\left[(m+2)a_{m+2} + 4a_{m+1}\right] = 0
+$$
+
+For $m \geq 0$, this gives the **recurrence relation**:
+
+$$
+a_{m+2} = -\frac{4a_{m+1}}{m+2}
+$$
+
+#### **Solve for the Coefficients**
+
+Start with $a_0$ and $a_1$ as arbitrary constants:
+
+$$
+a_0 = C_0, \quad a_1 = C_1
+$$
+
+Use the recurrence relation to find the higher coefficients:
+
+1. **For $m = 0$:**
+
+   $$
+   a_2 = -\frac{4a_1}{0+2} = -\frac{2a_1}{1} = -2a_1
+   $$
+
+2. **For $m = 1$:**
+
+   $$
+   a_3 = -\frac{4a_2}{1+2} = -\frac{4(-2a_1)}{3} = \frac{8a_1}{3}
+   $$
+
+3. **For $m = 2$:**
+
+   $$
+   a_4 = -\frac{4a_3}{2+2} = -\frac{4\left(\frac{8a_1}{3}\right)}{4} = -\frac{8a_1}{3}
+   $$
+
+4. **For $m = 3$:**
+   $$
+   a_5 = -\frac{4a_4}{3+2} = -\frac{4\left(-\frac{8a_1}{3}\right)}{5} = \frac{32a_1}{15}
+   $$
+
+#### **Write the Taylor Series Solution**
+
+Substitute the coefficients into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + a_5 t^5 + \cdots
+$$
+
+Using the computed values:
+
+$$
+y(t) = C_0 + C_1 t - 2C_1 t^2 + \frac{8C_1}{3}t^3 - \frac{8C_1}{3}t^4 + \frac{32C_1}{15}t^5 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = C_0 + C_1 t - 2C_1 t^2 + \frac{8C_1}{3}t^3
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.3
+
+### **Problem:**
+
+Find the first four terms in the Taylor series representation of the general solution for the following DE:
+
+$$
+y'' + 4y = 0
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivatives are:
+
+1. **First derivative**:
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second derivative**:
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+#### **Substitute Into the Differential Equation**
+
+Substitute $y(t)$ and $y''(t)$ into the equation $y'' + 4y = 0$:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} + 4 \sum_{n=0}^\infty a_n t^n = 0
+$$
+
+#### **Simplify Each Term:**
+
+1. **First term ($y''(t)$):**
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+   Use the substitution $m = n-2$, so $n = m+2$, and $t^{n-2} \to t^m$:
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2} = \sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m
+   $$
+
+2. **Second term ($4y(t)$):**
+   $$
+   4 \sum_{n=0}^\infty a_n t^n
+   $$
+
+#### **Combine the Two Terms**
+
+The equation becomes:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m + 4 \sum_{m=0}^\infty a_m t^m = 0
+$$
+
+Combine terms with the same powers of $t^m$:
+
+$$
+\sum_{m=0}^\infty \left[(m+2)(m+1)a_{m+2} + 4a_m\right] t^m = 0
+$$
+
+Since this must hold for all $t^m$, the coefficients of $t^m$ must satisfy:
+
+$$
+(m+2)(m+1)a_{m+2} + 4a_m = 0
+$$
+
+#### **Solve for the Coefficients**
+
+The recurrence relation is:
+
+$$
+a_{m+2} = -\frac{4a_m}{(m+2)(m+1)}
+$$
+
+Start with $a_0$ and $a_1$ as arbitrary constants:
+
+$$
+a_0 = C_0, \quad a_1 = C_1
+$$
+
+Use the recurrence relation to compute the higher coefficients:
+
+1. **For $m = 0$:**
+
+   $$
+   a_2 = -\frac{4a_0}{(0+2)(0+1)} = -\frac{4a_0}{2} = -2a_0
+   $$
+
+2. **For $m = 1$:**
+
+   $$
+   a_3 = -\frac{4a_1}{(1+2)(1+1)} = -\frac{4a_1}{6} = -\frac{2a_1}{3}
+   $$
+
+3. **For $m = 2$:**
+
+   $$
+   a_4 = -\frac{4a_2}{(2+2)(2+1)} = -\frac{4(-2a_0)}{12} = \frac{8a_0}{12} = \frac{2a_0}{3}
+   $$
+
+4. **For $m = 3$:**
+   $$
+   a_5 = -\frac{4a_3}{(3+2)(3+1)} = -\frac{4\left(-\frac{2a_1}{3}\right)}{20} = \frac{8a_1}{60} = \frac{2a_1}{15}
+   $$
+
+#### **Write the Taylor Series Solution**
+
+Substitute the coefficients into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + a_5 t^5 + \cdots
+$$
+
+Using the computed values:
+
+$$
+y(t) = C_0 + C_1 t - 2C_0 t^2 - \frac{2C_1}{3} t^3 + \frac{2C_0}{3} t^4 + \frac{2C_1}{15} t^5 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = C_0 + C_1 t - 2C_0 t^2 - \frac{2C_1}{3} t^3
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.9
+
+### **Problem:**
+
+Find the first four terms in the Taylor series representation of the general solution for the following DE:
+
+$$
+(1 - t)y'' + y = 0
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivatives are:
+
+1. **First derivative**:
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second derivative**:
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+#### **Substitute Into the Differential Equation**
+
+Substitute $y(t)$ and $y''(t)$ into the equation $(1 - t)y'' + y = 0$:
+
+$$
+(1 - t) \sum_{n=2}^\infty n(n-1)a_n t^{n-2} + \sum_{n=0}^\infty a_n t^n = 0
+$$
+
+#### **Expand and Simplify Each Term:**
+
+1. **First term** ($(1 - t)y''(t)$):
+
+Expand $(1 - t)y''(t)$:
+
+$$
+(1 - t)y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2} - t \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+$$
+
+Simplify:
+
+- The first part ($1 \cdot y''$):
+
+  $$
+  \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+  $$
+
+- The second part ($-t \cdot y''$):
+  $$
+  -\sum_{n=2}^\infty n(n-1)a_n t^{n-1}
+  $$
+
+Reindex the second part to align powers of $t$. Let $m = n - 1$, so $n = m + 1$ and $t^{n-1} = t^m$:
+
+$$
+-\sum_{n=2}^\infty n(n-1)a_n t^{n-1} = -\sum_{m=1}^\infty (m+1)m a_{m+1} t^m
+$$
+
+Thus, $(1 - t)y''(t)$ becomes:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} - \sum_{m=1}^\infty (m+1)m a_{m+1} t^m
+$$
+
+1. **Second term** ($y(t)$):
+
+$$
+\sum_{n=0}^\infty a_n t^n
+$$
+
+#### **Combine the Two Terms**
+
+Now combine all terms into a single summation:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} - \sum_{m=1}^\infty (m+1)m a_{m+1} t^m + \sum_{n=0}^\infty a_n t^n = 0
+$$
+
+Reindex the first term ($t^{n-2}$) to match the powers of $t^m$. Let $m = n - 2$, so $n = m + 2$ and $t^{n-2} = t^m$:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} = \sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m
+$$
+
+Thus, the equation becomes:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m - \sum_{m=1}^\infty (m+1)m a_{m+1} t^m + \sum_{m=0}^\infty a_m t^m = 0
+$$
+
+Combine terms:
+
+$$
+\sum_{m=0}^\infty \left[(m+2)(m+1)a_{m+2} - (m+1)m a_{m+1} + a_m\right] t^m = 0
+$$
+
+#### **Solve for the Recurrence Relation**
+
+For the equation to hold for all $t^m$, the coefficients of $t^m$ must equal zero:
+
+$$
+(m+2)(m+1)a_{m+2} - (m+1)m a_{m+1} + a_m = 0
+$$
+
+Simplify:
+
+$$
+(m+2)(m+1)a_{m+2} = (m+1)m a_{m+1} - a_m
+$$
+
+Divide through by $(m+2)(m+1)$:
+
+$$
+a_{m+2} = \frac{(m+1)m a_{m+1} - a_m}{(m+2)(m+1)}
+$$
+
+#### **Solve for the Coefficients**
+
+Start with $a_0$ and $a_1$ as arbitrary constants:
+
+$$
+a_0 = C_0, \quad a_1 = C_1
+$$
+
+Use the recurrence relation to compute the higher coefficients:
+
+1. **For $m = 0$:**
+
+   $$
+   a_2 = \frac{(0+1)0 a_1 - a_0}{(0+2)(0+1)} = \frac{-a_0}{2}
+   $$
+
+2. **For $m = 1$:**
+
+   $$
+   a_3 = \frac{(1+1)1 a_2 - a_1}{(1+2)(1+1)} = \frac{2 a_2 - a_1}{6}
+   $$
+
+   Substitute $a_2 = -\frac{a_0}{2}$:
+
+   $$
+   a_3 = \frac{2\left(-\frac{a_0}{2}\right) - a_1}{6} = \frac{-a_0 - a_1}{6}
+   $$
+
+3. **For $m = 2$:**
+   $$
+   a_4 = \frac{(2+1)2 a_3 - a_2}{(2+2)(2+1)} = \frac{3(2)a_3 - a_2}{12}
+   $$
+   Substitute $a_3 = \frac{-a_0 - a_1}{6}$ and $a_2 = -\frac{a_0}{2}$:
+   $$
+   a_4 = \frac{6\left(\frac{-a_0 - a_1}{6}\right) - \left(-\frac{a_0}{2}\right)}{12}
+   $$
+   Simplify:
+   $$
+   a_4 = \frac{-a_0 - a_1 + \frac{a_0}{2}}{12} = \frac{-\frac{a_0}{2} - a_1}{12}
+   $$
+
+#### **Write the Taylor Series Solution**
+
+Substitute the coefficients into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + \cdots
+$$
+
+Using the computed values:
+
+$$
+y(t) = C_0 + C_1 t - \frac{C_0}{2} t^2 - \frac{C_0 + C_1}{6} t^3 - \frac{\frac{C_0}{2} + C_1}{12} t^4 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = C_0 + C_1 t - \frac{C_0}{2} t^2 - \frac{C_0 + C_1}{6} t^3
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.15
+
+### **Problem:**
+
+Find the first four nonzero coefficients of the Taylor series expansion for the solution to the following IVP:
+
+$$
+y'' + (1 - t)y = 0, \quad y(0) = 1, \quad y'(0) = 0
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivatives are:
+
+1. **First derivative**:
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second derivative**:
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+#### **Substitute Into the Differential Equation**
+
+Substitute $y(t)$ and $y''(t)$ into the equation $y'' + (1 - t)y = 0$:
+
+$$
+\sum_{n=2}^\infty n(n-1)a_n t^{n-2} + (1 - t)\sum_{n=0}^\infty a_n t^n = 0
+$$
+
+#### **Expand and Simplify Each Term:**
+
+1. **First term ($y''(t)$):**
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+   Reindex this term by letting $m = n - 2$, so $n = m + 2$, and $t^{n-2} = t^m$:
+
+   $$
+   \sum_{n=2}^\infty n(n-1)a_n t^{n-2} = \sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m
+   $$
+
+2. **Second term ($(1 - t)y(t)$):**
+
+   Expand $(1 - t)y(t) = y(t) - t y(t)$:
+
+   - $y(t)$: $\sum_{n=0}^\infty a_n t^n$,
+   - $-t y(t)$: Multiply $t$ with $\sum_{n=0}^\infty a_n t^n$:
+
+     $$
+     -t \sum_{n=0}^\infty a_n t^n = \sum_{n=0}^\infty a_n t^{n+1}
+     $$
+
+     Reindex this term by letting $m = n + 1$, so $n = m - 1$, and $t^{n+1} = t^m$:
+
+     $$
+     \sum_{n=0}^\infty a_n t^{n+1} = \sum_{m=1}^\infty a_{m-1} t^m
+     $$
+
+Therefore, the second term becomes:
+
+$$
+(1 - t)y(t) = \sum_{n=0}^\infty a_n t^n - \sum_{m=1}^\infty a_{m-1} t^m
+$$
+
+#### **Combine All Terms**
+
+The equation now becomes:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m + \sum_{n=0}^\infty a_n t^n - \sum_{m=1}^\infty a_{m-1} t^m = 0
+$$
+
+Align the indices so all terms are in powers of $t^m$:
+
+1. The first summation is:
+
+   $$
+   \sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m
+   $$
+
+2. The second summation is:
+
+   $$
+   \sum_{m=0}^\infty a_m t^m
+   $$
+
+3. The third summation is:
+   $$
+   -\sum_{m=1}^\infty a_{m-1} t^m
+   $$
+
+Substitute these into the equation:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m + \sum_{m=0}^\infty a_m t^m - \sum_{m=1}^\infty a_{m-1} t^m = 0
+$$
+
+#### **Separate the Terms for $m = 0$ and $m \geq 1$:**
+
+For $m = 0$:
+
+$$
+(0+2)(0+1)a_2 + a_0 = 0 \quad \implies \quad 2a_2 + a_0 = 0 \quad \implies \quad a_2 = -\frac{a_0}{2}
+$$
+
+For $m \geq 1$:
+
+$$
+(m+2)(m+1)a_{m+2} + a_m - a_{m-1} = 0
+$$
+
+#### **Solve for the Coefficients**
+
+From the initial conditions:
+
+$$
+y(0) = a_0 = 1, \quad y'(0) = a_1 = 0
+$$
+
+1. **For $m = 0$:**
+
+   $$
+   a_2 = -\frac{a_0}{2} = -\frac{1}{2}
+   $$
+
+2. **For $m = 1$:**
+   Use the recurrence relation:
+
+   $$
+   (1+2)(1+1)a_3 + a_1 - a_0 = 0
+   $$
+
+   Substitute $a_1 = 0$ and $a_0 = 1$:
+
+   $$
+   6a_3 - 1 = 0 \quad \implies \quad a_3 = \frac{1}{6}
+   $$
+
+3. **For $m = 2$:**
+   Use the recurrence relation:
+   $$
+   (2+2)(2+1)a_4 + a_2 - a_1 = 0
+   $$
+   Substitute $a_2 = -\frac{1}{2}$ and $a_1 = 0$:
+   $$
+   12a_4 - \frac{1}{2} = 0 \quad \implies \quad a_4 = \frac{1}{24}
+   $$
+
+#### **Write the Taylor Series Solution**
+
+The coefficients are:
+
+$$
+a_0 = 1, \quad a_1 = 0, \quad a_2 = -\frac{1}{2}, \quad a_3 = \frac{1}{6}, \quad a_4 = \frac{1}{24}
+$$
+
+Substitute these into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + \cdots
+$$
+
+Using the computed coefficients:
+
+$$
+y(t) = 1 + 0 \cdot t - \frac{1}{2}t^2 + \frac{1}{6}t^3 + \frac{1}{24}t^4 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four nonzero terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = 1 - \frac{1}{2}t^2 + \frac{1}{6}t^3 + \frac{1}{24}t^4
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.16
+
+### **Problem:**
+
+Find the first four nonzero coefficients of the Taylor series expansion for the solution to the following IVP:
+
+$$
+y'' - t^2 y' + y \sin t = 0, \quad y(0) = 0, \quad y'(0) = 1,
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivatives are:
+
+1. **First derivative**:
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second derivative**:
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+#### **Substitute Into the Differential Equation**
+
+The equation is:
+
+$$
+y'' - t^2 y' + y \sin t = 0
+$$
+
+Substitute $y(t)$, $y'(t)$, $y''(t)$, and the Taylor series expansion for $\sin t = \sum_{k=0}^\infty \frac{(-1)^k t^{2k+1}}{(2k+1)!}$.
+
+1. **Second derivative term ($y''$):**
+
+   $$
+   y''(t) = \sum_{n=2}^\infty n(n-1)a_n t^{n-2}
+   $$
+
+2. **First derivative term ($-t^2 y'$):**
+   Expand $t^2 y'(t)$:
+
+   $$
+   t^2 y'(t) = t^2 \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+   This becomes:
+
+   $$
+   t^2 y'(t) = \sum_{n=1}^\infty n a_n t^{n+1}
+   $$
+
+   Reindex by letting $m = n+1$, so $n = m-1$:
+
+   $$
+   \sum_{n=1}^\infty n a_n t^{n+1} = \sum_{m=2}^\infty (m-1)a_{m-1} t^m
+   $$
+
+3. **Sine term ($y \sin t$):**
+   Multiply $y(t)$ by the Taylor series for $\sin t$:
+   $$
+   y(t) \sin t = \left(\sum_{n=0}^\infty a_n t^n\right) \left(\sum_{k=0}^\infty \frac{(-1)^k t^{2k+1}}{(2k+1)!}\right)
+   $$
+   Use the Cauchy product formula to expand:
+   $$
+   y(t) \sin t = \sum_{m=0}^\infty \left(\sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!}\right) t^m
+   $$
+   where the inner summation $k$ sums over all valid indices such that $m - k \geq 0$.
+
+#### **Combine All Terms**
+
+The equation becomes:
+
+$$
+\sum_{m=0}^\infty (m+2)(m+1)a_{m+2} t^m - \sum_{m=2}^\infty (m-1)a_{m-1} t^m + \sum_{m=0}^\infty \left(\sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!}\right) t^m = 0
+$$
+
+Since this equation must hold for all powers of $t^m$, the coefficients of $t^m$ must satisfy:
+
+$$
+(m+2)(m+1)a_{m+2} - (m-1)a_{m-1} + \sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!} = 0
+$$
+
+#### **Solve for the Coefficients**
+
+From the initial conditions:
+
+1. $y(0) = a_0 = 0$
+2. $y'(0) = a_1 = 1$
+
+Now compute higher coefficients using the recurrence relation.
+
+1. **For $m = 0$:**
+
+   $$
+   (0+2)(0+1)a_2 - (0-1)a_{-1} + \sum_{k=0}^0 a_{0-k} \frac{(-1)^k}{(2k+1)!} = 0
+   $$
+
+   This simplifies to:
+
+   $$
+   2a_2 + a_0 \frac{(-1)^0}{1!} = 0
+   $$
+
+   Substitute $a_0 = 0$:
+
+   $$
+   2a_2 = 0 \quad \implies \quad a_2 = 0
+   $$
+
+2. **For $m = 1$:**
+
+   $$
+   (1+2)(1+1)a_3 - (1-1)a_0 + \sum_{k=0}^1 a_{1-k} \frac{(-1)^k}{(2k+1)!} = 0
+   $$
+
+   Simplify:
+
+   $$
+   6a_3 + a_1 \frac{(-1)^0}{1!} + a_0 \frac{(-1)^1}{3!} = 0
+   $$
+
+   Substitute $a_0 = 0$ and $a_1 = 1$:
+
+   $$
+   6a_3 + 1 = 0 \quad \implies \quad a_3 = -\frac{1}{6}
+   $$
+
+3. **For $m = 2$:**
+
+   $$
+   (2+2)(2+1)a_4 - (2-1)a_1 + \sum_{k=0}^2 a_{2-k} \frac{(-1)^k}{(2k+1)!} = 0
+   $$
+
+   Simplify:
+
+   $$
+   12a_4 - 1 + a_2 \frac{(-1)^0}{1!} + a_1 \frac{(-1)^1}{3!} + a_0 \frac{(-1)^2}{5!} = 0
+   $$
+
+   Substitute $a_0 = 0$, $a_1 = 1$, and $a_2 = 0$:
+
+   $$
+   12a_4 - 1 - \frac{1}{6} = 0 \quad \implies \quad 12a_4 = \frac{7}{6} \quad \implies \quad a_4 = \frac{7}{72}
+   $$
+
+4. **For $m = 3$:**
+   Follow a similar process to find $a_5$, using previous coefficients.
+
+#### **Write the Taylor Series Solution**
+
+The coefficients are:
+
+$$
+a_0 = 0, \quad a_1 = 1, \quad a_2 = 0, \quad a_3 = -\frac{1}{6}, \quad a_4 = \frac{7}{72}
+$$
+
+Substitute these into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + \cdots
+$$
+
+Using the computed coefficients:
+
+$$
+y(t) = t - \frac{1}{6}t^3 + \frac{7}{72}t^4 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four nonzero terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = t - \frac{1}{6}t^3 + \frac{7}{72}t^4
+$$
+
+:::
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## 8.3.17
+
+### **Problem:**
+
+Find the first four nonzero coefficients of the Taylor series expansion for the solution to the following IVP:
+
+$$
+y' + y \sin t = 0, \quad y(0) = 1, \quad y'(0) = 0
+$$
+
+### **Solution:**
+
+#### **Assume a Taylor Series Solution**
+
+Assume the solution $y(t)$ is given by a Taylor series:
+
+$$
+y(t) = \sum_{n=0}^\infty a_n t^n
+$$
+
+where $a_n$ are coefficients to be determined. The derivative is:
+
+1. **First derivative**:
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+The sine function is expanded as a Taylor series:
+
+$$
+\sin t = \sum_{k=0}^\infty \frac{(-1)^k t^{2k+1}}{(2k+1)!}
+$$
+
+#### **Substitute Into the Differential Equation**
+
+The equation is:
+
+$$
+y' + y \sin t = 0
+$$
+
+Substitute $y(t)$, $y'(t)$, and $\sin t$:
+
+1. **First term ($y'(t)$):**
+
+   $$
+   y'(t) = \sum_{n=1}^\infty n a_n t^{n-1}
+   $$
+
+2. **Second term ($y \sin t$):**
+   Multiply $y(t)$ by $\sin t$:
+   $$
+   y(t) \sin t = \left(\sum_{n=0}^\infty a_n t^n\right) \left(\sum_{k=0}^\infty \frac{(-1)^k t^{2k+1}}{(2k+1)!}\right)
+   $$
+   Use the Cauchy product formula:
+   $$
+   y(t) \sin t = \sum_{m=0}^\infty \left(\sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!}\right) t^m
+   $$
+   where the inner summation sums over all valid indices $k$ such that $m - k \geq 0$.
+
+The equation becomes:
+
+$$
+\sum_{n=1}^\infty n a_n t^{n-1} + \sum_{m=0}^\infty \left(\sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!}\right) t^m = 0
+$$
+
+#### **Combine All Terms**
+
+Reindex the first summation ($n = 1$) to align powers of $t^m$. Let $m = n-1$, so $n = m+1$:
+
+$$
+\sum_{n=1}^\infty n a_n t^{n-1} = \sum_{m=0}^\infty (m+1)a_{m+1} t^m
+$$
+
+The equation now becomes:
+
+$$
+\sum_{m=0}^\infty \left[(m+1)a_{m+1} + \sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!}\right] t^m = 0
+$$
+
+For this equation to hold for all powers of $t^m$, the coefficients of $t^m$ must satisfy:
+
+$$
+(m+1)a_{m+1} + \sum_{k=0}^m a_{m-k} \frac{(-1)^k}{(2k+1)!} = 0
+$$
+
+#### **Solve for the Coefficients**
+
+From the initial conditions:
+
+$$
+y(0) = a_0 = 1, \quad y'(0) = a_1 = 0
+$$
+
+Now compute higher coefficients using the recurrence relation.
+
+1. **For $m = 0$:**
+
+   $$
+   (0+1)a_1 + \sum_{k=0}^0 a_{0-k} \frac{(-1)^k}{(2k+1)!} = 0
+   $$
+
+   Simplify:
+
+   $$
+   a_1 + a_0 \frac{(-1)^0}{1!} = 0
+   $$
+
+   Substitute $a_0 = 1$:
+
+   $$
+   a_1 + 1 = 0 \quad \implies \quad a_1 = -1
+   $$
+
+2. **For $m = 1$:**
+
+   $$
+   (1+1)a_2 + \sum_{k=0}^1 a_{1-k} \frac{(-1)^k}{(2k+1)!} = 0
+   $$
+
+   Simplify:
+
+   $$
+   2a_2 + a_1 \frac{(-1)^0}{1!} + a_0 \frac{(-1)^1}{3!} = 0
+   $$
+
+   Substitute $a_0 = 1$ and $a_1 = -1$:
+
+   $$
+   2a_2 - 1 - \frac{1}{6} = 0
+   $$
+
+   Simplify:
+
+   $$
+   2a_2 = 1 + \frac{1}{6} = \frac{7}{6} \quad \implies \quad a_2 = \frac{7}{12}
+   $$
+
+3. **For $m = 2$:**
+
+   $$
+   (2+1)a_3 + \sum_{k=0}^2 a_{2-k} \frac{(-1)^k}{(2k+1)!} = 0
+   $$
+
+   Simplify:
+
+   $$
+   3a_3 + a_2 \frac{(-1)^0}{1!} + a_1 \frac{(-1)^1}{3!} + a_0 \frac{(-1)^2}{5!} = 0
+   $$
+
+   Substitute $a_0 = 1$, $a_1 = -1$, and $a_2 = \frac{7}{12}$:
+
+   $$
+   3a_3 + \frac{7}{12} + \frac{1}{6} + \frac{1}{120} = 0
+   $$
+
+   Combine terms:
+
+   $$
+   3a_3 + \frac{70}{120} + \frac{20}{120} + \frac{1}{120} = 0
+   $$
+
+   $$
+   3a_3 + \frac{91}{120} = 0 \quad \implies \quad a_3 = -\frac{91}{360}
+   $$
+
+4. **For $m = 3$:**
+   Compute $a_4$ similarly.
+
+#### **Write the Taylor Series Solution**
+
+The coefficients are:
+
+$$
+a_0 = 1, \quad a_1 = -1, \quad a_2 = \frac{7}{12}, \quad a_3 = -\frac{91}{360}
+$$
+
+Substitute these into the Taylor series:
+
+$$
+y(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + \cdots
+$$
+
+Using the computed coefficients:
+
+$$
+y(t) = 1 - t + \frac{7}{12}t^2 - \frac{91}{360}t^3 + \cdots
+$$
+
+::: {.callout-tip icon=false}
+
+## **Final Answer:**
+
+The first four nonzero terms of the Taylor series representation for the solution are:
+
+$$
+y(t) = 1 - t + \frac{7}{12}t^2 - \frac{91}{360}t^3
+$$
+
+:::
+:::
