@@ -293,11 +293,182 @@ $$
 
 ### **Problem:**
 
+Solve the initial value problem using Laplace transforms:
+
+$$
+y'' + 2y' + 5y = u(t - 4), \quad y(0) = 1, \quad y'(0) = 0
+$$
+
+where $u(t - 4)$ is the Heaviside step function.
+
 ### **Solution:**
+
+#### **Apply the Laplace Transform**
+
+Taking the Laplace transform of both sides of the differential equation:
+
+$$
+\mathcal{L}\{y''(t)\} + 2\mathcal{L}\{y'(t)\} + 5\mathcal{L}\{y(t)\} = \mathcal{L}\{u(t - 4)\}
+$$
+
+Using Laplace transform properties:
+
+1. $\mathcal{L}\{y''(t)\} = s^2 Y(s) - s y(0) - y'(0)$
+2. $\mathcal{L}\{y'(t)\} = s Y(s) - y(0)$
+3. $\mathcal{L}\{y(t)\} = Y(s)$
+4. $\mathcal{L}\{u(t - a)\} = \frac{e^{-as}}{s}$ for $a > 0$
+
+Substituting these into the equation:
+
+$$
+s^2 Y(s) - s \cdot 1 - 0 + 2(s Y(s) - 1) + 5 Y(s) = \frac{e^{-4s}}{s}
+$$
+
+#### **Substitute Initial Conditions and Simplify**
+
+Given $y(0) = 1$ and $y'(0) = 0$, substitute these values:
+
+$$
+s^2 Y(s) - s + 2s Y(s) - 2 + 5 Y(s) = \frac{e^{-4s}}{s}
+$$
+
+Combine like terms:
+
+$$
+(s^2 + 2s + 5) Y(s) - s - 2 = \frac{e^{-4s}}{s}
+$$
+
+Rearrange to solve for $Y(s)$:
+
+$$
+Y(s) = \frac{s + 2}{s^2 + 2s + 5} + \frac{e^{-4s}}{s(s^2 + 2s + 5)}
+$$
+
+#### **Simplify the Denominator**
+
+Complete the square for the quadratic expression in the denominator:
+
+$$
+s^2 + 2s + 5 = (s + 1)^2 + 4
+$$
+
+The expression for $Y(s)$ becomes:
+
+$$
+Y(s) = \frac{s + 2}{(s + 1)^2 + 4} + \frac{e^{-4s}}{s[(s + 1)^2 + 4]}
+$$
+
+#### **Partial Fraction Decomposition**
+
+Focus on the second term involving $\frac{1}{s[(s + 1)^2 + 4]}$:
+
+$$
+\frac{1}{s[(s + 1)^2 + 4]} = \frac{A}{s} + \frac{Bs + C}{(s + 1)^2 + 4}
+$$
+
+Multiply both sides by $s[(s + 1)^2 + 4]$:
+
+$$
+1 = A[(s + 1)^2 + 4] + (Bs + C)s
+$$
+
+Expand and collect like terms:
+
+$$
+1 = A(s^2 + 2s + 5) + Bs^2 + Cs
+$$
+
+$$
+1 = (A + B)s^2 + (2A + C)s + 5A
+$$
+
+Equate coefficients of like powers of $s$:
+
+1. $A + B = 0$
+2. $2A + C = 0$
+3. $5A = 1$
+
+Solving the system:
+
+- From the third equation: $A = \frac{1}{5}$
+- From the first equation: $B = -\frac{1}{5}$
+- From the second equation: $C = -\frac{2}{5}$
+
+The partial fractions are:
+
+$$
+\frac{1}{s[(s + 1)^2 + 4]} = \frac{\frac{1}{5}}{s} - \frac{\frac{1}{5}}{s + 1} - \frac{\frac{2}{5}}{(s + 1)^2 + 4}
+$$
+
+#### **Rewrite $Y(s)$ with Partial Fractions**
+
+Substitute the partial fractions back into $Y(s)$:
+
+$$
+Y(s) = \frac{s + 2}{(s + 1)^2 + 4} + e^{-4s} \left( \frac{\frac{1}{5}}{s} - \frac{\frac{1}{5}}{s + 1} - \frac{\frac{2}{5}}{(s + 1)^2 + 4} \right)
+$$
+
+#### **Inverse Laplace Transform**
+
+Take the inverse Laplace transform term by term.
+
+1. **First Term:**
+
+$$
+\mathcal{L}^{-1}\left\{\frac{s + 2}{(s + 1)^2 + 4}\right\} = e^{-t} \cos(2t) + \frac{1}{2} e^{-t} \sin(2t)
+$$
+
+2. **Second Term:**
+
+Using the Heaviside step function property:
+
+$$
+\mathcal{L}^{-1}\left\{ e^{-4s} F(s) \right\} = u(t - 4) f(t - 4)
+$$
+
+Where:
+
+$$
+F(s) = \frac{1}{5s} - \frac{1}{5(s + 1)} - \frac{2}{5((s + 1)^2 + 4)}
+$$
+
+Inverse transforming each component:
+
+- $\mathcal{L}^{-1}\left\{\frac{1}{5s}\right\} = \frac{1}{5}$
+- $\mathcal{L}^{-1}\left\{\frac{1}{5(s + 1)}\right\} = \frac{1}{5} e^{-t}$
+- $\mathcal{L}^{-1}\left\{\frac{2}{5((s + 1)^2 + 4)}\right\} = \frac{1}{5} e^{-t} \sin(2t)$
+
+Combining these:
+
+$$
+\mathcal{L}^{-1}\left\{ F(s) \right\} = \frac{1}{5} - \frac{1}{5} e^{-t} - \frac{1}{5} e^{-t} \sin(2t)
+$$
+
+The inverse transform of the second term is:
+
+$$
+u(t - 4) \left( \frac{1}{5} - \frac{1}{5} e^{-(t - 4)} - \frac{1}{5} e^{-(t - 4)} \sin[2(t - 4)] \right)
+$$
+
+#### **Combine All Terms**
+
+$$
+y(t) = e^{-t} \cos(2t) + \frac{1}{2} e^{-t} \sin(2t) + \frac{1}{5} u(t - 4) \left(1 - e^{-(t - 4)} - e^{-(t - 4)} \sin[2(t - 4)] \right)
+$$
+
+#### **Final Simplification**
+
+$$
+y(t) = e^{-t} \cos(2t) + \frac{1}{2} e^{-t} \sin(2t) + \frac{1}{5} u(t - 4) \left(1 - e^{-(t - 4)} \left(1 + \sin[2(t - 4)]\right) \right)
+$$
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+$$
+y(t) = e^{-t} \cos(2t) + \frac{1}{2} e^{-t} \sin(2t) + \frac{1}{5} u(t - 4) \left(1 - e^{-(t - 4)} \cos[2(t - 4)] - e^{-(t - 4)} \sin[2(t - 4)]\right)
+$$
 
 :::
 :::
@@ -308,11 +479,466 @@ $$
 
 ### **Problem:**
 
+Solve the initial value problem for the spring-mass-damper system using Laplace transforms with the following parameters:
+
+- **Forcing function:** $f(t) = 10e^{-0.2t}$
+- **Spring constant:** $k = 72$
+- **Mass:** $m = 2$
+- **Damping constant:** $c$ (varies; consider $c = 0, 2, 24, 40$)
+- **Initial conditions:** $y(0) = 0$, $y'(0) = 0$
+
 ### **Solution:**
+
+#### **Write the Differential Equation:**
+
+The general equation for the spring-mass-damper system is:
+
+$$
+m y'' + c y' + k y = f(t)
+$$
+
+Substituting the given values:
+
+$$
+2 y'' + c y' + 72 y = 10e^{-0.2t}
+$$
+
+#### **Take the Laplace Transform:**
+
+$$
+\mathcal{L}\{2 y''\} + \mathcal{L}\{c y'\} + \mathcal{L}\{72 y\} = \mathcal{L}\{10e^{-0.2t}\}
+$$
+
+Using Laplace transform properties:
+
+$$
+2s^2 Y(s) + cs Y(s) + 72 Y(s) = \frac{10}{s + 0.2}
+$$
+
+Simplify:
+
+$$
+(2s^2 + cs + 72) Y(s) = \frac{10}{s + 0.2}
+$$
+
+$$
+Y(s) = \frac{10}{(s + 0.2)(2s^2 + cs + 72)}
+$$
+
+#### **Perform Partial Fraction Decomposition:**
+
+The denominator depends on the damping constant $c$. For each given $c$ value ($c = 0, 2, 24, 40$), we factorize $2s^2 + cs + 72$ and decompose $Y(s)$ into partial fractions.
+
+##### **Case 1: $c = 0$ (Undamped System)**
+
+- **Characteristic Equation:**
+  $$
+  2s^2 + 72 = 0 \quad \Rightarrow \quad s^2 = -36 \quad \Rightarrow \quad s = \pm 6i
+  $$
+- **Laplace Transform Simplifies To:**
+  $$
+  Y(s) = \frac{10}{(s + 0.2)(2s^2 +72)} = \frac{5}{(s + 0.2)(s^2 +36)}
+  $$
+- **Partial Fraction Decomposition:**
+
+  $$
+  Y(s) = \frac{A}{s + 0.2} + \frac{Bs + C}{s^2 +36}
+  $$
+
+  Multiply both sides by $(s + 0.2)(s^2 +36)$:
+
+  $$
+  5 = A(s^2 +36) + (Bs + C)(s +0.2)
+  $$
+
+  Expand:
+
+  $$
+  5 = A s^2 + 36A + Bs^2 + 0.2Bs + Cs +0.2C
+  $$
+
+  Grouping like terms:
+
+  $$
+  (A + B)s^2 + (0.2B + C)s + (36A +0.2C) = 5
+  $$
+
+  Equating coefficients:
+
+  $$
+  \begin{cases}
+  A + B = 0 \quad \text{(1)} \\
+  0.2B + C = 0 \quad \text{(2)} \\
+  36A +0.2C = 5 \quad \text{(3)}
+  \end{cases}
+  $$
+
+  Solving the system:
+
+  - From equation (1): $B = -A$
+  - From equation (2): $C = -0.2B = 0.2A$
+  - Substitute $B$ and $C$ into equation (3):
+    $$
+    36A +0.2(0.2A) = 5 \quad \Rightarrow \quad 36A +0.04A = 5 \quad \Rightarrow \quad 36.04A = 5 \quad \Rightarrow \quad A = \frac{5}{36.04} \approx 0.1387
+    $$
+    $$
+    B = -0.1387, \quad C = 0.2 \times 0.1387 \approx 0.0277
+    $$
+
+  Thus, the partial fractions are:
+
+  $$
+  Y(s) \approx \frac{0.1387}{s + 0.2} + \frac{-0.1387 s + 0.0277}{s^2 +36}
+  $$
+
+- **Inverse Laplace Transform:**
+  $$
+  y(t) = 0.1387 e^{-0.2 t} -0.1387 \cos(6t) + 0.0277 \sin(6t)
+  $$
+
+##### **Case 2: $c = 2$ (Lightly Damped System)**
+
+- **Characteristic Equation:**
+  $$
+  2s^2 + 2s +72 = 0 \quad \Rightarrow \quad s^2 +s +36 = 0
+  $$
+  $$
+  s = \frac{-1 \pm \sqrt{1 -144}}{2} = \frac{-1 \pm \sqrt{-143}}{2} = -\frac{1}{2} \pm \frac{\sqrt{143}}{2}i \approx -0.5 \pm 5.9792i
+  $$
+- **Laplace Transform Simplifies To:**
+  $$
+  Y(s) = \frac{10}{(s +0.2)(2s^2 +2s +72)} = \frac{5}{(s +0.2)(s^2 +s +36)}
+  $$
+- **Partial Fraction Decomposition:**
+
+  $$
+  Y(s) = \frac{A}{s +0.2} + \frac{Bs + C}{s^2 +s +36}
+  $$
+
+  Multiply both sides by $(s +0.2)(s^2 +s +36)$:
+
+  $$
+  5 = A(s^2 +s +36) + (Bs + C)(s +0.2)
+  $$
+
+  Expand:
+
+  $$
+  5 = A s^2 +A s +36A +Bs^2 +0.2Bs +Cs +0.2C
+  $$
+
+  Grouping like terms:
+
+  $$
+  (A + B)s^2 + (A +0.2B + C)s + (36A +0.2C) =5
+  $$
+
+  Equating coefficients:
+
+  $$
+  \begin{cases}
+  A + B =0 \quad \text{(1)} \\
+  A +0.2B + C =0 \quad \text{(2)} \\
+  36A +0.2C =5 \quad \text{(3)}
+  \end{cases}
+  $$
+
+  Solving the system:
+
+  - From equation (1): $B = -A$
+  - From equation (2): $A +0.2(-A) + C =0 \quad \Rightarrow \quad 0.8A + C =0 \quad \Rightarrow \quad C = -0.8A$
+  - Substitute $B$ and $C$ into equation (3):
+    $$
+    36A +0.2(-0.8A) =5 \quad \Rightarrow \quad 36A -0.16A =5 \quad \Rightarrow \quad 35.84A =5 \quad \Rightarrow \quad A = \frac{5}{35.84} \approx 0.1393
+    $$
+    $$
+    B = -0.1393, \quad C = -0.8 \times 0.1393 \approx -0.1114
+    $$
+
+  Thus, the partial fractions are:
+
+  $$
+  Y(s) \approx \frac{0.1393}{s +0.2} + \frac{-0.1393 s -0.1114}{s^2 +s +36}
+  $$
+
+- **Inverse Laplace Transform:**
+
+  First, complete the square for the denominator $s^2 +s +36$:
+
+  $$
+  s^2 +s +36 = \left(s + \frac{1}{2}\right)^2 + \frac{143}{4}
+  $$
+
+  $$
+  \omega = \sqrt{\frac{143}{4}} = \frac{\sqrt{143}}{2} \approx 5.9792
+  $$
+
+  Thus,
+
+  $$
+  \mathcal{L}^{-1}\left\{ \frac{-0.1393 s -0.1114}{s^2 +s +36} \right\} = -0.1393 e^{-0.5 t} \cos(5.9792 t) - \frac{0.1114}{5.9792} e^{-0.5 t} \sin(5.9792 t)
+  $$
+
+  $$
+  \approx -0.1393 e^{-0.5 t} \cos(5.9792 t) -0.0186 e^{-0.5 t} \sin(5.9792 t)
+  $$
+
+  Therefore,
+
+  $$
+  y(t) \approx 0.1393 e^{-0.2 t} -0.1393 e^{-0.5 t} \cos(5.9792 t) -0.0186 e^{-0.5 t} \sin(5.9792 t)
+  $$
+
+##### **Case 3: $c = 24$ (Critically Damped System)**
+
+- **Characteristic Equation:**
+  $$
+  2s^2 +24s +72 =0 \quad \Rightarrow \quad s^2 +12s +36 =0
+  $$
+  $$
+  s = \frac{-12 \pm \sqrt{144 -144}}{2} = \frac{-12 \pm 0}{2} = -6
+  $$
+  (Repeated real roots; critically damped)
+- **Laplace Transform Simplifies To:**
+  $$
+  Y(s) = \frac{10}{(s +0.2)(2s^2 +24s +72)} = \frac{5}{(s +0.2)(s^2 +12s +36)}
+  $$
+- **Partial Fraction Decomposition:**
+
+  $$
+  Y(s) = \frac{A}{s +0.2} + \frac{B}{s +6} + \frac{C}{(s +6)^2}
+  $$
+
+  Multiply both sides by $(s +0.2)(s +6)^2$:
+
+  $$
+  5 = A(s +6)^2 + B(s +0.2)(s +6) + C(s +0.2)
+  $$
+
+  Expand:
+
+  $$
+  5 = A(s^2 +12s +36) + B(s^2 +6.2s +1.2) + C(s +0.2)
+  $$
+
+  Grouping like terms:
+
+  $$
+  (A + B)s^2 + (12A +6.2B +C)s + (36A +1.2B +0.2C) =5
+  $$
+
+  Equating coefficients:
+
+  $$
+  \begin{cases}
+  A + B =0 \quad \text{(1)} \\
+  12A +6.2B +C =0 \quad \text{(2)} \\
+  36A +1.2B +0.2C =5 \quad \text{(3)}
+  \end{cases}
+  $$
+
+  Solving the system:
+
+  - From equation (1): $B = -A$
+  - Substitute $B = -A$ into equation (2):
+    $$
+    12A +6.2(-A) +C =0 \quad \Rightarrow \quad 12A -6.2A +C =0 \quad \Rightarrow \quad 5.8A +C =0 \quad \Rightarrow \quad C = -5.8A
+    $$
+  - Substitute $B = -A$ and $C = -5.8A$ into equation (3):
+    $$
+    36A +1.2(-A) +0.2(-5.8A) =5 \quad \Rightarrow \quad 36A -1.2A -1.16A =5 \quad \Rightarrow \quad 33.64A =5
+    $$
+    $$
+    A = \frac{5}{33.64} \approx0.1484
+    $$
+    $$
+    B = -0.1484, \quad C = -5.8 \times0.1484 \approx -0.861
+    $$
+
+  Thus, the partial fractions are:
+
+  $$
+  Y(s) \approx \frac{0.1484}{s +0.2} + \frac{-0.1484}{s +6} + \frac{-0.861}{(s +6)^2}
+  $$
+
+- **Inverse Laplace Transform:**
+  $$
+  y(t) \approx 0.1484 e^{-0.2 t} -0.1484 e^{-6 t} -0.861 t e^{-6 t}
+  $$
+
+##### **Case 4: $c = 40$ (Highly Overdamped System)**
+
+- **Characteristic Equation:**
+  $$
+  2s^2 +40s +72 =0 \quad \Rightarrow \quad s^2 +20s +36 =0
+  $$
+  $$
+  s = \frac{-20 \pm \sqrt{400 -144}}{2} = \frac{-20 \pm \sqrt{256}}{2} = \frac{-20 \pm16}{2} = -2 \text{ or } -18
+  $$
+- **Laplace Transform Simplifies To:**
+  $$
+  Y(s) = \frac{10}{(s +0.2)(2s^2 +40s +72)} = \frac{5}{(s +0.2)(s^2 +20s +36)}
+  $$
+- **Partial Fraction Decomposition:**
+
+  $$
+  Y(s) = \frac{A}{s +0.2} + \frac{B}{s +2} + \frac{C}{s +18}
+  $$
+
+  Multiply both sides by $(s +0.2)(s +2)(s +18)$:
+
+  $$
+  5 = A(s +2)(s +18) + B(s +0.2)(s +18) + C(s +0.2)(s +2)
+  $$
+
+  Expand:
+
+  $$
+  5 = A(s^2 +20s +36) + B(s^2 +18.2s +3.6) + C(s^2 +2.2s +0.4)
+  $$
+
+  Grouping like terms:
+
+  $$
+  (A + B + C)s^2 + (20A +18.2B +2.2C)s + (36A +3.6B +0.4C) =5
+  $$
+
+  Equating coefficients:
+
+  $$
+  \begin{cases}
+  A + B + C =0 \quad \text{(1)} \\
+  20A +18.2B +2.2C =0 \quad \text{(2)} \\
+  36A +3.6B +0.4C =5 \quad \text{(3)}
+  \end{cases}
+  $$
+
+  Solving the system:
+
+  - From equation (1): $C = -A -B$
+  - Substitute $C = -A -B$ into equation (2):
+    $$
+    20A +18.2B +2.2(-A -B) =0 \quad \Rightarrow \quad 20A +18.2B -2.2A -2.2B =0 \quad \Rightarrow \quad 17.8A +16B=0
+    $$
+    $$
+    16B = -17.8A \quad \Rightarrow \quad B = -\frac{17.8}{16}A \approx -1.1125 A
+    $$
+  - Substitute $C = -A -B = -A -(-1.1125 A) =0.1125 A$ into equation (3):
+    $$
+    36A +3.6(-1.1125A) +0.4(0.1125 A) =5 \quad \Rightarrow \quad 36A -4.005A +0.045A =5 \quad \Rightarrow \quad 32.04A =5
+    $$
+
+  $$
+  A = \frac{5}{32.04} \approx0.156
+  $$
+
+  $$
+  B = -1.1125 \times0.156 \approx -0.1737, \quad C=0.1125 \times0.156 \approx0.0176
+  $$
+
+  Thus, the partial fractions are:
+
+  $$
+  Y(s) \approx \frac{0.156}{s +0.2} + \frac{-0.1737}{s +2} + \frac{0.0176}{s +18}
+  $$
+
+- **Inverse Laplace Transform:**
+  $$
+  y(t) \approx 0.156 e^{-0.2 t} -0.1737 e^{-2 t} +0.0176 e^{-18 t}
+  $$
+
+#### **Combined Solutions:**
+
+Summarizing the solutions for each damping constant $c$:
+
+1. **Undamped ($c = 0$):**
+   $$
+   y(t) = 0.1387 e^{-0.2 t} -0.1387 \cos(6t) +0.0277 \sin(6t)
+   $$
+2. **Lightly Damped ($c = 2$):**
+   $$
+   y(t) = 0.1393 e^{-0.2 t} -0.1393 e^{-0.5 t} \cos(5.9792 t) -0.0186 e^{-0.5 t} \sin(5.9792 t)
+   $$
+3. **Critically Damped ($c = 24$):**
+   $$
+   y(t) = 0.1484 e^{-0.2 t} -0.1484 e^{-6 t} -0.861 t e^{-6 t}
+   $$
+4. **Highly Overdamped ($c = 40$):**
+   $$
+   y(t) = 0.156 e^{-0.2 t} -0.1737 e^{-2 t} +0.0176 e^{-18 t}
+   $$
+
+#### **Graph**
+
+```{python}
+#| label: graph-5-5-31
+#| code-summary: "Show Code"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define time range
+t = np.linspace(0, 10, 1000)
+
+# Solutions for different damping constants
+
+# Case 1: c = 0 (Undamped System)
+y_c0 = 0.1387 * np.exp(-0.2 * t) -0.1387 * np.cos(6 * t) +0.0277 * np.sin(6 * t)
+
+# Case 2: c = 2 (Lightly Damped System)
+omega_d_c2 = np.sqrt(143)/2  # Approximately 5.9792
+y_c2 = 0.1393 * np.exp(-0.2 * t) -0.1393 * np.exp(-0.5 * t) * np.cos(omega_d_c2 * t) -0.0186 * np.exp(-0.5 * t) * np.sin(omega_d_c2 * t)
+
+# Case 3: c = 24 (Critically Damped System)
+y_c24 = 0.1484 * np.exp(-0.2 * t) -0.1484 * np.exp(-6 * t) -0.861 * t * np.exp(-6 * t)
+
+# Case 4: c = 40 (Highly Overdamped System)
+y_c40 = 0.156 * np.exp(-0.2 * t) -0.1737 * np.exp(-2 * t) +0.0176 * np.exp(-18 * t)
+
+# Plotting
+plt.figure(figsize=(9, 5))
+plt.plot(t, y_c0, label='c = 0 (Undamped)', linewidth=2)
+plt.plot(t, y_c2, label='c = 2 (Lightly Damped)', linewidth=2)
+plt.plot(t, y_c24, label='c = 24 (Critically Damped)', linewidth=2)
+plt.plot(t, y_c40, label='c = 40 (Highly Overdamped)', linewidth=2)
+plt.title('Response of Spring-Mass-Damper System for Various Damping Constants', fontsize=14)
+plt.xlabel('Time (s)', fontsize=12)
+plt.ylabel('Displacement y(t)', fontsize=12)
+plt.legend(fontsize=12)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+#### **Visualization Interpretation:**
+
+- **$c = 0$ (Undamped):** Exhibits persistent oscillations with a slight decay due to the forcing function.
+- **$c = 2$ (Lightly Damped):** Shows oscillations that gradually decrease in amplitude.
+- **$c = 24$ (Critically Damped):** Returns to equilibrium without oscillating, achieving the fastest non-oscillatory return.
+- **$c = 40$ (Highly Overdamped):** Returns to equilibrium without oscillating but does so more slowly compared to the critically damped case.
 
 ::: {.callout-tip icon=false}
 
 ## **Final Answer:**
+
+For each damping constant $c$, the solution $y(t)$ is:
+
+1. **Undamped ($c = 0$):**
+   $$
+   y(t) = 0.1387 e^{-0.2 t} -0.1387 \cos(6t) +0.0277 \sin(6t)
+   $$
+2. **Lightly Damped ($c = 2$):**
+   $$
+   y(t) = 0.1393 e^{-0.2 t} -0.1393 e^{-0.5 t} \cos(5.9792 t) -0.0186 e^{-0.5 t} \sin(5.9792 t)
+   $$
+3. **Critically Damped ($c = 24$):**
+   $$
+   y(t) = 0.1484 e^{-0.2 t} -0.1484 e^{-6 t} -0.861 t e^{-6 t}
+   $$
+4. **Highly Overdamped ($c = 40$):**
+   $$
+   y(t) = 0.156 e^{-0.2 t} -0.1737 e^{-2 t} +0.0176 e^{-18 t}
+   $$
 
 :::
 :::
